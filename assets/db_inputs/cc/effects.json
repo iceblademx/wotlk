@@ -1,0 +1,535 @@
+[
+  {
+    "kind": "warning",
+    "ownerId": 44066,
+    "owner": "Kharmaa's Grace",
+    "detail": "GemProperties 1549 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 44076,
+    "owner": "Swift Starflare Diamond",
+    "detail": "GemProperties 1550 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 44078,
+    "owner": "Tireless Starflare Diamond",
+    "detail": "GemProperties 1551 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 44081,
+    "owner": "Enigmatic Starflare Diamond",
+    "detail": "GemProperties 1552 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 44082,
+    "owner": "Impassive Starflare Diamond",
+    "detail": "GemProperties 1553 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 44084,
+    "owner": "Forlorn Starflare Diamond",
+    "detail": "GemProperties 1554 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 44087,
+    "owner": "Persistent Earthshatter Diamond",
+    "detail": "GemProperties 1555 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 44088,
+    "owner": "Powerful Earthshatter Diamond",
+    "detail": "GemProperties 1556 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 44089,
+    "owner": "Trenchant Earthshatter Diamond",
+    "detail": "GemProperties 1557 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 45862,
+    "owner": "Bold Stormjewel",
+    "detail": "GemProperties 1569 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 45879,
+    "owner": "Delicate Stormjewel",
+    "detail": "GemProperties 1589 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 45880,
+    "owner": "Solid Stormjewel",
+    "detail": "GemProperties 1590 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 45881,
+    "owner": "Sparkling Stormjewel",
+    "detail": "GemProperties 1591 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 45882,
+    "owner": "Brilliant Stormjewel",
+    "detail": "GemProperties 1592 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 45883,
+    "owner": "Runed Stormjewel",
+    "detail": "GemProperties 1593 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 45987,
+    "owner": "Rigid Stormjewel",
+    "detail": "GemProperties 1609 not in GemProperties.dbc"
+  },
+  {
+    "kind": "warning",
+    "ownerId": 49110,
+    "owner": "Nightmare Tear",
+    "detail": "GemProperties 1629 not in GemProperties.dbc"
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900100,
+    "owner": "Bulwark of Azzinoth",
+    "spellId": 64955,
+    "trigger": "equip",
+    "detail": "Item - Paladin T8 Protection Relic: proc",
+    "text": "Increases your block value by 450 for 20 sec each time you use Holy Shield."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900101,
+    "owner": "Bulwark of Azzinoth",
+    "spellId": 64955,
+    "trigger": "equip",
+    "detail": "Item - Paladin T8 Protection Relic: proc",
+    "text": "Increases your block value by 450 for 20 sec each time you use Holy Shield."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900102,
+    "owner": "The Nexus Key",
+    "spellId": 200012,
+    "trigger": "equip",
+    "detail": "Nexus Charge: proc",
+    "text": "Chance on damaging spell hit to grant 100% critical strike chance for 4 sec."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900104,
+    "owner": "Thunderfury, Reforged",
+    "spellId": 200014,
+    "trigger": "equip",
+    "detail": "Thunderfury Reforged: proc",
+    "text": "Chance on hit to increase your critical strike chance with melee attacks by 50% for 10 sec."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900105,
+    "owner": "Skareth's Blazing Loop",
+    "spellId": 200015,
+    "trigger": "equip",
+    "detail": "Skareth's Blazing Loop: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Fireball increases your Haste, Critical Strike, and Fire damage by 3%. Stacks up to 5 times."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900106,
+    "owner": "Vaelith's Withering Grasp",
+    "spellId": 200016,
+    "trigger": "equip",
+    "detail": "Vaelith's Withering Grasp: aura ADD_FLAT_MODIFIER (107)",
+    "text": "Shadow Bolt increases the damage of your Drain Soul by 50%, stacking up to 4 times, consumed by your next Drain Soul cast. Drain Soul channels twice as fast: half the duration, same number of ticks."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900107,
+    "owner": "Skareth's Killing Eye",
+    "spellId": 200019,
+    "trigger": "equip",
+    "detail": "Skareth's Killing Eye: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Casting Misdirection allows your next Kill Shot to be cast regardless of target health, dealing 300% additional damage."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900108,
+    "owner": "Skareth's Falling Star",
+    "spellId": 200021,
+    "trigger": "equip",
+    "detail": "Skareth's Falling Star: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Casting Starfall causes you to channel Fury of the Goddess for 3 sec, unleashing a rapid volley of spells at your current target."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900109,
+    "owner": "Vorrax's Seal",
+    "spellId": 200024,
+    "trigger": "equip",
+    "detail": "Vorrax's Seal: aura PERIODIC_DUMMY (226)",
+    "text": "Grants a stack of Patience every 2 sec, up to 10. At 10 stacks, gain Righteous Vengeance, increasing the damage of your next Hammer of the Righteous by 500%."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900110,
+    "owner": "Skareth's Fractured Mind",
+    "spellId": 200027,
+    "trigger": "equip",
+    "detail": "Skareth's Fractured Mind: proc",
+    "text": "Casting Mind Flay increases the damage and Critical Strike Chance of your next Mind Blast by 33%. This stacks 3 times. Casting Mind Blast increases the damage and Critical Strike Chance of your next Mind Flay by 100%."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900110,
+    "owner": "Skareth's Fractured Mind",
+    "spellId": 200028,
+    "trigger": "equip",
+    "detail": "Skareth's Fractured Mind: proc"
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900111,
+    "owner": "Vaelith's Flowing Band",
+    "spellId": 200031,
+    "trigger": "equip",
+    "detail": "Vaelith's Flowing Band: aura ADD_FLAT_MODIFIER (107)",
+    "text": "Chain Heal no longer loses effectiveness with each jump and can jump to 2 additional players."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900112,
+    "owner": "Vorrax's Runic Loop",
+    "spellId": 200032,
+    "trigger": "equip",
+    "detail": "Vorrax's Runic Loop: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Your rune-spending abilities have a 30% chance to refund a rune."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900113,
+    "owner": "Morgrath's Proto-Scale Band",
+    "spellId": 200033,
+    "trigger": "equip",
+    "detail": "Morgrath's Proto-Scale Band: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Casting Lightning Bolt increases the damage of your next Lava Burst by 100%. Casting Lava Burst increases the damage of your next Chain Lightning by 100%."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900114,
+    "owner": "Morgrath's Wrathful Verdict",
+    "spellId": 200036,
+    "trigger": "equip",
+    "detail": "Morgrath's Wrathful Verdict: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Crusader Strike and Exorcism grant Enlightenment, increasing all Holy damage you deal by 10%, stacking up to 3 times. Casting Divine Storm consumes Enlightenment, dealing 200% increased damage per Enlightenment you had."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900115,
+    "owner": "Morgrath's Ravaging Claw",
+    "spellId": 200049,
+    "trigger": "equip",
+    "detail": "Morgrath's Ravaging Claw: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Ferocious Bite has a 20% chance per combo point spent to trigger Omen of Clarity. Shred or Mangle casts that consume Omen of Clarity deal 100% additional damage."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900116,
+    "owner": "Vorrax's Reckless Fury",
+    "spellId": 200051,
+    "trigger": "equip",
+    "detail": "Vorrax's Reckless Fury: aura DUMMY (4)",
+    "text": "Execute grants a stack of Undying Fury, increasing the damage of Execute by 5% and its critical strike chance by 5%. Stacks up to 99 times, lasting 60 sec. Sudden Death has a 20% chance to activate."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900117,
+    "owner": "Vaelith's Radiant Infusion",
+    "spellId": 200053,
+    "trigger": "equip",
+    "detail": "Vaelith's Radiant Infusion: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Prayer of Mending also applies Power Word: Shield each time it heals a target. This may be applied regardless of Weakened Soul."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900119,
+    "owner": "Vorrax's Fatebound Coin",
+    "spellId": 200057,
+    "trigger": "equip",
+    "detail": "Vorrax's Fatebound Coin: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Each finishing move that consumes 4 or more combo points flips a Fatebound Coin. Heads increases your Energy regeneration by 30% for 15 sec or until you flip Tails, gaining an additional 10% for each consecutive Heads flip. Tails deals Arcane damage to your target, dealing additional damage for each consecutive Tails flip."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900120,
+    "owner": "Rok'thul's Frozen Heart",
+    "spellId": 200062,
+    "trigger": "equip",
+    "detail": "Rok'thul's Frozen Heart: aura PERIODIC_DUMMY (226)",
+    "text": "Every 2 sec, gain a stack of Cold Heart (up to 20), causing your next Chains of Ice to deal an additional 60% of Attack Power as Frost damage per stack. If Chains of Ice is used at 20 stacks, the target is also stunned for 4 sec."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900121,
+    "owner": "Morgrath's Boundless Well",
+    "spellId": 200066,
+    "trigger": "equip",
+    "detail": "Morgrath's Boundless Well: aura ADD_FLAT_MODIFIER (107)",
+    "text": "Evocation's cast time is reduced by 50% and no longer has a cooldown. Completing a full channel of Evocation increases your Arcane spell damage by 20% for 60 sec."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900122,
+    "owner": "Rok'thul's Sacred Flame",
+    "spellId": 200069,
+    "trigger": "equip",
+    "detail": "Rok'thul's Sacred Flame: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Casting Holy Fire or Smite heals all targets with Power Word: Shield active."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900123,
+    "owner": "Rok'thul's Festering Mind",
+    "spellId": 200072,
+    "trigger": "equip",
+    "detail": "Rok'thul's Festering Mind: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Mind Blast extends the remaining duration of Vampiric Touch and Devouring Plague by an amount equal to its own cooldown."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900124,
+    "owner": "Rok'thul's Molten Verdict",
+    "spellId": 200073,
+    "trigger": "equip",
+    "detail": "Rok'thul's Molten Verdict: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Consuming Hot Streak causes your next fully-cast Pyroblast within 20 sec to deal 200% additional damage. Does not apply to the instant Pyroblast Hot Streak itself grants."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900125,
+    "owner": "Vaelith's Reaped Soul",
+    "spellId": 200076,
+    "trigger": "equip",
+    "detail": "Vaelith's Reaped Soul: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Corruption, Curse of Agony, and Unstable Affliction grant a stack of Reaped Soul each time they deal damage. At 25 stacks, consume all stacks to Reap your primary target's soul, dealing Shadow damage every 1 sec for 4 sec."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900126,
+    "owner": "Rok'thul's Slayer's Edge",
+    "spellId": 200082,
+    "trigger": "equip",
+    "detail": "Rok'thul's Slayer's Edge: proc",
+    "text": "Your attacks against your primary target have a chance to overwhelm their defenses and trigger a Slayer's Strike, dealing Physical damage and granting you a stack of Slayer, increasing your Bloodthirst damage for a short time. Multiple stacks of Slayer may overlap."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900127,
+    "owner": "Vaelith's Abyssal Calling",
+    "spellId": 200085,
+    "trigger": "equip",
+    "detail": "Vaelith's Abyssal Calling: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Casting Demonic Empowerment calls forth a Pit Lord from the Twisting Nether that attacks your target with Fire damage, and increases the spell power of allies within 30 yards for 20 sec."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900128,
+    "owner": "Morgrath's Malediction",
+    "spellId": 200088,
+    "trigger": "equip",
+    "detail": "Morgrath's Malediction: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Casting Immolate also applies Malediction to your target, dealing Fire damage over 24 sec. If the target is afflicted by Malediction, casting Chaos Bolt and Shadowburn increases its stack count by 1. Each time Malediction gains a stack it has a chance to collapse, consuming a stack every 1 sec to deal Shadowflame damage until 1 stack remains."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900129,
+    "owner": "Vorrax's Chaosflame",
+    "spellId": 200092,
+    "trigger": "equip",
+    "detail": "Vorrax's Chaosflame: aura PROC_TRIGGER_SPELL (42)",
+    "text": "Casting Incinerate grants a stack of Chaosflame, increasing the damage of your next Chaos Bolt by 50% and guaranteeing it will Critically Strike, stacking up to 5 times. Casting Chaos Bolt consumes all stacks of Chaosflame."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900130,
+    "owner": "Rok'thul's Crescent Band",
+    "spellId": 200094,
+    "trigger": "equip",
+    "detail": "Rok'thul's Crescent Band: aura DUMMY (4)",
+    "text": "Empowered by the Strength of the Earth, you may equip two-handed axes and maces in one hand."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900131,
+    "owner": "Ancestral Farseer Band",
+    "spellId": 200095,
+    "trigger": "equip",
+    "detail": "Ancestral Farseer Band: aura DUMMY (4)",
+    "text": "Elemental Mastery turns you into a Fire Tyrant, removing the cooldown on Lava Burst for the duration. Additionally, Flame Shock Critical Strikes have a chance to activate Elemental Mastery for 8 seconds."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900132,
+    "owner": "Rok'thul's Command",
+    "spellId": 200098,
+    "trigger": "equip",
+    "detail": "Rok'thul's Command: aura DUMMY (4)",
+    "text": "Infuse part of your essence into the life force of your summoned minions, greatly empowering them."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900133,
+    "owner": "Vorrax's Wild Hunt",
+    "spellId": 200143,
+    "trigger": "equip",
+    "detail": "Vorrax's Wild Hunt: aura DUMMY (4)",
+    "text": "While you have the Beast Mastery talent, your pet inherits 100% of your armor penetration and 30% of your critical strike and haste ratings. Call of the Wild also unleashes a stampede of spirit beasts upon your target for 20 sec."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900134,
+    "owner": "Pack Leader's Insignia",
+    "spellId": 200146,
+    "trigger": "equip",
+    "detail": "Pack Leader's Insignia: aura DUMMY (4)",
+    "text": "Kill Command calls upon a legendary beast to aid your hunt. The Wyvern, Bear and Boar answer in succession, each granting their blessing for 30 sec."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900135,
+    "owner": "Deadeye's Oath",
+    "spellId": 200154,
+    "trigger": "equip",
+    "detail": "Deadeye's Oath: aura DUMMY (4)",
+    "text": "Your Aimed Shot deals additional Physical damage equal to 650% of your ranged attack power, but its base cooldown is increased to 15 sec. Casting another Shot reduces the cooldown by 2 sec."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900136,
+    "owner": "Loop of the Banshee",
+    "spellId": 200156,
+    "trigger": "equip",
+    "detail": "Loop of the Banshee: aura DUMMY (4)",
+    "text": "Your Silencing Shot fires a Withering Arrow at the target, dealing Shadow damage over 8 sec. Each periodic tick strengthens the arrow's eruption. Your Chimera Shot consumes the arrow, immediately dealing its remaining periodic damage to the target and unleashing a Shadow eruption that strikes all enemies within 8 yards."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900137,
+    "owner": "Bombardier's Pin",
+    "spellId": 200160,
+    "trigger": "equip",
+    "detail": "Bombardier's Pin: aura DUMMY (4)",
+    "text": "Grants the Wildfire Bomb ability."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900138,
+    "owner": "Signet of Dark Deeds",
+    "spellId": 200162,
+    "trigger": "equip",
+    "detail": "Signet of Dark Deeds: aura DUMMY (4)",
+    "text": "Your Black Arrow summons a Dark Minion for 10 sec. When it fades, it strikes your target for 90% of all damage you dealt while it was active, as Shadow damage."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900142,
+    "owner": "Roll the Bones",
+    "spellId": 200165,
+    "trigger": "equip",
+    "detail": "Roll the Bones: aura DUMMY (4)",
+    "text": "Your Eviscerate has a 20% chance per combo point spent to grant you one of six combat enhancements for 15 sec. Different enhancements may overlap; receiving an enhancement you already have refreshes its duration."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900143,
+    "owner": "Between the Eyes",
+    "spellId": 200173,
+    "trigger": "equip",
+    "detail": "Between the Eyes: aura ADD_PCT_MODIFIER (108)",
+    "text": "Your Kidney Shot also deals Physical damage based on your attack power and the combo points spent, retaining its stun and cooldown. This damage strikes for three times normal damage on a critical strike."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900144,
+    "owner": "Venomdrinker",
+    "spellId": 200175,
+    "trigger": "equip",
+    "detail": "Venomdrinker: proc",
+    "text": "Your Shiv costs no Energy and grants Venom Rush for 8 sec, increasing your Energy regeneration by 50% and your poison damage by 20%. Shiv now has a 20-sec cooldown."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900145,
+    "owner": "Sanguine Hunger",
+    "spellId": 200177,
+    "trigger": "equip",
+    "detail": "Sanguine Hunger: proc",
+    "text": "Your Rupture and Garrote restore 8 Energy each time they deal periodic damage. Your Envenom extends your active bleeds on its target by 1 sec per combo point spent, up to their original maximum durations."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900146,
+    "owner": "Endless Dance",
+    "spellId": 200179,
+    "trigger": "equip",
+    "detail": "Endless Dance: aura DUMMY (4)",
+    "text": "Your finishing moves reduce the remaining cooldown of Shadow Dance by 1 sec per combo point spent. Activating Shadow Dance restores 40 Energy."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900147,
+    "owner": "Shadow's Invitation",
+    "spellId": 200181,
+    "trigger": "equip",
+    "detail": "Shadow's Invitation: proc",
+    "text": "Your Eviscerate allows your next Ambush to be used without being in Stealth and reduces its Energy cost by 20. Your Ambush deals additional Shadow damage equal to 30% of its damage dealt."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900148,
+    "owner": "Lashing Flames",
+    "spellId": 200184,
+    "trigger": "equip",
+    "detail": "Lashing Flames: aura DUMMY (4)",
+    "text": "While Flametongue Weapon is active on both of your weapons, your Lava Lash also strikes with your main-hand weapon, deals 100% increased damage, and refreshes the duration of your Flame Shock on the target."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900149,
+    "owner": "Stormflurry",
+    "spellId": 200186,
+    "trigger": "equip",
+    "detail": "Stormflurry: aura DUMMY (4)",
+    "text": "Your Stormstrike strikes an additional time and grants you 2 stacks of Maelstrom Weapon."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900150,
+    "owner": "Tempest",
+    "spellId": 200207,
+    "trigger": "equip",
+    "detail": "Tempest: aura DUMMY (4)",
+    "text": "Your Lightning Bolt and Chain Lightning have a chance to call down a tremendous lightning strike, searing your target with the fury of the storm and scorching enemies near it."
+  },
+  {
+    "kind": "item-spell",
+    "ownerId": 900155,
+    "owner": "Vorrax's Glacial Spire",
+    "spellId": 200210,
+    "trigger": "equip",
+    "detail": "Vorrax's Glacial Spire: aura PERIODIC_DUMMY (226)",
+    "text": "While in combat, frost crystallizes around you, generating an Icicle every 4 sec. Upon generating 5 Icicles, fire a massive spike of ice that impales your target, dealing Frost damage."
+  }
+]

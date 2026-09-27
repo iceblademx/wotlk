@@ -3,4 +3,6 @@
 
 package cc
 
-func init() {}
+func init() {
+
+}

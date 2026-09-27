@@ -203,8 +203,8 @@ dps_results: {
 dps_results: {
  key: "TestDemonology-AllItems-DeathbringerGarb"
  value: {
-  dps: 10829.58867
-  tps: 9256.94195
+  dps: 10710.17325
+  tps: 9150.78803
  }
 }
 dps_results: {
@@ -287,8 +287,8 @@ dps_results: {
 dps_results: {
  key: "TestDemonology-AllItems-EyeoftheBroodmother-45308"
  value: {
-  dps: 13416.73309
-  tps: 11669.56719
+  dps: 13392.21366
+  tps: 11646.039
  }
 }
 dps_results: {

@@ -46,16 +46,16 @@ character_stats_results: {
 dps_results: {
  key: "TestRetribution-AllItems-AegisBattlegear"
  value: {
-  dps: 6268.37146
-  tps: 6353.83098
-  dtps: 9.92959
+  dps: 6209.74526
+  tps: 6295.25455
+  dtps: 9.56591
  }
 }
 dps_results: {
  key: "TestRetribution-AllItems-AegisPlate"
  value: {
-  dps: 5624.17512
-  tps: 5704.4374
+  dps: 5571.88301
+  tps: 5652.14529
   dtps: 8.90286
  }
 }
@@ -369,8 +369,8 @@ dps_results: {
 dps_results: {
  key: "TestRetribution-AllItems-EyeoftheBroodmother-45308"
  value: {
-  dps: 6541.10959
-  tps: 6626.59401
+  dps: 6535.90429
+  tps: 6621.38871
   dtps: 9.92959
  }
 }
@@ -866,8 +866,8 @@ dps_results: {
 dps_results: {
  key: "TestRetribution-AllItems-StormshroudArmor"
  value: {
-  dps: 5065.99489
-  tps: 5147.23399
+  dps: 5116.48694
+  tps: 5197.72604
   dtps: 9.23882
  }
 }
@@ -1026,8 +1026,8 @@ dps_results: {
 dps_results: {
  key: "TestRetribution-AllItems-Val'anyr,HammerofAncientKings-46017"
  value: {
-  dps: 5145.39682
-  tps: 5230.26174
+  dps: 5073.68472
+  tps: 5158.79659
   dtps: 9.92959
  }
 }

@@ -220,7 +220,7 @@ func init() {
 		AuraID:    65006,
 		Duration:  time.Second * 10,
 		MaxStacks: 5,
-		Bonus:     stats.Stats{stats.SpellPower: 26},
+		Bonus:     stats.Stats{stats.SpellPower: 25},
 		Callback:  core.CallbackOnHealDealt | core.CallbackOnSpellHitDealt | core.CallbackOnPeriodicHealDealt | core.CallbackOnPeriodicDamageDealt,
 	})
 
@@ -328,7 +328,7 @@ func init() {
 		AuraID:      65000,
 		Duration:    time.Second * 20,
 		MaxStacks:   20,
-		Bonus:       stats.Stats{stats.MP5: 85},
+		Bonus:       stats.Stats{stats.MP5: 75},
 		CD:          time.Minute * 2,
 		Callback:    core.CallbackOnCastComplete,
 		IsDefensive: true,

@@ -1,0 +1,808 @@
+[
+  {
+    "id": 9301,
+    "name": "Rime of the Hollow Bough",
+    "itemIds": [
+      901001,
+      901002,
+      901003,
+      901004
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900300,
+        "name": "Torrent of Ice",
+        "text": "Your auto-attack critical strikes have a chance to send out a torrent of ice, dealing 35% of your attack power as Frost damage to enemies in front of you. This is guaranteed to occur during Unbreakable Armor.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900301,
+        "name": "Torrent of Ice",
+        "text": "While Unbreakable Armor is active, your auto-attack critical strikes increase its duration by 2 sec, up to a maximum of 8 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9302,
+    "name": "Plague of the Burrow",
+    "itemIds": [
+      901005,
+      901006,
+      901007,
+      901008
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900310,
+        "name": "Festering Wound",
+        "text": "Necrosis damage applies Festering Wound to the target, dealing 4% of your attack power as Shadow damage every 2 sec for 15 sec. Stacks up to 20 times.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900311,
+        "name": "Festering Wound",
+        "text": "Scourge Strike bursts all Festering Wounds on the target, dealing 15% of your attack power as Shadow damage per wound and increasing your Strength by 25 per wound for 20 sec. A new burst replaces any existing Strength bonus.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9303,
+    "name": "Sapdrinker's Vigil",
+    "itemIds": [
+      901009,
+      901010,
+      901011,
+      901012
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900320,
+        "name": "Blood Feast",
+        "text": "Each enemy hit by Blood Boil or Heart Strike grants a stack of Blood Feast, increasing the damage and healing of Death Strike by 3%, stacking up to 5 times. Lasts 20 sec.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900321,
+        "name": "Blood Feast",
+        "text": "Death Strike overhealing is converted into an absorb shield lasting 10 sec, absorbing 45% of the overhealing, up to 12% of your maximum health.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9304,
+    "name": "Canopy Dreamer's Regalia",
+    "itemIds": [
+      901013,
+      901014,
+      901015,
+      901016
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900330,
+        "name": "Dream Burst",
+        "text": "Starfire and Wrath have a 15% chance to fire a Dream Burst at your target, dealing Nature damage.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900331,
+        "name": "Power of Elune",
+        "text": "Starfire and Wrath deal 4% increased damage, and have a 15% chance to grant Power of Elune for 12 sec, guaranteeing that Starfire and Wrath fire a Dream Burst.",
+        "needsCode": "aura ADD_PCT_MODIFIER (108)"
+      }
+    ]
+  },
+  {
+    "id": 9305,
+    "name": "Prowler of the Fevered Canopy",
+    "itemIds": [
+      901017,
+      901018,
+      901019,
+      901020
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900340,
+        "name": "Bloodseeker Vines",
+        "text": "Rip and Rake damage has a 10% chance to cause Bloodseeker Vines to grow on the victim, dealing 35% of your attack power as Bleed damage over 6 sec.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900341,
+        "name": "Bloodseeker Vines",
+        "text": "When Bloodseeker Vines expire, or you use Ferocious Bite on their target, they explode in thorns, dealing 30% of your attack power as physical damage to the victim and nearby enemies.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9306,
+    "name": "Ursoc's Tainted Claw",
+    "itemIds": [
+      901021,
+      901022,
+      901023,
+      901024
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900350,
+        "name": "Empowered Maul",
+        "text": "Your auto-attacks have a 20% chance to empower your next Maul, dealing 50% of your attack power as physical damage to your target and 25% to all other enemies in front of you.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900351,
+        "name": "Ravage",
+        "text": "During Berserk, Mangle, Lacerate and Swipe have a 20% chance to make your next Maul become Ravage, dealing 250% of an empowered Maul.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9307,
+    "name": "Sapwarden's Vestments",
+    "itemIds": [
+      901025,
+      901026,
+      901027,
+      901028
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900360,
+        "name": "Symbiotic Blooms",
+        "text": "Wild Growth and Rejuvenation have a 8% chance, and Swiftmend always causes, Symbiotic Blooms to grow on the target, healing for 50% of your spell power over 6 sec.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900361,
+        "name": "Symbiotic Blooms",
+        "text": "Symbiotic Blooms increases the healing your spells do to affected targets by 15%.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9308,
+    "name": "Grizzlemaw Tracker's Garb",
+    "itemIds": [
+      901029,
+      901030,
+      901031,
+      901032
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900370,
+        "name": "Barbed Shot",
+        "text": "Your shots have a 22% chance to apply Barbed Shot to the target, causing them to bleed for 35% of your attack power over 6 sec. Each time Barbed Shot is applied, your pet stomps the ground, dealing 30% of your attack power as physical damage to all nearby enemies.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900371,
+        "name": "Barbed Shot",
+        "text": "Each time your pet Stomps, reduce the cooldown of Call of the Wild and Rapid Fire by 2 sec, and Bestial Wrath and Kill Command by 1 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9309,
+    "name": "Warden of the Silent Canopy",
+    "itemIds": [
+      901033,
+      901034,
+      901035,
+      901036
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900380,
+        "name": "Marked Quarry",
+        "text": "Steady Shot grants Marked Quarry, increasing the damage of Steady Shot by 2% per stack, stacking up to 5 times. Lasts 30 sec.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900381,
+        "name": "Marked Quarry",
+        "text": "Aimed Shot consumes all stacks of Marked Quarry, dealing 20% of your attack power as additional damage per stack, and causes your next Arcane Shot to deal 50% more damage and cost no mana.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9310,
+    "name": "Nightmare Stalker's Trappings",
+    "itemIds": [
+      901037,
+      901038,
+      901039,
+      901040
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900390,
+        "name": "Sentinel's Mark",
+        "text": "Consuming Lock and Load with Explosive Shot has a 45% chance to summon a Sentinel Owl, applying Sentinel's Mark to your target. Your next Explosive Shot deals 40% increased damage to the marked target.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900391,
+        "name": "Sentinel's Mark",
+        "text": "When Sentinel's Mark is consumed, it summons a barrage of 4 lunar missiles, each dealing 30% of your attack power as Arcane damage to enemies within 10 yards.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9311,
+    "name": "Cinder of the Burning Root",
+    "itemIds": [
+      901041,
+      901042,
+      901043,
+      901044
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900400,
+        "name": "Arcane Phoenix",
+        "text": "Consuming Hot Streak summons an Arcane Phoenix to aid you for 15 sec, casting Arcane and Fire spells at your enemies. This effect has an internal cooldown of 45 sec.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900401,
+        "name": "Kindled Momentum",
+        "text": "Consuming Hot Streak grants a stack of Kindled Momentum, increasing spell haste by 2% for 10 sec, stacking up to 5. Each spell cast by the Arcane Phoenix also grants a stack.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9312,
+    "name": "Hoarfrost of the Sleeping Tree",
+    "itemIds": [
+      901045,
+      901046,
+      901047,
+      901048
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900410,
+        "name": "Brain Freeze",
+        "text": "Brain Freeze causes your next Frostfire Bolt to deal an additional 50% of your spell power as damage and explode, dealing 35% of its damage to nearby enemies. Consuming Brain Freeze grants 1 charge of Fingers of Frost.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900411,
+        "name": "Empowered Icy Lance",
+        "text": "Activating Icy Veins grants Brain Freeze. While Icy Veins is active, an Empowered Icy Lance is launched at your target every second, dealing 165% of your spell power as Frost damage.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9313,
+    "name": "Whisperer of the Hollow Tree",
+    "itemIds": [
+      901049,
+      901050,
+      901051,
+      901052
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900420,
+        "name": "Arcane Splinters",
+        "text": "Casting Arcane Blast or Arcane Barrage conjures an Arcane Splinter, dealing Arcane Damage to the target.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900421,
+        "name": "Splinterstorm",
+        "text": "Conjuring an Arcane Splinter has a 10% chance to trigger Splinterstorm, conjuring 8 additional Arcane Splinters at your target. Splinters conjured by Splinterstorm cannot trigger Splinterstorm.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9314,
+    "name": "Lightwarden of the Grove",
+    "itemIds": [
+      901053,
+      901054,
+      901055,
+      901056
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900430,
+        "name": "Tyr's Deliverance",
+        "text": "Activating Avenging Wrath invokes Tyr's Deliverance for its duration, instantly healing up to 5 injured allies within 40 yards, then healing an injured ally every 1 sec for 35% of your spell power.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900431,
+        "name": "Tyr's Grace",
+        "text": "Allies healed by Tyr's Deliverance or your Holy Shock gain Tyr's Grace for 12 sec, increasing healing received from your Holy Light, Flash of Light and Holy Shock by 10%.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9315,
+    "name": "Bulwark of the Ancient Bark",
+    "itemIds": [
+      901057,
+      901058,
+      901059,
+      901060
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900440,
+        "name": "Vanguard",
+        "text": "Judgement grants Vanguard. Your next Shield of Righteousness deals 45% increased damage and heals you for 50% of the damage it deals.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900441,
+        "name": "Vanguard",
+        "text": "Avenger's Shield refracts Holy Light onto up to 4 nearby enemies, dealing 45% of your attack power as Holy damage, and consuming Vanguard reduces its cooldown by 2 sec. While Avenging Wrath is active, every Shield of Righteousness benefits from Vanguard.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9316,
+    "name": "Judgement of the Nightmare",
+    "itemIds": [
+      901061,
+      901062,
+      901063,
+      901064
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900450,
+        "name": "Crusader's Zeal",
+        "text": "Art of War also grants Crusader's Zeal, increasing the damage of your next Crusader Strike by 70%. Crusader's Zeal can accumulate up to 2 times.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900451,
+        "name": "Crusader's Zeal",
+        "text": "Crusader Strike empowered by Crusader's Zeal unleashes a wave of Holy energy through its target, dealing 50% of your attack power as Holy damage to the primary target and 30% to all other enemies in its path.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9317,
+    "name": "Wardings of the Dreamless Sleep",
+    "itemIds": [
+      901065,
+      901066,
+      901067,
+      901068
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900460,
+        "name": "Atonement",
+        "text": "Casting Penance against an enemy target heals all allies within 20 yards of it for 100% of the damage dealt.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900461,
+        "name": "Atonement",
+        "text": "Casting Smite increases the damage of Penance by 25%, stacking up to 2 times. Lasts 12 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9318,
+    "name": "Dawnsap Vestments",
+    "itemIds": [
+      901069,
+      901070,
+      901071,
+      901072
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900470,
+        "name": "Surge of Light",
+        "text": "Consuming Surge of Light with Flash Heal also heals the 2 of your lowest health allies within 40 yards for 100% of the Flash Heal.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900471,
+        "name": "Blessed Light",
+        "text": "Flash Heal cast while under Surge of Light leaves Blessed Light on the target, healing them for 35% of the Flash Heal over 6 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9319,
+    "name": "Voice of the Faceless",
+    "itemIds": [
+      901073,
+      901074,
+      901075,
+      901076
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900480,
+        "name": "Shadow Word: Death",
+        "text": "Damaging an enemy with Shadow Word: Pain increases the damage of your next Shadow Word: Death by 150% of your spell power. Stacks up to 10 times, and Shadow Word: Death no longer causes damage to the caster.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900481,
+        "name": "Shadow Word: Death",
+        "text": "While you have Shadow Word: Pain, Devouring Plague and Vampiric Touch active on the same target, your Mind Blast deals 45% more damage.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9320,
+    "name": "Blightsap Poisoner's Garb",
+    "itemIds": [
+      901077,
+      901078,
+      901079,
+      901080
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900490,
+        "name": "Deathstalker's Mark",
+        "text": "Garrote applies 3 stacks of Deathstalker's Mark to your target for 30 sec. When you spend 4 or more combo points on Envenom against a marked target, you consume a stack, dealing 156% of your attack power as Poison damage.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900491,
+        "name": "Deathstalker's Mark",
+        "text": "Each time you consume a stack of Deathstalker's Mark, reduce the cooldown of Vanish by 30 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9321,
+    "name": "Burrow Cutthroat's Kit",
+    "itemIds": [
+      901081,
+      901082,
+      901083,
+      901084
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900500,
+        "name": "Flawless Form",
+        "text": "Rupture periodic damage increases the damage of your next Eviscerate by 4% for 12 sec, stacking up to 5 times.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900501,
+        "name": "Flawless Form",
+        "text": "Flawless Form makes your next Eviscerate swing a flurry of attacks, dealing 50% of your attack power as physical damage to the target and 30% to all other nearby enemies. While Blade Flurry is active, damage to non-primary targets is increased by 100%.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9322,
+    "name": "Shadow of the Canopy",
+    "itemIds": [
+      901085,
+      901086,
+      901087,
+      901088
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900510,
+        "name": "Shadow Strikes",
+        "text": "Hemorrhage deals a secondary strike with both weapons, each dealing Shadow damage.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900511,
+        "name": "Shadow Strikes",
+        "text": "While in Shadow Dance, your abilities strike a second time, dealing Shadow damage. When Shadow Dance ends, all nearby enemies take increased Shadow damage from you for 12 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9323,
+    "name": "Stormcaller of Vordrassil",
+    "itemIds": [
+      901089,
+      901090,
+      901091,
+      901092
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900520,
+        "name": "Elemental Mastery",
+        "text": "Elemental Mastery makes your next 3 Lightning Bolts instant cast and deal 125% more damage.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900521,
+        "name": "Elemental Mastery",
+        "text": "Lightning Bolt reduces the cooldown of Elemental Mastery by 1 sec, and Chain Lightning by 2 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9324,
+    "name": "Fury of the Grizzly Hills",
+    "itemIds": [
+      901093,
+      901094,
+      901095,
+      901096
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900530,
+        "name": "Maelstrom Weapon",
+        "text": "Lightning Bolt and Chain Lightning deal 20% increased damage and have a 20% chance to refund the Maelstrom Weapon spent.",
+        "needsCode": "aura ADD_PCT_MODIFIER (108)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900531,
+        "name": "Maelstrom Weapon",
+        "text": "Maelstrom Weapon can stack 5 additional times. Each stack of Maelstrom Weapon increases the damage of Lightning Bolt or Chain Lightning by 10%. Stacks beyond 5 add damage only.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9325,
+    "name": "Tidewarden of the Deep Roots",
+    "itemIds": [
+      901097,
+      901098,
+      901099,
+      901100
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900540,
+        "name": "Stormstream Totem",
+        "text": "Casting Nature's Swiftness summons a Stormstream Totem at your feet, healing allies within 30 yards for 60% of your spell power every 2 sec for 10 sec.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900541,
+        "name": "Stormstream Totem",
+        "text": "While active, Stormstream Totem casts Riptide on the lowest health ally every 2 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9326,
+    "name": "Rot of the Fevered Dream",
+    "itemIds": [
+      901101,
+      901102,
+      901103,
+      901104
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900550,
+        "name": "Soul Anathema",
+        "text": "Haunt unleashes a demonic entity unto the soul of your target, dealing 680% of your spell power as Shadow damage over 10 sec. If reapplied, any remaining damage is added to the new Soul Anathema.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900551,
+        "name": "Soul Anathema",
+        "text": "Soul Anathema damage increased by 25%. Consuming Nightfall is guaranteed to apply Soul Anathema.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9327,
+    "name": "Bindings of the Faceless Pact",
+    "itemIds": [
+      901105,
+      901106,
+      901107,
+      901108
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900560,
+        "name": "Wild Imps",
+        "text": "Consuming a Molten Core charge summons 3 Wild Imps for 12 sec, each casting Fel Fireball at your primary target for 20% of your spell power as Fire damage.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900561,
+        "name": "Empowered Imp",
+        "text": "For each 3 Wild Imps summoned, 1 becomes Empowered and casts Empowered Fel Fireball instead, dealing 100% increased damage and also dealing 12.5% of your spell power as Fire damage to all enemies within 10 yards of the impact.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9328,
+    "name": "Immolation of the World Tree",
+    "itemIds": [
+      901109,
+      901110,
+      901111,
+      901112
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900570,
+        "name": "Crashing Chaos",
+        "text": "Chaos Bolt deals an additional 40% of your spell power as damage, and makes your next Incinerate within 12 sec an instant cast.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900571,
+        "name": "Crashing Chaos",
+        "text": "Chaos Bolt has a 22% chance to summon an Infernal at your target for 8 sec, granting Crashing Chaos while it is active. Crashing Chaos increases Chaos Bolt and Incinerate damage by 35%.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9329,
+    "name": "Reaver of the Tainted Grove",
+    "itemIds": [
+      901113,
+      901114,
+      901115,
+      901116
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900580,
+        "name": "Fatal Mark",
+        "text": "Overpower has a 35% chance to reset the cooldown of Mortal Strike and reduce the cost of your next Mortal Strike by 33%.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900581,
+        "name": "Fatal Mark",
+        "text": "Mortal Strike applies a Fatal Mark for 30 sec, stacking up to 5. Execute against a marked target consumes all marks, dealing 276% of your attack power as physical damage per mark.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9330,
+    "name": "Berserker of Grizzlemaw",
+    "itemIds": [
+      901117,
+      901118,
+      901119,
+      901120
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900590,
+        "name": "Bloodbath",
+        "text": "Bloodthirst critical strikes increase the damage of your next Bloodthirst by 20% for 9 sec.",
+        "needsCode": "aura DUMMY (4)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900591,
+        "name": "Bloodbath",
+        "text": "Bloodthirst has a 28% chance to apply Bloodbath to your target, causing them to suffer 25% of your attack power as Bleed damage over 6 sec. Using Bloodthirst on a target affected by Bloodbath extends the bleed by 6 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  },
+  {
+    "id": 9331,
+    "name": "Warden of the Deep Root",
+    "itemIds": [
+      901121,
+      901122,
+      901123,
+      901124
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "spellId": 900600,
+        "name": "Violent Outburst",
+        "text": "Shield Slam deals 15% increased damage and reduces enemies' damage against you by 3% for 6 sec. Multiple stacks may overlap, up to 3.",
+        "needsCode": "aura ADD_PCT_MODIFIER (108)"
+      },
+      {
+        "pieces": 4,
+        "spellId": 900601,
+        "name": "Violent Outburst",
+        "text": "Every 250 rage you spend triggers a Violent Outburst, causing your next Shield Slam to deal 200% increased damage, generate 50% more rage and grant Shield Block for 8 sec.",
+        "needsCode": "aura DUMMY (4)"
+      }
+    ]
+  }
+]

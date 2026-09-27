@@ -343,8 +343,8 @@ dps_results: {
 dps_results: {
  key: "TestMM-AllItems-EyeoftheBroodmother-45308"
  value: {
-  dps: 7188.69225
-  tps: 6276.63648
+  dps: 7181.57186
+  tps: 6269.52884
  }
 }
 dps_results: {
@@ -645,8 +645,8 @@ dps_results: {
 dps_results: {
  key: "TestMM-AllItems-ScourgestalkerBattlegear"
  value: {
-  dps: 7065.56974
-  tps: 6186.05793
+  dps: 6951.19151
+  tps: 6079.09864
  }
 }
 dps_results: {
@@ -722,8 +722,8 @@ dps_results: {
 dps_results: {
  key: "TestMM-AllItems-StormshroudArmor"
  value: {
-  dps: 5669.34177
-  tps: 4918.07828
+  dps: 5725.96563
+  tps: 4973.98407
  }
 }
 dps_results: {
@@ -848,8 +848,8 @@ dps_results: {
 dps_results: {
  key: "TestMM-AllItems-Val'anyr,HammerofAncientKings-46017"
  value: {
-  dps: 7044.43231
-  tps: 6137.68887
+  dps: 7034.88517
+  tps: 6131.51726
  }
 }
 dps_results: {

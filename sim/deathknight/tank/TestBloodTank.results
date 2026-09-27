@@ -196,15 +196,15 @@ dps_results: {
 dps_results: {
  key: "TestBloodTank-AllItems-DarkrunedBattlegear"
  value: {
-  dps: 2403.10357
-  tps: 7401.76305
+  dps: 2349.38083
+  tps: 7253.47954
  }
 }
 dps_results: {
  key: "TestBloodTank-AllItems-DarkrunedPlate"
  value: {
-  dps: 2099.02262
-  tps: 6430.10576
+  dps: 2083.8042
+  tps: 6384.24864
  }
 }
 dps_results: {
@@ -322,8 +322,8 @@ dps_results: {
 dps_results: {
  key: "TestBloodTank-AllItems-EyeoftheBroodmother-45308"
  value: {
-  dps: 2115.62376
-  tps: 6485.29199
+  dps: 2114.87327
+  tps: 6483.73585
  }
 }
 dps_results: {
@@ -680,8 +680,8 @@ dps_results: {
 dps_results: {
  key: "TestBloodTank-AllItems-StormshroudArmor"
  value: {
-  dps: 1783.4818
-  tps: 5460.04228
+  dps: 1801.70415
+  tps: 5529.25802
  }
 }
 dps_results: {
@@ -813,8 +813,8 @@ dps_results: {
 dps_results: {
  key: "TestBloodTank-AllItems-Val'anyr,HammerofAncientKings-46017"
  value: {
-  dps: 1818.52878
-  tps: 5767.87681
+  dps: 1802.59615
+  tps: 5735.09356
  }
 }
 dps_results: {

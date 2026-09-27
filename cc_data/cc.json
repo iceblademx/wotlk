@@ -1,0 +1,7 @@
+{
+  // Custom items on this server live at 900000+; lower IDs are stock 3.3.5a items.
+  "customItemIdMin": 900000,
+  "phase": 1,
+  "applyStockItemChanges": true,
+  "restrictToServerItems": true
+}

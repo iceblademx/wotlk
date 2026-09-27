@@ -1,0 +1,8410 @@
+[
+  {
+    "id": 52624,
+    "name": "Afterburn",
+    "description": "Increases the caster's chance to critically hit with melee attacks by $s1% for $d.",
+    "tooltip": "Chance to crit with melee attacks increased by $s1%.",
+    "text": "Increases the caster's chance to critically hit with melee attacks by 50% for 10 sec.",
+    "icon": "spell_fire_elemental_totem",
+    "dispel": 1,
+    "attributes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 20,
+    "procChance": 101,
+    "durationIndex": 1,
+    "durationMs": 10000,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 4,
+    "spellIconId": 2290,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 52,
+        "auraName": "MOD_WEAPON_CRIT_PERCENT",
+        "basePoints": 49,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1,
+        "bonusMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 61,
+        "auraName": "MOD_SCALE",
+        "basePoints": 24,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 64955,
+    "name": "Item - Paladin T8 Protection Relic",
+    "description": "Increases your block value by $65182s1 for $65182d each time you use Holy Shield.",
+    "text": "Increases your block value by 450 for 20 sec each time you use Holy Shield.",
+    "icon": "spell_nature_elementalshields",
+    "attributes": [
+      464,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 17680,
+    "procChance": 100,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 10,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 2025,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 271,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 23,
+        "triggerSpell": 65182,
+        "spellClassMask": [
+          0,
+          64,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          995691415,
+          64,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1,
+        "bonusMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 64955,
+      "spellFamilyName": 10,
+      "spellFamilyMask": [
+        0,
+        64,
+        0
+      ],
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 65182,
+    "name": "Increased Block",
+    "description": "Increases the block value of your shield by $s1.",
+    "tooltip": "Increases the block value of your shield by $s1.",
+    "text": "Increases the block value of your shield by 450.",
+    "icon": "spell_holy_avengersshield",
+    "attributes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procChance": 101,
+    "durationIndex": 18,
+    "durationMs": 20000,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 2172,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 158,
+        "auraName": "MOD_SHIELD_BLOCKVALUE",
+        "basePoints": 449,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200012,
+    "name": "Nexus Charge",
+    "description": "Chance on damaging spell hit to grant $200013s1% critical strike chance for $200013d.",
+    "text": "Chance on damaging spell hit to grant 100% critical strike chance for 4 sec.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 69632,
+    "procChance": 15,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "triggerSpell": 200013,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200012,
+      "spellFamilyMask": [
+        0,
+        0,
+        0
+      ],
+      "cooldownMs": 45000,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200013,
+    "name": "Nexus Overcharge",
+    "description": "Increases your critical strike chance with spells by $s1% for $d.",
+    "tooltip": "Critical strike chance with spells increased by $s1%.",
+    "text": "Increases your critical strike chance with spells by 100% for 4 sec.",
+    "icon": "spell_fire_sealoffire",
+    "attributes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procChance": 101,
+    "durationIndex": 35,
+    "durationMs": 4000,
+    "rangeIndex": 5,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 33,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 57,
+        "auraName": "MOD_SPELL_CRIT_CHANCE",
+        "basePoints": 99,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1,
+        "bonusMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1,
+        "bonusMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200014,
+    "name": "Thunderfury Reforged",
+    "description": "Chance on hit to increase your critical strike chance with melee attacks by $52624s1% for $52624d.",
+    "text": "Chance on hit to increase your critical strike chance with melee attacks by 50% for 10 sec.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 20,
+    "procChance": 20,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "triggerSpell": 52624,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200014,
+      "spellFamilyMask": [
+        0,
+        0,
+        0
+      ],
+      "cooldownMs": 55000,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200015,
+    "name": "Skareth's Blazing Loop",
+    "description": "Fireball increases your Haste, Critical Strike, and Fire damage by 3%. Stacks up to 5 times.",
+    "text": "Fireball increases your Haste, Critical Strike, and Fire damage by 3%. Stacks up to 5 times.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200016,
+    "name": "Vaelith's Withering Grasp",
+    "description": "Shadow Bolt increases the damage of your Drain Soul by 50%, stacking up to 4 times, consumed by your next Drain Soul cast. Drain Soul channels twice as fast: half the duration, same number of ticks.",
+    "text": "Shadow Bolt increases the damage of your Drain Soul by 50%, stacking up to 4 times, consumed by your next Drain Soul cast. Drain Soul channels twice as fast: half the duration, same number of ticks.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 65536,
+    "procChance": 100,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "durationIndex": 21,
+    "durationMs": -1,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 5,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "basePoints": -7501,
+        "implicitTargetA": 1,
+        "miscValue": 1,
+        "spellClassMask": [
+          16384,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": -51,
+        "implicitTargetA": 1,
+        "miscValue": 19,
+        "spellClassMask": [
+          16384,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200019,
+    "name": "Skareth's Killing Eye",
+    "description": "Casting Misdirection allows your next Kill Shot to be cast regardless of target health, dealing 300% additional damage.",
+    "text": "Casting Misdirection allows your next Kill Shot to be cast regardless of target health, dealing 300% additional damage.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200021,
+    "name": "Skareth's Falling Star",
+    "description": "Casting Starfall causes you to channel Fury of the Goddess for 3 sec, unleashing a rapid volley of spells at your current target.",
+    "text": "Casting Starfall causes you to channel Fury of the Goddess for 3 sec, unleashing a rapid volley of spells at your current target.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200024,
+    "name": "Vorrax's Seal",
+    "description": "Grants a stack of Patience every 2 sec, up to 10. At 10 stacks, gain Righteous Vengeance, increasing the damage of your next Hammer of the Righteous by 500%.",
+    "tooltip": "Grants a stack of Patience every 2 sec, up to 10. At 10 stacks, gain Righteous Vengeance, increasing the damage of your next Hammer of the Righteous by 500%.",
+    "text": "Grants a stack of Patience every 2 sec, up to 10. At 10 stacks, gain Righteous Vengeance, increasing the damage of your next Hammer of the Righteous by 500%.",
+    "icon": "spell_holy_holyprotection",
+    "attributes": [
+      64,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "durationIndex": 21,
+    "durationMs": -1,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 329,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 226,
+        "auraName": "PERIODIC_DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "amplitude": 2000,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1,
+        "bonusMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "bonusMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "bonusMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200027,
+    "name": "Skareth's Fractured Mind",
+    "description": "Casting Mind Flay increases the damage and Critical Strike Chance of your next Mind Blast by 33%. This stacks 3 times. Casting Mind Blast increases the damage and Critical Strike Chance of your next Mind Flay by 100%.",
+    "tooltip": "Casting Mind Flay increases the damage and Critical Strike Chance of your next Mind Blast by 33%. This stacks 3 times. Casting Mind Blast increases the damage and Critical Strike Chance of your next Mind Flay by 100%.",
+    "text": "Casting Mind Flay increases the damage and Critical Strike Chance of your next Mind Blast by 33%. This stacks 3 times. Casting Mind Blast increases the damage and Critical Strike Chance of your next Mind Flay by 100%.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 65536,
+    "procChance": 100,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "triggerSpell": 200029,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200027,
+      "spellFamilyName": 6,
+      "spellFamilyMask": [
+        0,
+        0,
+        1088
+      ],
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200028,
+    "name": "Skareth's Fractured Mind",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 65536,
+    "procChance": 100,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "triggerSpell": 200030,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200028,
+      "spellFamilyName": 6,
+      "spellFamilyMask": [
+        8192,
+        0,
+        0
+      ],
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200029,
+    "name": "Empowered Mind Blast",
+    "description": "Increases the damage and Critical Strike Chance of your next Mind Blast.",
+    "tooltip": "Increases the damage and Critical Strike Chance of your next Mind Blast.",
+    "text": "Increases the damage and Critical Strike Chance of your next Mind Blast.",
+    "icon": "ability_warlock_moltencore",
+    "attributes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 65536,
+    "procChance": 100,
+    "procCharges": 1,
+    "durationIndex": 8,
+    "durationMs": 15000,
+    "rangeIndex": 1,
+    "stackAmount": 3,
+    "equippedItemClass": -1,
+    "spellFamilyName": 6,
+    "spellFamilyFlags": [
+      8192,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 3175,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 32,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          8192,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "basePoints": 32,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 7,
+        "spellClassMask": [
+          8192,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": -1,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 10,
+        "spellClassMask": [
+          8192,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200029,
+      "spellFamilyName": 6,
+      "spellFamilyMask": [
+        8192,
+        0,
+        0
+      ],
+      "procFlags": 65536,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200030,
+    "name": "Empowered Mind Flay",
+    "description": "Increases the damage and Critical Strike Chance of your next Mind Flay.",
+    "tooltip": "Increases the damage and Critical Strike Chance of your next Mind Flay.",
+    "text": "Increases the damage and Critical Strike Chance of your next Mind Flay.",
+    "icon": "ability_warlock_moltencore",
+    "attributes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 65536,
+    "procChance": 100,
+    "procCharges": 1,
+    "durationIndex": 8,
+    "durationMs": 15000,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 6,
+    "spellFamilyFlags": [
+      8388608,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 3175,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 99,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          8388608,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "basePoints": 99,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 7,
+        "spellClassMask": [
+          8388608,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200031,
+    "name": "Vaelith's Flowing Band",
+    "description": "Chain Heal no longer loses effectiveness with each jump and can jump to 2 additional players.",
+    "tooltip": "Chain Heal no longer loses effectiveness with each jump and can jump to 2 additional players.",
+    "text": "Chain Heal no longer loses effectiveness with each jump and can jump to 2 additional players.",
+    "icon": "trade_engineering",
+    "attributes": [
+      192,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procChance": 101,
+    "durationIndex": 21,
+    "durationMs": -1,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 11,
+    "spellFamilyFlags": [
+      256,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 1,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "basePoints": 1,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 17,
+        "spellClassMask": [
+          256,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 66,
+        "dieSides": 1,
+        "miscValue": 20,
+        "spellClassMask": [
+          256,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200032,
+    "name": "Vorrax's Runic Loop",
+    "description": "Your rune-spending abilities have a 30% chance to refund a rune.",
+    "tooltip": "Your rune-spending abilities have a 30% chance to refund a rune.",
+    "text": "Your rune-spending abilities have a 30% chance to refund a rune.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200033,
+    "name": "Morgrath's Proto-Scale Band",
+    "description": "Casting Lightning Bolt increases the damage of your next Lava Burst by 100%. Casting Lava Burst increases the damage of your next Chain Lightning by 100%.",
+    "text": "Casting Lightning Bolt increases the damage of your next Lava Burst by 100%. Casting Lava Burst increases the damage of your next Chain Lightning by 100%.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200036,
+    "name": "Morgrath's Wrathful Verdict",
+    "description": "Crusader Strike and Exorcism grant Enlightenment, increasing all Holy damage you deal by 10%, stacking up to 3 times. Casting Divine Storm consumes Enlightenment, dealing 200% increased damage per Enlightenment you had.",
+    "text": "Crusader Strike and Exorcism grant Enlightenment, increasing all Holy damage you deal by 10%, stacking up to 3 times. Casting Divine Storm consumes Enlightenment, dealing 200% increased damage per Enlightenment you had.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200049,
+    "name": "Morgrath's Ravaging Claw",
+    "description": "Ferocious Bite has a 20% chance per combo point spent to trigger Omen of Clarity. Shred or Mangle casts that consume Omen of Clarity deal 100% additional damage.",
+    "text": "Ferocious Bite has a 20% chance per combo point spent to trigger Omen of Clarity. Shred or Mangle casts that consume Omen of Clarity deal 100% additional damage.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200051,
+    "name": "Vorrax's Reckless Fury",
+    "description": "Execute grants a stack of Undying Fury, increasing the damage of Execute by 5% and its critical strike chance by 5%. Stacks up to 99 times, lasting 60 sec. Sudden Death has a 20% chance to activate.",
+    "text": "Execute grants a stack of Undying Fury, increasing the damage of Execute by 5% and its critical strike chance by 5%. Stacks up to 99 times, lasting 60 sec. Sudden Death has a 20% chance to activate.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200051,
+      "spellFamilyMask": [
+        0,
+        0,
+        0
+      ],
+      "procFlags": 20,
+      "chance": 100,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200053,
+    "name": "Vaelith's Radiant Infusion",
+    "description": "Prayer of Mending also applies Power Word: Shield each time it heals a target. This may be applied regardless of Weakened Soul.",
+    "text": "Prayer of Mending also applies Power Word: Shield each time it heals a target. This may be applied regardless of Weakened Soul.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200057,
+    "name": "Vorrax's Fatebound Coin",
+    "description": "Each finishing move that consumes 4 or more combo points flips a Fatebound Coin. Heads increases your Energy regeneration by 30% for 15 sec or until you flip Tails, gaining an additional 10% for each consecutive Heads flip. Tails deals Arcane damage to your target, dealing additional damage for each consecutive Tails flip.",
+    "text": "Each finishing move that consumes 4 or more combo points flips a Fatebound Coin. Heads increases your Energy regeneration by 30% for 15 sec or until you flip Tails, gaining an additional 10% for each consecutive Heads flip. Tails deals Arcane damage to your target, dealing additional damage for each consecutive Tails flip.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200062,
+    "name": "Rok'thul's Frozen Heart",
+    "description": "Every 2 sec, gain a stack of Cold Heart (up to 20), causing your next Chains of Ice to deal an additional 60% of Attack Power as Frost damage per stack. If Chains of Ice is used at 20 stacks, the target is also stunned for 4 sec.",
+    "text": "Every 2 sec, gain a stack of Cold Heart (up to 20), causing your next Chains of Ice to deal an additional 60% of Attack Power as Frost damage per stack. If Chains of Ice is used at 20 stacks, the target is also stunned for 4 sec.",
+    "icon": "spell_holy_devotionaura",
+    "attributes": [
+      256,
+      268435456,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 35,
+    "spellLevel": 35,
+    "durationIndex": 21,
+    "durationMs": -1,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 291,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 226,
+        "auraName": "PERIODIC_DUMMY",
+        "basePoints": -1,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "amplitude": 2000,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200066,
+    "name": "Morgrath's Boundless Well",
+    "description": "Evocation's cast time is reduced by 50% and no longer has a cooldown. Completing a full channel of Evocation increases your Arcane spell damage by 20% for 60 sec.",
+    "text": "Evocation's cast time is reduced by 50% and no longer has a cooldown. Completing a full channel of Evocation increases your Arcane spell damage by 20% for 60 sec.",
+    "icon": "trade_engineering",
+    "attributes": [
+      192,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procChance": 101,
+    "durationIndex": 21,
+    "durationMs": -1,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 3,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 1,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "basePoints": -4001,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 1,
+        "spellClassMask": [
+          67108864,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "basePoints": -240001,
+        "implicitTargetA": 1,
+        "miscValue": 11,
+        "spellClassMask": [
+          67108864,
+          0,
+          0
+        ],
+        "damageMultiplier": 1,
+        "bonusMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200069,
+    "name": "Rok'thul's Sacred Flame",
+    "description": "Casting Holy Fire or Smite heals all targets with Power Word: Shield active.",
+    "text": "Casting Holy Fire or Smite heals all targets with Power Word: Shield active.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200072,
+    "name": "Rok'thul's Festering Mind",
+    "description": "Mind Blast extends the remaining duration of Vampiric Touch and Devouring Plague by an amount equal to its own cooldown.",
+    "text": "Mind Blast extends the remaining duration of Vampiric Touch and Devouring Plague by an amount equal to its own cooldown.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200073,
+    "name": "Rok'thul's Molten Verdict",
+    "description": "Consuming Hot Streak causes your next fully-cast Pyroblast within 20 sec to deal 200% additional damage. Does not apply to the instant Pyroblast Hot Streak itself grants.",
+    "text": "Consuming Hot Streak causes your next fully-cast Pyroblast within 20 sec to deal 200% additional damage. Does not apply to the instant Pyroblast Hot Streak itself grants.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200076,
+    "name": "Vaelith's Reaped Soul",
+    "description": "Corruption, Curse of Agony, and Unstable Affliction grant a stack of Reaped Soul each time they deal damage. At 25 stacks, consume all stacks to Reap your primary target's soul, dealing Shadow damage every 1 sec for 4 sec.",
+    "text": "Corruption, Curse of Agony, and Unstable Affliction grant a stack of Reaped Soul each time they deal damage. At 25 stacks, consume all stacks to Reap your primary target's soul, dealing Shadow damage every 1 sec for 4 sec.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200082,
+    "name": "Rok'thul's Slayer's Edge",
+    "description": "Your attacks against your primary target have a chance to overwhelm their defenses and trigger a Slayer's Strike, dealing Physical damage and granting you a stack of Slayer, increasing your Bloodthirst damage for a short time. Multiple stacks of Slayer may overlap.",
+    "text": "Your attacks against your primary target have a chance to overwhelm their defenses and trigger a Slayer's Strike, dealing Physical damage and granting you a stack of Slayer, increasing your Bloodthirst damage for a short time. Multiple stacks of Slayer may overlap.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 20,
+    "procChance": 15,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "triggerSpell": 200083,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200082,
+      "spellFamilyMask": [
+        0,
+        0,
+        0
+      ],
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200083,
+    "name": "Slayer's Strike",
+    "icon": "ability_hunter_rapidkilling",
+    "attributes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 2,
+    "schoolMask": 1,
+    "spellIconId": 2285,
+    "effects": [
+      {
+        "effect": 2,
+        "effectName": "SCHOOL_DAMAGE",
+        "basePoints": -1,
+        "dieSides": 1,
+        "implicitTargetA": 6,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 64,
+        "effectName": "TRIGGER_SPELL",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 7,
+        "triggerSpell": 200084,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "dieSides": 1,
+        "miscValue": 10,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverBonus": {
+      "spellId": 200083,
+      "direct": 0,
+      "dot": 0,
+      "ap": 1,
+      "apDot": 0
+    }
+  },
+  {
+    "id": 200084,
+    "name": "Slayer",
+    "tooltip": "Increases the damage of your Bloodthirst. Multiple stacks may overlap.",
+    "icon": "ability_warlock_moltencore",
+    "attributes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "durationIndex": 29,
+    "durationMs": 12000,
+    "rangeIndex": 1,
+    "stackAmount": 99,
+    "equippedItemClass": -1,
+    "spellFamilyName": 4,
+    "spellFamilyFlags": [
+      0,
+      1024,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 3175,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 2,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          1024,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 7,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 10,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200085,
+    "name": "Vaelith's Abyssal Calling",
+    "description": "Casting Demonic Empowerment calls forth a Pit Lord from the Twisting Nether that attacks your target with Fire damage, and increases the spell power of allies within 30 yards for 20 sec.",
+    "text": "Casting Demonic Empowerment calls forth a Pit Lord from the Twisting Nether that attacks your target with Fire damage, and increases the spell power of allies within 30 yards for 20 sec.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200088,
+    "name": "Morgrath's Malediction",
+    "description": "Casting Immolate also applies Malediction to your target, dealing Fire damage over 24 sec. If the target is afflicted by Malediction, casting Chaos Bolt and Shadowburn increases its stack count by 1. Each time Malediction gains a stack it has a chance to collapse, consuming a stack every 1 sec to deal Shadowflame damage until 1 stack remains.",
+    "text": "Casting Immolate also applies Malediction to your target, dealing Fire damage over 24 sec. If the target is afflicted by Malediction, casting Chaos Bolt and Shadowburn increases its stack count by 1. Each time Malediction gains a stack it has a chance to collapse, consuming a stack every 1 sec to deal Shadowflame damage until 1 stack remains.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200092,
+    "name": "Vorrax's Chaosflame",
+    "description": "Casting Incinerate grants a stack of Chaosflame, increasing the damage of your next Chaos Bolt by 50% and guaranteeing it will Critically Strike, stacking up to 5 times. Casting Chaos Bolt consumes all stacks of Chaosflame.",
+    "text": "Casting Incinerate grants a stack of Chaosflame, increasing the damage of your next Chaos Bolt by 50% and guaranteeing it will Critically Strike, stacking up to 5 times. Casting Chaos Bolt consumes all stacks of Chaosflame.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200094,
+    "name": "Rok'thul's Crescent Band",
+    "description": "Empowered by the Strength of the Earth, you may equip two-handed axes and maces in one hand.",
+    "text": "Empowered by the Strength of the Earth, you may equip two-handed axes and maces in one hand.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      0,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200095,
+    "name": "Ancestral Farseer Band",
+    "description": "Elemental Mastery turns you into a Fire Tyrant, removing the cooldown on Lava Burst for the duration. Additionally, Flame Shock Critical Strikes have a chance to activate Elemental Mastery for 8 seconds.",
+    "text": "Elemental Mastery turns you into a Fire Tyrant, removing the cooldown on Lava Burst for the duration. Additionally, Flame Shock Critical Strikes have a chance to activate Elemental Mastery for 8 seconds.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      0,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 65536,
+    "procChance": 100,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 4,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 14,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200095,
+      "spellFamilyName": 11,
+      "spellFamilyMask": [
+        268435456,
+        0,
+        0
+      ],
+      "procFlags": 65536,
+      "chance": 100,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200098,
+    "name": "Rok'thul's Command",
+    "description": "Infuse part of your essence into the life force of your summoned minions, greatly empowering them.",
+    "text": "Infuse part of your essence into the life force of your summoned minions, greatly empowering them.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      0,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200143,
+    "name": "Vorrax's Wild Hunt",
+    "description": "While you have the Beast Mastery talent, your pet inherits 100% of your armor penetration and 30% of your critical strike and haste ratings. Call of the Wild also unleashes a stampede of spirit beasts upon your target for 20 sec.",
+    "text": "While you have the Beast Mastery talent, your pet inherits 100% of your armor penetration and 30% of your critical strike and haste ratings. Call of the Wild also unleashes a stampede of spirit beasts upon your target for 20 sec.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      0,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200146,
+    "name": "Pack Leader's Insignia",
+    "description": "Kill Command calls upon a legendary beast to aid your hunt. The Wyvern, Bear and Boar answer in succession, each granting their blessing for 30 sec.",
+    "text": "Kill Command calls upon a legendary beast to aid your hunt. The Wyvern, Bear and Boar answer in succession, each granting their blessing for 30 sec.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      0,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200154,
+    "name": "Deadeye's Oath",
+    "description": "Your Aimed Shot deals additional Physical damage equal to 650% of your ranged attack power, but its base cooldown is increased to 15 sec. Casting another Shot reduces the cooldown by 2 sec.",
+    "text": "Your Aimed Shot deals additional Physical damage equal to 650% of your ranged attack power, but its base cooldown is increased to 15 sec. Casting another Shot reduces the cooldown by 2 sec.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      0,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 256,
+    "procChance": 100,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200154,
+      "spellFamilyName": 9,
+      "spellFamilyMask": [
+        0,
+        0,
+        0
+      ],
+      "procFlags": 256,
+      "chance": 100,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200156,
+    "name": "Loop of the Banshee",
+    "description": "Your Silencing Shot fires a Withering Arrow at the target, dealing Shadow damage over 8 sec. Each periodic tick strengthens the arrow's eruption. Your Chimera Shot consumes the arrow, immediately dealing its remaining periodic damage to the target and unleashing a Shadow eruption that strikes all enemies within 8 yards.",
+    "text": "Your Silencing Shot fires a Withering Arrow at the target, dealing Shadow damage over 8 sec. Each periodic tick strengthens the arrow's eruption. Your Chimera Shot consumes the arrow, immediately dealing its remaining periodic damage to the target and unleashing a Shadow eruption that strikes all enemies within 8 yards.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      0,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200160,
+    "name": "Bombardier's Pin",
+    "description": "Grants the Wildfire Bomb ability.",
+    "text": "Grants the Wildfire Bomb ability.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      0,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200162,
+    "name": "Signet of Dark Deeds",
+    "description": "Your Black Arrow summons a Dark Minion for 10 sec. When it fades, it strikes your target for 90% of all damage you dealt while it was active, as Shadow damage.",
+    "text": "Your Black Arrow summons a Dark Minion for 10 sec. When it fades, it strikes your target for 90% of all damage you dealt while it was active, as Shadow damage.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      0,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 256,
+    "procChance": 100,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200162,
+      "spellFamilyName": 9,
+      "spellFamilyMask": [
+        0,
+        0,
+        0
+      ],
+      "procFlags": 2446676,
+      "chance": 100,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200165,
+    "name": "Roll the Bones",
+    "description": "Your Eviscerate has a 20% chance per combo point spent to grant you one of six combat enhancements for 15 sec. Different enhancements may overlap; receiving an enhancement you already have refreshes its duration.",
+    "text": "Your Eviscerate has a 20% chance per combo point spent to grant you one of six combat enhancements for 15 sec. Different enhancements may overlap; receiving an enhancement you already have refreshes its duration.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200173,
+    "name": "Between the Eyes",
+    "description": "Your Kidney Shot also deals Physical damage based on your attack power and the combo points spent, retaining its stun and cooldown. This damage strikes for three times normal damage on a critical strike.",
+    "text": "Your Kidney Shot also deals Physical damage based on your attack power and the combo points spent, retaining its stun and cooldown. This damage strikes for three times normal damage on a critical strike.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 99,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 15,
+        "spellClassMask": [
+          0,
+          0,
+          1
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200175,
+    "name": "Venomdrinker",
+    "description": "Your Shiv costs no Energy and grants Venom Rush for 8 sec, increasing your Energy regeneration by 50% and your poison damage by 20%. Shiv now has a 20-sec cooldown.",
+    "text": "Your Shiv costs no Energy and grants Venom Rush for 8 sec, increasing your Energy regeneration by 50% and your poison damage by 20%. Shiv now has a 20-sec cooldown.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 16,
+    "procChance": 100,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": -101,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 14,
+        "spellClassMask": [
+          536870912,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "triggerSpell": 200176,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200175,
+      "spellFamilyName": 8,
+      "spellFamilyMask": [
+        536870912,
+        0,
+        0
+      ],
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200176,
+    "name": "Venom Rush",
+    "description": "Energy regeneration increased by 50%. Poison damage increased by 20%.",
+    "tooltip": "Energy regeneration increased by 50%. Poison damage increased by 20%.",
+    "text": "Energy regeneration increased by 50%. Poison damage increased by 20%.",
+    "icon": "ability_rogue_disembowel",
+    "dispel": 9,
+    "mechanic": 31,
+    "attributes": [
+      134479888,
+      98304,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "recoveryTimeMs": 180000,
+    "startRecoveryCategory": 133,
+    "gcdMs": 1500,
+    "baseLevel": 30,
+    "spellLevel": 30,
+    "durationIndex": 31,
+    "durationMs": 8000,
+    "powerType": 1,
+    "manaCost": 100,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 2237,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 110,
+        "auraName": "MOD_POWER_REGEN_PERCENT",
+        "basePoints": 49,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 3,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 79,
+        "auraName": "MOD_DAMAGE_PERCENT_DONE",
+        "basePoints": 19,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 8,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200177,
+    "name": "Sanguine Hunger",
+    "description": "Your Rupture and Garrote restore 8 Energy each time they deal periodic damage. Your Envenom extends your active bleeds on its target by 1 sec per combo point spent, up to their original maximum durations.",
+    "text": "Your Rupture and Garrote restore 8 Energy each time they deal periodic damage. Your Envenom extends your active bleeds on its target by 1 sec per combo point spent, up to their original maximum durations.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 262144,
+    "procChance": 100,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "triggerSpell": 200178,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200177,
+      "spellFamilyName": 8,
+      "spellFamilyMask": [
+        1048832,
+        0,
+        0
+      ],
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200178,
+    "name": "Sanguine Hunger",
+    "description": "Deals Arcane damage to your target, growing with each consecutive Tails flip.",
+    "text": "Deals Arcane damage to your target, growing with each consecutive Tails flip.",
+    "icon": "ability_rogue_rupture",
+    "category": 19,
+    "attributes": [
+      65536,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "categoryRecoveryTimeMs": 8000,
+    "startRecoveryCategory": 133,
+    "gcdMs": 1500,
+    "baseLevel": 14,
+    "spellLevel": 14,
+    "maxLevel": 19,
+    "manaCostPct": 21,
+    "rangeIndex": 3,
+    "equippedItemClass": -1,
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 500,
+    "effects": [
+      {
+        "effect": 30,
+        "effectName": "ENERGIZE",
+        "basePoints": 7,
+        "dieSides": 1,
+        "realPointsPerLevel": 1,
+        "implicitTargetA": 1,
+        "miscValue": 3,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1,
+        "bonusMultiplier": 0.332
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200179,
+    "name": "Endless Dance",
+    "description": "Your finishing moves reduce the remaining cooldown of Shadow Dance by 1 sec per combo point spent. Activating Shadow Dance restores 40 Energy.",
+    "text": "Your finishing moves reduce the remaining cooldown of Shadow Dance by 1 sec per combo point spent. Activating Shadow Dance restores 40 Energy.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200181,
+    "name": "Shadow's Invitation",
+    "description": "Your Eviscerate allows your next Ambush to be used without being in Stealth and reduces its Energy cost by 20. Your Ambush deals additional Shadow damage equal to 30% of its damage dealt.",
+    "text": "Your Eviscerate allows your next Ambush to be used without being in Stealth and reduces its Energy cost by 20. Your Ambush deals additional Shadow damage equal to 30% of its damage dealt.",
+    "icon": "inv_misc_head_tiger_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "procFlags": 16,
+    "procChance": 100,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 293,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "triggerSpell": 200182,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200181,
+      "spellFamilyName": 8,
+      "spellFamilyMask": [
+        131072,
+        0,
+        0
+      ],
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200182,
+    "name": "Shadow's Invitation",
+    "description": "Your next Ambush can be used without being in Stealth and costs 20 less Energy.",
+    "tooltip": "Your next Ambush can be used without being in Stealth and costs 20 less Energy.",
+    "text": "Your next Ambush can be used without being in Stealth and costs 20 less Energy.",
+    "icon": "ability_rogue_ambush",
+    "dispel": 9,
+    "mechanic": 31,
+    "attributes": [
+      134479888,
+      98304,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "recoveryTimeMs": 180000,
+    "startRecoveryCategory": 133,
+    "gcdMs": 1500,
+    "procFlags": 16,
+    "procChance": 100,
+    "procCharges": 1,
+    "baseLevel": 30,
+    "spellLevel": 30,
+    "durationIndex": 8,
+    "durationMs": 15000,
+    "powerType": 1,
+    "manaCost": 100,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "spellIconId": 856,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 275,
+        "auraName": "MOD_IGNORE_SHAPESHIFT",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          512,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "basePoints": -21,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "miscValue": 14,
+        "spellClassMask": [
+          512,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 200182,
+      "spellFamilyName": 8,
+      "spellFamilyMask": [
+        512,
+        0,
+        0
+      ],
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 200184,
+    "name": "Lashing Flames",
+    "description": "While Flametongue Weapon is active on both of your weapons, your Lava Lash also strikes with your main-hand weapon, deals 100% increased damage, and refreshes the duration of your Flame Shock on the target.",
+    "text": "While Flametongue Weapon is active on both of your weapons, your Lava Lash also strikes with your main-hand weapon, deals 100% increased damage, and refreshes the duration of your Flame Shock on the target.",
+    "icon": "ability_shaman_lavalash",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 3741,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200186,
+    "name": "Stormflurry",
+    "description": "Your Stormstrike strikes an additional time and grants you 2 stacks of Maelstrom Weapon.",
+    "text": "Your Stormstrike strikes an additional time and grants you 2 stacks of Maelstrom Weapon.",
+    "icon": "ability_shaman_stormstrike",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 64,
+    "spellIconId": 2562,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200207,
+    "name": "Tempest",
+    "description": "Your Lightning Bolt and Chain Lightning have a chance to call down a tremendous lightning strike, searing your target with the fury of the storm and scorching enemies near it.",
+    "tooltip": "Your Lightning Bolt and Chain Lightning have a chance to call down a tremendous lightning strike, searing your target with the fury of the storm and scorching enemies near it.",
+    "text": "Your Lightning Bolt and Chain Lightning have a chance to call down a tremendous lightning strike, searing your target with the fury of the storm and scorching enemies near it.",
+    "icon": "spell_nature_wispheal",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 117,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 200210,
+    "name": "Vorrax's Glacial Spire",
+    "description": "While in combat, frost crystallizes around you, generating an Icicle every 4 sec. Upon generating 5 Icicles, fire a massive spike of ice that impales your target, dealing Frost damage.",
+    "text": "While in combat, frost crystallizes around you, generating an Icicle every 4 sec. Upon generating 5 Icicles, fire a massive spike of ice that impales your target, dealing Frost damage.",
+    "icon": "spell_frost_frostblast",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 16,
+    "spellIconId": 186,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 226,
+        "auraName": "PERIODIC_DUMMY",
+        "basePoints": 0,
+        "implicitTargetA": 1,
+        "amplitude": 4000,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900300,
+    "name": "Torrent of Ice",
+    "description": "Your auto-attack critical strikes have a chance to send out a torrent of ice, dealing 35% of your attack power as Frost damage to enemies in front of you. This is guaranteed to occur during Unbreakable Armor.",
+    "text": "Your auto-attack critical strikes have a chance to send out a torrent of ice, dealing 35% of your attack power as Frost damage to enemies in front of you. This is guaranteed to occur during Unbreakable Armor.",
+    "icon": "spell_frost_arcticwinds",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2131,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 900300,
+      "spellFamilyMask": [
+        0,
+        0,
+        0
+      ],
+      "procFlags": 4,
+      "hitMask": 2,
+      "chance": 100,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 900301,
+    "name": "Torrent of Ice",
+    "description": "While Unbreakable Armor is active, your auto-attack critical strikes increase its duration by 2 sec, up to a maximum of 8 sec.",
+    "text": "While Unbreakable Armor is active, your auto-attack critical strikes increase its duration by 2 sec, up to a maximum of 8 sec.",
+    "icon": "inv_armor_helm_plate_naxxramas_raidwarrior_c_01",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2703,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900310,
+    "name": "Festering Wound",
+    "description": "Necrosis damage applies Festering Wound to the target, dealing 4% of your attack power as Shadow damage every 2 sec for 15 sec. Stacks up to 20 times.",
+    "text": "Necrosis damage applies Festering Wound to the target, dealing 4% of your attack power as Shadow damage every 2 sec for 15 sec. Stacks up to 20 times.",
+    "icon": "spell_shadow_contagion",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 1494,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900311,
+    "name": "Festering Wound",
+    "description": "Scourge Strike bursts all Festering Wounds on the target, dealing 15% of your attack power as Shadow damage per wound and increasing your Strength by 25 per wound for 20 sec. A new burst replaces any existing Strength bonus.",
+    "text": "Scourge Strike bursts all Festering Wounds on the target, dealing 15% of your attack power as Shadow damage per wound and increasing your Strength by 25 per wound for 20 sec. A new burst replaces any existing Strength bonus.",
+    "icon": "spell_deathknight_scourgestrike",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3143,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900320,
+    "name": "Blood Feast",
+    "description": "Each enemy hit by Blood Boil or Heart Strike grants a stack of Blood Feast, increasing the damage and healing of Death Strike by 3%, stacking up to 5 times. Lasts 20 sec.",
+    "text": "Each enemy hit by Blood Boil or Heart Strike grants a stack of Blood Feast, increasing the damage and healing of Death Strike by 3%, stacking up to 5 times. Lasts 20 sec.",
+    "icon": "spell_deathknight_bloodtap",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2724,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900321,
+    "name": "Blood Feast",
+    "description": "Death Strike overhealing is converted into an absorb shield lasting 10 sec, absorbing 45% of the overhealing, up to 12% of your maximum health.",
+    "text": "Death Strike overhealing is converted into an absorb shield lasting 10 sec, absorbing 45% of the overhealing, up to 12% of your maximum health.",
+    "icon": "spell_deathknight_butcher2",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2751,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900330,
+    "name": "Dream Burst",
+    "description": "Starfire and Wrath have a 15% chance to fire a Dream Burst at your target, dealing Nature damage.",
+    "text": "Starfire and Wrath have a 15% chance to fire a Dream Burst at your target, dealing Nature damage.",
+    "icon": "ability_druid_dreamstate",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2255,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900331,
+    "name": "Power of Elune",
+    "description": "Starfire and Wrath deal 4% increased damage, and have a 15% chance to grant Power of Elune for 12 sec, guaranteeing that Starfire and Wrath fire a Dream Burst.",
+    "text": "Starfire and Wrath deal 4% increased damage, and have a 15% chance to grant Power of Elune for 12 sec, guaranteeing that Starfire and Wrath fire a Dream Burst.",
+    "icon": "ability_druid_earthandsky",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 7,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2991,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 7,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          5,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900340,
+    "name": "Bloodseeker Vines",
+    "description": "Rip and Rake damage has a 10% chance to cause Bloodseeker Vines to grow on the victim, dealing 35% of your attack power as Bleed damage over 6 sec.",
+    "text": "Rip and Rake damage has a 10% chance to cause Bloodseeker Vines to grow on the victim, dealing 35% of your attack power as Bleed damage over 6 sec.",
+    "icon": "ability_ghoulfrenzy",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 108,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900341,
+    "name": "Bloodseeker Vines",
+    "description": "When Bloodseeker Vines expire, or you use Ferocious Bite on their target, they explode in thorns, dealing 30% of your attack power as physical damage to the victim and nearby enemies.",
+    "text": "When Bloodseeker Vines expire, or you use Ferocious Bite on their target, they explode in thorns, dealing 30% of your attack power as physical damage to the victim and nearby enemies.",
+    "icon": "ability_druid_mangle2",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2312,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900350,
+    "name": "Empowered Maul",
+    "description": "Your auto-attacks have a 20% chance to empower your next Maul, dealing 50% of your attack power as physical damage to your target and 25% to all other enemies in front of you.",
+    "text": "Your auto-attacks have a 20% chance to empower your next Maul, dealing 50% of your attack power as physical damage to your target and 25% to all other enemies in front of you.",
+    "icon": "ability_druid_maul",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 261,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 900350,
+      "spellFamilyMask": [
+        0,
+        0,
+        0
+      ],
+      "procFlags": 4,
+      "chance": 100,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 900351,
+    "name": "Ravage",
+    "description": "During Berserk, Mangle, Lacerate and Swipe have a 20% chance to make your next Maul become Ravage, dealing 250% of an empowered Maul.",
+    "text": "During Berserk, Mangle, Lacerate and Swipe have a 20% chance to make your next Maul become Ravage, dealing 250% of an empowered Maul.",
+    "icon": "ability_druid_lacerate",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2246,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900360,
+    "name": "Symbiotic Blooms",
+    "description": "Wild Growth and Rejuvenation have a 8% chance, and Swiftmend always causes, Symbiotic Blooms to grow on the target, healing for 50% of your spell power over 6 sec.",
+    "text": "Wild Growth and Rejuvenation have a 8% chance, and Swiftmend always causes, Symbiotic Blooms to grow on the target, healing for 50% of your spell power over 6 sec.",
+    "icon": "ability_druid_flourish",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2864,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900361,
+    "name": "Symbiotic Blooms",
+    "description": "Symbiotic Blooms increases the healing your spells do to affected targets by 15%.",
+    "text": "Symbiotic Blooms increases the healing your spells do to affected targets by 15%.",
+    "icon": "spell_nature_healingtouch",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 962,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900370,
+    "name": "Barbed Shot",
+    "description": "Your shots have a 22% chance to apply Barbed Shot to the target, causing them to bleed for 35% of your attack power over 6 sec. Each time Barbed Shot is applied, your pet stomps the ground, dealing 30% of your attack power as physical damage to all nearby enemies.",
+    "text": "Your shots have a 22% chance to apply Barbed Shot to the target, causing them to bleed for 35% of your attack power over 6 sec. Each time Barbed Shot is applied, your pet stomps the ground, dealing 30% of your attack power as physical damage to all nearby enemies.",
+    "icon": "ability_hunter_killcommand",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2226,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ],
+    "serverProc": {
+      "spellId": 900370,
+      "spellFamilyName": 9,
+      "spellFamilyMask": [
+        0,
+        0,
+        0
+      ],
+      "procFlags": 320,
+      "chance": 100,
+      "source": "spell_proc"
+    }
+  },
+  {
+    "id": 900371,
+    "name": "Barbed Shot",
+    "description": "Each time your pet Stomps, reduce the cooldown of Call of the Wild and Rapid Fire by 2 sec, and Bestial Wrath and Kill Command by 1 sec.",
+    "text": "Each time your pet Stomps, reduce the cooldown of Call of the Wild and Rapid Fire by 2 sec, and Bestial Wrath and Kill Command by 1 sec.",
+    "icon": "ability_golemstormbolt",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 132,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900380,
+    "name": "Marked Quarry",
+    "description": "Steady Shot grants Marked Quarry, increasing the damage of Steady Shot by 2% per stack, stacking up to 5 times. Lasts 30 sec.",
+    "text": "Steady Shot grants Marked Quarry, increasing the damage of Steady Shot by 2% per stack, stacking up to 5 times. Lasts 30 sec.",
+    "icon": "inv_spear_07",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 1629,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900381,
+    "name": "Marked Quarry",
+    "description": "Aimed Shot consumes all stacks of Marked Quarry, dealing 20% of your attack power as additional damage per stack, and causes your next Arcane Shot to deal 50% more damage and cost no mana.",
+    "text": "Aimed Shot consumes all stacks of Marked Quarry, dealing 20% of your attack power as additional damage per stack, and causes your next Arcane Shot to deal 50% more damage and cost no mana.",
+    "icon": "ability_impalingbolt",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 218,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900390,
+    "name": "Sentinel's Mark",
+    "description": "Consuming Lock and Load with Explosive Shot has a 45% chance to summon a Sentinel Owl, applying Sentinel's Mark to your target. Your next Explosive Shot deals 40% increased damage to the marked target.",
+    "text": "Consuming Lock and Load with Explosive Shot has a 45% chance to summon a Sentinel Owl, applying Sentinel's Mark to your target. Your next Explosive Shot deals 40% increased damage to the marked target.",
+    "icon": "ability_hunter_explosiveshot",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3407,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900391,
+    "name": "Sentinel's Mark",
+    "description": "When Sentinel's Mark is consumed, it summons a barrage of 4 lunar missiles, each dealing 30% of your attack power as Arcane damage to enemies within 10 yards.",
+    "text": "When Sentinel's Mark is consumed, it summons a barrage of 4 lunar missiles, each dealing 30% of your attack power as Arcane damage to enemies within 10 yards.",
+    "icon": "spell_arcane_starfire",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 1485,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900400,
+    "name": "Arcane Phoenix",
+    "description": "Consuming Hot Streak summons an Arcane Phoenix to aid you for 15 sec, casting Arcane and Fire spells at your enemies. This effect has an internal cooldown of 45 sec.",
+    "text": "Consuming Hot Streak summons an Arcane Phoenix to aid you for 15 sec, casting Arcane and Fire spells at your enemies. This effect has an internal cooldown of 45 sec.",
+    "icon": "spell_fire_fireball02",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 184,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900401,
+    "name": "Kindled Momentum",
+    "description": "Consuming Hot Streak grants a stack of Kindled Momentum, increasing spell haste by 2% for 10 sec, stacking up to 5. Each spell cast by the Arcane Phoenix also grants a stack.",
+    "text": "Consuming Hot Streak grants a stack of Kindled Momentum, increasing spell haste by 2% for 10 sec, stacking up to 5. Each spell cast by the Arcane Phoenix also grants a stack.",
+    "icon": "spell_arcane_blast",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2294,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900410,
+    "name": "Brain Freeze",
+    "description": "Brain Freeze causes your next Frostfire Bolt to deal an additional 50% of your spell power as damage and explode, dealing 35% of its damage to nearby enemies. Consuming Brain Freeze grants 1 charge of Fingers of Frost.",
+    "text": "Brain Freeze causes your next Frostfire Bolt to deal an additional 50% of your spell power as damage and explode, dealing 35% of its damage to nearby enemies. Consuming Brain Freeze grants 1 charge of Fingers of Frost.",
+    "icon": "ability_mage_frostfirebolt",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2946,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900411,
+    "name": "Empowered Icy Lance",
+    "description": "Activating Icy Veins grants Brain Freeze. While Icy Veins is active, an Empowered Icy Lance is launched at your target every second, dealing 165% of your spell power as Frost damage.",
+    "text": "Activating Icy Veins grants Brain Freeze. While Icy Veins is active, an Empowered Icy Lance is launched at your target every second, dealing 165% of your spell power as Frost damage.",
+    "icon": "spell_frost_frostbolt02",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 188,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900420,
+    "name": "Arcane Splinters",
+    "description": "Casting Arcane Blast or Arcane Barrage conjures an Arcane Splinter, dealing Arcane Damage to the target.",
+    "text": "Casting Arcane Blast or Arcane Barrage conjures an Arcane Splinter, dealing Arcane Damage to the target.",
+    "icon": "ability_mage_missilebarrage",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3261,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900421,
+    "name": "Splinterstorm",
+    "description": "Conjuring an Arcane Splinter has a 10% chance to trigger Splinterstorm, conjuring 8 additional Arcane Splinters at your target. Splinters conjured by Splinterstorm cannot trigger Splinterstorm.",
+    "text": "Conjuring an Arcane Splinter has a 10% chance to trigger Splinterstorm, conjuring 8 additional Arcane Splinters at your target. Splinters conjured by Splinterstorm cannot trigger Splinterstorm.",
+    "icon": "ability_mage_missilebarrage",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3261,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900430,
+    "name": "Tyr's Deliverance",
+    "description": "Activating Avenging Wrath invokes Tyr's Deliverance for its duration, instantly healing up to 5 injured allies within 40 yards, then healing an injured ally every 1 sec for 35% of your spell power.",
+    "text": "Activating Avenging Wrath invokes Tyr's Deliverance for its duration, instantly healing up to 5 injured allies within 40 yards, then healing an injured ally every 1 sec for 35% of your spell power.",
+    "icon": "spell_holy_holybolt",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 70,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900431,
+    "name": "Tyr's Grace",
+    "description": "Allies healed by Tyr's Deliverance or your Holy Shock gain Tyr's Grace for 12 sec, increasing healing received from your Holy Light, Flash of Light and Holy Shock by 10%.",
+    "text": "Allies healed by Tyr's Deliverance or your Holy Shock gain Tyr's Grace for 12 sec, increasing healing received from your Holy Light, Flash of Light and Holy Shock by 10%.",
+    "icon": "spell_holy_searinglight",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 156,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900440,
+    "name": "Vanguard",
+    "description": "Judgement grants Vanguard. Your next Shield of Righteousness deals 45% increased damage and heals you for 50% of the damage it deals.",
+    "text": "Judgement grants Vanguard. Your next Shield of Righteousness deals 45% increased damage and heals you for 50% of the damage it deals.",
+    "icon": "ability_paladin_hammeroftherighteous",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3023,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900441,
+    "name": "Vanguard",
+    "description": "Avenger's Shield refracts Holy Light onto up to 4 nearby enemies, dealing 45% of your attack power as Holy damage, and consuming Vanguard reduces its cooldown by 2 sec. While Avenging Wrath is active, every Shield of Righteousness benefits from Vanguard.",
+    "text": "Avenger's Shield refracts Holy Light onto up to 4 nearby enemies, dealing 45% of your attack power as Holy damage, and consuming Vanguard reduces its cooldown by 2 sec. While Avenging Wrath is active, every Shield of Righteousness benefits from Vanguard.",
+    "icon": "spell_holy_avengersshield",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2172,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900450,
+    "name": "Crusader's Zeal",
+    "description": "Art of War also grants Crusader's Zeal, increasing the damage of your next Crusader Strike by 70%. Crusader's Zeal can accumulate up to 2 times.",
+    "text": "Art of War also grants Crusader's Zeal, increasing the damage of your next Crusader Strike by 70%. Crusader's Zeal can accumulate up to 2 times.",
+    "icon": "spell_holy_crusaderstrike",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2309,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900451,
+    "name": "Crusader's Zeal",
+    "description": "Crusader Strike empowered by Crusader's Zeal unleashes a wave of Holy energy through its target, dealing 50% of your attack power as Holy damage to the primary target and 30% to all other enemies in its path.",
+    "text": "Crusader Strike empowered by Crusader's Zeal unleashes a wave of Holy energy through its target, dealing 50% of your attack power as Holy damage to the primary target and 30% to all other enemies in its path.",
+    "icon": "ability_paladin_divinestorm",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3027,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900460,
+    "name": "Atonement",
+    "description": "Casting Penance against an enemy target heals all allies within 20 yards of it for 100% of the damage dealt.",
+    "text": "Casting Penance against an enemy target heals all allies within 20 yards of it for 100% of the damage dealt.",
+    "icon": "spell_holy_penance",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2818,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900461,
+    "name": "Atonement",
+    "description": "Casting Smite increases the damage of Penance by 25%, stacking up to 2 times. Lasts 12 sec.",
+    "text": "Casting Smite increases the damage of Penance by 25%, stacking up to 2 times. Lasts 12 sec.",
+    "icon": "spell_holy_holysmite",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 237,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900470,
+    "name": "Surge of Light",
+    "description": "Consuming Surge of Light with Flash Heal also heals the 2 of your lowest health allies within 40 yards for 100% of the Flash Heal.",
+    "text": "Consuming Surge of Light with Flash Heal also heals the 2 of your lowest health allies within 40 yards for 100% of the Flash Heal.",
+    "icon": "spell_holy_flashheal",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 242,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900471,
+    "name": "Blessed Light",
+    "description": "Flash Heal cast while under Surge of Light leaves Blessed Light on the target, healing them for 35% of the Flash Heal over 6 sec.",
+    "text": "Flash Heal cast while under Surge of Light leaves Blessed Light on the target, healing them for 35% of the Flash Heal over 6 sec.",
+    "icon": "spell_holy_holybolt",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 70,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900480,
+    "name": "Shadow Word: Death",
+    "description": "Damaging an enemy with Shadow Word: Pain increases the damage of your next Shadow Word: Death by 150% of your spell power. Stacks up to 10 times, and Shadow Word: Death no longer causes damage to the caster.",
+    "text": "Damaging an enemy with Shadow Word: Pain increases the damage of your next Shadow Word: Death by 150% of your spell power. Stacks up to 10 times, and Shadow Word: Death no longer causes damage to the caster.",
+    "icon": "spell_shadow_demonicfortitude",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 1980,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900481,
+    "name": "Shadow Word: Death",
+    "description": "While you have Shadow Word: Pain, Devouring Plague and Vampiric Touch active on the same target, your Mind Blast deals 45% more damage.",
+    "text": "While you have Shadow Word: Pain, Devouring Plague and Vampiric Touch active on the same target, your Mind Blast deals 45% more damage.",
+    "icon": "spell_holy_stoicism",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2213,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900490,
+    "name": "Deathstalker's Mark",
+    "description": "Garrote applies 3 stacks of Deathstalker's Mark to your target for 30 sec. When you spend 4 or more combo points on Envenom against a marked target, you consume a stack, dealing 156% of your attack power as Poison damage.",
+    "text": "Garrote applies 3 stacks of Deathstalker's Mark to your target for 30 sec. When you spend 4 or more combo points on Envenom against a marked target, you consume a stack, dealing 156% of your attack power as Poison damage.",
+    "icon": "ability_rogue_masterofsubtlety",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2114,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900491,
+    "name": "Deathstalker's Mark",
+    "description": "Each time you consume a stack of Deathstalker's Mark, reduce the cooldown of Vanish by 30 sec.",
+    "text": "Each time you consume a stack of Deathstalker's Mark, reduce the cooldown of Vanish by 30 sec.",
+    "icon": "ability_rogue_masterofsubtlety",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2114,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900500,
+    "name": "Flawless Form",
+    "description": "Rupture periodic damage increases the damage of your next Eviscerate by 4% for 12 sec, stacking up to 5 times.",
+    "text": "Rupture periodic damage increases the damage of your next Eviscerate by 4% for 12 sec, stacking up to 5 times.",
+    "icon": "ability_rogue_eviscerate",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 514,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900501,
+    "name": "Flawless Form",
+    "description": "Flawless Form makes your next Eviscerate swing a flurry of attacks, dealing 50% of your attack power as physical damage to the target and 30% to all other nearby enemies. While Blade Flurry is active, damage to non-primary targets is increased by 100%.",
+    "text": "Flawless Form makes your next Eviscerate swing a flurry of attacks, dealing 50% of your attack power as physical damage to the target and 30% to all other nearby enemies. While Blade Flurry is active, damage to non-primary targets is increased by 100%.",
+    "icon": "spell_shadow_shadowworddominate",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 235,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900510,
+    "name": "Shadow Strikes",
+    "description": "Hemorrhage deals a secondary strike with both weapons, each dealing Shadow damage.",
+    "text": "Hemorrhage deals a secondary strike with both weapons, each dealing Shadow damage.",
+    "icon": "spell_shadow_lifedrain",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 153,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900511,
+    "name": "Shadow Strikes",
+    "description": "While in Shadow Dance, your abilities strike a second time, dealing Shadow damage. When Shadow Dance ends, all nearby enemies take increased Shadow damage from you for 12 sec.",
+    "text": "While in Shadow Dance, your abilities strike a second time, dealing Shadow damage. When Shadow Dance ends, all nearby enemies take increased Shadow damage from you for 12 sec.",
+    "icon": "ability_rogue_shadowdance",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2959,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900520,
+    "name": "Elemental Mastery",
+    "description": "Elemental Mastery makes your next 3 Lightning Bolts instant cast and deal 125% more damage.",
+    "text": "Elemental Mastery makes your next 3 Lightning Bolts instant cast and deal 125% more damage.",
+    "icon": "spell_nature_wispheal",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 117,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900521,
+    "name": "Elemental Mastery",
+    "description": "Lightning Bolt reduces the cooldown of Elemental Mastery by 1 sec, and Chain Lightning by 2 sec.",
+    "text": "Lightning Bolt reduces the cooldown of Elemental Mastery by 1 sec, and Chain Lightning by 2 sec.",
+    "icon": "spell_nature_chainlightning",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 165,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900530,
+    "name": "Maelstrom Weapon",
+    "description": "Lightning Bolt and Chain Lightning deal 20% increased damage and have a 20% chance to refund the Maelstrom Weapon spent.",
+    "text": "Lightning Bolt and Chain Lightning deal 20% increased damage and have a 20% chance to refund the Maelstrom Weapon spent.",
+    "icon": "spell_shaman_maelstromweapon",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 11,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3156,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 19,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          3,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900531,
+    "name": "Maelstrom Weapon",
+    "description": "Maelstrom Weapon can stack 5 additional times. Each stack of Maelstrom Weapon increases the damage of Lightning Bolt or Chain Lightning by 10%. Stacks beyond 5 add damage only.",
+    "text": "Maelstrom Weapon can stack 5 additional times. Each stack of Maelstrom Weapon increases the damage of Lightning Bolt or Chain Lightning by 10%. Stacks beyond 5 add damage only.",
+    "icon": "ability_shaman_stormstrike",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2562,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900540,
+    "name": "Stormstream Totem",
+    "description": "Casting Nature's Swiftness summons a Stormstream Totem at your feet, healing allies within 30 yards for 60% of your spell power every 2 sec for 10 sec.",
+    "text": "Casting Nature's Swiftness summons a Stormstream Totem at your feet, healing allies within 30 yards for 60% of your spell power every 2 sec for 10 sec.",
+    "icon": "spell_nature_ravenform",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 112,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900541,
+    "name": "Stormstream Totem",
+    "description": "While active, Stormstream Totem casts Riptide on the lowest health ally every 2 sec.",
+    "text": "While active, Stormstream Totem casts Riptide on the lowest health ally every 2 sec.",
+    "icon": "spell_nature_riptide",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3786,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900550,
+    "name": "Soul Anathema",
+    "description": "Haunt unleashes a demonic entity unto the soul of your target, dealing 680% of your spell power as Shadow damage over 10 sec. If reapplied, any remaining damage is added to the new Soul Anathema.",
+    "text": "Haunt unleashes a demonic entity unto the soul of your target, dealing 680% of your spell power as Shadow damage over 10 sec. If reapplied, any remaining damage is added to the new Soul Anathema.",
+    "icon": "ability_warlock_haunt",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3172,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900551,
+    "name": "Soul Anathema",
+    "description": "Soul Anathema damage increased by 25%. Consuming Nightfall is guaranteed to apply Soul Anathema.",
+    "text": "Soul Anathema damage increased by 25%. Consuming Nightfall is guaranteed to apply Soul Anathema.",
+    "icon": "ability_warlock_haunt",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3172,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900560,
+    "name": "Wild Imps",
+    "description": "Consuming a Molten Core charge summons 3 Wild Imps for 12 sec, each casting Fel Fireball at your primary target for 20% of your spell power as Fire damage.",
+    "text": "Consuming a Molten Core charge summons 3 Wild Imps for 12 sec, each casting Fel Fireball at your primary target for 20% of your spell power as Fire damage.",
+    "icon": "spell_shadow_summonimp",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 215,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900561,
+    "name": "Empowered Imp",
+    "description": "For each 3 Wild Imps summoned, 1 becomes Empowered and casts Empowered Fel Fireball instead, dealing 100% increased damage and also dealing 12.5% of your spell power as Fire damage to all enemies within 10 yards of the impact.",
+    "text": "For each 3 Wild Imps summoned, 1 becomes Empowered and casts Empowered Fel Fireball instead, dealing 100% increased damage and also dealing 12.5% of your spell power as Fire damage to all enemies within 10 yards of the impact.",
+    "icon": "spell_shadow_demonform",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3314,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900570,
+    "name": "Crashing Chaos",
+    "description": "Chaos Bolt deals an additional 40% of your spell power as damage, and makes your next Incinerate within 12 sec an instant cast.",
+    "text": "Chaos Bolt deals an additional 40% of your spell power as damage, and makes your next Incinerate within 12 sec an instant cast.",
+    "icon": "ability_warlock_chaosbolt",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 3178,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900571,
+    "name": "Crashing Chaos",
+    "description": "Chaos Bolt has a 22% chance to summon an Infernal at your target for 8 sec, granting Crashing Chaos while it is active. Crashing Chaos increases Chaos Bolt and Incinerate damage by 35%.",
+    "text": "Chaos Bolt has a 22% chance to summon an Infernal at your target for 8 sec, granting Crashing Chaos while it is active. Crashing Chaos increases Chaos Bolt and Incinerate damage by 35%.",
+    "icon": "spell_fire_burnout",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 2128,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900580,
+    "name": "Fatal Mark",
+    "description": "Overpower has a 35% chance to reset the cooldown of Mortal Strike and reduce the cost of your next Mortal Strike by 33%.",
+    "text": "Overpower has a 35% chance to reset the cooldown of Mortal Strike and reduce the cost of your next Mortal Strike by 33%.",
+    "icon": "ability_meleedamage",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 26,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900581,
+    "name": "Fatal Mark",
+    "description": "Mortal Strike applies a Fatal Mark for 30 sec, stacking up to 5. Execute against a marked target consumes all marks, dealing 276% of your attack power as physical damage per mark.",
+    "text": "Mortal Strike applies a Fatal Mark for 30 sec, stacking up to 5. Execute against a marked target consumes all marks, dealing 276% of your attack power as physical damage per mark.",
+    "icon": "ability_warrior_savageblow",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 564,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900590,
+    "name": "Bloodbath",
+    "description": "Bloodthirst critical strikes increase the damage of your next Bloodthirst by 20% for 9 sec.",
+    "text": "Bloodthirst critical strikes increase the damage of your next Bloodthirst by 20% for 9 sec.",
+    "icon": "spell_nature_bloodlust",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 38,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900591,
+    "name": "Bloodbath",
+    "description": "Bloodthirst has a 28% chance to apply Bloodbath to your target, causing them to suffer 25% of your attack power as Bleed damage over 6 sec. Using Bloodthirst on a target affected by Bloodbath extends the bleed by 6 sec.",
+    "text": "Bloodthirst has a 28% chance to apply Bloodbath to your target, causing them to suffer 25% of your attack power as Bleed damage over 6 sec. Using Bloodthirst on a target affected by Bloodbath extends the bleed by 6 sec.",
+    "icon": "ability_rogue_slicedice",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 515,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900600,
+    "name": "Violent Outburst",
+    "description": "Shield Slam deals 15% increased damage and reduces enemies' damage against you by 3% for 6 sec. Multiple stacks may overlap, up to 3.",
+    "text": "Shield Slam deals 15% increased damage and reduces enemies' damage against you by 3% for 6 sec. Multiple stacks may overlap, up to 3.",
+    "icon": "inv_shield_05",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyName": 4,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 413,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 14,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          512,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": 900601,
+    "name": "Violent Outburst",
+    "description": "Every 250 rage you spend triggers a Violent Outburst, causing your next Shield Slam to deal 200% increased damage, generate 50% more rage and grant Shield Block for 8 sec.",
+    "text": "Every 250 rage you spend triggers a Violent Outburst, causing your next Shield Slam to deal 200% increased damage, generate 50% more rage and grant Shield Block for 8 sec.",
+    "icon": "ability_defend",
+    "dispel": 1,
+    "attributes": [
+      192,
+      268435456,
+      0,
+      67108864,
+      0,
+      0,
+      0,
+      0
+    ],
+    "castingTimeIndex": 1,
+    "baseLevel": 60,
+    "spellLevel": 60,
+    "rangeIndex": 1,
+    "equippedItemClass": -1,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "dmgClass": 1,
+    "schoolMask": 8,
+    "spellIconId": 28,
+    "effects": [
+      {
+        "effect": 6,
+        "effectName": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "basePoints": 0,
+        "dieSides": 1,
+        "implicitTargetA": 1,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      },
+      {
+        "effect": 0,
+        "basePoints": 0,
+        "spellClassMask": [
+          0,
+          0,
+          0
+        ],
+        "damageMultiplier": 1
+      }
+    ]
+  }
+]

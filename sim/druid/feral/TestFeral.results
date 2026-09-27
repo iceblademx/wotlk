@@ -308,8 +308,8 @@ dps_results: {
 dps_results: {
  key: "TestFeral-AllItems-EyeoftheBroodmother-45308"
  value: {
-  dps: 7546.91067
-  tps: 5421.05259
+  dps: 7536.19715
+  tps: 5413.3712
  }
 }
 dps_results: {
@@ -462,8 +462,8 @@ dps_results: {
 dps_results: {
  key: "TestFeral-AllItems-IdoloftheRavenGoddess-32387"
  value: {
-  dps: 7652.94361
-  tps: 5498.43
+  dps: 7689.15516
+  tps: 5524.21499
  }
 }
 dps_results: {
@@ -610,15 +610,15 @@ dps_results: {
 dps_results: {
  key: "TestFeral-AllItems-NightsongBattlegear"
  value: {
-  dps: 7376.68513
-  tps: 5300.11767
+  dps: 7262.45083
+  tps: 5218.86174
  }
 }
 dps_results: {
  key: "TestFeral-AllItems-NightsongGarb"
  value: {
-  dps: 5957.44997
-  tps: 4296.4244
+  dps: 5932.51536
+  tps: 4277.67381
  }
 }
 dps_results: {
@@ -799,8 +799,8 @@ dps_results: {
 dps_results: {
  key: "TestFeral-AllItems-StormshroudArmor"
  value: {
-  dps: 6263.17795
-  tps: 4508.18141
+  dps: 6346.97893
+  tps: 4567.38096
  }
 }
 dps_results: {
@@ -925,8 +925,8 @@ dps_results: {
 dps_results: {
  key: "TestFeral-AllItems-Val'anyr,HammerofAncientKings-46017"
  value: {
-  dps: 6361.77501
-  tps: 4582.14902
+  dps: 6244.74368
+  tps: 4499.50549
  }
 }
 dps_results: {
