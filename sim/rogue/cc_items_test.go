@@ -159,14 +159,19 @@ func TestShadowsInvitation(t *testing.T) {
 }
 
 func TestShadowOfTheCanopy(t *testing.T) {
-	// 2pc: a landed Hemorrhage adds a Shadow strike with each weapon.
+	// 2pc: a landed Hemorrhage adds a Shadow Strike with each weapon, each for the Hemorrhage's damage.
 	sim, rogue, target := newSub(t, canopySet(2))
 	mh, oh := rogue.GetSpell(core.ActionID{SpellID: 900512, Tag: 1}), rogue.GetSpell(core.ActionID{SpellID: 900512, Tag: 2})
 	if mh == nil || oh == nil {
 		t.Fatal("2pc: Shadow Strikes not registered")
 	}
 	for i := 0; i < 20; i++ {
-		castUntilLanded(t, sim, rogue.Hemorrhage, target, func() {})
+		mhBefore, ohBefore := mh.SpellMetrics[target.UnitIndex].TotalDamage, oh.SpellMetrics[target.UnitIndex].TotalDamage
+		hemorrhage := castUntilLanded(t, sim, rogue.Hemorrhage, target, func() {})
+		mhDamage, ohDamage := mh.SpellMetrics[target.UnitIndex].TotalDamage-mhBefore, oh.SpellMetrics[target.UnitIndex].TotalDamage-ohBefore
+		if math.Abs(mhDamage-hemorrhage) > 1e-6 || math.Abs(ohDamage-hemorrhage) > 1e-6 {
+			t.Fatalf("Shadow Strikes dealt %.1f/%.1f after a %.1f Hemorrhage, want the same amount", mhDamage, ohDamage, hemorrhage)
+		}
 	}
 	hemo := rogue.Hemorrhage.SpellMetrics[target.UnitIndex]
 	if landed := hemo.Hits + hemo.Crits; mh.SpellMetrics[target.UnitIndex].Casts != landed || oh.SpellMetrics[target.UnitIndex].Casts != landed {
@@ -176,7 +181,7 @@ func TestShadowOfTheCanopy(t *testing.T) {
 		t.Error("the Shadow Dance strikes need the 4pc")
 	}
 
-	// 4pc: during Shadow Dance, abilities strike again for a share of their damage.
+	// 4pc: during Shadow Dance, abilities strike again for the same damage.
 	sim, rogue, target = newSub(t, canopySet(4))
 	echo := rogue.GetSpell(core.ActionID{SpellID: 900514})
 	debuff := rogue.cc.shadowOfTheCanopyAuras.Get(target)
@@ -188,7 +193,7 @@ func TestShadowOfTheCanopy(t *testing.T) {
 	}
 	rogue.ShadowDanceAura.Activate(sim)
 	backstab := castUntilLanded(t, sim, rogue.Backstab, target, func() {})
-	if got := echo.SpellMetrics[target.UnitIndex].TotalDamage; !afterPartialResist(got, dancingShadowStrikesDamage*backstab) {
+	if got := echo.SpellMetrics[target.UnitIndex].TotalDamage; math.Abs(got-backstab) > 1e-6 {
 		t.Errorf("second strike dealt %.1f after a %.1f Backstab", got, backstab)
 	}
 
@@ -201,7 +206,7 @@ func TestShadowOfTheCanopy(t *testing.T) {
 	echoBefore := echo.SpellMetrics[target.UnitIndex].TotalDamage
 	backstab = castUntilLanded(t, sim, rogue.Backstab, target, func() {})
 	got := echo.SpellMetrics[target.UnitIndex].TotalDamage - echoBefore
-	if want := dancingShadowStrikesDamage * backstab * (1 + shadowOfTheCanopyBonus); !afterPartialResist(got, want) {
+	if want := backstab * (1 + shadowOfTheCanopyBonus); math.Abs(got-want) > 1e-6 {
 		t.Errorf("second strike under the debuff dealt %.1f, want %.1f", got, want)
 	}
 }

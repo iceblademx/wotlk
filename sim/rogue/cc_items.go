@@ -150,13 +150,10 @@ var ItemSetShadowOfTheCanopy = core.NewItemSet(core.ItemSet{
 	},
 })
 
-// The Shadow Strike damage (spells 900512 and 900514) is computed by server scripts and the tooltips
-// give no numbers, so these are assumptions. Adjust them once in-game combat logs are available.
+// Shadow Strikes (spells 900512 and 900514) repeat the damage of the ability that triggered them, as
+// Shadow damage. The server script computes it (spell_bonus_data is 0); the full amount was confirmed
+// in game. It is a copy of the damage dealt, so it neither rolls its own crit nor is partially resisted.
 const (
-	// 2pc: each secondary strike deals this fraction of its weapon's normalized damage, as Shadow.
-	shadowStrikesWeaponDamage = 0.5
-	// 4pc: the second strike deals this fraction of the ability's damage, as Shadow.
-	dancingShadowStrikesDamage = 0.5
 	// 4pc debuff (spell 900515, script tier_rog_sub_debuff): its aura tooltip reads 15%, the set bonus
 	// 12 sec. The DBC effect itself says 50% for 18 sec, which looks left over from the spell it was
 	// cloned from, so the tooltip values are used.
@@ -164,37 +161,37 @@ const (
 	shadowOfTheCanopyDuration = time.Second * 12
 )
 
+func (rogue *Rogue) newShadowStrike(actionID core.ActionID) *core.Spell {
+	return rogue.RegisterSpell(core.SpellConfig{
+		ActionID:    actionID,
+		SpellSchool: core.SpellSchoolShadow,
+		// Triggered strikes don't proc weapon effects, like other server-triggered spells.
+		ProcMask: core.ProcMaskEmpty,
+		Flags:    core.SpellFlagIgnoreModifiers | core.SpellFlagIgnoreResists | core.SpellFlagMeleeMetrics | core.SpellFlagNoOnCastComplete,
+
+		DamageMultiplier: 1,
+		ThreatMultiplier: 1,
+
+		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {},
+	})
+}
+
+// dealShadowStrike deals a copy of an ability's damage as a Shadow Strike.
+func (rogue *Rogue) dealShadowStrike(sim *core.Simulation, strike *core.Spell, target *core.Unit, damage float64) {
+	strike.SpellMetrics[target.UnitIndex].Casts++
+	strike.CalcAndDealDamage(sim, target, damage*rogue.shadowStrikesDebuffMultiplier(target), strike.OutcomeAlwaysHit)
+}
+
 func (rogue *Rogue) registerShadowStrikes() {
 	if rogue.Hemorrhage == nil {
 		return
 	}
 
-	newStrike := func(tag int32, procMask core.ProcMask, weaponDamage func(sim *core.Simulation, spell *core.Spell) float64) *core.Spell {
-		return rogue.RegisterSpell(core.SpellConfig{
-			ActionID:    core.ActionID{SpellID: 900512, Tag: tag},
-			SpellSchool: core.SpellSchoolShadow,
-			ProcMask:    procMask,
-			Flags:       core.SpellFlagMeleeMetrics | core.SpellFlagNoOnCastComplete,
-
-			DamageMultiplier: 1,
-			CritMultiplier:   rogue.MeleeCritMultiplier(false),
-			ThreatMultiplier: 1,
-
-			ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-				baseDamage := shadowStrikesWeaponDamage * weaponDamage(sim, spell) * rogue.shadowStrikesDebuffMultiplier(target)
-				spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialHitAndCrit)
-			},
-		})
-	}
-	// Triggered strikes: they don't proc weapon effects (ProcMaskEmpty), like other server-triggered spells.
-	mhStrike := newStrike(1, core.ProcMaskEmpty, func(sim *core.Simulation, spell *core.Spell) float64 {
-		return spell.Unit.MHNormalizedWeaponDamage(sim, spell.MeleeAttackPower())
-	})
+	// One strike per weapon, each for the full Hemorrhage damage.
+	mhStrike := rogue.newShadowStrike(core.ActionID{SpellID: 900512, Tag: 1})
 	var ohStrike *core.Spell
 	if rogue.AutoAttacks.IsDualWielding {
-		ohStrike = newStrike(2, core.ProcMaskEmpty, func(sim *core.Simulation, spell *core.Spell) float64 {
-			return spell.Unit.OHNormalizedWeaponDamage(sim, spell.MeleeAttackPower())
-		})
+		ohStrike = rogue.newShadowStrike(core.ActionID{SpellID: 900512, Tag: 2})
 	}
 
 	rogue.RegisterAura(core.Aura{
@@ -205,12 +202,12 @@ func (rogue *Rogue) registerShadowStrikes() {
 			aura.Activate(sim)
 		},
 		OnSpellHitDealt: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
-			if spell != rogue.Hemorrhage || !result.Landed() {
+			if spell != rogue.Hemorrhage || !result.Landed() || result.Damage <= 0 {
 				return
 			}
-			mhStrike.Cast(sim, result.Target)
+			rogue.dealShadowStrike(sim, mhStrike, result.Target, result.Damage)
 			if ohStrike != nil {
-				ohStrike.Cast(sim, result.Target)
+				rogue.dealShadowStrike(sim, ohStrike, result.Target, result.Damage)
 			}
 		},
 	})
@@ -234,18 +231,8 @@ func (rogue *Rogue) registerDancingShadowStrikes() {
 		}
 	})
 
-	// Spell 900514: the second strike, dealing Shadow damage.
-	echo := rogue.RegisterSpell(core.SpellConfig{
-		ActionID:    core.ActionID{SpellID: 900514},
-		SpellSchool: core.SpellSchoolShadow,
-		ProcMask:    core.ProcMaskEmpty,
-		Flags:       core.SpellFlagIgnoreModifiers | core.SpellFlagMeleeMetrics | core.SpellFlagNoOnCastComplete,
-
-		DamageMultiplier: 1,
-		ThreatMultiplier: 1,
-
-		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {},
-	})
+	// Spell 900514: the second strike.
+	echo := rogue.newShadowStrike(core.ActionID{SpellID: 900514})
 
 	rogue.RegisterAura(core.Aura{
 		Label:    "Shadow Strikes (Shadow Dance)",
@@ -260,8 +247,7 @@ func (rogue *Rogue) registerDancingShadowStrikes() {
 				!spell.Flags.Matches(SpellFlagBuilder|SpellFlagFinisher) {
 				return
 			}
-			damage := dancingShadowStrikesDamage * result.Damage * rogue.shadowStrikesDebuffMultiplier(result.Target)
-			echo.CalcAndDealDamage(sim, result.Target, damage, echo.OutcomeAlwaysHit)
+			rogue.dealShadowStrike(sim, echo, result.Target, result.Damage)
 		},
 	})
 }
