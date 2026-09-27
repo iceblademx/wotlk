@@ -15938,7 +15938,7 @@
   {
     "id": 67883,
     "name": "Obliterate",
-    "text": "A brutal instant attack that deals 125% weapon damage plus ${1200*125/100}, total damage increased ${60/2}% per each of your diseases on the target, removing the diseases on the target."
+    "text": "A brutal instant attack that deals 125% weapon damage plus 1500, total damage increased 30% per each of your diseases on the target, removing the diseases on the target."
   },
   {
     "id": 67884,
@@ -16023,19 +16023,19 @@
     "id": 67929,
     "name": "Death Coil",
     "rank": "Rank 5",
-    "text": "Fire a blast of unholy energy, causing 5550 to 6450 Shadow damage to an enemy target or healing ${5550 to 6450*1.5} damage from a friendly Undead target."
+    "text": "Fire a blast of unholy energy, causing 5550 to 6450 Shadow damage to an enemy target or healing 8325 damage from a friendly Undead target."
   },
   {
     "id": 67930,
     "name": "Death Coil",
     "rank": "Rank 5",
-    "text": "Fire a blast of unholy energy, causing 5550 to 6450 Shadow damage to an enemy target or healing ${5550 to 6450*1.5} damage from a friendly Undead target."
+    "text": "Fire a blast of unholy energy, causing 5550 to 6450 Shadow damage to an enemy target or healing 8325 damage from a friendly Undead target."
   },
   {
     "id": 67931,
     "name": "Death Coil",
     "rank": "Rank 5",
-    "text": "Fire a blast of unholy energy, causing 6475 to 7525 Shadow damage to an enemy target or healing ${6475 to 7525*1.5} damage from a friendly Undead target."
+    "text": "Fire a blast of unholy energy, causing 6475 to 7525 Shadow damage to an enemy target or healing 9712 damage from a friendly Undead target."
   },
   {
     "id": 67932,
@@ -16056,19 +16056,19 @@
     "id": 67935,
     "name": "Frost Strike",
     "rank": "Rank 6",
-    "text": "Instantly strike the enemy, causing 80% weapon damage plus ${250*80/100} as Frost damage.  Can't be dodged, blocked, or parried."
+    "text": "Instantly strike the enemy, causing 80% weapon damage plus 200 as Frost damage.  Can't be dodged, blocked, or parried."
   },
   {
     "id": 67936,
     "name": "Frost Strike",
     "rank": "Rank 6",
-    "text": "Instantly strike the enemy, causing 80% weapon damage plus ${250*80/100} as Frost damage.  Can't be dodged, blocked, or parried."
+    "text": "Instantly strike the enemy, causing 80% weapon damage plus 200 as Frost damage.  Can't be dodged, blocked, or parried."
   },
   {
     "id": 67937,
     "name": "Frost Strike",
     "rank": "Rank 6",
-    "text": "Instantly strike the enemy, causing 100% weapon damage plus ${250*100/100} as Frost damage.  Can't be dodged, blocked, or parried."
+    "text": "Instantly strike the enemy, causing 100% weapon damage plus 250 as Frost damage.  Can't be dodged, blocked, or parried."
   },
   {
     "id": 67938,
@@ -19671,7 +19671,7 @@
   {
     "id": 72369,
     "name": "Shared Suffering",
-    "text": "Deals ${4000*1000*12 sec/3} Shadow damage over 12 sec to an enemy target. When removed, it splits the remaining damage to the target and his allies."
+    "text": "Deals 16000000 Shadow damage over 12 sec to an enemy target. When removed, it splits the remaining damage to the target and his allies."
   },
   {
     "id": 72421,

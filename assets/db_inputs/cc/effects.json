@@ -163,6 +163,7 @@
     "spellId": 200019,
     "trigger": "equip",
     "detail": "Skareth's Killing Eye: aura PROC_TRIGGER_SPELL (42)",
+    "handledByHandwrittenCode": true,
     "text": "Casting Misdirection allows your next Kill Shot to be cast regardless of target health, dealing 300% additional damage."
   },
   {
@@ -405,6 +406,7 @@
     "spellId": 200143,
     "trigger": "equip",
     "detail": "Vorrax's Wild Hunt: aura DUMMY (4)",
+    "handledByHandwrittenCode": true,
     "text": "While you have the Beast Mastery talent, your pet inherits 100% of your armor penetration and 30% of your critical strike and haste ratings. Call of the Wild also unleashes a stampede of spirit beasts upon your target for 20 sec."
   },
   {
@@ -414,6 +416,7 @@
     "spellId": 200146,
     "trigger": "equip",
     "detail": "Pack Leader's Insignia: aura DUMMY (4)",
+    "handledByHandwrittenCode": true,
     "text": "Kill Command calls upon a legendary beast to aid your hunt. The Wyvern, Bear and Boar answer in succession, each granting their blessing for 30 sec."
   },
   {
@@ -423,6 +426,7 @@
     "spellId": 200154,
     "trigger": "equip",
     "detail": "Deadeye's Oath: aura DUMMY (4)",
+    "handledByHandwrittenCode": true,
     "text": "Your Aimed Shot deals additional Physical damage equal to 650% of your ranged attack power, but its base cooldown is increased to 15 sec. Casting another Shot reduces the cooldown by 2 sec."
   },
   {
@@ -432,6 +436,7 @@
     "spellId": 200156,
     "trigger": "equip",
     "detail": "Loop of the Banshee: aura DUMMY (4)",
+    "handledByHandwrittenCode": true,
     "text": "Your Silencing Shot fires a Withering Arrow at the target, dealing Shadow damage over 8 sec. Each periodic tick strengthens the arrow's eruption. Your Chimera Shot consumes the arrow, immediately dealing its remaining periodic damage to the target and unleashing a Shadow eruption that strikes all enemies within 8 yards."
   },
   {
@@ -441,6 +446,7 @@
     "spellId": 200160,
     "trigger": "equip",
     "detail": "Bombardier's Pin: aura DUMMY (4)",
+    "handledByHandwrittenCode": true,
     "text": "Grants the Wildfire Bomb ability."
   },
   {
@@ -450,6 +456,7 @@
     "spellId": 200162,
     "trigger": "equip",
     "detail": "Signet of Dark Deeds: aura DUMMY (4)",
+    "handledByHandwrittenCode": true,
     "text": "Your Black Arrow summons a Dark Minion for 10 sec. When it fades, it strikes your target for 90% of all damage you dealt while it was active, as Shadow damage."
   },
   {

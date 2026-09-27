@@ -208,7 +208,8 @@
         "text": "Each time your pet Stomps, reduce the cooldown of Call of the Wild and Rapid Fire by 2 sec, and Bestial Wrath and Kill Command by 1 sec.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9309,
@@ -234,7 +235,8 @@
         "text": "Aimed Shot consumes all stacks of Marked Quarry, dealing 20% of your attack power as additional damage per stack, and causes your next Arcane Shot to deal 50% more damage and cost no mana.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9310,
@@ -260,7 +262,8 @@
         "text": "When Sentinel's Mark is consumed, it summons a barrage of 4 lunar missiles, each dealing 30% of your attack power as Arcane damage to enemies within 10 yards.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9311,

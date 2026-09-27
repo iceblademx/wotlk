@@ -14,6 +14,79 @@
     "classModifiers": []
   },
   {
+    "id": 200019,
+    "name": "Skareth's Killing Eye",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200020,
+    "name": "Skareth's Killing Eye",
+    "spellFamilyName": 9,
+    "spellFamilyFlags": [
+      0,
+      33554432,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 53262,
+        "name": "Longevity",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 11,
+        "basePoints": -11
+      },
+      {
+        "spellId": 53263,
+        "name": "Longevity",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 11,
+        "basePoints": -21
+      },
+      {
+        "spellId": 53264,
+        "name": "Longevity",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 11,
+        "basePoints": -31
+      },
+      {
+        "spellId": 56830,
+        "name": "Glyph of Bestial Wrath",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 11,
+        "basePoints": -20001
+      }
+    ]
+  },
+  {
     "id": 200021,
     "name": "Skareth's Falling Star",
     "spellFamilyName": 0,
@@ -1113,6 +1186,286 @@
     "classModifiers": []
   },
   {
+    "id": 200143,
+    "name": "Vorrax's Wild Hunt",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200144,
+    "name": "Bonded Instincts",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200145,
+    "name": "Spirit Cleave",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200146,
+    "name": "Pack Leader's Insignia",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200147,
+    "name": "Skyhunter's Cry",
+    "spellFamilyName": 9,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200148,
+    "name": "Poison Bolt",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200149,
+    "name": "Might of the Elder",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200150,
+    "name": "Might of the Elder",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200151,
+    "name": "Heavy Cleave",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200152,
+    "name": "Relentless Pursuit",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200153,
+    "name": "Gouge",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200154,
+    "name": "Deadeye's Oath",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200156,
+    "name": "Loop of the Banshee",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200157,
+    "name": "Withering Arrow",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200158,
+    "name": "Withering Arrow",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200159,
+    "name": "Withering Arrow",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200160,
+    "name": "Bombardier's Pin",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200161,
+    "name": "Wildfire Bomb",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 4,
+    "dmgClass": 3,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200162,
+    "name": "Signet of Dark Deeds",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200163,
+    "name": "Dark Echo",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
     "id": 200165,
     "name": "Roll the Bones",
     "spellFamilyName": 0,
@@ -1740,6 +2093,164 @@
     ],
     "schoolMask": 8,
     "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900370,
+    "name": "Barbed Shot",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900372,
+    "name": "Barbed Shot",
+    "spellFamilyName": 9,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 3,
+    "bleed": true,
+    "classModifiers": []
+  },
+  {
+    "id": 900373,
+    "name": "Stomp",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900380,
+    "name": "Marked Quarry",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900382,
+    "name": "Marked Quarry",
+    "spellFamilyName": 9,
+    "spellFamilyFlags": [
+      0,
+      16777216,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 53228,
+        "name": "Rapid Recuperation",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc",
+        "basePoints": 0
+      }
+    ]
+  },
+  {
+    "id": 900383,
+    "name": "Marked Quarry",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 3,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900384,
+    "name": "Marked Quarry",
+    "spellFamilyName": 9,
+    "spellFamilyFlags": [
+      0,
+      16777216,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 53228,
+        "name": "Rapid Recuperation",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc",
+        "basePoints": 0
+      }
+    ]
+  },
+  {
+    "id": 900390,
+    "name": "Sentinel's Mark",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900392,
+    "name": "Sentinel's Mark",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900394,
+    "name": "Lunar Missile",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 3,
     "bleed": false,
     "classModifiers": []
   },
