@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"html"
 	"math"
+	"slices"
 	"sort"
 	"strings"
 
@@ -348,14 +349,11 @@ func (src *Source) ItemTooltipHTML(it *server.ItemTemplate) string {
 
 	if set := src.Tables.ItemSets[it.ItemSet]; set != nil && it.ItemSet != 0 {
 		w.b.WriteString(`<div style="margin-top:0.5em"></div>`)
+		total := len(src.setPieces(it, set))
 		fmt.Fprintf(&w.b, `<div data-cc-set-header data-name="%s" data-total="%d" style="color:%s">%s (0/%d)</div>`,
-			esc(set.Name), len(set.ItemIDs), colorYellow, esc(set.Name), len(set.ItemIDs))
-		for _, id := range set.ItemIDs {
-			name := fmt.Sprintf("item %d", id)
-			if piece := src.Server.Items[id]; piece != nil {
-				name = piece.Name
-			}
-			fmt.Fprintf(&w.b, `<div data-cc-set-piece="%d" style="color:%s;padding-left:0.8em">%s</div>`, id, colorGray, esc(name))
+			esc(set.Name), total, colorYellow, esc(set.Name), total)
+		for _, p := range src.setPieces(it, set) {
+			fmt.Fprintf(&w.b, `<div data-cc-set-piece="%s" style="color:%s;padding-left:0.8em">%s</div>`, p.ids, colorGray, esc(p.name))
 		}
 		bonuses := append([]dbc.ItemSetBonus(nil), set.Bonuses...)
 		sort.Slice(bonuses, func(i, j int) bool { return bonuses[i].Pieces < bonuses[j].Pieces })
@@ -365,6 +363,84 @@ func (src *Source) ItemTooltipHTML(it *server.ItemTemplate) string {
 		}
 	}
 	return w.html()
+}
+
+type setPiece struct {
+	name string
+	ids  string // space-separated IDs of every version of the piece; wearing any of them counts
+}
+
+// setPieces lists the pieces of it's item set. ItemSet.dbc lists one version of each piece, but every
+// server item with the set's ID counts toward its bonuses (10/25-man, heroic and faction versions of
+// tier sets), so pieces are grouped by slot and named after the version closest to it. Sets that
+// don't have exactly one piece per slot use ItemSet.dbc's list as-is.
+func (src *Source) setPieces(it *server.ItemTemplate, set *dbc.ItemSet) []setPiece {
+	if src.setItems == nil {
+		src.setItems = map[uint32][]*server.ItemTemplate{}
+		for _, item := range src.Server.Items {
+			if item.ItemSet != 0 {
+				src.setItems[item.ItemSet] = append(src.setItems[item.ItemSet], item)
+			}
+		}
+		for _, items := range src.setItems {
+			sort.Slice(items, func(i, j int) bool { return items[i].Entry < items[j].Entry })
+		}
+	}
+	slotOf := func(item *server.ItemTemplate) uint32 {
+		if item.InventoryType == 20 { // robes
+			return 5
+		}
+		return item.InventoryType
+	}
+	bySlot := map[uint32][]*server.ItemTemplate{}
+	for _, item := range src.setItems[it.ItemSet] {
+		bySlot[slotOf(item)] = append(bySlot[slotOf(item)], item)
+	}
+
+	var slots []uint32
+	for _, id := range set.ItemIDs {
+		listed := src.Server.Items[id]
+		if listed == nil || len(bySlot[slotOf(listed)]) == 0 || slices.Contains(slots, slotOf(listed)) {
+			slots = nil
+			break
+		}
+		slots = append(slots, slotOf(listed))
+	}
+	if len(slots) == 0 || len(slots) != len(bySlot) {
+		pieces := make([]setPiece, 0, len(set.ItemIDs))
+		for _, id := range set.ItemIDs {
+			name := fmt.Sprintf("item %d", id)
+			if piece := src.Server.Items[id]; piece != nil {
+				name = piece.Name
+			}
+			pieces = append(pieces, setPiece{name: name, ids: fmt.Sprint(id)})
+		}
+		return pieces
+	}
+
+	pieces := make([]setPiece, 0, len(slots))
+	for _, slot := range slots {
+		var best *server.ItemTemplate
+		score := func(item *server.ItemTemplate) int {
+			s := 0
+			if item.ItemLevel == it.ItemLevel {
+				s += 2
+			}
+			if item.AllowableRace == it.AllowableRace {
+				s++
+			}
+			return s
+		}
+		ids := make([]string, 0, len(bySlot[slot]))
+		for _, item := range bySlot[slot] {
+			if best == nil || score(item) > score(best) {
+				best = item
+			}
+			ids = append(ids, fmt.Sprint(item.Entry))
+		}
+		pieces = append(pieces, setPiece{name: best.Name, ids: strings.Join(ids, " ")})
+	}
+	return pieces
 }
 
 // SpellTooltipHTML renders a spell tooltip: name, rank and description.

@@ -82,6 +82,23 @@ func TestSpellDecodeAndFormat(t *testing.T) {
 	if want := "Increases haste rating by 200 for 10 sec."; sp.Text != want {
 		t.Errorf("text = %q, want %q", sp.Text, want)
 	}
+
+	// Divisions and expressions use signed values: effect 3 has base points -5000.
+	sp.Effects[2].BasePoints = -5000
+	for text, want := range map[string]string{
+		"$/10;s1 per 5 sec":             "20 per 5 sec",
+		"$/1000;90003s1 sec":            "0.2 sec",
+		"reduced by ${$m3/-1000} sec":   "reduced by 5 sec",
+		"by ${$m3/-1000}.1 sec":         "by 5.0 sec",
+		"${($s1+$s2)*2}":                "420",
+		"lasts ${$d/2} sec, ticks $t2":  "lasts 5 sec, ticks $t2",
+		"heals ${$s1*1.5/7}":            "heals 43",
+		"$a1 yards and ${$PL*2} damage": "$a1 yards and ${$PL*2} damage",
+	} {
+		if got := store.FormatText(sp, text); got != want {
+			t.Errorf("FormatText(%q) = %q, want %q", text, got, want)
+		}
+	}
 }
 
 func TestLayoutMismatchIsRejected(t *testing.T) {

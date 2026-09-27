@@ -136,7 +136,9 @@ export function renderCustomTooltip(html: string, ctx: GearContext): string {
 	if (header) {
 		let equipped = 0;
 		root.querySelectorAll<HTMLElement>('[data-cc-set-piece]').forEach(pieceElem => {
-			if (ctx.equippedItems.has(Number(pieceElem.dataset.ccSetPiece))) {
+			// Space-separated IDs: every version of the piece (10/25-man, heroic, faction) counts.
+			const ids = (pieceElem.dataset.ccSetPiece ?? '').split(' ').map(Number);
+			if (ids.some(id => ctx.equippedItems.has(id))) {
 				equipped++;
 				pieceElem.style.color = colorEquippedPiece;
 			}

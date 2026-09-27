@@ -351,7 +351,6 @@ func (store *SpellStore) MergeTable(header []string, rows [][]string) (added, re
 	if err != nil {
 		return 0, 0, err
 	}
-	var merged []*Spell
 	for i := 0; i < f.RecordCount; i++ {
 		s := decodeSpell(f.Record(i))
 		s.DurationMs = store.Durations[s.DurationIndex]
@@ -362,9 +361,9 @@ func (store *SpellStore) MergeTable(header []string, rows [][]string) (added, re
 			added++
 		}
 		store.Spells[s.ID] = s
-		merged = append(merged, s)
 	}
-	for _, s := range merged {
+	// Client spells can reference server-only ones (e.g. set bonus texts quoting a spell_dbc value).
+	for _, s := range store.Spells {
 		s.Text = store.FormatText(s, s.Description)
 	}
 	return added, replaced, nil
@@ -382,29 +381,51 @@ func IconName(path string) string {
 
 var descTokenRegex = regexp.MustCompile(`\$(\d*)([a-zA-Z])(\d?)`)
 
-// FormatText substitutes the most common description tokens ($s1, $d, $h, $o1, $t1, $u, $n, $x1,
-// and cross-spell references like $12345s1). Formulas (${...}) and conditionals ($?...) are left as-is.
+// "$/1000;s1" (a token divided by a constant) and "${$m1/-1000}.1" (an expression, optionally
+// followed by the number of decimals to show).
+var descDivideRegex = regexp.MustCompile(`\$/(\d+);(\d*)([a-zA-Z])(\d?)`)
+var descExprRegex = regexp.MustCompile(`\$\{([^{}]*)\}(?:\.(\d))?`)
+
+// FormatText substitutes the description tokens the client uses in item and spell texts: $s1, $m1,
+// $d, $h, $o1, $t1, $u, $n, $x1, cross-spell references like $12345s1, divisions like $/1000;s1 and
+// arithmetic like ${$m1/-1000}.1. Anything else ($a1, $PL, max(), $?conditionals) is left as-is.
 func (store *SpellStore) FormatText(s *Spell, text string) string {
-	return descTokenRegex.ReplaceAllStringFunc(text, func(tok string) string {
-		m := descTokenRegex.FindStringSubmatch(tok)
-		target := s
-		if m[1] != "" {
-			id, _ := strconv.Atoi(m[1])
-			if other, ok := store.Spells[uint32(id)]; ok {
-				target = other
-			} else {
-				return tok
+	text = descExprRegex.ReplaceAllStringFunc(text, func(tok string) string {
+		m := descExprRegex.FindStringSubmatch(tok)
+		unresolved := false
+		expr := descTokenRegex.ReplaceAllStringFunc(m[1], func(inner string) string {
+			v, ok := store.tokenValue(s, descTokenRegex.FindStringSubmatch(inner))
+			if !ok {
+				unresolved = true
+				return inner
 			}
-		}
-		idx := 0
-		if m[3] != "" {
-			idx, _ = strconv.Atoi(m[3])
-			idx--
-		}
-		if idx < 0 || idx > 2 {
+			return strconv.FormatFloat(v, 'f', -1, 64)
+		})
+		v, ok := evalExpr(expr)
+		if unresolved || !ok {
 			return tok
 		}
-		eff := target.Effects[idx]
+		decimals := 0 // whole numbers unless the text asks for decimals
+		if m[2] != "" {
+			decimals, _ = strconv.Atoi(m[2])
+		}
+		return formatNumber(math.Abs(v), decimals)
+	})
+	text = descDivideRegex.ReplaceAllStringFunc(text, func(tok string) string {
+		m := descDivideRegex.FindStringSubmatch(tok)
+		div, _ := strconv.Atoi(m[1])
+		v, ok := store.tokenValue(s, []string{"", m[2], m[3], m[4]})
+		if !ok || div == 0 {
+			return tok
+		}
+		return formatNumber(math.Abs(v)/float64(div), -1)
+	})
+	return descTokenRegex.ReplaceAllStringFunc(text, func(tok string) string {
+		m := descTokenRegex.FindStringSubmatch(tok)
+		target, eff, ok := store.tokenTarget(s, m)
+		if !ok {
+			return tok
+		}
 		switch strings.ToLower(m[2]) {
 		case "s", "m":
 			lo, hi := absInt(eff.Min()), absInt(eff.Max())
@@ -412,32 +433,154 @@ func (store *SpellStore) FormatText(s *Spell, text string) string {
 				return fmt.Sprintf("%d to %d", lo, hi)
 			}
 			return strconv.Itoa(int(lo))
-		case "o":
-			if eff.Amplitude > 0 && target.DurationMs > 0 {
-				ticks := target.DurationMs / eff.Amplitude
-				return strconv.Itoa(int(math.Abs(eff.Avg())) * int(ticks))
-			}
-		case "t":
-			if eff.Amplitude > 0 {
-				return formatSeconds(eff.Amplitude)
-			}
 		case "d":
 			if target.DurationMs > 0 {
 				return formatSeconds(target.DurationMs) + " sec"
 			}
-		case "h":
-			return strconv.Itoa(int(target.ProcChance))
-		case "u":
-			return strconv.Itoa(int(target.StackAmount))
-		case "n":
-			return strconv.Itoa(int(target.ProcCharges))
-		case "x":
-			return strconv.Itoa(int(eff.ChainTarget))
-		case "a":
 			return tok
+		}
+		if v, ok := store.tokenValue(s, m); ok {
+			return formatNumber(math.Abs(v), -1)
 		}
 		return tok
 	})
+}
+
+// tokenTarget resolves the spell and effect a token refers to (m is a descTokenRegex match).
+func (store *SpellStore) tokenTarget(s *Spell, m []string) (*Spell, SpellEffect, bool) {
+	target := s
+	if m[1] != "" {
+		id, _ := strconv.Atoi(m[1])
+		other, ok := store.Spells[uint32(id)]
+		if !ok {
+			return nil, SpellEffect{}, false
+		}
+		target = other
+	}
+	idx := 0
+	if m[3] != "" {
+		idx, _ = strconv.Atoi(m[3])
+		idx--
+	}
+	if idx < 0 || idx > 2 {
+		return nil, SpellEffect{}, false
+	}
+	return target, target.Effects[idx], true
+}
+
+// tokenValue is the signed numeric value of a token, as used in expressions: $d and $t in seconds.
+func (store *SpellStore) tokenValue(s *Spell, m []string) (float64, bool) {
+	target, eff, ok := store.tokenTarget(s, m)
+	if !ok {
+		return 0, false
+	}
+	switch strings.ToLower(m[2]) {
+	case "s", "m":
+		return float64(eff.Min()), true
+	case "o":
+		if eff.Amplitude > 0 && target.DurationMs > 0 {
+			return float64(int(eff.Avg()) * int(target.DurationMs/eff.Amplitude)), true
+		}
+	case "t":
+		if eff.Amplitude > 0 {
+			return float64(eff.Amplitude) / 1000, true
+		}
+	case "d":
+		if target.DurationMs > 0 {
+			return float64(target.DurationMs) / 1000, true
+		}
+	case "h":
+		return float64(target.ProcChance), true
+	case "u":
+		return float64(target.StackAmount), true
+	case "n":
+		return float64(target.ProcCharges), true
+	case "x":
+		return float64(eff.ChainTarget), true
+	}
+	return 0, false
+}
+
+// formatNumber shows at most 2 decimals, or exactly the given number of decimals when >= 0.
+func formatNumber(v float64, decimals int) string {
+	if decimals >= 0 {
+		return strconv.FormatFloat(v, 'f', decimals, 64)
+	}
+	return strconv.FormatFloat(math.Round(v*100)/100, 'f', -1, 64)
+}
+
+// evalExpr evaluates + - * / and parentheses over numbers.
+func evalExpr(expr string) (float64, bool) {
+	p := &exprParser{s: strings.ReplaceAll(expr, " ", "")}
+	v, ok := p.sum()
+	return v, ok && p.pos == len(p.s)
+}
+
+type exprParser struct {
+	s   string
+	pos int
+}
+
+func (p *exprParser) peek() byte {
+	if p.pos < len(p.s) {
+		return p.s[p.pos]
+	}
+	return 0
+}
+
+func (p *exprParser) sum() (float64, bool) {
+	v, ok := p.product()
+	for ok && (p.peek() == '+' || p.peek() == '-') {
+		op := p.peek()
+		p.pos++
+		var r float64
+		if r, ok = p.product(); op == '+' {
+			v += r
+		} else {
+			v -= r
+		}
+	}
+	return v, ok
+}
+
+func (p *exprParser) product() (float64, bool) {
+	v, ok := p.unary()
+	for ok && (p.peek() == '*' || p.peek() == '/') {
+		op := p.peek()
+		p.pos++
+		var r float64
+		if r, ok = p.unary(); op == '*' {
+			v *= r
+		} else if r == 0 {
+			return 0, false
+		} else {
+			v /= r
+		}
+	}
+	return v, ok
+}
+
+func (p *exprParser) unary() (float64, bool) {
+	switch p.peek() {
+	case '-':
+		p.pos++
+		v, ok := p.unary()
+		return -v, ok
+	case '(':
+		p.pos++
+		v, ok := p.sum()
+		if !ok || p.peek() != ')' {
+			return 0, false
+		}
+		p.pos++
+		return v, true
+	}
+	start := p.pos
+	for p.pos < len(p.s) && (p.s[p.pos] >= '0' && p.s[p.pos] <= '9' || p.s[p.pos] == '.') {
+		p.pos++
+	}
+	v, err := strconv.ParseFloat(p.s[start:p.pos], 64)
+	return v, err == nil
 }
 
 func absInt(v int32) int32 {

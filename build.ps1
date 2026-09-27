@@ -272,7 +272,7 @@ function Invoke-CustomContent {
 	Write-Step 'Importing custom content from cc_data/'
 	Invoke-Native 'go' @('run', './tools/cc/extract')
 	Invoke-Items
-	Write-Host 'Review assets/db_inputs/cc/REPORT.md and STOCK_CHANGES.md, then run ./build.ps1 test.' -ForegroundColor Green
+	Write-Host 'Review assets/db_inputs/cc/REPORT.md, STOCK_CHANGES.md and TOOLTIP_CHANGES.md, then run ./build.ps1 test.' -ForegroundColor Green
 }
 
 function Invoke-Fmt {

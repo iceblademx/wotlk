@@ -17,6 +17,8 @@ type Source struct {
 	Spells *dbc.SpellStore
 	Tables *dbc.Tables
 	Server *server.Data
+
+	setItems map[uint32][]*server.ItemTemplate // item set ID -> server items in it (built on first use)
 }
 
 // Issue describes an effect the importer could not express as plain stats; it needs Go code.

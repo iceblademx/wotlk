@@ -30,6 +30,7 @@ Fork of wowsims/wotlk (Wrath Classic sim) targeting the 3.3.5a (12340) client pl
 - To decode data while implementing, run `./build.ps1 inspect spell|item|set|enchant <id>` or `inspect search <text>`.
 - Server: AzerothCore world DB. `./build.ps1 dump` exports tables using `.env` (read-only session; never commit `.env`). Custom items are IDs >= 900000 (`cc_data/cc.json`).
 - `./build.ps1 audit [-fix]` checks the item effect values hardcoded in the sim against 3.3.5a Spell.dbc. Wrath Classic buffed Ulduar trinket procs, and the 3.3.5a values are restored. Re-run it after merging upstream.
+- Tooltips: stock items use wowhead (Wrath Classic values) unless their 3.3.5a values differ. `./build.ps1 cc` compares server item_template and Spell.dbc against the cached wowhead tooltips and renders in-game style tooltips for the differing items into `tooltips.json` (`tools/cc/extract/stock_tooltips.go`; list in `TOOLTIP_CHANGES.md`). Items whose text still has unresolved tokens (`$a1`, `$PL`, `$?`) or random suffixes stay on wowhead and are listed as kept.
 - Stat mapping: hit, crit and haste ratings go to both melee and spell stats. AP goes to both AP and RAP. Expertise and defense aura points are converted to rating.
 
 ## Conventions

@@ -88,7 +88,7 @@ func (cc *CustomContent) Apply(db *WowDatabase) {
 			if !ok {
 				continue
 			}
-			if diff := diffItem(dst, src); len(diff) > 0 {
+			if diff := DiffItem(dst, src); len(diff) > 0 {
 				changes = append(changes, fmt.Sprintf("| %d | %s | %s |", id, dst.Name, strings.Join(diff, "<br>")))
 				dst.Stats = src.Stats
 				dst.GemSockets = src.GemSockets
@@ -104,7 +104,7 @@ func (cc *CustomContent) Apply(db *WowDatabase) {
 			if !ok {
 				continue
 			}
-			if d := diffStats(dst.Stats, src.Stats); d != "" {
+			if d := DiffStats(dst.Stats, src.Stats); d != "" {
 				changes = append(changes, fmt.Sprintf("| %d | %s (gem) | %s |", id, dst.Name, d))
 				dst.Stats = src.Stats
 				dst.Color = src.Color
@@ -187,15 +187,16 @@ func (cc *CustomContent) WriteTooltips(dbDir string) {
 	tools.WriteFile(filepath.Join(dbDir, "cc_tooltips.json"), string(data))
 }
 
-func diffItem(a, b *proto.UIItem) []string {
+// DiffItem lists the stat, socket, weapon, ilvl, quality and name differences between two versions of an item.
+func DiffItem(a, b *proto.UIItem) []string {
 	var out []string
 	if a.Name != b.Name {
 		out = append(out, fmt.Sprintf("name %q -> %q", a.Name, b.Name))
 	}
-	if d := diffStats(a.Stats, b.Stats); d != "" {
+	if d := DiffStats(a.Stats, b.Stats); d != "" {
 		out = append(out, d)
 	}
-	if d := diffStats(a.SocketBonus, b.SocketBonus); d != "" {
+	if d := DiffStats(a.SocketBonus, b.SocketBonus); d != "" {
 		out = append(out, "socket bonus "+d)
 	}
 	if !slices.Equal(a.GemSockets, b.GemSockets) {
@@ -214,7 +215,8 @@ func diffItem(a, b *proto.UIItem) []string {
 	return out
 }
 
-func diffStats(a, b []float64) string {
+// DiffStats lists stats that differ by more than 0.5, e.g. "Agility 10 -> 12".
+func DiffStats(a, b []float64) string {
 	n := max(len(a), len(b))
 	var parts []string
 	for i := 0; i < n; i++ {

@@ -15,6 +15,9 @@
 //	assets/db_inputs/cc/spell_changes.json      spells that differ from cc_data/dbc_baseline (if provided)
 //	assets/db_inputs/cc/sim_spells.json         family data of the custom spells hand-written sim code uses
 //	                                            (checked by sim/common/cc/ccfamily)
+//	assets/db_inputs/cc/tooltips.json           in-game style tooltips: custom content, plus stock items whose
+//	                                            3.3.5a values differ from wowhead's Wrath Classic ones
+//	assets/db_inputs/cc/TOOLTIP_CHANGES.md      those stock items and what differs (stock_tooltips.go)
 //	assets/db_inputs/cc/REPORT.md               human-readable summary / TODO list
 //	sim/common/cc/zz_generated.go               effects expressible from data alone
 package main
@@ -95,6 +98,9 @@ type stockData struct {
 	itemIDs    map[int32]bool // wowhead item tooltip IDs: anything else is custom
 	spellIDs   map[int32]bool // wowhead spell tooltip IDs: anything else is custom
 	enchantIDs map[int32]bool // stock enchant effect IDs
+
+	tooltipsPath string // wowhead item tooltips, compared with the 3.3.5a values (stock_tooltips.go)
+	plannerPath  string // wowhead gear planner DB: gen_db only builds items listed there
 }
 
 func csvIDs(path string) map[int32]bool {
@@ -120,9 +126,11 @@ func csvIDs(path string) map[int32]bool {
 
 func loadStock(assets string, cfg *cc.Config) *stockData {
 	s := &stockData{
-		itemIDs:    csvIDs(filepath.Join(assets, "db_inputs", "wowhead_item_tooltips.csv")),
-		spellIDs:   csvIDs(filepath.Join(assets, "db_inputs", "wowhead_spell_tooltips.csv")),
-		enchantIDs: map[int32]bool{},
+		itemIDs:      csvIDs(filepath.Join(assets, "db_inputs", "wowhead_item_tooltips.csv")),
+		spellIDs:     csvIDs(filepath.Join(assets, "db_inputs", "wowhead_spell_tooltips.csv")),
+		enchantIDs:   map[int32]bool{},
+		tooltipsPath: filepath.Join(assets, "db_inputs", "wowhead_item_tooltips.csv"),
+		plannerPath:  filepath.Join(assets, "db_inputs", "wowhead_gearplannerdb.txt"),
 	}
 	for _, e := range database.EnchantOverrides {
 		s.enchantIDs[e.EffectId] = true
@@ -233,17 +241,20 @@ type extraction struct {
 	stock       *stockData
 	handwritten *handwritten
 
-	customDB     *database.WowDatabase
-	stockDB      *database.WowDatabase // server values for stock items (only fully-understood ones)
-	stockReview  []stockReview         // stock items whose server values couldn't be fully converted
-	serverIDs    []int32
-	effects      []effectEntry
-	sets         []*setEntry
-	spellRefs    map[uint32]bool
-	gen          []string // generated Go statements
-	tooltips     Tooltips
-	customSpells []map[string]any
-	spellChanges []map[string]any
+	customDB    *database.WowDatabase
+	stockDB     *database.WowDatabase // server values for stock items (only fully-understood ones)
+	stockReview []stockReview         // stock items whose server values couldn't be fully converted
+	// Stock items/gems with fully converted server values, and the ones whose tooltip differs from wowhead's.
+	stockCandidates []stockCandidate
+	stockTooltips   []stockTooltipChange
+	serverIDs       []int32
+	effects         []effectEntry
+	sets            []*setEntry
+	spellRefs       map[uint32]bool
+	gen             []string // generated Go statements
+	tooltips        Tooltips
+	customSpells    []map[string]any
+	spellChanges    []map[string]any
 }
 
 func (ex *extraction) excluded(id uint32) bool {
@@ -302,7 +313,10 @@ func (ex *extraction) run() {
 					setIDs[it.ItemSet] = true
 				}
 			} else if ex.stock.itemIDs[int32(id)] {
-				ex.considerStock(item.Id, item.Name, issues, func() { ex.stockDB.MergeItem(slimStockItem(item)) })
+				ex.considerStock(item.Id, item.Name, issues, func() {
+					ex.stockDB.MergeItem(slimStockItem(item))
+					ex.stockCandidates = append(ex.stockCandidates, stockCandidate{it: it, item: item})
+				})
 			}
 		case convert.IsGem(it):
 			ex.serverIDs = append(ex.serverIDs, int32(id))
@@ -326,6 +340,7 @@ func (ex *extraction) run() {
 			} else if ex.stock.itemIDs[int32(id)] {
 				ex.considerStock(gem.Id, gem.Name, issues, func() {
 					ex.stockDB.MergeGem(&proto.UIGem{Id: gem.Id, Name: gem.Name, Color: gem.Color, Stats: gem.Stats})
+					ex.stockCandidates = append(ex.stockCandidates, stockCandidate{it: it, gem: gem})
 				})
 			}
 		case it.Class == 0 && it.SubClass == 6: // item enhancements (scrolls, armor kits, spellthreads)
@@ -345,6 +360,7 @@ func (ex *extraction) run() {
 	ex.indexCustomSpells()
 	ex.diffBaseline()
 	ex.buildTooltips()
+	ex.buildStockTooltips()
 }
 
 // Tooltips holds in-game style tooltip HTML for custom items and spells, keyed by ID.
@@ -927,6 +943,7 @@ func (ex *extraction) write(outDir, genFile string) (err error) {
 		must(cc.WriteJSON(filepath.Join(outDir, "spell_changes.json"), ex.spellChanges))
 	}
 	must(os.WriteFile(filepath.Join(outDir, "REPORT.md"), []byte(ex.report()), 0666))
+	must(os.WriteFile(filepath.Join(outDir, "TOOLTIP_CHANGES.md"), []byte(ex.stockTooltipReport()), 0666))
 	must(writeGenerated(genFile, ex.gen))
 	return err
 }
