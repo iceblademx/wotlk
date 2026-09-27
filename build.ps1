@@ -11,6 +11,7 @@
   ./build.ps1 rundevserver # build + run native server using dist/ at http://localhost:3333/wotlk/
   ./build.ps1 serve        # build + run wowsimwotlk.exe at http://localhost:3333/wotlk/ (sims run on this machine)
   ./build.ps1 serve -Remote -Port 8000   # host/rundevserver/serve: let other machines connect, on port 8000
+  ./build.ps1 release      # tag first (git tag vX.Y.Z); builds release/*.zip for Windows, macOS and Linux
   ./build.ps1 test         # go test --tags=with_db ./sim/...
   ./build.ps1 update-tests # accept *.results.tmp as new expected results
   ./build.ps1 items        # regenerate assets/database/db.{bin,json} (includes imported custom content)
@@ -208,21 +209,38 @@ function Get-ServerArgs {
 }
 
 function Invoke-Release {
+	# Builds the platforms upstream ships into release/, one zip each. The version is the current git
+	# tag (tag the commit first); the sim checks this fork's latest GitHub release against it.
 	Invoke-BinaryDist
+	$version = (& git describe --tags --always).Trim()
+	$ldflags = "-X 'main.Version=$version' -s -w"
+	$releaseDir = Join-Path $Root 'release'
+	Remove-Item $releaseDir -Recurse -Force -ErrorAction SilentlyContinue
+	New-Item -ItemType Directory -Force $releaseDir | Out-Null
+	$builds = @(
+		@{ Out = 'wowsimwotlk-windows.exe'; Pkg = './sim/web'; OS = 'windows'; Arch = 'amd64' },
+		@{ Out = 'wowsimwotlk-amd64-darwin'; Pkg = './sim/web'; OS = 'darwin'; Arch = 'amd64' },
+		@{ Out = 'wowsimwotlk-arm64-darwin'; Pkg = './sim/web'; OS = 'darwin'; Arch = 'arm64' },
+		@{ Out = 'wowsimwotlk-amd64-linux'; Pkg = './sim/web'; OS = 'linux'; Arch = 'amd64' },
+		@{ Out = 'wowsimcli-windows.exe'; Pkg = './cmd/wowsimcli'; OS = 'windows'; Arch = 'amd64'; Tags = 'with_db' }
+	)
 	Copy-Item assets/favicon_io/icon-windows_amd64.syso sim/web/icon-windows_amd64.syso
 	try {
-		Push-Location sim/web
-		$env:GOAMD64 = 'v2'
-		Invoke-Native 'go' @('build', '-o', (Join-Path $Root 'wowsimwotlk-windows.exe'), '-ldflags=-s -w')
-		Pop-Location
-		Push-Location cmd/wowsimcli
-		Invoke-Native 'go' @('build', '-o', (Join-Path $Root 'wowsimcli-windows.exe'), '--tags=with_db', '-ldflags=-s -w')
-		Pop-Location
+		foreach ($b in $builds) {
+			Write-Step "Compiling $($b.Out) ($version)"
+			$env:GOOS = $b.OS; $env:GOARCH = $b.Arch
+			if ($b.Arch -eq 'amd64') { $env:GOAMD64 = 'v2' } else { Remove-Item Env:GOAMD64 -ErrorAction SilentlyContinue }
+			$exe = Join-Path $releaseDir $b.Out
+			$goArgs = @('build', '-o', $exe, "-ldflags=$ldflags")
+			if ($b.Tags) { $goArgs += "--tags=$($b.Tags)" }
+			Invoke-Native 'go' ($goArgs + $b.Pkg)
+			Compress-Archive -Path $exe -DestinationPath "$exe.zip" -Force
+		}
 	} finally {
-		Remove-Item Env:GOAMD64 -ErrorAction SilentlyContinue
+		Remove-Item Env:GOOS, Env:GOARCH, Env:GOAMD64 -ErrorAction SilentlyContinue
 		Remove-Item sim/web/icon-windows_amd64.syso -ErrorAction SilentlyContinue
-		Set-Location $Root
 	}
+	Write-Host "Release $version built into $releaseDir" -ForegroundColor Green
 }
 
 function Invoke-Test {

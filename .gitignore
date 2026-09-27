@@ -23,6 +23,7 @@ ui/*/index.html
 # binaries
 dist
 binary_dist
+/release/
 sim/web/__debug_bin
 /wowsimwotlkcli*
 /wowsimwotlk*
