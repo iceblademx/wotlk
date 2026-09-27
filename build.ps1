@@ -84,7 +84,8 @@ function Invoke-Setup {
 }
 
 function Invoke-Proto {
-	$protoFiles = (Get-ChildItem proto -Filter *.proto).FullName
+	# Relative paths: protoc requires them to share the -I prefix exactly.
+	$protoFiles = (Get-ChildItem proto -Filter *.proto).Name | ForEach-Object { "proto/$_" }
 	if (Test-Stale 'sim/core/proto/api.pb.go' @('proto')) {
 		Write-Step 'protoc (Go)'
 		Invoke-Native 'protoc' (@('-I=proto', '--go_out=sim/core') + $protoFiles)

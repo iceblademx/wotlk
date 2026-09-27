@@ -175,7 +175,9 @@ type handwritten struct {
 	literals map[string]bool
 }
 
-var itemIDPatterns = regexp.MustCompile(`(?:NewItemEffect|NewSimpleStat\w*Effect\w*|NewItemEffectWithHeroic|NewSimpleStatItemActiveEffect)\(\s*(\d+)|\b(?:ID|ItemID):\s*(\d+)`)
+// Stock item IDs are < 100000, so any larger integer literal in hand-written sim code refers to
+// custom content (e.g. `const MorgrathsRavagingClawItemID = 900115`).
+var itemIDPatterns = regexp.MustCompile(`(?:NewItemEffect|NewSimpleStat\w*Effect\w*|NewItemEffectWithHeroic|NewSimpleStatItemActiveEffect)\(\s*(\d+)|\b(?:ID|ItemID):\s*(\d+)|\b([1-9]\d{5,6})\b`)
 var stringLiteral = regexp.MustCompile(`"((?:[^"\\]|\\.)*)"`)
 
 func scanHandwritten(simDir, genFile string) *handwritten {
@@ -193,7 +195,7 @@ func scanHandwritten(simDir, genFile string) *handwritten {
 			return nil
 		}
 		for _, m := range itemIDPatterns.FindAllStringSubmatch(string(data), -1) {
-			idStr := m[1] + m[2]
+			idStr := m[1] + m[2] + m[3]
 			if id, err := strconv.Atoi(idStr); err == nil {
 				h.itemIDs[int32(id)] = true
 			}
