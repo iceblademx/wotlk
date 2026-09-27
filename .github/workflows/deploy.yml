@@ -3,9 +3,19 @@ on:
   push:
     branches:
       - master
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Install Go
         uses: actions/setup-go@v2
@@ -37,12 +47,12 @@ jobs:
         run: |
           make test
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      # The site is built for the /wotlk/ path, which is where GitHub Pages serves this repo (named wotlk).
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v5
         with:
-            repository-name: wowsims/pages-deploy
-            branch: main
-            folder: dist/wotlk
-            target-folder: wotlk
-            single-commit: true
-            token: ${{ secrets.DEPLOY_REPO_TOKEN }}
+          path: dist/wotlk
+
+      - name: Deploy 🚀
+        id: deployment
+        uses: actions/deploy-pages@v5

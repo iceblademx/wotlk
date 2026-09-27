@@ -179,7 +179,7 @@ export class SimHeader extends Component {
 	}
 
 	private addDownloadBinaryLink() {
-		const href = 'https://github.com/iceblademx/wowsims-cc/releases';
+		const href = 'https://github.com/iceblademx/wotlk/releases';
 		const icon = 'fas fa-gauge-high fa-lg';
 		const parent = this.simToolbar;
 
