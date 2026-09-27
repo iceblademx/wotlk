@@ -134,6 +134,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeralTank-AllItems-CanopyDreamer'sRegalia"
+ value: {
+  dps: 2751.23609
+  tps: 5861.85012
+  dtps: 7.5117
+ }
+}
+dps_results: {
  key: "TestFeralTank-AllItems-ChaoticSkyflareDiamond"
  value: {
   dps: 2578.34617
@@ -864,6 +872,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeralTank-AllItems-Skareth'sFallingStar-900108"
+ value: {
+  dps: 2610.26352
+  tps: 5514.58984
+  dtps: 7.24371
+ }
+}
+dps_results: {
  key: "TestFeralTank-AllItems-SliverofPureIce-50339"
  value: {
   dps: 2527.84406
@@ -1053,6 +1069,14 @@ dps_results: {
   dps: 2208.9301
   tps: 4678.60413
   dtps: 6.91733
+ }
+}
+dps_results: {
+ key: "TestFeralTank-AllItems-Ursoc'sTaintedClaw"
+ value: {
+  dps: 3339.57555
+  tps: 7081.73044
+  dtps: 7.24371
  }
 }
 dps_results: {

@@ -100,6 +100,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAffliction-AllItems-BindingsoftheFacelessPact"
+ value: {
+  dps: 14348.47119
+  tps: 13151.29073
+ }
+}
+dps_results: {
  key: "TestAffliction-AllItems-BlessedRegaliaofUndeadCleansing"
  value: {
   dps: 10732.54758
@@ -380,6 +387,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAffliction-AllItems-ImmolationoftheWorldTree"
+ value: {
+  dps: 14348.47119
+  tps: 13151.29073
+ }
+}
+dps_results: {
  key: "TestAffliction-AllItems-ImpassiveSkyflareDiamond"
  value: {
   dps: 14666.84304
@@ -440,6 +454,13 @@ dps_results: {
  value: {
   dps: 14138.98198
   tps: 12965.50438
+ }
+}
+dps_results: {
+ key: "TestAffliction-AllItems-Morgrath'sMalediction-900128"
+ value: {
+  dps: 15002.97
+  tps: 13796.54813
  }
 }
 dps_results: {
@@ -550,8 +571,8 @@ dps_results: {
 dps_results: {
  key: "TestAffliction-AllItems-RotoftheFeveredDream"
  value: {
-  dps: 21409.6919
-  tps: 20235.86805
+  dps: 19005.47113
+  tps: 17831.64727
  }
 }
 dps_results: {
@@ -723,10 +744,17 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAffliction-AllItems-Vaelith'sAbyssalCalling-900127"
+ value: {
+  dps: 15009.54897
+  tps: 13803.1271
+ }
+}
+dps_results: {
  key: "TestAffliction-AllItems-Vaelith'sReapedSoul-900125"
  value: {
-  dps: 25486.18549
-  tps: 24279.65331
+  dps: 22122.21384
+  tps: 20915.68166
  }
 }
 dps_results: {
@@ -734,6 +762,13 @@ dps_results: {
  value: {
   dps: 17418.53007
   tps: 16217.8981
+ }
+}
+dps_results: {
+ key: "TestAffliction-AllItems-Vorrax'sChaosflame-900129"
+ value: {
+  dps: 15024.7003
+  tps: 13820.78046
  }
 }
 dps_results: {

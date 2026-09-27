@@ -27,6 +27,7 @@ func (rogue *Rogue) registerShivSpell() {
 				GCD: time.Second,
 			},
 			IgnoreHaste: true,
+			CD:          rogue.venomdrinkerCooldown(),
 		},
 
 		DamageMultiplier: (1 +

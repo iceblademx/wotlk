@@ -300,6 +300,10 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRogue, {
 			Presets.ROTATION_PRESET_AOE,
 			Presets.ROTATION_PRESET_SUBTLETY,
 			Presets.ROTATION_PRESET_SUBTLETY_HEMO,
+			Presets.ROTATION_PRESET_MUTILATE_DEATHSTALKER,
+			Presets.ROTATION_PRESET_MUTILATE_VENOMDRINKER,
+			Presets.ROTATION_PRESET_COMBAT_BETWEEN_THE_EYES,
+			Presets.ROTATION_PRESET_COMBAT_EVISCERATE,
 		],
 		// Preset gear configurations that the user can quickly select.
 		gear: [

@@ -102,6 +102,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAssassination-AllItems-BetweentheEyes-900143"
+ value: {
+  dps: 7183.81719
+  tps: 5100.51021
+ }
+}
+dps_results: {
  key: "TestAssassination-AllItems-BlackBruise-50035"
  value: {
   dps: 6515.05695
@@ -123,6 +130,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAssassination-AllItems-BlightsapPoisoner'sGarb"
+ value: {
+  dps: 7193.45057
+  tps: 5107.3499
+ }
+}
+dps_results: {
  key: "TestAssassination-AllItems-BonescytheBattlegear"
  value: {
   dps: 6162.97096
@@ -134,6 +148,13 @@ dps_results: {
  value: {
   dps: 6695.82572
   tps: 4658.95554
+ }
+}
+dps_results: {
+ key: "TestAssassination-AllItems-BurrowCutthroat'sKit"
+ value: {
+  dps: 7193.45057
+  tps: 5107.3499
  }
 }
 dps_results: {
@@ -566,10 +587,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAssassination-AllItems-RolltheBones-900142"
+ value: {
+  dps: 7183.81719
+  tps: 5100.51021
+ }
+}
+dps_results: {
  key: "TestAssassination-AllItems-RuneofRepulsion-40372"
  value: {
   dps: 6502.06434
   tps: 4616.46568
+ }
+}
+dps_results: {
+ key: "TestAssassination-AllItems-SanguineHunger-900145"
+ value: {
+  dps: 9270.25928
+  tps: 6581.88409
  }
 }
 dps_results: {
@@ -794,6 +829,20 @@ dps_results: {
  value: {
   dps: 6373.10553
   tps: 4524.90493
+ }
+}
+dps_results: {
+ key: "TestAssassination-AllItems-Venomdrinker-900144"
+ value: {
+  dps: 7183.81719
+  tps: 5100.51021
+ }
+}
+dps_results: {
+ key: "TestAssassination-AllItems-Vorrax'sFateboundCoin-900119"
+ value: {
+  dps: 9019.24623
+  tps: 6403.66482
  }
 }
 dps_results: {

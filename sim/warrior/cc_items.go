@@ -21,6 +21,32 @@ const (
 	RokthulsSlayersEdgeItemID = 900126
 )
 
+// Tuning published by the server at http://209.38.90.151:8087/sim/data.json and checked against it by
+// cc_tuning_test.go.
+const (
+	recklessFurySuddenDeathChance = 0.2
+	undyingFuryPerStack           = 0.05 // Execute damage, and crit chance in percent points / 100
+	undyingFuryMaxStacks          = 99
+	undyingFuryDuration           = time.Second * 60
+	slayersEdgeProcChance         = 0.15 // spell 200082 procChance, on melee auto attacks and specials (0x14)
+	slayersStrikeAP               = 1.0
+	slayerPerStack                = 0.03
+	slayerMaxStacks               = 99
+	slayerDuration                = time.Second * 12
+	bloodthirstCritBuffBonus      = 0.2
+	bloodthirstCritBuffDuration   = time.Second * 9
+	bloodbathProcChance           = 0.28
+	bloodbathAP                   = 0.25
+	bloodbathTicks                = 3 // spell 900593: a tick every 2 sec for 6 sec
+	fatalMarkResetChance          = 0.35
+	fatalMarkCostReduction        = 0.33 // spell 900582: ADD_PCT_MODIFIER cost -33% on Mortal Strike
+	fatalMarkCostBuffDuration     = time.Second * 15
+	fatalMarkChance               = 1.0
+	fatalMarkMaxStacks            = 5
+	fatalMarkDuration             = time.Second * 30
+	fatalMarkAP                   = 2.76 // per mark consumed
+)
+
 func init() {
 	core.NewItemEffect(VorraxsRecklessFuryItemID, func(agent core.Agent) {
 		warrior := agent.(WarriorAgent).GetWarrior()
@@ -33,10 +59,20 @@ func init() {
 	})
 }
 
+// familylessCritMultiplier is the crit multiplier of custom spells. They have no family flags, so the
+// talents the server restricts by family don't reach them (./build.ps1 inspect family <id>): not
+// Impale, which critMultiplier includes for the warrior's own abilities.
+func (warrior *Warrior) familylessCritMultiplier() float64 {
+	return warrior.MeleeCritMultiplier(primary(warrior, none), 0)
+}
+
 func (warrior *Warrior) registerRecklessFury() {
 	// The server proc (script item_vorrax_reckless_fury_sudden_death) fires on every melee hit, auto
-	// attacks and specials alike (proc flags 0x14). Assumed to activate Sudden Death on 20% of them
-	// whether or not the warrior has the talent; the talent's own procs still happen on top.
+	// attacks and specials alike (proc flags 0x14). The server documents sd_chance as the combined chance
+	// ("talent + ring top-up"), so the ring rolls only the top-up that brings the talent's independent
+	// roll up to 20% per hit. Without the talent (fury) that is the full 20%.
+	talentChance := []float64{0, 0.03, 0.06, 0.09}[warrior.Talents.SuddenDeath]
+	topUpChance := 1 - (1-recklessFurySuddenDeathChance)/(1-talentChance)
 	if warrior.SuddenDeathAura == nil {
 		// Without the talent there is no minimum rage kept after Execute.
 		warrior.SuddenDeathAura = warrior.RegisterAura(core.Aura{
@@ -55,12 +91,12 @@ func (warrior *Warrior) registerRecklessFury() {
 	undyingFury := warrior.RegisterAura(core.Aura{
 		Label:     "Undying Fury",
 		ActionID:  core.ActionID{SpellID: 200052},
-		Duration:  time.Second * 60,
-		MaxStacks: 99,
+		Duration:  undyingFuryDuration,
+		MaxStacks: undyingFuryMaxStacks,
 		OnStacksChange: func(aura *core.Aura, sim *core.Simulation, oldStacks int32, newStacks int32) {
 			delta := float64(newStacks - oldStacks)
-			warrior.Execute.DamageMultiplierAdditive += 0.05 * delta
-			warrior.Execute.BonusCritRating += 5 * core.CritRatingPerCritChance * delta
+			warrior.Execute.DamageMultiplierAdditive += undyingFuryPerStack * delta
+			warrior.Execute.BonusCritRating += 100 * undyingFuryPerStack * core.CritRatingPerCritChance * delta
 		},
 	})
 
@@ -72,7 +108,7 @@ func (warrior *Warrior) registerRecklessFury() {
 			aura.Activate(sim)
 		},
 		OnSpellHitDealt: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
-			if result.Landed() && spell.ProcMask.Matches(core.ProcMaskMelee) && sim.RandomFloat("Vorrax's Reckless Fury") < 0.2 {
+			if result.Landed() && spell.ProcMask.Matches(core.ProcMaskMelee) && sim.RandomFloat("Vorrax's Reckless Fury") < topUpChance {
 				warrior.SuddenDeathAura.Activate(sim)
 			}
 		},
@@ -86,21 +122,16 @@ func (warrior *Warrior) registerRecklessFury() {
 	})
 }
 
-const (
-	slayersEdgeProcChance = 0.15 // spell 200082 procChance, on melee auto attacks and specials (0x14)
-	slayerDuration        = time.Second * 12
-)
-
 func (warrior *Warrior) registerSlayersEdge() {
 	// Spell 200084: +3% Bloodthirst damage per stack for 12 sec. Every stack has its own duration.
 	slayer := warrior.RegisterAura(core.Aura{
 		Label:     "Slayer",
 		ActionID:  core.ActionID{SpellID: 200084},
 		Duration:  core.NeverExpires,
-		MaxStacks: 99,
+		MaxStacks: slayerMaxStacks,
 		OnStacksChange: func(aura *core.Aura, sim *core.Simulation, oldStacks int32, newStacks int32) {
 			if warrior.Bloodthirst != nil {
-				warrior.Bloodthirst.DamageMultiplierAdditive += 0.03 * float64(newStacks-oldStacks)
+				warrior.Bloodthirst.DamageMultiplierAdditive += slayerPerStack * float64(newStacks-oldStacks)
 			}
 		},
 	})
@@ -128,11 +159,11 @@ func (warrior *Warrior) registerSlayersEdge() {
 		Flags:       core.SpellFlagMeleeMetrics | core.SpellFlagNoOnCastComplete,
 
 		DamageMultiplier: 1,
-		CritMultiplier:   warrior.critMultiplier(none),
+		CritMultiplier:   warrior.familylessCritMultiplier(),
 		ThreatMultiplier: 1,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			result := spell.CalcAndDealDamage(sim, target, spell.MeleeAttackPower(), spell.OutcomeMeleeSpecialHitAndCrit)
+			result := spell.CalcAndDealDamage(sim, target, slayersStrikeAP*spell.MeleeAttackPower(), spell.OutcomeMeleeSpecialHitAndCrit)
 			if result.Landed() {
 				addSlayerStack(sim)
 			}
@@ -183,12 +214,12 @@ func (warrior *Warrior) registerBloodbathBuff() {
 	buff := warrior.RegisterAura(core.Aura{
 		Label:    "Bloodbath",
 		ActionID: core.ActionID{SpellID: 900592},
-		Duration: time.Second * 9,
+		Duration: bloodthirstCritBuffDuration,
 		OnGain: func(aura *core.Aura, sim *core.Simulation) {
-			warrior.Bloodthirst.DamageMultiplierAdditive += 0.2
+			warrior.Bloodthirst.DamageMultiplierAdditive += bloodthirstCritBuffBonus
 		},
 		OnExpire: func(aura *core.Aura, sim *core.Simulation) {
-			warrior.Bloodthirst.DamageMultiplierAdditive -= 0.2
+			warrior.Bloodthirst.DamageMultiplierAdditive -= bloodthirstCritBuffBonus
 		},
 	})
 
@@ -212,11 +243,6 @@ func (warrior *Warrior) registerBloodbathBuff() {
 		},
 	})
 }
-
-const (
-	bloodbathProcChance = 0.28
-	bloodbathTicks      = 3 // spell 900593: a tick every 2 sec for 6 sec
-)
 
 func (warrior *Warrior) registerBloodbathBleed() {
 	if warrior.Bloodthirst == nil {
@@ -243,7 +269,7 @@ func (warrior *Warrior) registerBloodbathBleed() {
 			TickLength:    time.Second * 2,
 
 			OnSnapshot: func(sim *core.Simulation, target *core.Unit, dot *core.Dot, _ bool) {
-				dot.SnapshotBaseDamage = 0.25 * dot.Spell.MeleeAttackPower() / bloodbathTicks
+				dot.SnapshotBaseDamage = bloodbathAP * dot.Spell.MeleeAttackPower() / bloodbathTicks
 				dot.SnapshotAttackerMultiplier = dot.Spell.AttackerDamageMultiplier(dot.Spell.Unit.AttackTables[target.UnitIndex])
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
@@ -275,6 +301,130 @@ func (warrior *Warrior) registerBloodbathBleed() {
 				dot.UpdateExpires(dot.ExpiresAt() + bloodbathTicks*dot.TickLength)
 			} else if sim.RandomFloat("Bloodbath") < bloodbathProcChance {
 				bloodbath.Cast(sim, result.Target)
+			}
+		},
+	})
+}
+
+// Reaver of the Tainted Grove (custom arms set 9329: neck, ring, cloak, weapon).
+var ItemSetReaverOfTheTaintedGrove = core.NewItemSet(core.ItemSet{
+	Name: "Reaver of the Tainted Grove",
+	Bonuses: map[int32]core.ApplyEffect{
+		// Overpower has a 35% chance to reset the cooldown of Mortal Strike and reduce the cost of your next
+		// Mortal Strike by 33%.
+		2: func(agent core.Agent) {
+			warrior := agent.(WarriorAgent).GetWarrior()
+			warrior.Env.RegisterPreFinalizeEffect(warrior.registerFatalMarkReset)
+		},
+		// Mortal Strike applies a Fatal Mark for 30 sec, stacking up to 5. Execute against a marked target
+		// consumes all marks, dealing 276% of your attack power as physical damage per mark.
+		4: func(agent core.Agent) {
+			warrior := agent.(WarriorAgent).GetWarrior()
+			warrior.Env.RegisterPreFinalizeEffect(warrior.registerFatalMarks)
+		},
+	},
+})
+
+func (warrior *Warrior) registerFatalMarkReset() {
+	if warrior.MortalStrike == nil {
+		return
+	}
+
+	// Spell 900582: the next Mortal Strike within 15 sec costs 33% less rage. Assumed used up by that
+	// Mortal Strike's cast, whatever its outcome (a miss still refunds 80% of the reduced cost).
+	costBuff := warrior.RegisterAura(core.Aura{
+		Label:    "Fatal Mark (Mortal Strike cost)",
+		ActionID: core.ActionID{SpellID: 900582},
+		Duration: fatalMarkCostBuffDuration,
+		OnGain: func(aura *core.Aura, sim *core.Simulation) {
+			warrior.MortalStrike.CostMultiplier -= fatalMarkCostReduction
+		},
+		OnExpire: func(aura *core.Aura, sim *core.Simulation) {
+			warrior.MortalStrike.CostMultiplier += fatalMarkCostReduction
+		},
+		OnCastComplete: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell) {
+			if spell == warrior.MortalStrike {
+				aura.Deactivate(sim)
+			}
+		},
+	})
+
+	warrior.RegisterAura(core.Aura{
+		Label:    "Fatal Mark 2pc Trigger",
+		ActionID: core.ActionID{SpellID: 900580},
+		Duration: core.NeverExpires,
+		OnReset: func(aura *core.Aura, sim *core.Simulation) {
+			aura.Activate(sim)
+		},
+		// Assumed to need a landed Overpower (a server script on its hit).
+		OnSpellHitDealt: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
+			if spell == warrior.Overpower && result.Landed() && sim.RandomFloat("Fatal Mark Reset") < fatalMarkResetChance {
+				warrior.MortalStrike.CD.Reset()
+				costBuff.Activate(sim)
+			}
+		},
+	})
+}
+
+func (warrior *Warrior) registerFatalMarks() {
+	if warrior.MortalStrike == nil {
+		return
+	}
+
+	// Spell 900583: the mark on the target, a DUMMY aura (30 sec, 5 stacks).
+	marks := warrior.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
+		return target.GetOrRegisterAura(core.Aura{
+			Label:     "Fatal Mark-" + warrior.Label,
+			ActionID:  core.ActionID{SpellID: 900583},
+			Duration:  fatalMarkDuration,
+			MaxStacks: fatalMarkMaxStacks,
+		})
+	})
+
+	// Spell 900584: physical melee-class damage computed by the server script. It has
+	// SPELL_ATTR3_IGNORE_HIT_RESULT (it can't miss, be dodged or parried) and can crit. No family flags, so
+	// only school-wide modifiers (Two-Handed Weapon Specialization, armor, debuffs) apply.
+	detonation := warrior.RegisterSpell(core.SpellConfig{
+		ActionID:    core.ActionID{SpellID: 900584},
+		SpellSchool: core.SpellSchoolPhysical,
+		ProcMask:    core.ProcMaskEmpty,
+		Flags:       core.SpellFlagMeleeMetrics | core.SpellFlagNoOnCastComplete,
+
+		DamageMultiplier: 1,
+		CritMultiplier:   warrior.familylessCritMultiplier(),
+		ThreatMultiplier: 1,
+
+		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+			mark := marks.Get(target)
+			baseDamage := fatalMarkAP * float64(mark.GetStacks()) * spell.MeleeAttackPower()
+			mark.Deactivate(sim)
+			spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialCritOnly)
+		},
+	})
+
+	warrior.RegisterAura(core.Aura{
+		Label:    "Fatal Mark 4pc Trigger",
+		ActionID: core.ActionID{SpellID: 900581},
+		Duration: core.NeverExpires,
+		OnReset: func(aura *core.Aura, sim *core.Simulation) {
+			aura.Activate(sim)
+		},
+		// Both assumed to need the ability to land.
+		OnSpellHitDealt: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
+			if !result.Landed() {
+				return
+			}
+			switch spell {
+			case warrior.MortalStrike:
+				if sim.RandomFloat("Fatal Mark") < fatalMarkChance {
+					mark := marks.Get(result.Target)
+					mark.Activate(sim)
+					mark.AddStack(sim)
+				}
+			case warrior.Execute:
+				if marks.Get(result.Target).IsActive() {
+					detonation.Cast(sim, result.Target)
+				}
 			}
 		},
 	})

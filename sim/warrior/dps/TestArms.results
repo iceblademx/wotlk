@@ -601,6 +601,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArms-AllItems-ReaveroftheTaintedGrove"
+ value: {
+  dps: 13875.5866
+  tps: 11224.65529
+ }
+}
+dps_results: {
  key: "TestArms-AllItems-ReignoftheDead-47316"
  value: {
   dps: 6396.79762
@@ -631,8 +638,8 @@ dps_results: {
 dps_results: {
  key: "TestArms-AllItems-Rok'thul'sSlayer'sEdge-900126"
  value: {
-  dps: 8930.54727
-  tps: 7197.3156
+  dps: 8813.05118
+  tps: 7103.31873
  }
 }
 dps_results: {
@@ -862,8 +869,8 @@ dps_results: {
 dps_results: {
  key: "TestArms-AllItems-Vorrax'sRecklessFury-900116"
  value: {
-  dps: 9839.02786
-  tps: 8493.11838
+  dps: 9373.08923
+  tps: 8016.85675
  }
 }
 dps_results: {

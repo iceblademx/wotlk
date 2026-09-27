@@ -101,7 +101,8 @@
         "text": "Starfire and Wrath deal 4% increased damage, and have a 15% chance to grant Power of Elune for 12 sec, guaranteeing that Starfire and Wrath fire a Dream Burst.",
         "needsCode": "aura ADD_PCT_MODIFIER (108)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9305,
@@ -154,7 +155,8 @@
         "text": "During Berserk, Mangle, Lacerate and Swipe have a 20% chance to make your next Maul become Ravage, dealing 250% of an empowered Maul.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9307,
@@ -518,7 +520,8 @@
         "text": "Each time you consume a stack of Deathstalker's Mark, reduce the cooldown of Vanish by 30 sec.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9321,
@@ -544,7 +547,8 @@
         "text": "Flawless Form makes your next Eviscerate swing a flurry of attacks, dealing 50% of your attack power as physical damage to the target and 30% to all other nearby enemies. While Blade Flurry is active, damage to non-primary targets is increased by 100%.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9322,
@@ -702,7 +706,8 @@
         "text": "For each 3 Wild Imps summoned, 1 becomes Empowered and casts Empowered Fel Fireball instead, dealing 100% increased damage and also dealing 12.5% of your spell power as Fire damage to all enemies within 10 yards of the impact.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9328,
@@ -728,7 +733,8 @@
         "text": "Chaos Bolt has a 22% chance to summon an Infernal at your target for 8 sec, granting Crashing Chaos while it is active. Crashing Chaos increases Chaos Bolt and Incinerate damage by 35%.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9329,
@@ -754,7 +760,8 @@
         "text": "Mortal Strike applies a Fatal Mark for 30 sec, stacking up to 5. Execute against a marked target consumes all marks, dealing 276% of your attack power as physical damage per mark.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9330,

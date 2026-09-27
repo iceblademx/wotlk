@@ -5,6 +5,8 @@
 //	go run ./tools/cc/inspect set 883            # ItemSet.dbc row and bonus spells
 //	go run ./tools/cc/inspect enchant 3789       # SpellItemEnchantment.dbc row
 //	go run ./tools/cc/inspect search "deathbringer"  # spells/items/sets whose name contains the text
+//	go run ./tools/cc/inspect family 900552 200078   # per spell: family flags, bleed mechanic, and the
+//	                                                 # class talents/buffs/procs that can apply to it
 package main
 
 import (
@@ -20,6 +22,7 @@ import (
 	"github.com/wowsims/wotlk/sim/core/stats"
 	"github.com/wowsims/wotlk/tools/cc"
 	"github.com/wowsims/wotlk/tools/cc/convert"
+	"github.com/wowsims/wotlk/tools/cc/dbc"
 )
 
 var inDir = flag.String("in", "cc_data", "Directory with raw 3.3.5a client/server files")
@@ -28,7 +31,7 @@ func main() {
 	flag.Parse()
 	args := flag.Args()
 	if len(args) < 2 {
-		fmt.Fprintln(os.Stderr, "usage: inspect [-in cc_data] spell|item|set|enchant <id> | search <text>")
+		fmt.Fprintln(os.Stderr, "usage: inspect [-in cc_data] spell|item|set|enchant <id> | family <id>... | search <text>")
 		os.Exit(2)
 	}
 	in, err := cc.Load(*inDir)
@@ -39,6 +42,21 @@ func main() {
 
 	if args[0] == "search" {
 		search(in, strings.ToLower(strings.Join(args[1:], " ")))
+		return
+	}
+	if args[0] == "family" {
+		for _, arg := range args[1:] {
+			id, err := strconv.ParseUint(arg, 10, 32)
+			if err != nil {
+				log.Fatalf("invalid id %q", arg)
+			}
+			if sp := src.Spells.Spells[uint32(id)]; sp != nil {
+				printFamily(src, sp)
+			} else {
+				fmt.Printf("spell %d: not in Spell.dbc\n", id)
+			}
+			fmt.Println()
+		}
 		return
 	}
 	id64, err := strconv.ParseUint(args[1], 10, 32)
@@ -62,6 +80,7 @@ func main() {
 			fmt.Println("server spell_bonus_data:")
 			dump(b)
 		}
+		printFamily(src, sp)
 		if s, ok, why := convert.SpellStats(sp); ok {
 			fmt.Printf("as passive stats: %s\n", statString(s))
 		} else {
@@ -128,6 +147,42 @@ func main() {
 		}
 	default:
 		log.Fatalf("unknown kind %q", args[0])
+	}
+}
+
+// printFamily lists what class code can apply to the spell. Class talents, glyphs, buffs, debuffs and
+// procs select spells by family flags, so this, not the spell's name or school, decides which class
+// modifiers a custom spell gets in the sim.
+func printFamily(src *convert.Source, sp *dbc.Spell) {
+	fmt.Printf("spell %d %s: family %d, flags %#x/%#x/%#x, school %#x, dmgClass %d, bleed %v\n",
+		sp.ID, sp.Name, sp.SpellFamilyName, sp.SpellFamilyFlags[0], sp.SpellFamilyFlags[1], sp.SpellFamilyFlags[2],
+		sp.SchoolMask, sp.DmgClass, sp.IsBleed())
+	mods := dbc.ClassModifiers(src.Spells.Spells, sp)
+	var procs []string
+	for id, p := range src.Server.SpellProcs {
+		if dbc.FamilyMaskMatches(p.SpellFamilyName, p.SpellFamilyMask, sp) {
+			name := ""
+			if other := src.Spells.Spells[id]; other != nil {
+				name = other.Name
+			}
+			procs = append(procs, fmt.Sprintf("  proc %d %s (%s, chance %g)", id, name, p.Source, p.Chance))
+		}
+	}
+	sort.Strings(procs)
+	if len(mods) == 0 && len(procs) == 0 {
+		fmt.Println("class modifiers: none (no talent, glyph, buff, debuff or class proc selects this spell)")
+		return
+	}
+	fmt.Println("class modifiers (the sim must apply exactly these class effects to this spell):")
+	for _, m := range mods {
+		detail := m.Effect
+		if m.AuraName != "" {
+			detail = m.AuraName
+		}
+		fmt.Printf("  %d %s: %s, effect %d %s misc=%d bp=%d\n", m.SpellID, m.Name, m.Kind, m.EffectIndex+1, detail, m.MiscValue, m.BasePoints)
+	}
+	for _, p := range procs {
+		fmt.Println(p)
 	}
 }
 

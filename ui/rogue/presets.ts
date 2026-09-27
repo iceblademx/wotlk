@@ -75,6 +75,15 @@ import SubtletyApl from './apls/subtlety.apl.json'
 export const ROTATION_PRESET_SUBTLETY = PresetUtils.makePresetAPLRotation('Subtlety', SubtletyApl, { talentTree: 2 });
 import SubtletyHemoApl from './apls/subtlety_hemo.apl.json'
 export const ROTATION_PRESET_SUBTLETY_HEMO = PresetUtils.makePresetAPLRotation('Subtlety Hemo', SubtletyHemoApl, { talentTree: 2 });
+// Custom content: rotations for effects that need their own abilities or openers.
+import MutilateDeathstalkerApl from './apls/mutilate_deathstalker.apl.json'
+export const ROTATION_PRESET_MUTILATE_DEATHSTALKER = PresetUtils.makePresetAPLRotation("Rupture Mutilate (Deathstalker's Mark)", MutilateDeathstalkerApl, { talentTree: 0 });
+import MutilateVenomdrinkerApl from './apls/mutilate_venomdrinker.apl.json'
+export const ROTATION_PRESET_MUTILATE_VENOMDRINKER = PresetUtils.makePresetAPLRotation('Rupture Mutilate (Venomdrinker)', MutilateVenomdrinkerApl, { talentTree: 0 });
+import CombatBetweenTheEyesApl from './apls/combat_between_the_eyes.apl.json'
+export const ROTATION_PRESET_COMBAT_BETWEEN_THE_EYES = PresetUtils.makePresetAPLRotation('Combat (Between the Eyes)', CombatBetweenTheEyesApl, { talentTree: 1 });
+import CombatEviscerateApl from './apls/combat_eviscerate.apl.json'
+export const ROTATION_PRESET_COMBAT_EVISCERATE = PresetUtils.makePresetAPLRotation('Combat (Eviscerate)', CombatEviscerateApl, { talentTree: 1 });
 
 // Default talents. Uses the wowhead calculator format, make the talents on
 // https://wowhead.com/wotlk/talent-calc and copy the numbers in the url.

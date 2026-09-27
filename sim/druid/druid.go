@@ -98,6 +98,7 @@ type Druid struct {
 	hasRavagingClaw   bool
 	BloodseekerVines  *DruidSpell
 	BloodseekerThorns *DruidSpell
+	cc                ccItems
 
 	ExtendingMoonfireStacks int
 	LunarICD                core.Cooldown

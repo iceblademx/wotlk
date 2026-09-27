@@ -1,0 +1,6712 @@
+{
+  "legendaries": [
+    {
+      "classes": [
+        "Death Knight"
+      ],
+      "entry": 900112,
+      "item_level": 277,
+      "mechanics": [
+        "Each rune-spending ability has a 30% chance to refund one rune (the first rune on cooldown is made ready)."
+      ],
+      "name": "Vorrax's Runic Loop",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200032,
+          "name": "Vorrax's Runic Loop",
+          "tooltip": "Your rune-spending abilities have a 30% chance to refund a rune."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "All",
+      "spells": [
+        {
+          "id": 200032,
+          "name": "Vorrax's Runic Loop",
+          "tooltip": "Your rune-spending abilities have a 30% chance to refund a rune.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150,
+        "strength": 134
+      },
+      "tuning": {
+        "refund_chance": {
+          "note": "",
+          "unit": "%",
+          "value": 30
+        }
+      }
+    },
+    {
+      "classes": [
+        "Death Knight"
+      ],
+      "entry": 900120,
+      "item_level": 277,
+      "mechanics": [
+        "Gain a Cold Heart stack every 2 sec (max 20). Chains of Ice consumes them: +60% of AP as Frost damage per stack.",
+        "At 20 stacks Chains of Ice also stuns the target for 4 sec."
+      ],
+      "name": "Rok'thul's Frozen Heart",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200062,
+          "name": "Rok'thul's Frozen Heart",
+          "tooltip": "Every 2 sec, gain a stack of Cold Heart (up to 20), causing your next Chains of Ice to deal an additional 60% of Attack Power as Frost damage per stack. If Chains of Ice is used at 20 stacks, the target is also stunned for 4 sec."
+        },
+        {
+          "id": 200063,
+          "name": "Cold Heart",
+          "tooltip": ""
+        },
+        {
+          "id": 200064,
+          "name": "Cold Heart Detonation",
+          "tooltip": ""
+        },
+        {
+          "id": 200065,
+          "name": "Cold Heart's Grip",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Frost",
+      "spells": [
+        {
+          "id": 200062,
+          "name": "Rok'thul's Frozen Heart",
+          "tooltip": "Every 2 sec, gain a stack of Cold Heart (up to 20), causing your next Chains of Ice to deal an additional 60% of Attack Power as Frost damage per stack. If Chains of Ice is used at 20 stacks, the target is also stunned for 4 sec.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150,
+        "strength": 134
+      },
+      "tuning": {
+        "ap_pct_per_stack": {
+          "note": "",
+          "unit": "% of AP",
+          "value": 60
+        },
+        "max_stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 20
+        },
+        "stun": {
+          "note": "",
+          "unit": "sec",
+          "value": 4
+        },
+        "tick": {
+          "note": "",
+          "unit": "sec",
+          "value": 2
+        }
+      }
+    },
+    {
+      "classes": [
+        "Death Knight"
+      ],
+      "entry": 900132,
+      "item_level": 277,
+      "mechanics": [
+        "Raise Dead ghoul becomes an Empowered Ghoul (Patchwerk form): +31% physical damage (design note says 30; the spell data applies 31).",
+        "Army of the Dead ghouls become an Empowered Horde (+31% damage) and two Abomination companions join for 40 sec.",
+        "Summon Gargoyle brings extra Ebon Gargoyles (40 sec).",
+        "Raise Dead also summons a Coldwraith that casts Frost Bolt (50% slow) at your target every 3 sec."
+      ],
+      "name": "Rok'thul's Command",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200098,
+          "name": "Rok'thul's Command",
+          "tooltip": "Infuse part of your essence into the life force of your summoned minions, greatly empowering them."
+        },
+        {
+          "id": 200099,
+          "name": "Empowered Ghoul",
+          "tooltip": ""
+        },
+        {
+          "id": 200119,
+          "name": "Empowered Horde",
+          "tooltip": ""
+        },
+        {
+          "id": 200141,
+          "name": "Frost Bolt (Coldwraith)",
+          "tooltip": ""
+        },
+        {
+          "id": 200142,
+          "name": "Frost Bolt (Coldwraith)",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Unholy",
+      "spells": [
+        {
+          "id": 200098,
+          "name": "Rok'thul's Command",
+          "tooltip": "Infuse part of your essence into the life force of your summoned minions, greatly empowering them.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150,
+        "strength": 134
+      },
+      "tuning": {
+        "abomination_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 40
+        },
+        "abominations": {
+          "note": "",
+          "unit": "companions",
+          "value": 2
+        },
+        "coldwraith_bolt_interval": {
+          "note": "",
+          "unit": "sec",
+          "value": 3
+        },
+        "extra_gargoyles": {
+          "config": {
+            "param": "extra_gargoyles",
+            "set_key": "leg_command",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "gargoyles",
+          "value": 1
+        },
+        "gargoyle_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 40
+        },
+        "minion_damage_pct": {
+          "note": "effective in-game value",
+          "unit": "%",
+          "value": 31
+        }
+      }
+    },
+    {
+      "classes": [
+        "Druid"
+      ],
+      "entry": 900108,
+      "item_level": 277,
+      "mechanics": [
+        "Casting Starfall also channels Fury of the Goddess for 3 sec: 12 casts on your target every 0.25 sec - 1 Moonfire, then 11 random Starfire/Wrath (50/50), max rank, at normal damage."
+      ],
+      "name": "Skareth's Falling Star",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200021,
+          "name": "Skareth's Falling Star",
+          "tooltip": "Casting Starfall causes you to channel Fury of the Goddess for 3 sec, unleashing a rapid volley of spells at your current target."
+        },
+        {
+          "id": 200056,
+          "name": "Fury of the Goddess",
+          "tooltip": "Casting Starfall causes you to channel Fury of the Goddess for 3 sec, unleashing a rapid volley of spells at your current target."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Balance",
+      "spells": [
+        {
+          "id": 200021,
+          "name": "Skareth's Falling Star",
+          "tooltip": "Casting Starfall causes you to channel Fury of the Goddess for 3 sec, unleashing a rapid volley of spells at your current target.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "casts": {
+          "note": "",
+          "unit": "casts",
+          "value": 12
+        },
+        "channel": {
+          "note": "",
+          "unit": "sec",
+          "value": 3
+        },
+        "starfire_chance": {
+          "note": "",
+          "unit": "%",
+          "value": 50
+        }
+      }
+    },
+    {
+      "classes": [
+        "Druid"
+      ],
+      "entry": 900115,
+      "item_level": 277,
+      "mechanics": [
+        "Ferocious Bite has a 20% chance per combo point spent to trigger Omen of Clarity (Clearcasting).",
+        "Shred or Mangle that consumes Clearcasting deals +100% damage."
+      ],
+      "name": "Morgrath's Ravaging Claw",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200049,
+          "name": "Morgrath's Ravaging Claw",
+          "tooltip": "Ferocious Bite has a 20% chance per combo point spent to trigger Omen of Clarity. Shred or Mangle casts that consume Omen of Clarity deal 100% additional damage."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Feral (cat)",
+      "spells": [
+        {
+          "id": 200049,
+          "name": "Morgrath's Ravaging Claw",
+          "tooltip": "Ferocious Bite has a 20% chance per combo point spent to trigger Omen of Clarity. Shred or Mangle casts that consume Omen of Clarity deal 100% additional damage.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "chance_per_cp": {
+          "note": "",
+          "unit": "%",
+          "value": 20
+        },
+        "shred_mangle_bonus_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 100
+        }
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "entry": 900107,
+      "item_level": 277,
+      "mechanics": [
+        "Casting Misdirection grants a one-charge buff (10 sec): the next Kill Shot ignores the target health requirement and deals +300% damage."
+      ],
+      "name": "Skareth's Killing Eye",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200019,
+          "name": "Skareth's Killing Eye",
+          "tooltip": "Casting Misdirection allows your next Kill Shot to be cast regardless of target health, dealing 300% additional damage."
+        },
+        {
+          "id": 200020,
+          "name": "Skareth's Killing Eye",
+          "tooltip": "Your next Kill Shot can be used regardless of the target's health, dealing 300% additional damage."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Marksmanship",
+      "spells": [
+        {
+          "id": 200019,
+          "name": "Skareth's Killing Eye",
+          "tooltip": "Casting Misdirection allows your next Kill Shot to be cast regardless of target health, dealing 300% additional damage.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 10
+        },
+        "kill_shot_bonus_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 300
+        }
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "entry": 900133,
+      "item_level": 277,
+      "mechanics": [
+        "With the Beast Mastery talent tree: your pet inherits 100% of your armor penetration and 30% of your crit and haste (as percentages, updated live).",
+        "Call of the Wild also summons 4 spirit beasts at your target for 20 sec; each casts Spirit Cleave every ~2 sec for 10% of your AP."
+      ],
+      "name": "Vorrax's Wild Hunt",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200143,
+          "name": "Vorrax's Wild Hunt",
+          "tooltip": "While you have the Beast Mastery talent, your pet inherits 100% of your armor penetration and 30% of your critical strike and haste ratings. Call of the Wild also unleashes a stampede of spirit beasts upon your target for 20 sec."
+        },
+        {
+          "id": 200144,
+          "name": "Bonded Instincts",
+          "tooltip": ""
+        },
+        {
+          "id": 200145,
+          "name": "Spirit Cleave",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Beast Mastery",
+      "spells": [
+        {
+          "id": 200143,
+          "name": "Vorrax's Wild Hunt",
+          "tooltip": "While you have the Beast Mastery talent, your pet inherits 100% of your armor penetration and 30% of your critical strike and haste ratings. Call of the Wild also unleashes a stampede of spirit beasts upon your target for 20 sec.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "cleave_ap_pct": {
+          "note": "",
+          "unit": "% of AP per beast hit",
+          "value": 10
+        },
+        "cleave_interval": {
+          "note": "",
+          "unit": "sec",
+          "value": 2
+        },
+        "pet_arp_share_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 100
+        },
+        "pet_crit_share_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 30
+        },
+        "pet_haste_share_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 30
+        },
+        "stampede_beasts": {
+          "note": "",
+          "unit": "beasts",
+          "value": 4
+        },
+        "stampede_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 20
+        }
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "entry": 900134,
+      "item_level": 277,
+      "mechanics": [
+        "Kill Command summons a legendary beast for 30 sec alongside your pet, cycling Wyvern -> Bear -> Boar on successive casts, each with a 30 sec blessing.",
+        "Wyvern: Skyhunter's Cry (+51% Steady Shot damage - designed as 50, the spell data applies 51) and Poison Bolt every 2.5 sec for 15% AP.",
+        "Bear: Might of the Elder (your pet's Bite/Claw/Smack deal extra damage equal to 60% of your AP) and Heavy Cleave every 6 sec for 35% AP.",
+        "Boar: Relentless Pursuit and a Gouge bleed, 8% AP per tick, stacking to 5 (15 sec)."
+      ],
+      "name": "Pack Leader's Insignia",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200146,
+          "name": "Pack Leader's Insignia",
+          "tooltip": "Kill Command calls upon a legendary beast to aid your hunt. The Wyvern, Bear and Boar answer in succession, each granting their blessing for 30 sec."
+        },
+        {
+          "id": 200147,
+          "name": "Skyhunter's Cry",
+          "tooltip": ""
+        },
+        {
+          "id": 200148,
+          "name": "Poison Bolt",
+          "tooltip": ""
+        },
+        {
+          "id": 200149,
+          "name": "Might of the Elder",
+          "tooltip": ""
+        },
+        {
+          "id": 200150,
+          "name": "Might of the Elder",
+          "tooltip": ""
+        },
+        {
+          "id": 200151,
+          "name": "Heavy Cleave",
+          "tooltip": ""
+        },
+        {
+          "id": 200152,
+          "name": "Relentless Pursuit",
+          "tooltip": ""
+        },
+        {
+          "id": 200153,
+          "name": "Gouge",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Beast Mastery",
+      "spells": [
+        {
+          "id": 200146,
+          "name": "Pack Leader's Insignia",
+          "tooltip": "Kill Command calls upon a legendary beast to aid your hunt. The Wyvern, Bear and Boar answer in succession, each granting their blessing for 30 sec.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "beast_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 30
+        },
+        "elder_pet_ap_pct": {
+          "note": "",
+          "unit": "% of AP per pet special",
+          "value": 60
+        },
+        "gouge_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 15
+        },
+        "gouge_max_stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 5
+        },
+        "gouge_tick_ap_pct": {
+          "note": "",
+          "unit": "% of AP per tick per stack",
+          "value": 8
+        },
+        "heavy_cleave_ap_pct": {
+          "note": "",
+          "unit": "% of AP",
+          "value": 35
+        },
+        "heavy_cleave_interval": {
+          "note": "",
+          "unit": "sec",
+          "value": 6
+        },
+        "poison_bolt_ap_pct": {
+          "note": "",
+          "unit": "% of AP",
+          "value": 15
+        },
+        "poison_bolt_interval": {
+          "note": "",
+          "unit": "sec",
+          "value": 2.5
+        },
+        "steady_shot_pct": {
+          "note": "effective in-game value (design note says 50)",
+          "unit": "%",
+          "value": 51
+        }
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "entry": 900135,
+      "item_level": 277,
+      "mechanics": [
+        "Aimed Shot deals extra Physical damage (added before crit/armor) and its cooldown grows by 5 sec per Aimed Shot hit (base 10 -> 15).",
+        "Every other Shot you cast takes 2 sec off the Aimed Shot cooldown."
+      ],
+      "name": "Deadeye's Oath",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200154,
+          "name": "Deadeye's Oath",
+          "tooltip": "Your Aimed Shot deals additional Physical damage equal to 650% of your ranged attack power, but its base cooldown is increased to 15 sec. Casting another Shot reduces the cooldown by 2 sec."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Marksmanship",
+      "spells": [
+        {
+          "id": 200154,
+          "name": "Deadeye's Oath",
+          "tooltip": "Your Aimed Shot deals additional Physical damage equal to 650% of your ranged attack power, but its base cooldown is increased to 15 sec. Casting another Shot reduces the cooldown by 2 sec.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "ap_pct": {
+          "config": {
+            "param": "ap_pct",
+            "set_key": "leg_deadeye",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "% of RAP",
+          "value": 650
+        },
+        "cd_increase": {
+          "config": {
+            "param": "cd_increase_ms",
+            "set_key": "leg_deadeye",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "ms",
+          "value": 5000
+        },
+        "cd_reduction": {
+          "config": {
+            "param": "cd_reduction_ms",
+            "set_key": "leg_deadeye",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "ms",
+          "value": 2000
+        }
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "entry": 900136,
+      "item_level": 277,
+      "mechanics": [
+        "Silencing Shot applies Withering Arrow: 8 sec Shadow DoT, 8 ticks; tick n deals 12% AP x (1 + 0.15 x (n-1)) (ramping).",
+        "Chimera Shot consumes the arrow: all remaining ticks are dealt at once, plus a Shadow eruption on enemies within 8 yd for 50% of that burst."
+      ],
+      "name": "Loop of the Banshee",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200156,
+          "name": "Loop of the Banshee",
+          "tooltip": "Your Silencing Shot fires a Withering Arrow at the target, dealing Shadow damage over 8 sec. Each periodic tick strengthens the arrow's eruption. Your Chimera Shot consumes the arrow, immediately dealing its remaining periodic damage to the target and unleashing a Shadow eruption that strikes all enemies within 8 yards."
+        },
+        {
+          "id": 200157,
+          "name": "Withering Arrow",
+          "tooltip": ""
+        },
+        {
+          "id": 200158,
+          "name": "Withering Arrow",
+          "tooltip": ""
+        },
+        {
+          "id": 200159,
+          "name": "Withering Arrow",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Marksmanship",
+      "spells": [
+        {
+          "id": 200156,
+          "name": "Loop of the Banshee",
+          "tooltip": "Your Silencing Shot fires a Withering Arrow at the target, dealing Shadow damage over 8 sec. Each periodic tick strengthens the arrow's eruption. Your Chimera Shot consumes the arrow, immediately dealing its remaining periodic damage to the target and unleashing a Shadow eruption that strikes all enemies within 8 yards.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "base_tick_ap_pct": {
+          "note": "",
+          "unit": "% of RAP",
+          "value": 12
+        },
+        "eruption_radius": {
+          "note": "",
+          "unit": "yd",
+          "value": 8
+        },
+        "eruption_share": {
+          "note": "",
+          "unit": "% of burst",
+          "value": 50
+        },
+        "ramp_per_tick": {
+          "note": "",
+          "unit": "%",
+          "value": 15
+        },
+        "ticks": {
+          "note": "",
+          "unit": "ticks",
+          "value": 8
+        }
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "entry": 900137,
+      "item_level": 277,
+      "mechanics": [
+        "Grants the Wildfire Bomb ability (Survival-style bomb; see its tooltip in-game). Hit damage = its effect value % of ranged AP."
+      ],
+      "name": "Bombardier's Pin",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200160,
+          "name": "Bombardier's Pin",
+          "tooltip": "Grants the Wildfire Bomb ability."
+        },
+        {
+          "id": 200161,
+          "name": "Wildfire Bomb",
+          "tooltip": "Hurl a bomb at your target, dealing Fire damage equal to 80% of your ranged attack power. The explosion also grants Lock and Load."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Survival",
+      "spells": [
+        {
+          "id": 200160,
+          "name": "Bombardier's Pin",
+          "tooltip": "Grants the Wildfire Bomb ability.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "bomb_ap_pct": {
+          "note": "",
+          "unit": "% of RAP (Spell.dbc 200161 effect base)",
+          "value": 81
+        }
+      }
+    },
+    {
+      "classes": [
+        "Hunter"
+      ],
+      "entry": 900138,
+      "item_level": 277,
+      "mechanics": [
+        "Black Arrow summons a Dark Minion for 10 sec. When it fades it strikes your target for 90% of all damage you dealt while it was active, as Shadow."
+      ],
+      "name": "Signet of Dark Deeds",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200162,
+          "name": "Signet of Dark Deeds",
+          "tooltip": "Your Black Arrow summons a Dark Minion for 10 sec. When it fades, it strikes your target for 90% of all damage you dealt while it was active, as Shadow damage."
+        },
+        {
+          "id": 200163,
+          "name": "Dark Echo",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Survival",
+      "spells": [
+        {
+          "id": 200162,
+          "name": "Signet of Dark Deeds",
+          "tooltip": "Your Black Arrow summons a Dark Minion for 10 sec. When it fades, it strikes your target for 90% of all damage you dealt while it was active, as Shadow damage.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 10
+        },
+        "echo_pct": {
+          "note": "",
+          "unit": "% of damage dealt",
+          "value": 90
+        }
+      }
+    },
+    {
+      "classes": [
+        "Mage"
+      ],
+      "entry": 900105,
+      "item_level": 277,
+      "mechanics": [
+        "Each Fireball cast grants Blazing Ascension: +3% spell haste, +3% spell crit chance, +3% Fire damage per stack.",
+        "Stacks to 5, 15 sec duration, refreshed by every Fireball cast."
+      ],
+      "name": "Skareth's Blazing Loop",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200015,
+          "name": "Skareth's Blazing Loop",
+          "tooltip": "Fireball increases your Haste, Critical Strike, and Fire damage by 3%. Stacks up to 5 times."
+        },
+        {
+          "id": 200080,
+          "name": "Blazing Ascension",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Fire",
+      "spells": [
+        {
+          "id": 200015,
+          "name": "Skareth's Blazing Loop",
+          "tooltip": "Fireball increases your Haste, Critical Strike, and Fire damage by 3%. Stacks up to 5 times.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 15
+        },
+        "max_stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 5
+        },
+        "per_stack_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 3
+        }
+      }
+    },
+    {
+      "classes": [
+        "Mage"
+      ],
+      "entry": 900121,
+      "item_level": 277,
+      "mechanics": [
+        "Evocation cast/channel time -50% (-4 sec) and no cooldown (-240 sec).",
+        "Completing a full Evocation channel grants Arcane Empowerment: +20% Arcane spell damage for 60 sec."
+      ],
+      "name": "Morgrath's Boundless Well",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200066,
+          "name": "Morgrath's Boundless Well",
+          "tooltip": "Evocation's cast time is reduced by 50% and no longer has a cooldown. Completing a full channel of Evocation increases your Arcane spell damage by 20% for 60 sec."
+        },
+        {
+          "id": 200067,
+          "name": "Arcane Empowerment",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Arcane",
+      "spells": [
+        {
+          "id": 200066,
+          "name": "Morgrath's Boundless Well",
+          "tooltip": "Evocation's cast time is reduced by 50% and no longer has a cooldown. Completing a full channel of Evocation increases your Arcane spell damage by 20% for 60 sec.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "arcane_dmg_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 20
+        },
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 60
+        },
+        "evocation_time_pct": {
+          "note": "",
+          "unit": "%",
+          "value": -50
+        }
+      }
+    },
+    {
+      "classes": [
+        "Mage"
+      ],
+      "entry": 900124,
+      "item_level": 277,
+      "mechanics": [
+        "Consuming Hot Streak (the instant Pyroblast) arms Molten Verdict Ready for 20 sec.",
+        "The next fully hard-cast Pyroblast within that window deals +200% damage (one charge). The Hot Streak Pyroblast itself is not empowered."
+      ],
+      "name": "Rok'thul's Molten Verdict",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200073,
+          "name": "Rok'thul's Molten Verdict",
+          "tooltip": "Consuming Hot Streak causes your next fully-cast Pyroblast within 20 sec to deal 200% additional damage. Does not apply to the instant Pyroblast Hot Streak itself grants."
+        },
+        {
+          "id": 200074,
+          "name": "Molten Verdict Ready",
+          "tooltip": ""
+        },
+        {
+          "id": 200075,
+          "name": "Molten Verdict",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Fire",
+      "spells": [
+        {
+          "id": 200073,
+          "name": "Rok'thul's Molten Verdict",
+          "tooltip": "Consuming Hot Streak causes your next fully-cast Pyroblast within 20 sec to deal 200% additional damage. Does not apply to the instant Pyroblast Hot Streak itself grants.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "pyro_bonus_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 200
+        },
+        "window": {
+          "note": "",
+          "unit": "sec",
+          "value": 20
+        }
+      }
+    },
+    {
+      "classes": [
+        "Mage"
+      ],
+      "entry": 900155,
+      "item_level": 277,
+      "mechanics": [
+        "While in combat, gain an Icicle every 4 sec.",
+        "At the configured number of Icicles, all are consumed and a Glacial Spike hits the current target for Frost damage (always hits)."
+      ],
+      "name": "Vorrax's Glacial Spire",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200210,
+          "name": "Vorrax's Glacial Spire",
+          "tooltip": "While in combat, frost crystallizes around you, generating an Icicle every 4 sec. Upon generating 5 Icicles, fire a massive spike of ice that impales your target, dealing Frost damage."
+        },
+        {
+          "id": 200211,
+          "name": "Icicle",
+          "tooltip": ""
+        },
+        {
+          "id": 200212,
+          "name": "Glacial Spike",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Frost",
+      "spells": [
+        {
+          "id": 200210,
+          "name": "Vorrax's Glacial Spire",
+          "tooltip": "While in combat, frost crystallizes around you, generating an Icicle every 4 sec. Upon generating 5 Icicles, fire a massive spike of ice that impales your target, dealing Frost damage.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "icicle_interval": {
+          "note": "",
+          "unit": "sec",
+          "value": 4
+        },
+        "icicles": {
+          "config": {
+            "param": "stacks",
+            "set_key": "leg_glacial",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "stacks",
+          "value": 5
+        },
+        "spike_sp_pct": {
+          "config": {
+            "param": "sp_pct",
+            "set_key": "leg_glacial",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "% of Frost SP",
+          "value": 1300
+        }
+      }
+    },
+    {
+      "classes": [
+        "Paladin"
+      ],
+      "entry": 900109,
+      "item_level": 277,
+      "mechanics": [
+        "Gain a Patience stack every 2 sec, in or out of combat. At 10 stacks they convert into Righteous Vengeance: next Hammer of the Righteous +500% damage (15 sec, one charge).",
+        "While Righteous Vengeance is unspent no new stacks build."
+      ],
+      "name": "Vorrax's Seal",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200024,
+          "name": "Vorrax's Seal",
+          "tooltip": "Grants a stack of Patience every 2 sec, up to 10. At 10 stacks, gain Righteous Vengeance, increasing the damage of your next Hammer of the Righteous by 500%."
+        },
+        {
+          "id": 200025,
+          "name": "Patience",
+          "tooltip": "Stacks up to 10 times, one every 2 sec. At 10 stacks, you gain Righteous Vengeance."
+        },
+        {
+          "id": 200026,
+          "name": "Righteous Vengeance",
+          "tooltip": "Increases the damage of your next Hammer of the Righteous by 500%."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Protection",
+      "spells": [
+        {
+          "id": 200024,
+          "name": "Vorrax's Seal",
+          "tooltip": "Grants a stack of Patience every 2 sec, up to 10. At 10 stacks, gain Righteous Vengeance, increasing the damage of your next Hammer of the Righteous by 500%.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "armor": 450,
+        "defense_rating": 70,
+        "dodge_rating": 55,
+        "hit_rating": 55,
+        "stamina": 150,
+        "strength": 134
+      },
+      "tuning": {
+        "buff_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 15
+        },
+        "hotr_bonus_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 500
+        },
+        "stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 10
+        },
+        "tick": {
+          "note": "",
+          "unit": "sec",
+          "value": 2
+        }
+      }
+    },
+    {
+      "classes": [
+        "Paladin"
+      ],
+      "entry": 900114,
+      "item_level": 277,
+      "mechanics": [
+        "Crusader Strike and Exorcism grant Enlightenment: +10% Holy damage per stack, up to 3 (15 sec).",
+        "Divine Storm consumes Enlightenment and deals +200% damage per stack consumed."
+      ],
+      "name": "Morgrath's Wrathful Verdict",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200036,
+          "name": "Morgrath's Wrathful Verdict",
+          "tooltip": "Crusader Strike and Exorcism grant Enlightenment, increasing all Holy damage you deal by 10%, stacking up to 3 times. Casting Divine Storm consumes Enlightenment, dealing 200% increased damage per Enlightenment you had."
+        },
+        {
+          "id": 200037,
+          "name": "Enlightenment",
+          "tooltip": "Increases all Holy damage you deal by 10%. Stacks up to 3 times."
+        },
+        {
+          "id": 200038,
+          "name": "Wrathful Verdict",
+          "tooltip": "Increases the damage of your next Divine Storm."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Retribution",
+      "spells": [
+        {
+          "id": 200036,
+          "name": "Morgrath's Wrathful Verdict",
+          "tooltip": "Crusader Strike and Exorcism grant Enlightenment, increasing all Holy damage you deal by 10%, stacking up to 3 times. Casting Divine Storm consumes Enlightenment, dealing 200% increased damage per Enlightenment you had.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150,
+        "strength": 134
+      },
+      "tuning": {
+        "divine_storm_pct_per_stack": {
+          "note": "",
+          "unit": "%",
+          "value": 200
+        },
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 15
+        },
+        "holy_pct_per_stack": {
+          "note": "",
+          "unit": "%",
+          "value": 10
+        },
+        "max_stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 3
+        }
+      }
+    },
+    {
+      "classes": [
+        "Priest"
+      ],
+      "entry": 900110,
+      "item_level": 277,
+      "mechanics": [
+        "Mind Flay grants Empowered Mind Blast: +33% damage and +33% crit chance on the next Mind Blast, stacking 3 times.",
+        "Mind Blast grants Empowered Mind Flay: +100% damage and +100% crit chance on the next Mind Flay channel (whole channel, one charge, 15 sec)."
+      ],
+      "name": "Skareth's Fractured Mind",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200027,
+          "name": "Skareth's Fractured Mind",
+          "tooltip": "Casting Mind Flay increases the damage and Critical Strike Chance of your next Mind Blast by 33%. This stacks 3 times. Casting Mind Blast increases the damage and Critical Strike Chance of your next Mind Flay by 100%."
+        },
+        {
+          "id": 200028,
+          "name": "Skareth's Fractured Mind",
+          "tooltip": ""
+        },
+        {
+          "id": 200029,
+          "name": "Empowered Mind Blast",
+          "tooltip": "Increases the damage and Critical Strike Chance of your next Mind Blast."
+        },
+        {
+          "id": 200030,
+          "name": "Empowered Mind Flay",
+          "tooltip": "Increases the damage and Critical Strike Chance of your next Mind Flay."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Shadow",
+      "spells": [
+        {
+          "id": 200027,
+          "name": "Skareth's Fractured Mind",
+          "tooltip": "Casting Mind Flay increases the damage and Critical Strike Chance of your next Mind Blast by 33%. This stacks 3 times. Casting Mind Blast increases the damage and Critical Strike Chance of your next Mind Flay by 100%.",
+          "trigger": "on equip"
+        },
+        {
+          "id": 200028,
+          "name": "Skareth's Fractured Mind",
+          "tooltip": "",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "max_stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 3
+        },
+        "mind_blast_pct_per_stack": {
+          "note": "",
+          "unit": "% dmg and crit",
+          "value": 33
+        },
+        "mind_flay_pct": {
+          "note": "",
+          "unit": "% dmg and crit",
+          "value": 100
+        }
+      }
+    },
+    {
+      "classes": [
+        "Priest"
+      ],
+      "entry": 900117,
+      "item_level": 277,
+      "mechanics": [
+        "Each Prayer of Mending heal also casts Power Word: Shield (max rank, your normal shield amount) on that target, ignoring Weakened Soul."
+      ],
+      "name": "Vaelith's Radiant Infusion",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200053,
+          "name": "Vaelith's Radiant Infusion",
+          "tooltip": "Prayer of Mending also applies Power Word: Shield each time it heals a target. This may be applied regardless of Weakened Soul."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Discipline",
+      "spells": [
+        {
+          "id": 200053,
+          "name": "Vaelith's Radiant Infusion",
+          "tooltip": "Prayer of Mending also applies Power Word: Shield each time it heals a target. This may be applied regardless of Weakened Soul.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {}
+    },
+    {
+      "classes": [
+        "Priest"
+      ],
+      "entry": 900122,
+      "item_level": 277,
+      "mechanics": [
+        "Smite or Holy Fire heals you and every party/raid member within 40 yd who has Power Word: Shield active.",
+        "Smite heal: base 944 + 40.285% SP. Holy Fire heal: base 1227 + 52.37% SP (50% / 65% of Flash Heal)."
+      ],
+      "name": "Rok'thul's Sacred Flame",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200069,
+          "name": "Rok'thul's Sacred Flame",
+          "tooltip": "Casting Holy Fire or Smite heals all targets with Power Word: Shield active."
+        },
+        {
+          "id": 200070,
+          "name": "Sacred Flame (Smite)",
+          "tooltip": ""
+        },
+        {
+          "id": 200071,
+          "name": "Sacred Flame (Holy Fire)",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Discipline",
+      "spells": [
+        {
+          "id": 200069,
+          "name": "Rok'thul's Sacred Flame",
+          "tooltip": "Casting Holy Fire or Smite heals all targets with Power Word: Shield active.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "holy_fire_base": {
+          "note": "",
+          "unit": "healing",
+          "value": 1227
+        },
+        "holy_fire_sp_pct": {
+          "note": "",
+          "unit": "% of SP",
+          "value": 52.3705
+        },
+        "range": {
+          "note": "",
+          "unit": "yd",
+          "value": 40
+        },
+        "smite_base": {
+          "note": "",
+          "unit": "healing",
+          "value": 944
+        },
+        "smite_sp_pct": {
+          "note": "",
+          "unit": "% of SP",
+          "value": 40.285
+        }
+      }
+    },
+    {
+      "classes": [
+        "Priest"
+      ],
+      "entry": 900123,
+      "item_level": 277,
+      "mechanics": [
+        "Mind Blast extends the remaining duration (and max duration) of your Vampiric Touch and Devouring Plague on the target by Mind Blast's own cooldown."
+      ],
+      "name": "Rok'thul's Festering Mind",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200072,
+          "name": "Rok'thul's Festering Mind",
+          "tooltip": "Mind Blast extends the remaining duration of Vampiric Touch and Devouring Plague by an amount equal to its own cooldown."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Shadow",
+      "spells": [
+        {
+          "id": 200072,
+          "name": "Rok'thul's Festering Mind",
+          "tooltip": "Mind Blast extends the remaining duration of Vampiric Touch and Devouring Plague by an amount equal to its own cooldown.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {}
+    },
+    {
+      "classes": [
+        "Rogue"
+      ],
+      "entry": 900119,
+      "item_level": 277,
+      "mechanics": [
+        "Each finisher that consumes 4+ combo points flips a coin (50/50).",
+        "Heads: energy regen +30% for 15 sec, +10% more per consecutive Heads (20% + 10% x streak); ends the Tails streak.",
+        "Tails: Arcane damage to the target = 168% of AP x (1 + 10% x (streak - 1)); ends Heads."
+      ],
+      "name": "Vorrax's Fatebound Coin",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200057,
+          "name": "Vorrax's Fatebound Coin",
+          "tooltip": "Each finishing move that consumes 4 or more combo points flips a Fatebound Coin. Heads increases your Energy regeneration by 30% for 15 sec or until you flip Tails, gaining an additional 10% for each consecutive Heads flip. Tails deals Arcane damage to your target, dealing additional damage for each consecutive Tails flip."
+        },
+        {
+          "id": 200058,
+          "name": "Coin Flip: Heads",
+          "tooltip": "Increases your Energy regeneration, growing with each consecutive Heads flip."
+        },
+        {
+          "id": 200059,
+          "name": "Coin Flip: Tails",
+          "tooltip": "Deals Arcane damage to your target, growing with each consecutive Tails flip."
+        },
+        {
+          "id": 200060,
+          "name": "Coin Flip: Tails Streak",
+          "tooltip": "Increases the damage of your next Tails flip, growing with each consecutive Tails flip."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "All",
+      "spells": [
+        {
+          "id": 200057,
+          "name": "Vorrax's Fatebound Coin",
+          "tooltip": "Each finishing move that consumes 4 or more combo points flips a Fatebound Coin. Heads increases your Energy regeneration by 30% for 15 sec or until you flip Tails, gaining an additional 10% for each consecutive Heads flip. Tails deals Arcane damage to your target, dealing additional damage for each consecutive Tails flip.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "heads_base_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 20
+        },
+        "heads_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 15
+        },
+        "heads_per_stack_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 10
+        },
+        "min_cp": {
+          "note": "",
+          "unit": "combo points",
+          "value": 4
+        },
+        "tails_ap_pct": {
+          "note": "",
+          "unit": "% of AP",
+          "value": 168
+        },
+        "tails_per_streak_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 10
+        }
+      }
+    },
+    {
+      "classes": [
+        "Rogue"
+      ],
+      "entry": 900142,
+      "item_level": 277,
+      "mechanics": [
+        "Eviscerate: 20% chance per combo point spent to grant one of six buffs at random (15 sec; re-rolling an active one refreshes it).",
+        "Broadside: combo point builders award 1 extra combo point. Buried Treasure: +25% energy regen. Grand Melee: +25% melee haste.",
+        "Ruthless Precision: +15% crit chance. Skull and Crossbones: 25% chance on melee hits for an extra attack. True Bearings: finishers reduce Adrenaline Rush / Blade Flurry / Killing Spree / Sprint / Evasion cooldowns by 1 sec per combo point."
+      ],
+      "name": "Roll the Bones",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200165,
+          "name": "Roll the Bones",
+          "tooltip": "Your Eviscerate has a 20% chance per combo point spent to grant you one of six combat enhancements for 15 sec. Different enhancements may overlap; receiving an enhancement you already have refreshes its duration."
+        },
+        {
+          "id": 200166,
+          "name": "Broadside",
+          "tooltip": "Your combo point-generating abilities generate 1 additional combo point."
+        },
+        {
+          "id": 200167,
+          "name": "Buried Treasure",
+          "tooltip": "Increases your Energy regeneration by 25%."
+        },
+        {
+          "id": 200168,
+          "name": "Grand Melee",
+          "tooltip": "Increases your attack speed by 25%."
+        },
+        {
+          "id": 200169,
+          "name": "Ruthless Precision",
+          "tooltip": "Increases your critical strike chance by 15%."
+        },
+        {
+          "id": 200170,
+          "name": "Skull and Crossbones",
+          "tooltip": "Your Sinister Strike has a 25% chance to strike an additional time."
+        },
+        {
+          "id": 200172,
+          "name": "True Bearings",
+          "tooltip": "Your finishing moves reduce the remaining cooldown of Adrenaline Rush, Blade Flurry, Killing Spree, Sprint and Evasion by 1 sec per combo point spent."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Combat",
+      "spells": [
+        {
+          "id": 200165,
+          "name": "Roll the Bones",
+          "tooltip": "Your Eviscerate has a 20% chance per combo point spent to grant you one of six combat enhancements for 15 sec. Different enhancements may overlap; receiving an enhancement you already have refreshes its duration.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "buried_treasure_regen_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 25
+        },
+        "chance_per_cp": {
+          "note": "",
+          "unit": "%",
+          "value": 20
+        },
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 15
+        },
+        "grand_melee_haste_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 25
+        },
+        "ruthless_precision_crit_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 15
+        },
+        "skull_extra_attack_chance": {
+          "note": "",
+          "unit": "%",
+          "value": 25
+        },
+        "true_bearings_cdr_per_cp": {
+          "note": "",
+          "unit": "sec",
+          "value": 1
+        }
+      }
+    },
+    {
+      "classes": [
+        "Rogue"
+      ],
+      "entry": 900143,
+      "item_level": 277,
+      "mechanics": [
+        "Kidney Shot also deals Physical damage = 50% of AP per combo point spent (keeps its stun and cooldown); a critical hit deals triple damage."
+      ],
+      "name": "Between the Eyes",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200173,
+          "name": "Between the Eyes",
+          "tooltip": "Your Kidney Shot also deals Physical damage based on your attack power and the combo points spent, retaining its stun and cooldown. This damage strikes for three times normal damage on a critical strike."
+        },
+        {
+          "id": 200174,
+          "name": "Between the Eyes",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Combat",
+      "spells": [
+        {
+          "id": 200173,
+          "name": "Between the Eyes",
+          "tooltip": "Your Kidney Shot also deals Physical damage based on your attack power and the combo points spent, retaining its stun and cooldown. This damage strikes for three times normal damage on a critical strike.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "ap_pct_per_cp": {
+          "note": "",
+          "unit": "% of AP",
+          "value": 50
+        },
+        "crit_multiplier": {
+          "note": "",
+          "unit": "x",
+          "value": 3
+        }
+      }
+    },
+    {
+      "classes": [
+        "Rogue"
+      ],
+      "entry": 900144,
+      "item_level": 277,
+      "mechanics": [
+        "Shiv costs no energy, has a 20 sec cooldown, and grants Venom Rush for 8 sec: +50% energy regen, +20% poison damage."
+      ],
+      "name": "Venomdrinker",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200175,
+          "name": "Venomdrinker",
+          "tooltip": "Your Shiv costs no Energy and grants Venom Rush for 8 sec, increasing your Energy regeneration by 50% and your poison damage by 20%. Shiv now has a 20-sec cooldown."
+        },
+        {
+          "id": 200176,
+          "name": "Venom Rush",
+          "tooltip": "Energy regeneration increased by 50%. Poison damage increased by 20%."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Assassination",
+      "spells": [
+        {
+          "id": 200175,
+          "name": "Venomdrinker",
+          "tooltip": "Your Shiv costs no Energy and grants Venom Rush for 8 sec, increasing your Energy regeneration by 50% and your poison damage by 20%. Shiv now has a 20-sec cooldown.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 8
+        },
+        "poison_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 20
+        },
+        "regen_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 50
+        },
+        "shiv_cooldown": {
+          "note": "",
+          "unit": "sec",
+          "value": 20
+        }
+      }
+    },
+    {
+      "classes": [
+        "Rogue"
+      ],
+      "entry": 900145,
+      "item_level": 277,
+      "mechanics": [
+        "Rupture and Garrote restore 8 energy per periodic tick.",
+        "Envenom extends your bleeds on the target by 1 sec per combo point spent, up to their original maximum duration."
+      ],
+      "name": "Sanguine Hunger",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200177,
+          "name": "Sanguine Hunger",
+          "tooltip": "Your Rupture and Garrote restore 8 Energy each time they deal periodic damage. Your Envenom extends your active bleeds on its target by 1 sec per combo point spent, up to their original maximum durations."
+        },
+        {
+          "id": 200178,
+          "name": "Sanguine Hunger",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Assassination",
+      "spells": [
+        {
+          "id": 200177,
+          "name": "Sanguine Hunger",
+          "tooltip": "Your Rupture and Garrote restore 8 Energy each time they deal periodic damage. Your Envenom extends your active bleeds on its target by 1 sec per combo point spent, up to their original maximum durations.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "energy_per_tick": {
+          "note": "",
+          "unit": "energy",
+          "value": 8
+        },
+        "extension_per_cp": {
+          "note": "",
+          "unit": "sec",
+          "value": 1
+        }
+      }
+    },
+    {
+      "classes": [
+        "Rogue"
+      ],
+      "entry": 900146,
+      "item_level": 277,
+      "mechanics": [
+        "Finishers reduce Shadow Dance's remaining cooldown by 1 sec per combo point spent. Activating Shadow Dance restores 40 energy."
+      ],
+      "name": "Endless Dance",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200179,
+          "name": "Endless Dance",
+          "tooltip": "Your finishing moves reduce the remaining cooldown of Shadow Dance by 1 sec per combo point spent. Activating Shadow Dance restores 40 Energy."
+        },
+        {
+          "id": 200180,
+          "name": "Endless Dance",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Subtlety",
+      "spells": [
+        {
+          "id": 200179,
+          "name": "Endless Dance",
+          "tooltip": "Your finishing moves reduce the remaining cooldown of Shadow Dance by 1 sec per combo point spent. Activating Shadow Dance restores 40 Energy.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "cdr_per_cp": {
+          "note": "",
+          "unit": "sec",
+          "value": 1
+        },
+        "energy": {
+          "note": "",
+          "unit": "energy",
+          "value": 40
+        }
+      }
+    },
+    {
+      "classes": [
+        "Rogue"
+      ],
+      "entry": 900147,
+      "item_level": 277,
+      "mechanics": [
+        "Eviscerate makes your next Ambush usable outside Stealth and 20 energy cheaper.",
+        "Ambush deals additional Shadow damage equal to 30% of the damage it dealt."
+      ],
+      "name": "Shadow's Invitation",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200181,
+          "name": "Shadow's Invitation",
+          "tooltip": "Your Eviscerate allows your next Ambush to be used without being in Stealth and reduces its Energy cost by 20. Your Ambush deals additional Shadow damage equal to 30% of its damage dealt."
+        },
+        {
+          "id": 200182,
+          "name": "Shadow's Invitation",
+          "tooltip": "Your next Ambush can be used without being in Stealth and costs 20 less Energy."
+        },
+        {
+          "id": 200183,
+          "name": "Shadow's Invitation",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Subtlety",
+      "spells": [
+        {
+          "id": 200181,
+          "name": "Shadow's Invitation",
+          "tooltip": "Your Eviscerate allows your next Ambush to be used without being in Stealth and reduces its Energy cost by 20. Your Ambush deals additional Shadow damage equal to 30% of its damage dealt.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "agility": 134,
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150
+      },
+      "tuning": {
+        "ambush_cost_reduction": {
+          "note": "",
+          "unit": "energy",
+          "value": 20
+        },
+        "shadow_echo_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 30
+        }
+      }
+    },
+    {
+      "classes": [
+        "Shaman"
+      ],
+      "entry": 900111,
+      "item_level": 277,
+      "mechanics": [
+        "Chain Heal no longer loses effectiveness per jump and jumps to 2 additional targets."
+      ],
+      "name": "Vaelith's Flowing Band",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200031,
+          "name": "Vaelith's Flowing Band",
+          "tooltip": "Chain Heal no longer loses effectiveness with each jump and can jump to 2 additional players."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Restoration",
+      "spells": [
+        {
+          "id": 200031,
+          "name": "Vaelith's Flowing Band",
+          "tooltip": "Chain Heal no longer loses effectiveness with each jump and can jump to 2 additional players.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "extra_jumps": {
+          "note": "",
+          "unit": "targets",
+          "value": 2
+        },
+        "jump_falloff": {
+          "note": "",
+          "unit": "%",
+          "value": 0
+        }
+      }
+    },
+    {
+      "classes": [
+        "Shaman"
+      ],
+      "entry": 900113,
+      "item_level": 277,
+      "mechanics": [
+        "Lightning Bolt grants Empowered Lava Burst: next Lava Burst +100% damage (one charge, 15 sec).",
+        "Lava Burst grants Empowered Chain Lightning: next Chain Lightning +100% damage (one charge, 15 sec)."
+      ],
+      "name": "Morgrath's Proto-Scale Band",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200033,
+          "name": "Morgrath's Proto-Scale Band",
+          "tooltip": "Casting Lightning Bolt increases the damage of your next Lava Burst by 100%. Casting Lava Burst increases the damage of your next Chain Lightning by 100%."
+        },
+        {
+          "id": 200034,
+          "name": "Empowered Lava Burst",
+          "tooltip": "Increases the damage of your next Lava Burst by 100%."
+        },
+        {
+          "id": 200035,
+          "name": "Empowered Chain Lightning",
+          "tooltip": "Increases the damage of your next Chain Lightning by 100%."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Elemental",
+      "spells": [
+        {
+          "id": 200033,
+          "name": "Morgrath's Proto-Scale Band",
+          "tooltip": "Casting Lightning Bolt increases the damage of your next Lava Burst by 100%. Casting Lava Burst increases the damage of your next Chain Lightning by 100%.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "chain_lightning_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 100
+        },
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 15
+        },
+        "lava_burst_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 100
+        }
+      }
+    },
+    {
+      "classes": [
+        "Shaman"
+      ],
+      "entry": 900130,
+      "item_level": 277,
+      "mechanics": [
+        "Titan's Grip for shamans: two-handed axes and maces can be wielded in one hand (dual wield)."
+      ],
+      "name": "Rok'thul's Crescent Band",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200094,
+          "name": "Rok'thul's Crescent Band",
+          "tooltip": "Empowered by the Strength of the Earth, you may equip two-handed axes and maces in one hand."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Enhancement",
+      "spells": [
+        {
+          "id": 200094,
+          "name": "Rok'thul's Crescent Band",
+          "tooltip": "Empowered by the Strength of the Earth, you may equip two-handed axes and maces in one hand.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 65,
+        "haste_rating": 65,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {}
+    },
+    {
+      "classes": [
+        "Shaman"
+      ],
+      "entry": 900131,
+      "item_level": 277,
+      "mechanics": [
+        "Elemental Mastery turns you into a Fire Tyrant for its duration (15 sec): Lava Burst has no cooldown.",
+        "Flame Shock critical strikes have a 15% chance to activate Elemental Mastery + Fire Tyrant for 8 sec."
+      ],
+      "name": "Ancestral Farseer Band",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200095,
+          "name": "Ancestral Farseer Band",
+          "tooltip": "Elemental Mastery turns you into a Fire Tyrant, removing the cooldown on Lava Burst for the duration. Additionally, Flame Shock Critical Strikes have a chance to activate Elemental Mastery for 8 seconds."
+        },
+        {
+          "id": 200096,
+          "name": "Fire Tyrant",
+          "tooltip": ""
+        },
+        {
+          "id": 200097,
+          "name": "Fire Tyrant",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Elemental",
+      "spells": [
+        {
+          "id": 200095,
+          "name": "Ancestral Farseer Band",
+          "tooltip": "Elemental Mastery turns you into a Fire Tyrant, removing the cooldown on Lava Burst for the duration. Additionally, Flame Shock Critical Strikes have a chance to activate Elemental Mastery for 8 seconds.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "em_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 15
+        },
+        "fs_crit_chance": {
+          "note": "",
+          "unit": "%",
+          "value": 15
+        },
+        "proc_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 8
+        }
+      }
+    },
+    {
+      "classes": [
+        "Shaman"
+      ],
+      "entry": 900148,
+      "item_level": 277,
+      "mechanics": [
+        "With Flametongue Weapon on both weapons, Lava Lash also strikes with your main hand, deals +100% damage, and refreshes Flame Shock on the target."
+      ],
+      "name": "Lashing Flames",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200184,
+          "name": "Lashing Flames",
+          "tooltip": "While Flametongue Weapon is active on both of your weapons, your Lava Lash also strikes with your main-hand weapon, deals 100% increased damage, and refreshes the duration of your Flame Shock on the target."
+        },
+        {
+          "id": 200185,
+          "name": "Lashing Flames",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Enhancement",
+      "spells": [
+        {
+          "id": 200184,
+          "name": "Lashing Flames",
+          "tooltip": "While Flametongue Weapon is active on both of your weapons, your Lava Lash also strikes with your main-hand weapon, deals 100% increased damage, and refreshes the duration of your Flame Shock on the target.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "lava_lash_pct": {
+          "note": "",
+          "unit": "%",
+          "value": 100
+        }
+      }
+    },
+    {
+      "classes": [
+        "Shaman"
+      ],
+      "entry": 900149,
+      "item_level": 277,
+      "mechanics": [
+        "Stormstrike strikes one additional time and grants 2 stacks of Maelstrom Weapon."
+      ],
+      "name": "Stormflurry",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200186,
+          "name": "Stormflurry",
+          "tooltip": "Your Stormstrike strikes an additional time and grants you 2 stacks of Maelstrom Weapon."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Enhancement",
+      "spells": [
+        {
+          "id": 200186,
+          "name": "Stormflurry",
+          "tooltip": "Your Stormstrike strikes an additional time and grants you 2 stacks of Maelstrom Weapon.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "extra_strikes": {
+          "note": "",
+          "unit": "strikes",
+          "value": 1
+        },
+        "maelstrom_stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 2
+        }
+      }
+    },
+    {
+      "classes": [
+        "Shaman"
+      ],
+      "entry": 900150,
+      "item_level": 277,
+      "mechanics": [
+        "Lightning Bolt and Chain Lightning have a 35% chance to call a Tempest strike on the target (375% of Nature SP) plus a splash on enemies near it (243.75% of Nature SP, 65% of the strike)."
+      ],
+      "name": "Tempest",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200207,
+          "name": "Tempest",
+          "tooltip": "Your Lightning Bolt and Chain Lightning have a chance to call down a tremendous lightning strike, searing your target with the fury of the storm and scorching enemies near it."
+        },
+        {
+          "id": 200208,
+          "name": "Tempest",
+          "tooltip": "A tremendous lightning strike deals 1 Nature damage."
+        },
+        {
+          "id": 200209,
+          "name": "Tempest",
+          "tooltip": "The storm's fury scorches nearby enemies for 1 Nature damage."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Elemental / Enhancement",
+      "spells": [
+        {
+          "id": 200207,
+          "name": "Tempest",
+          "tooltip": "Your Lightning Bolt and Chain Lightning have a chance to call down a tremendous lightning strike, searing your target with the fury of the storm and scorching enemies near it.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "proc_chance": {
+          "note": "",
+          "unit": "%",
+          "value": 35
+        },
+        "splash_sp_pct": {
+          "note": "",
+          "unit": "% of Nature SP",
+          "value": 243.75
+        },
+        "strike_sp_pct": {
+          "note": "",
+          "unit": "% of Nature SP",
+          "value": 375
+        }
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "entry": 900106,
+      "item_level": 277,
+      "mechanics": [
+        "Shadow Bolt grants Shadowed Mark: +50% Drain Soul damage per stack, up to 4 stacks (18 sec); consumed by the next Drain Soul cast (becomes Reaping for that channel).",
+        "Drain Soul channels twice as fast: half duration, same number of ticks."
+      ],
+      "name": "Vaelith's Withering Grasp",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200016,
+          "name": "Vaelith's Withering Grasp",
+          "tooltip": "Shadow Bolt increases the damage of your Drain Soul by 50%, stacking up to 4 times, consumed by your next Drain Soul cast. Drain Soul channels twice as fast: half the duration, same number of ticks."
+        },
+        {
+          "id": 200061,
+          "name": "Withering Grasp: Shadowed Mark",
+          "tooltip": "Increases the damage of your Drain Soul, stacking up to 4 times."
+        },
+        {
+          "id": 200079,
+          "name": "Withering Grasp: Reaping",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Affliction",
+      "spells": [
+        {
+          "id": 200016,
+          "name": "Vaelith's Withering Grasp",
+          "tooltip": "Shadow Bolt increases the damage of your Drain Soul by 50%, stacking up to 4 times, consumed by your next Drain Soul cast. Drain Soul channels twice as fast: half the duration, same number of ticks.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "channel_time_pct": {
+          "note": "",
+          "unit": "%",
+          "value": -50
+        },
+        "drain_soul_pct_per_stack": {
+          "note": "",
+          "unit": "%",
+          "value": 50
+        },
+        "mark_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 18
+        },
+        "max_stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 4
+        }
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "entry": 900125,
+      "item_level": 277,
+      "mechanics": [
+        "Each periodic damage tick of Corruption, Curse of Agony or Unstable Affliction grants a Reaped Soul stack.",
+        "At the threshold all stacks are consumed to Reap: a 4 sec DoT on the primary target ticking every 1 sec."
+      ],
+      "name": "Vaelith's Reaped Soul",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200076,
+          "name": "Vaelith's Reaped Soul",
+          "tooltip": "Corruption, Curse of Agony, and Unstable Affliction grant a stack of Reaped Soul each time they deal damage. At 25 stacks, consume all stacks to Reap your primary target's soul, dealing Shadow damage every 1 sec for 4 sec."
+        },
+        {
+          "id": 200077,
+          "name": "Reaped Soul",
+          "tooltip": ""
+        },
+        {
+          "id": 200078,
+          "name": "Reap Soul",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Affliction",
+      "spells": [
+        {
+          "id": 200076,
+          "name": "Vaelith's Reaped Soul",
+          "tooltip": "Corruption, Curse of Agony, and Unstable Affliction grant a stack of Reaped Soul each time they deal damage. At 25 stacks, consume all stacks to Reap your primary target's soul, dealing Shadow damage every 1 sec for 4 sec.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "reap_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 4
+        },
+        "reap_tick": {
+          "note": "",
+          "unit": "sec",
+          "value": 1
+        },
+        "reap_tick_sp_pct": {
+          "note": "",
+          "unit": "% of SP per tick (spell_bonus_data dot_bonus 6.0)",
+          "value": 600
+        },
+        "stacks": {
+          "config": {
+            "param": "stacks",
+            "set_key": "leg_reaped",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "stacks",
+          "value": 25
+        }
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "entry": 900127,
+      "item_level": 277,
+      "mechanics": [
+        "Casting Demonic Empowerment summons a Pit Lord minion for 20 sec that casts Abyssal Strike (Fire) at your target every 2.5 sec.",
+        "Also grants Empowered by the Abyss to you and allies within 30 yd for 20 sec: spell power equal to 14% of your bonus spell power, snapshotted at cast.",
+        "While the ring is worn Demonic Empowerment has the configured cooldown."
+      ],
+      "name": "Vaelith's Abyssal Calling",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200085,
+          "name": "Vaelith's Abyssal Calling",
+          "tooltip": "Casting Demonic Empowerment calls forth a Pit Lord from the Twisting Nether that attacks your target with Fire damage, and increases the spell power of allies within 30 yards for 20 sec."
+        },
+        {
+          "id": 200086,
+          "name": "Abyssal Strike - Pit Lord",
+          "tooltip": ""
+        },
+        {
+          "id": 200087,
+          "name": "Empowered by the Abyss",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Demonology",
+      "spells": [
+        {
+          "id": 200085,
+          "name": "Vaelith's Abyssal Calling",
+          "tooltip": "Casting Demonic Empowerment calls forth a Pit Lord from the Twisting Nether that attacks your target with Fire damage, and increases the spell power of allies within 30 yards for 20 sec.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "aura_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 20
+        },
+        "aura_radius": {
+          "note": "",
+          "unit": "yd",
+          "value": 30
+        },
+        "aura_sp_pct": {
+          "note": "",
+          "unit": "% of caster bonus SP, snapshot",
+          "value": 14
+        },
+        "blast_interval": {
+          "note": "",
+          "unit": "sec",
+          "value": 2.5
+        },
+        "blast_sp_pct": {
+          "config": {
+            "param": "blast_sp_pct",
+            "set_key": "leg_abyss",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "% of SP",
+          "value": 151.2
+        },
+        "de_cooldown": {
+          "config": {
+            "param": "de_cooldown_ms",
+            "set_key": "leg_abyss",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "ms",
+          "value": 60000
+        },
+        "pit_lord_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 20
+        }
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "entry": 900128,
+      "item_level": 277,
+      "mechanics": [
+        "Immolate applies (or restarts) Malediction: a 24 sec Fire DoT, 8 ticks, total damage 300% of SP (snapshotted at the Immolate).",
+        "Chaos Bolt or Shadowburn landing on a Malediction target adds a stack (uncapped) and refreshes it; each added stack has a 25% chance to start Igniting.",
+        "Igniting: every 1 sec one stack is consumed for a flat Shadowflame hit of 60% SP, down to 1 remaining stack. While igniting, Chaos Bolt/Shadowburn only refresh."
+      ],
+      "name": "Morgrath's Malediction",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200088,
+          "name": "Morgrath's Malediction",
+          "tooltip": "Casting Immolate also applies Malediction to your target, dealing Fire damage over 24 sec. If the target is afflicted by Malediction, casting Chaos Bolt and Shadowburn increases its stack count by 1. Each time Malediction gains a stack it has a chance to collapse, consuming a stack every 1 sec to deal Shadowflame damage until 1 stack remains."
+        },
+        {
+          "id": 200089,
+          "name": "Malediction",
+          "tooltip": ""
+        },
+        {
+          "id": 200090,
+          "name": "Malediction",
+          "tooltip": ""
+        },
+        {
+          "id": 200091,
+          "name": "Malediction: Ignite",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Destruction",
+      "spells": [
+        {
+          "id": 200088,
+          "name": "Morgrath's Malediction",
+          "tooltip": "Casting Immolate also applies Malediction to your target, dealing Fire damage over 24 sec. If the target is afflicted by Malediction, casting Chaos Bolt and Shadowburn increases its stack count by 1. Each time Malediction gains a stack it has a chance to collapse, consuming a stack every 1 sec to deal Shadowflame damage until 1 stack remains.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 65,
+        "haste_rating": 62,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "dot_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 24
+        },
+        "dot_ticks": {
+          "note": "",
+          "unit": "ticks",
+          "value": 8
+        },
+        "dot_total_sp_pct": {
+          "note": "",
+          "unit": "% of SP total",
+          "value": 300
+        },
+        "ignite_chance": {
+          "note": "",
+          "unit": "% per added stack",
+          "value": 25
+        },
+        "ignite_interval": {
+          "note": "",
+          "unit": "sec",
+          "value": 1
+        },
+        "ignite_sp_pct": {
+          "note": "",
+          "unit": "% of SP per consumed stack",
+          "value": 60
+        }
+      }
+    },
+    {
+      "classes": [
+        "Warlock"
+      ],
+      "entry": 900129,
+      "item_level": 277,
+      "mechanics": [
+        "Incinerate grants Chaosflame (20 sec, up to 5 stacks): +50% Chaos Bolt damage per stack and +100% crit chance (guaranteed crit).",
+        "Chaos Bolt consumes all stacks."
+      ],
+      "name": "Vorrax's Chaosflame",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200092,
+          "name": "Vorrax's Chaosflame",
+          "tooltip": "Casting Incinerate grants a stack of Chaosflame, increasing the damage of your next Chaos Bolt by 50% and guaranteeing it will Critically Strike, stacking up to 5 times. Casting Chaos Bolt consumes all stacks of Chaosflame."
+        },
+        {
+          "id": 200093,
+          "name": "Chaosflame",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Destruction",
+      "spells": [
+        {
+          "id": 200092,
+          "name": "Vorrax's Chaosflame",
+          "tooltip": "Casting Incinerate grants a stack of Chaosflame, increasing the damage of your next Chaos Bolt by 50% and guaranteeing it will Critically Strike, stacking up to 5 times. Casting Chaos Bolt consumes all stacks of Chaosflame.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "crit_rating": 70,
+        "haste_rating": 65,
+        "intellect": 134,
+        "spell_power": 115,
+        "stamina": 150
+      },
+      "tuning": {
+        "chaos_bolt_pct_per_stack": {
+          "note": "",
+          "unit": "%",
+          "value": 50
+        },
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 20
+        },
+        "max_stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 5
+        }
+      }
+    },
+    {
+      "classes": [
+        "Warrior"
+      ],
+      "entry": 900116,
+      "item_level": 277,
+      "mechanics": [
+        "Execute grants Undying Fury: +5% Execute damage and +5% Execute crit chance per stack, up to 99 stacks, 60 sec.",
+        "Sudden Death procs at the configured combined chance (talent + ring top-up) while worn."
+      ],
+      "name": "Vorrax's Reckless Fury",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200051,
+          "name": "Vorrax's Reckless Fury",
+          "tooltip": "Execute grants a stack of Undying Fury, increasing the damage of Execute by 5% and its critical strike chance by 5%. Stacks up to 99 times, lasting 60 sec. Sudden Death has a 20% chance to activate."
+        },
+        {
+          "id": 200052,
+          "name": "Undying Fury",
+          "tooltip": "Increases the damage of your Execute by 5% and its critical strike chance by 5%. Stacks up to 99 times."
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Arms / Fury",
+      "spells": [
+        {
+          "id": 200051,
+          "name": "Vorrax's Reckless Fury",
+          "tooltip": "Execute grants a stack of Undying Fury, increasing the damage of Execute by 5% and its critical strike chance by 5%. Stacks up to 99 times, lasting 60 sec. Sudden Death has a 20% chance to activate.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150,
+        "strength": 134
+      },
+      "tuning": {
+        "duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 60
+        },
+        "execute_pct_per_stack": {
+          "note": "",
+          "unit": "% dmg and crit",
+          "value": 5
+        },
+        "max_stacks": {
+          "note": "",
+          "unit": "stacks",
+          "value": 99
+        },
+        "sudden_death_chance": {
+          "config": {
+            "param": "sd_chance",
+            "set_key": "leg_fury",
+            "table": "crimson_tier_config"
+          },
+          "note": "",
+          "unit": "% combined",
+          "value": 20
+        }
+      }
+    },
+    {
+      "classes": [
+        "Warrior"
+      ],
+      "entry": 900126,
+      "item_level": 277,
+      "mechanics": [
+        "Melee attacks on your primary target have a 15% chance to trigger Slayer's Strike (Physical, 100% of AP) and grant a Slayer stack: +3% Bloodthirst damage per stack for 12 sec.",
+        "Slayer stacks overlap - each expires on its own 12 sec timer (up to 99)."
+      ],
+      "name": "Rok'thul's Slayer's Edge",
+      "quality": 5,
+      "related_spells": [
+        {
+          "id": 200082,
+          "name": "Rok'thul's Slayer's Edge",
+          "tooltip": "Your attacks against your primary target have a chance to overwhelm their defenses and trigger a Slayer's Strike, dealing Physical damage and granting you a stack of Slayer, increasing your Bloodthirst damage for a short time. Multiple stacks of Slayer may overlap."
+        },
+        {
+          "id": 200083,
+          "name": "Slayer's Strike",
+          "tooltip": ""
+        },
+        {
+          "id": 200084,
+          "name": "Slayer",
+          "tooltip": ""
+        }
+      ],
+      "required_level": 80,
+      "slot": "finger",
+      "spec": "Fury",
+      "spells": [
+        {
+          "id": 200082,
+          "name": "Rok'thul's Slayer's Edge",
+          "tooltip": "Your attacks against your primary target have a chance to overwhelm their defenses and trigger a Slayer's Strike, dealing Physical damage and granting you a stack of Slayer, increasing your Bloodthirst damage for a short time. Multiple stacks of Slayer may overlap.",
+          "trigger": "on equip"
+        }
+      ],
+      "stats": {
+        "attack_power": 230,
+        "crit_rating": 70,
+        "haste_rating": 62,
+        "stamina": 150,
+        "strength": 134
+      },
+      "tuning": {
+        "bloodthirst_pct_per_stack": {
+          "note": "",
+          "unit": "%",
+          "value": 3
+        },
+        "proc_chance": {
+          "note": "",
+          "unit": "%",
+          "value": 15
+        },
+        "stack_duration": {
+          "note": "",
+          "unit": "sec",
+          "value": 12
+        },
+        "strike_ap_pct": {
+          "note": "",
+          "unit": "% of AP",
+          "value": 100
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Tier sets: 4 pieces (neck, ring, cloak, weapon) at item level 271; bonuses at 2 and 4 pieces. Every tuning value is the live server value.",
+    "Legendaries: item stats and tooltips are live; mechanics and coefficients are documented from the server scripts. Values with a \"config\" source are live.",
+    "Coefficients: \"% of AP\" means percent of the relevant attack power (ranged AP for hunters), \"% of SP\" percent of spell power, per hit unless stated as a total.",
+    "Numbers change during tuning; check generated_at, or fetch data.json again before a sim run."
+  ],
+  "server": "Crimson Chains (WotLK 3.3.5a, AzerothCore)",
+  "tier_sets": [
+    {
+      "bonuses": [
+        {
+          "name": "Torrent of Ice",
+          "pieces": 2,
+          "spell_id": 900300,
+          "text": "Your auto-attack critical strikes have a chance to send out a torrent of ice, dealing 35% of your attack power as Frost damage to enemies in front of you. This is guaranteed to occur during Unbreakable Armor."
+        },
+        {
+          "name": "Torrent of Ice",
+          "pieces": 4,
+          "spell_id": 900301,
+          "text": "While Unbreakable Armor is active, your auto-attack critical strikes increase its duration by 2 sec, up to a maximum of 8 sec."
+        }
+      ],
+      "cls": "Death Knight",
+      "item_set_id": 9301,
+      "items": [
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901001,
+          "item_level": 271,
+          "name": "Choker of Frozen Sap",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901002,
+          "item_level": 271,
+          "name": "Band of the Frostbitten Root",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "armor_penetration_rating": 56,
+            "crit_rating": 64,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901003,
+          "item_level": 271,
+          "name": "Cape of the Winter Canopy",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "armor_penetration_rating": 64,
+            "hit_rating": 56,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901004,
+          "item_level": 271,
+          "name": "Boughsplitter",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "crit_rating": 98,
+            "hit_rating": 98,
+            "stamina": 198,
+            "strength": 181
+          },
+          "weapon": {
+            "dps": 312.4,
+            "max_damage": 1275.0,
+            "min_damage": 849.0,
+            "speed": 3.4,
+            "type": "two-handed sword"
+          }
+        }
+      ],
+      "key": "dk_frost",
+      "name": "Rime of the Hollow Bough",
+      "spec": "Frost",
+      "tuning": {
+        "cone_ap_pct": {
+          "note": "torrent damage, % of AP, 90-degree cone 10 yd",
+          "value": 35
+        },
+        "ext_cap_sec": {
+          "note": "max total extension per Unbreakable Armor",
+          "value": 8
+        },
+        "ext_sec": {
+          "note": "Unbreakable Armor extension per crit",
+          "value": 2
+        },
+        "icd_ua_ms": {
+          "note": "internal cooldown inside Unbreakable Armor, ms",
+          "value": 1000
+        },
+        "offhand_weight": {
+          "note": "off-hand crits count this much toward the proc",
+          "value": 0.5
+        },
+        "ppm": {
+          "note": "torrent procs per minute outside Unbreakable Armor (weapon-speed normalised)",
+          "value": 3.5
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Festering Wound",
+          "pieces": 2,
+          "spell_id": 900310,
+          "text": "Necrosis damage applies Festering Wound to the target, dealing 4% of your attack power as Shadow damage every 2 sec for 15 sec. Stacks up to 20 times."
+        },
+        {
+          "name": "Festering Wound",
+          "pieces": 4,
+          "spell_id": 900311,
+          "text": "Scourge Strike bursts all Festering Wounds on the target, dealing 15% of your attack power as Shadow damage per wound and increasing your Strength by 25 per wound for 20 sec. A new burst replaces any existing Strength bonus."
+        }
+      ],
+      "cls": "Death Knight",
+      "item_set_id": 9302,
+      "items": [
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901005,
+          "item_level": 271,
+          "name": "Pendant of Seeping Rot",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901006,
+          "item_level": 271,
+          "name": "Loop of the Blighted Taproot",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 64,
+            "haste_rating": 56,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901007,
+          "item_level": 271,
+          "name": "Drape of Festering Bark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "haste_rating": 64,
+            "hit_rating": 56,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901008,
+          "item_level": 271,
+          "name": "Rotbringer, Scythe of the Nightmare",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "crit_rating": 98,
+            "hit_rating": 98,
+            "stamina": 198,
+            "strength": 181
+          },
+          "weapon": {
+            "dps": 312.3,
+            "max_damage": 1312.0,
+            "min_damage": 874.0,
+            "speed": 3.5,
+            "type": "polearm"
+          }
+        }
+      ],
+      "key": "dk_unholy",
+      "name": "Plague of the Burrow",
+      "spec": "Unholy",
+      "tuning": {
+        "burst_ap_pct": {
+          "note": "Scourge Strike burst damage per wound, % of AP",
+          "value": 15
+        },
+        "str_dur": {
+          "note": "Strength buff duration",
+          "value": 20
+        },
+        "str_per_wound": {
+          "note": "Strength per wound burst",
+          "value": 25
+        },
+        "wound_cap": {
+          "note": "max wounds",
+          "value": 20
+        },
+        "wound_dur": {
+          "note": "wound duration, refreshed on application",
+          "value": 15
+        },
+        "wound_tick_ap_pct": {
+          "note": "Festering Wound damage per 2 sec tick, % of AP, per wound",
+          "value": 4
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Blood Feast",
+          "pieces": 2,
+          "spell_id": 900320,
+          "text": "Each enemy hit by Blood Boil or Heart Strike grants a stack of Blood Feast, increasing the damage and healing of Death Strike by 3%, stacking up to 5 times. Lasts 20 sec."
+        },
+        {
+          "name": "Blood Feast",
+          "pieces": 4,
+          "spell_id": 900321,
+          "text": "Death Strike overhealing is converted into an absorb shield lasting 10 sec, absorbing 45% of the overhealing, up to 12% of your maximum health."
+        }
+      ],
+      "cls": "Death Knight",
+      "item_set_id": 9303,
+      "items": [
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901009,
+          "item_level": 271,
+          "name": "Gorget of the Bloodsap",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "armor": 672,
+            "defense_rating": 51,
+            "dodge_rating": 43,
+            "stamina": 133,
+            "strength": 96
+          }
+        },
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901010,
+          "item_level": 271,
+          "name": "Signet of Clotted Roots",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "armor": 672,
+            "defense_rating": 51,
+            "parry_rating": 43,
+            "stamina": 133,
+            "strength": 96
+          }
+        },
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901011,
+          "item_level": 271,
+          "name": "Shroud of the Fed Tree",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "defense_rating": 51,
+            "expertise_rating": 43,
+            "stamina": 133,
+            "strength": 96
+          }
+        },
+        {
+          "classes": [
+            "Death Knight"
+          ],
+          "entry": 901012,
+          "item_level": 271,
+          "name": "Rootfeeder, Axe of the Wilting Grove",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "dodge_rating": 98,
+            "parry_rating": 98,
+            "stamina": 198,
+            "strength": 181
+          },
+          "weapon": {
+            "dps": 312.4,
+            "max_damage": 1275.0,
+            "min_damage": 849.0,
+            "speed": 3.4,
+            "type": "two-handed axe"
+          }
+        }
+      ],
+      "key": "dk_blood",
+      "name": "Sapdrinker's Vigil",
+      "spec": "Blood",
+      "tuning": {
+        "feast_cap": {
+          "note": "max Blood Feast stacks",
+          "value": 5
+        },
+        "feast_dur": {
+          "note": "Blood Feast duration, refreshed per stack",
+          "value": 20
+        },
+        "feast_pct": {
+          "note": "Death Strike damage+healing per Blood Feast stack, %",
+          "value": 3
+        },
+        "overheal_pct": {
+          "note": "share of Death Strike overhealing turned into a shield",
+          "value": 45
+        },
+        "shield_cap_pct": {
+          "note": "shield cap, % of max health",
+          "value": 12
+        },
+        "shield_dur": {
+          "note": "shield duration",
+          "value": 10
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Dream Burst",
+          "pieces": 2,
+          "spell_id": 900330,
+          "text": "Starfire and Wrath have a 15% chance to fire a Dream Burst at your target, dealing Nature damage."
+        },
+        {
+          "name": "Power of Elune",
+          "pieces": 4,
+          "spell_id": 900331,
+          "text": "Starfire and Wrath deal 4% increased damage, and have a 15% chance to grant Power of Elune for 12 sec, guaranteeing that Starfire and Wrath fire a Dream Burst."
+        }
+      ],
+      "cls": "Druid",
+      "item_set_id": 9304,
+      "items": [
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901013,
+          "item_level": 271,
+          "name": "Locket of Starlit Sap",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "haste_rating": 56,
+            "hit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901014,
+          "item_level": 271,
+          "name": "Circle of the Eclipsed Grove",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901015,
+          "item_level": 271,
+          "name": "Cloak of the Fevered Dream",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901016,
+          "item_level": 271,
+          "name": "Branch of the Waking Nightmare",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "haste_rating": 129,
+            "hit_rating": 129,
+            "intellect": 167,
+            "spell_power": 793,
+            "stamina": 167
+          },
+          "weapon": {
+            "dps": 232.1,
+            "max_damage": 619.0,
+            "min_damage": 356.0,
+            "speed": 2.1,
+            "type": "staff"
+          }
+        }
+      ],
+      "key": "dru_balance",
+      "name": "Canopy Dreamer's Regalia",
+      "spec": "Balance",
+      "tuning": {
+        "burst_chance": {
+          "note": "Dream Burst chance per Starfire/Wrath, %",
+          "value": 15
+        },
+        "burst_sp_pct": {
+          "note": "Dream Burst damage, % of SP (360 -> 180 test 2026-09-22)",
+          "value": 180
+        },
+        "elune_chance": {
+          "note": "Power of Elune chance per cast, %",
+          "value": 15
+        },
+        "elune_dur": {
+          "note": "Power of Elune duration",
+          "value": 12
+        },
+        "elune_icd": {
+          "note": "Power of Elune internal cooldown, sec",
+          "value": 45
+        },
+        "flat_pct": {
+          "note": "flat Starfire/Wrath damage bonus, % (8 -> 4 on 2026-09-22)",
+          "value": 4
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Bloodseeker Vines",
+          "pieces": 2,
+          "spell_id": 900340,
+          "text": "Rip and Rake damage has a 10% chance to cause Bloodseeker Vines to grow on the victim, dealing 35% of your attack power as Bleed damage over 6 sec."
+        },
+        {
+          "name": "Bloodseeker Vines",
+          "pieces": 4,
+          "spell_id": 900341,
+          "text": "When Bloodseeker Vines expire, or you use Ferocious Bite on their target, they explode in thorns, dealing 30% of your attack power as physical damage to the victim and nearby enemies."
+        }
+      ],
+      "cls": "Druid",
+      "item_set_id": 9305,
+      "items": [
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901017,
+          "item_level": 271,
+          "name": "Fang Collar of the Night Prowler",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "agility": 96,
+            "armor_penetration_rating": 56,
+            "attack_power": 113,
+            "crit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901018,
+          "item_level": 271,
+          "name": "Band of the Silent Stalk",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "agility": 96,
+            "armor_penetration_rating": 64,
+            "attack_power": 113,
+            "hit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901019,
+          "item_level": 271,
+          "name": "Pelt of the Canopy Prowler",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "agility": 96,
+            "armor": 184,
+            "attack_power": 113,
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901020,
+          "item_level": 271,
+          "name": "Nightclaw, Bough of the Hunt",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "agility": 156,
+            "armor_penetration_rating": 116,
+            "attack_power": 231,
+            "crit_rating": 116,
+            "stamina": 148
+          },
+          "weapon": {
+            "dps": 312.3,
+            "max_damage": 900.0,
+            "min_damage": 599.0,
+            "speed": 2.4,
+            "type": "staff"
+          }
+        }
+      ],
+      "key": "dru_cat",
+      "name": "Prowler of the Fevered Canopy",
+      "spec": "Feral (Cat)",
+      "tuning": {
+        "explode_ap_pct": {
+          "note": "thorn explosion, % of AP, 8 yd",
+          "value": 30
+        },
+        "icd": {
+          "note": "per-target internal cooldown, sec",
+          "value": 6
+        },
+        "proc_chance": {
+          "note": "vine chance per Rip/Rake tick, %",
+          "value": 10
+        },
+        "vine_ap_pct": {
+          "note": "vine bleed total over 6 sec, % of AP",
+          "value": 35
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Empowered Maul",
+          "pieces": 2,
+          "spell_id": 900350,
+          "text": "Your auto-attacks have a 20% chance to empower your next Maul, dealing 50% of your attack power as physical damage to your target and 25% to all other enemies in front of you."
+        },
+        {
+          "name": "Ravage",
+          "pieces": 4,
+          "spell_id": 900351,
+          "text": "During Berserk, Mangle, Lacerate and Swipe have a 20% chance to make your next Maul become Ravage, dealing 250% of an empowered Maul."
+        }
+      ],
+      "cls": "Druid",
+      "item_set_id": 9306,
+      "items": [
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901021,
+          "item_level": 271,
+          "name": "Fang Necklace of the Furbolg King",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "dodge_rating": 64,
+            "expertise_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901022,
+          "item_level": 271,
+          "name": "Band of the Rabid Bear",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "expertise_rating": 64,
+            "hit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901023,
+          "item_level": 271,
+          "name": "Pelt of the Mad Grizzly",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "agility": 96,
+            "armor": 184,
+            "attack_power": 113,
+            "dodge_rating": 56,
+            "hit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901024,
+          "item_level": 271,
+          "name": "Grizzlemaw's Wrath",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "agility": 156,
+            "attack_power": 231,
+            "dodge_rating": 116,
+            "expertise_rating": 116,
+            "stamina": 148
+          },
+          "weapon": {
+            "dps": 312.3,
+            "max_damage": 900.0,
+            "min_damage": 599.0,
+            "speed": 2.4,
+            "type": "staff"
+          }
+        }
+      ],
+      "key": "dru_bear",
+      "name": "Ursoc's Tainted Claw",
+      "spec": "Feral (Bear)",
+      "tuning": {
+        "emp_chance": {
+          "note": "empowerment chance per auto-attack, %",
+          "value": 20
+        },
+        "maul_cleave_ap_pct": {
+          "note": "empowered Maul cleave per extra target, % of AP",
+          "value": 25
+        },
+        "maul_primary_ap_pct": {
+          "note": "empowered Maul primary, % of AP",
+          "value": 50
+        },
+        "ravage_chance": {
+          "note": "Ravage chance per Mangle/Lacerate/Swipe during Berserk, %",
+          "value": 20
+        },
+        "ravage_mult_pct": {
+          "note": "Ravage = this % of an empowered Maul",
+          "value": 250
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Symbiotic Blooms",
+          "pieces": 2,
+          "spell_id": 900360,
+          "text": "Wild Growth and Rejuvenation have a 8% chance, and Swiftmend always causes, Symbiotic Blooms to grow on the target, healing for 50% of your spell power over 6 sec."
+        },
+        {
+          "name": "Symbiotic Blooms",
+          "pieces": 4,
+          "spell_id": 900361,
+          "text": "Symbiotic Blooms increases the healing your spells do to affected targets by 15%."
+        }
+      ],
+      "cls": "Druid",
+      "item_set_id": 9307,
+      "items": [
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901025,
+          "item_level": 271,
+          "name": "Amulet of Mending Bark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "haste_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "spirit": 64,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901026,
+          "item_level": 271,
+          "name": "Loop of the Living Root",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901027,
+          "item_level": 271,
+          "name": "Cape of Dew and Dream",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "spirit": 64,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Druid"
+          ],
+          "entry": 901028,
+          "item_level": 271,
+          "name": "Wellspring of Vordrassil",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "haste_rating": 129,
+            "intellect": 167,
+            "spell_power": 793,
+            "spirit": 129,
+            "stamina": 167
+          },
+          "weapon": {
+            "dps": 232.1,
+            "max_damage": 619.0,
+            "min_damage": 356.0,
+            "speed": 2.1,
+            "type": "staff"
+          }
+        }
+      ],
+      "key": "dru_resto",
+      "name": "Sapwarden's Vestments",
+      "spec": "Restoration",
+      "tuning": {
+        "amp_pct": {
+          "note": "4pc healing amplifier on bloomed targets, %",
+          "value": 15
+        },
+        "bloom_sp_pct": {
+          "note": "Bloom healing over 6 sec, % of SP",
+          "value": 50
+        },
+        "icd": {
+          "note": "per-target internal cooldown, sec",
+          "value": 12
+        },
+        "roll_chance": {
+          "note": "Bloom chance per Wild Growth / Rejuvenation cast, %",
+          "value": 8
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Barbed Shot",
+          "pieces": 2,
+          "spell_id": 900370,
+          "text": "Your shots have a 22% chance to apply Barbed Shot to the target, causing them to bleed for 35% of your attack power over 6 sec. Each time Barbed Shot is applied, your pet stomps the ground, dealing 30% of your attack power as physical damage to all nearby enemies."
+        },
+        {
+          "name": "Barbed Shot",
+          "pieces": 4,
+          "spell_id": 900371,
+          "text": "Each time your pet Stomps, reduce the cooldown of Call of the Wild and Rapid Fire by 2 sec, and Bestial Wrath and Kill Command by 1 sec."
+        }
+      ],
+      "cls": "Hunter",
+      "item_set_id": 9308,
+      "items": [
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901029,
+          "item_level": 271,
+          "name": "Beast-Tamer's Bone Torc",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "crit_rating": 64,
+            "haste_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901030,
+          "item_level": 271,
+          "name": "Ring of the Loyal Grizzly",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "haste_rating": 64,
+            "hit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901031,
+          "item_level": 271,
+          "name": "Cloak of the Wild Pack",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "agility": 96,
+            "armor": 184,
+            "attack_power": 113,
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901032,
+          "item_level": 271,
+          "name": "Ursa Howler",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "ranged",
+          "stats": {
+            "agility": 46,
+            "attack_power": 85,
+            "crit_rating": 39,
+            "haste_rating": 25,
+            "stamina": 39
+          },
+          "weapon": {
+            "dps": 268.5,
+            "max_damage": 1001.0,
+            "min_damage": 610.0,
+            "speed": 3.0,
+            "type": "gun"
+          }
+        }
+      ],
+      "key": "hun_bm",
+      "name": "Grizzlemaw Tracker's Garb",
+      "spec": "Beast Mastery",
+      "tuning": {
+        "bleed_ap_pct": {
+          "note": "bleed total over 6 sec, % of AP",
+          "value": 35
+        },
+        "cdr_bw_kc": {
+          "note": "Bestial Wrath / Kill Command reduction per Stomp, sec",
+          "value": 1
+        },
+        "cdr_cotw_rf": {
+          "note": "Call of the Wild / Rapid Fire reduction per Stomp, sec",
+          "value": 2
+        },
+        "proc_chance": {
+          "note": "Barbed Shot chance per shot, %",
+          "value": 22
+        },
+        "stomp_ap_pct": {
+          "note": "pet Stomp damage, % of AP, 8 yd",
+          "value": 30
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Marked Quarry",
+          "pieces": 2,
+          "spell_id": 900380,
+          "text": "Steady Shot grants Marked Quarry, increasing the damage of Steady Shot by 2% per stack, stacking up to 5 times. Lasts 30 sec."
+        },
+        {
+          "name": "Marked Quarry",
+          "pieces": 4,
+          "spell_id": 900381,
+          "text": "Aimed Shot consumes all stacks of Marked Quarry, dealing 20% of your attack power as additional damage per stack, and causes your next Arcane Shot to deal 50% more damage and cost no mana."
+        }
+      ],
+      "cls": "Hunter",
+      "item_set_id": 9309,
+      "items": [
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901033,
+          "item_level": 271,
+          "name": "Longshot's Bark Collar",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "agility": 96,
+            "armor_penetration_rating": 64,
+            "attack_power": 113,
+            "crit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901034,
+          "item_level": 271,
+          "name": "Ring of the Unerring Bough",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901035,
+          "item_level": 271,
+          "name": "Cape of the Still Wind",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "agility": 96,
+            "armor": 184,
+            "armor_penetration_rating": 56,
+            "attack_power": 113,
+            "hit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901036,
+          "item_level": 271,
+          "name": "Canopy Piercer",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "ranged",
+          "stats": {
+            "agility": 46,
+            "armor_penetration_rating": 39,
+            "attack_power": 85,
+            "crit_rating": 25,
+            "stamina": 39
+          },
+          "weapon": {
+            "dps": 268.1,
+            "max_damage": 967.0,
+            "min_damage": 588.0,
+            "speed": 2.9,
+            "type": "bow"
+          }
+        }
+      ],
+      "key": "hun_mm",
+      "name": "Warden of the Silent Canopy",
+      "spec": "Marksmanship",
+      "tuning": {
+        "aimed_ap_pct_per_stack": {
+          "note": "Aimed Shot bonus per stack consumed, % of AP",
+          "value": 20
+        },
+        "arcane_bonus_pct": {
+          "note": "next Arcane Shot bonus, %",
+          "value": 50
+        },
+        "arcane_buff_dur": {
+          "note": "free Arcane Shot buff duration",
+          "value": 30
+        },
+        "cap": {
+          "note": "max stacks",
+          "value": 5
+        },
+        "quarry_dur": {
+          "note": "Marked Quarry duration",
+          "value": 30
+        },
+        "ss_pct_per_stack": {
+          "note": "Steady Shot bonus per stack, %",
+          "value": 2
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Sentinel's Mark",
+          "pieces": 2,
+          "spell_id": 900390,
+          "text": "Consuming Lock and Load with Explosive Shot has a 45% chance to summon a Sentinel Owl, applying Sentinel's Mark to your target. Your next Explosive Shot deals 40% increased damage to the marked target."
+        },
+        {
+          "name": "Sentinel's Mark",
+          "pieces": 4,
+          "spell_id": 900391,
+          "text": "When Sentinel's Mark is consumed, it summons a barrage of 4 lunar missiles, each dealing 30% of your attack power as Arcane damage to enemies within 10 yards."
+        }
+      ],
+      "cls": "Hunter",
+      "item_set_id": 9310,
+      "items": [
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901037,
+          "item_level": 271,
+          "name": "Snare-Setter's Choker",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901038,
+          "item_level": 271,
+          "name": "Band of the Patient Trap",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901039,
+          "item_level": 271,
+          "name": "Drape of Tar and Thorn",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "agility": 96,
+            "armor": 184,
+            "attack_power": 113,
+            "haste_rating": 56,
+            "hit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Hunter"
+          ],
+          "entry": 901040,
+          "item_level": 271,
+          "name": "Blightspitter",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "ranged",
+          "stats": {
+            "agility": 46,
+            "attack_power": 85,
+            "crit_rating": 25,
+            "haste_rating": 39,
+            "stamina": 39
+          },
+          "weapon": {
+            "dps": 268.5,
+            "max_damage": 1001.0,
+            "min_damage": 610.0,
+            "speed": 3.0,
+            "type": "crossbow"
+          }
+        }
+      ],
+      "key": "hun_surv",
+      "name": "Nightmare Stalker's Trappings",
+      "spec": "Survival",
+      "tuning": {
+        "mark_bonus_pct": {
+          "note": "next Explosive Shot bonus vs marked target, %",
+          "value": 40
+        },
+        "missile_ap_pct": {
+          "note": "damage per missile, % of AP, 10 yd",
+          "value": 30
+        },
+        "missiles": {
+          "note": "lunar missiles per Mark consumed",
+          "value": 4
+        },
+        "proc_chance": {
+          "note": "Sentinel chance per Lock and Load consumed by Explosive Shot, %",
+          "value": 45
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Arcane Phoenix",
+          "pieces": 2,
+          "spell_id": 900400,
+          "text": "Consuming Hot Streak summons an Arcane Phoenix to aid you for 15 sec, casting Arcane and Fire spells at your enemies. This effect has an internal cooldown of 45 sec."
+        },
+        {
+          "name": "Kindled Momentum",
+          "pieces": 4,
+          "spell_id": 900401,
+          "text": "Consuming Hot Streak grants a stack of Kindled Momentum, increasing spell haste by 2% for 10 sec, stacking up to 5. Each spell cast by the Arcane Phoenix also grants a stack."
+        }
+      ],
+      "cls": "Mage",
+      "item_set_id": 9311,
+      "items": [
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901041,
+          "item_level": 271,
+          "name": "Choker of Smoldering Sap",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 64,
+            "haste_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901042,
+          "item_level": 271,
+          "name": "Ring of the Kindled Grove",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "haste_rating": 64,
+            "hit_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901043,
+          "item_level": 271,
+          "name": "Cape of Ashen Bark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901044,
+          "item_level": 271,
+          "name": "Emberbough, Dagger of the Pyre",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "main-hand",
+          "stats": {
+            "crit_rating": 63,
+            "haste_rating": 63,
+            "intellect": 72,
+            "spell_power": 793,
+            "stamina": 72
+          },
+          "weapon": {
+            "dps": 139.2,
+            "max_damage": 381.0,
+            "min_damage": 120.0,
+            "speed": 1.8,
+            "type": "dagger"
+          }
+        }
+      ],
+      "key": "mag_fire",
+      "name": "Cinder of the Burning Root",
+      "spec": "Fire",
+      "tuning": {
+        "cast_interval_ms": {
+          "note": "phoenix cast interval, ms",
+          "value": 1750
+        },
+        "icd": {
+          "note": "phoenix internal cooldown, sec",
+          "value": 45
+        },
+        "km_dur": {
+          "note": "Kindled Momentum duration per stack",
+          "value": 10
+        },
+        "km_haste_pct": {
+          "note": "Kindled Momentum haste per stack, %",
+          "value": 2
+        },
+        "km_stacks": {
+          "note": "Kindled Momentum max stacks",
+          "value": 5
+        },
+        "phoenix_dur": {
+          "note": "phoenix duration",
+          "value": 15
+        },
+        "pyro_chance": {
+          "note": "phoenix Pyroblast chance per cast, %",
+          "value": 12
+        },
+        "pyro_sp_pct": {
+          "note": "phoenix Pyroblast damage, % of SP",
+          "value": 50
+        },
+        "spell_sp_pct": {
+          "note": "phoenix Fireball/Arcane Blast damage, % of SP",
+          "value": 22
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Brain Freeze",
+          "pieces": 2,
+          "spell_id": 900410,
+          "text": "Brain Freeze causes your next Frostfire Bolt to deal an additional 50% of your spell power as damage and explode, dealing 35% of its damage to nearby enemies. Consuming Brain Freeze grants 1 charge of Fingers of Frost."
+        },
+        {
+          "name": "Empowered Icy Lance",
+          "pieces": 4,
+          "spell_id": 900411,
+          "text": "Activating Icy Veins grants Brain Freeze. While Icy Veins is active, an Empowered Icy Lance is launched at your target every second, dealing 165% of your spell power as Frost damage."
+        }
+      ],
+      "cls": "Mage",
+      "item_set_id": 9312,
+      "items": [
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901045,
+          "item_level": 271,
+          "name": "Icicle Pendant of Vordrassil",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901046,
+          "item_level": 271,
+          "name": "Band of the Rimed Bough",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901047,
+          "item_level": 271,
+          "name": "Drape of the Frozen Canopy",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "haste_rating": 56,
+            "hit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901048,
+          "item_level": 271,
+          "name": "Wintersap",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "main-hand",
+          "stats": {
+            "crit_rating": 63,
+            "haste_rating": 63,
+            "intellect": 72,
+            "spell_power": 793,
+            "stamina": 72
+          },
+          "weapon": {
+            "dps": 139.2,
+            "max_damage": 381.0,
+            "min_damage": 120.0,
+            "speed": 1.8,
+            "type": "dagger"
+          }
+        }
+      ],
+      "key": "mag_frost",
+      "name": "Hoarfrost of the Sleeping Tree",
+      "spec": "Frost",
+      "tuning": {
+        "explosion_pct": {
+          "note": "explosion, % of the bolt damage, 10 yd",
+          "value": 35
+        },
+        "ffb_sp_pct": {
+          "note": "Brain Freeze Frostfire Bolt bonus, flat % of SP",
+          "value": 50
+        },
+        "lance_interval_ms": {
+          "note": "seconds between lances while Icy Veins is up, ms",
+          "value": 1000
+        },
+        "lance_sp_pct": {
+          "note": "Empowered Icy Lance, % of SP (25 -> 150 -> 165 on 2026-09-22: only usable inside Icy Veins)",
+          "value": 165
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Arcane Splinters",
+          "pieces": 2,
+          "spell_id": 900420,
+          "text": "Casting Arcane Blast or Arcane Barrage conjures an Arcane Splinter, dealing Arcane Damage to the target."
+        },
+        {
+          "name": "Splinterstorm",
+          "pieces": 4,
+          "spell_id": 900421,
+          "text": "Conjuring an Arcane Splinter has a 10% chance to trigger Splinterstorm, conjuring 8 additional Arcane Splinters at your target. Splinters conjured by Splinterstorm cannot trigger Splinterstorm."
+        }
+      ],
+      "cls": "Mage",
+      "item_set_id": 9313,
+      "items": [
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901049,
+          "item_level": 271,
+          "name": "Pendant of the Whispered Rune",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901050,
+          "item_level": 271,
+          "name": "Loop of the Endless Ley",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901051,
+          "item_level": 271,
+          "name": "Cloak of Unraveled Dream",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "haste_rating": 56,
+            "hit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Mage"
+          ],
+          "entry": 901052,
+          "item_level": 271,
+          "name": "Staff of Ten Thousand Whispers",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "crit_rating": 129,
+            "haste_rating": 129,
+            "intellect": 167,
+            "spell_power": 793,
+            "stamina": 167
+          },
+          "weapon": {
+            "dps": 232.1,
+            "max_damage": 619.0,
+            "min_damage": 356.0,
+            "speed": 2.1,
+            "type": "staff"
+          }
+        }
+      ],
+      "key": "mag_arcane",
+      "name": "Whisperer of the Hollow Tree",
+      "spec": "Arcane",
+      "tuning": {
+        "conjure_chance": {
+          "note": "splinter chance per Arcane Blast/Barrage, %",
+          "value": 100
+        },
+        "splinter_sp_pct": {
+          "note": "splinter damage, % of SP",
+          "value": 43.65
+        },
+        "storm_chance": {
+          "note": "Splinterstorm chance per conjured splinter, %",
+          "value": 10
+        },
+        "storm_count": {
+          "note": "splinters per Splinterstorm",
+          "value": 8
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Tyr's Deliverance",
+          "pieces": 2,
+          "spell_id": 900430,
+          "text": "Activating Avenging Wrath invokes Tyr's Deliverance for its duration, instantly healing up to 5 injured allies within 40 yards, then healing an injured ally every 1 sec for 35% of your spell power."
+        },
+        {
+          "name": "Tyr's Grace",
+          "pieces": 4,
+          "spell_id": 900431,
+          "text": "Allies healed by Tyr's Deliverance or your Holy Shock gain Tyr's Grace for 12 sec, increasing healing received from your Holy Light, Flash of Light and Holy Shock by 10%."
+        }
+      ],
+      "cls": "Paladin",
+      "item_set_id": 9314,
+      "items": [
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901053,
+          "item_level": 271,
+          "name": "Medallion of Radiant Sap",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 64,
+            "haste_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901054,
+          "item_level": 271,
+          "name": "Signet of the Sunlit Canopy",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "haste_rating": 64,
+            "intellect": 74,
+            "mp5": 32,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901055,
+          "item_level": 271,
+          "name": "Cloak of Dawn over Grizzlemaw",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 56,
+            "intellect": 74,
+            "mp5": 32,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901056,
+          "item_level": 271,
+          "name": "Dawnbough",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "main-hand",
+          "stats": {
+            "crit_rating": 63,
+            "haste_rating": 63,
+            "intellect": 72,
+            "spell_power": 793,
+            "stamina": 72
+          },
+          "weapon": {
+            "dps": 139.2,
+            "max_damage": 381.0,
+            "min_damage": 120.0,
+            "speed": 1.8,
+            "type": "mace"
+          }
+        }
+      ],
+      "key": "pal_holy",
+      "name": "Lightwarden of the Grove",
+      "spec": "Holy",
+      "tuning": {
+        "grace_dur": {
+          "note": "Tyr's Grace duration",
+          "value": 12
+        },
+        "grace_pct": {
+          "note": "Tyr's Grace healing received bonus, %",
+          "value": 10
+        },
+        "initial_targets": {
+          "note": "allies healed instantly on activation",
+          "value": 5
+        },
+        "range": {
+          "note": "range, yd",
+          "value": 40
+        },
+        "tick_sp_pct": {
+          "note": "Tyr's Deliverance heal per tick, % of SP",
+          "value": 35
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Vanguard",
+          "pieces": 2,
+          "spell_id": 900440,
+          "text": "Judgement grants Vanguard. Your next Shield of Righteousness deals 45% increased damage and heals you for 50% of the damage it deals."
+        },
+        {
+          "name": "Vanguard",
+          "pieces": 4,
+          "spell_id": 900441,
+          "text": "Avenger's Shield refracts Holy Light onto up to 4 nearby enemies, dealing 45% of your attack power as Holy damage, and consuming Vanguard reduces its cooldown by 2 sec. While Avenging Wrath is active, every Shield of Righteousness benefits from Vanguard."
+        }
+      ],
+      "cls": "Paladin",
+      "item_set_id": 9315,
+      "items": [
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901057,
+          "item_level": 271,
+          "name": "Gorget of the Unbroken Bough",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "armor": 672,
+            "defense_rating": 51,
+            "dodge_rating": 43,
+            "stamina": 133,
+            "strength": 96
+          }
+        },
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901058,
+          "item_level": 271,
+          "name": "Seal of the Rooted Bulwark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "armor": 672,
+            "defense_rating": 51,
+            "parry_rating": 43,
+            "stamina": 133,
+            "strength": 96
+          }
+        },
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901059,
+          "item_level": 271,
+          "name": "Greatcloak of the Ironbark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "defense_rating": 51,
+            "expertise_rating": 43,
+            "stamina": 133,
+            "strength": 96
+          }
+        },
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901060,
+          "item_level": 271,
+          "name": "Barkwarden",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "one-hand",
+          "stats": {
+            "defense_rating": 45,
+            "dodge_rating": 47,
+            "parry_rating": 44,
+            "stamina": 98,
+            "strength": 51
+          },
+          "weapon": {
+            "dps": 240.0,
+            "max_damage": 500.0,
+            "min_damage": 268.0,
+            "speed": 1.6,
+            "type": "sword"
+          }
+        }
+      ],
+      "key": "pal_prot",
+      "name": "Bulwark of the Ancient Bark",
+      "spec": "Protection",
+      "tuning": {
+        "as_cdr": {
+          "note": "Avenger's Shield reduction per Vanguard consumed, sec",
+          "value": 2
+        },
+        "refract_ap_pct": {
+          "note": "refraction damage per target, % of AP",
+          "value": 45
+        },
+        "refract_targets": {
+          "note": "refraction target cap",
+          "value": 4
+        },
+        "selfheal_pct": {
+          "note": "self-heal, % of damage dealt",
+          "value": 50
+        },
+        "sor_pct": {
+          "note": "Vanguard Shield of Righteousness bonus, %",
+          "value": 45
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Crusader's Zeal",
+          "pieces": 2,
+          "spell_id": 900450,
+          "text": "Art of War also grants Crusader's Zeal, increasing the damage of your next Crusader Strike by 70%. Crusader's Zeal can accumulate up to 2 times."
+        },
+        {
+          "name": "Crusader's Zeal",
+          "pieces": 4,
+          "spell_id": 900451,
+          "text": "Crusader Strike empowered by Crusader's Zeal unleashes a wave of Holy energy through its target, dealing 50% of your attack power as Holy damage to the primary target and 30% to all other enemies in its path."
+        }
+      ],
+      "cls": "Paladin",
+      "item_set_id": 9316,
+      "items": [
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901061,
+          "item_level": 271,
+          "name": "Collar of the Righteous Purge",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "armor_penetration_rating": 56,
+            "crit_rating": 64,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901062,
+          "item_level": 271,
+          "name": "Seal of the Burning Whisper",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "armor_penetration_rating": 64,
+            "hit_rating": 56,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901063,
+          "item_level": 271,
+          "name": "Cape of the Cleansing Flame",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Paladin"
+          ],
+          "entry": 901064,
+          "item_level": 271,
+          "name": "Nightmare's End, Hammer of Vordrassil",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "armor_penetration_rating": 98,
+            "crit_rating": 98,
+            "stamina": 198,
+            "strength": 181
+          },
+          "weapon": {
+            "dps": 312.2,
+            "max_damage": 1349.0,
+            "min_damage": 899.0,
+            "speed": 3.6,
+            "type": "two-handed mace"
+          }
+        }
+      ],
+      "key": "pal_ret",
+      "name": "Judgement of the Nightmare",
+      "spec": "Retribution",
+      "tuning": {
+        "cap": {
+          "note": "max Zeal stacks",
+          "value": 2
+        },
+        "cs_pct": {
+          "note": "Crusader Strike bonus per Zeal, %",
+          "value": 70
+        },
+        "wave_primary_ap_pct": {
+          "note": "wave primary, % of AP",
+          "value": 50
+        },
+        "wave_secondary_ap_pct": {
+          "note": "wave secondary per target, % of AP",
+          "value": 30
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Atonement",
+          "pieces": 2,
+          "spell_id": 900460,
+          "text": "Casting Penance against an enemy target heals all allies within 20 yards of it for 100% of the damage dealt."
+        },
+        {
+          "name": "Atonement",
+          "pieces": 4,
+          "spell_id": 900461,
+          "text": "Casting Smite increases the damage of Penance by 25%, stacking up to 2 times. Lasts 12 sec."
+        }
+      ],
+      "cls": "Priest",
+      "item_set_id": 9317,
+      "items": [
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901065,
+          "item_level": 271,
+          "name": "Pendant of Quiet Bark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "haste_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "spirit": 64,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901066,
+          "item_level": 271,
+          "name": "Loop of the Sheltering Bough",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901067,
+          "item_level": 271,
+          "name": "Cloak of the Woven Ward",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "spirit": 64,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901068,
+          "item_level": 271,
+          "name": "Bough of Absolution",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "main-hand",
+          "stats": {
+            "haste_rating": 63,
+            "intellect": 72,
+            "spell_power": 793,
+            "spirit": 63,
+            "stamina": 72
+          },
+          "weapon": {
+            "dps": 139.2,
+            "max_damage": 381.0,
+            "min_damage": 120.0,
+            "speed": 1.8,
+            "type": "mace"
+          }
+        }
+      ],
+      "key": "pri_disc",
+      "name": "Wardings of the Dreamless Sleep",
+      "spec": "Discipline",
+      "tuning": {
+        "conversion_pct": {
+          "note": "Atonement healing, % of Penance damage",
+          "value": 100
+        },
+        "penance_pct_per_smite": {
+          "note": "Penance bonus per Smite, %",
+          "value": 25
+        },
+        "radius": {
+          "note": "radius around the enemy target, yd",
+          "value": 20
+        },
+        "smite_dur": {
+          "note": "Smite buff duration",
+          "value": 12
+        },
+        "smite_stacks": {
+          "note": "max Smite stacks",
+          "value": 2
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Surge of Light",
+          "pieces": 2,
+          "spell_id": 900470,
+          "text": "Consuming Surge of Light with Flash Heal also heals the 2 of your lowest health allies within 40 yards for 100% of the Flash Heal."
+        },
+        {
+          "name": "Blessed Light",
+          "pieces": 4,
+          "spell_id": 900471,
+          "text": "Flash Heal cast while under Surge of Light leaves Blessed Light on the target, healing them for 35% of the Flash Heal over 6 sec."
+        }
+      ],
+      "cls": "Priest",
+      "item_set_id": 9318,
+      "items": [
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901069,
+          "item_level": 271,
+          "name": "Amulet of the Waking Dawn",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "haste_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "spirit": 64,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901070,
+          "item_level": 271,
+          "name": "Ring of the Golden Sap",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901071,
+          "item_level": 271,
+          "name": "Cape of the Serene Canopy",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "spirit": 64,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901072,
+          "item_level": 271,
+          "name": "Staff of Renewing Roots",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "haste_rating": 129,
+            "intellect": 167,
+            "spell_power": 793,
+            "spirit": 129,
+            "stamina": 167
+          },
+          "weapon": {
+            "dps": 232.1,
+            "max_damage": 619.0,
+            "min_damage": 356.0,
+            "speed": 2.1,
+            "type": "staff"
+          }
+        }
+      ],
+      "key": "pri_holy",
+      "name": "Dawnsap Vestments",
+      "spec": "Holy",
+      "tuning": {
+        "blessed_dur": {
+          "note": "Blessed Light duration",
+          "value": 6
+        },
+        "blessed_pct": {
+          "note": "Blessed Light total, % of the Flash Heal",
+          "value": 35
+        },
+        "extra_pct": {
+          "note": "extra-target heal, % of the Flash Heal",
+          "value": 100
+        },
+        "range": {
+          "note": "smart heal range, yd",
+          "value": 40
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Shadow Word: Death",
+          "pieces": 2,
+          "spell_id": 900480,
+          "text": "Damaging an enemy with Shadow Word: Pain increases the damage of your next Shadow Word: Death by 150% of your spell power. Stacks up to 10 times, and Shadow Word: Death no longer causes damage to the caster."
+        },
+        {
+          "name": "Shadow Word: Death",
+          "pieces": 4,
+          "spell_id": 900481,
+          "text": "While you have Shadow Word: Pain, Devouring Plague and Vampiric Touch active on the same target, your Mind Blast deals 45% more damage."
+        }
+      ],
+      "cls": "Priest",
+      "item_set_id": 9319,
+      "items": [
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901073,
+          "item_level": 271,
+          "name": "Choker of the Thousand Whispers",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901074,
+          "item_level": 271,
+          "name": "Band of the Sleepless Eye",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901075,
+          "item_level": 271,
+          "name": "Shroud of the Maddening Dark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "haste_rating": 56,
+            "hit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Priest"
+          ],
+          "entry": 901076,
+          "item_level": 271,
+          "name": "Tongue of the Old God",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "main-hand",
+          "stats": {
+            "crit_rating": 63,
+            "haste_rating": 63,
+            "intellect": 72,
+            "spell_power": 793,
+            "stamina": 72
+          },
+          "weapon": {
+            "dps": 139.2,
+            "max_damage": 381.0,
+            "min_damage": 120.0,
+            "speed": 1.8,
+            "type": "dagger"
+          }
+        }
+      ],
+      "key": "pri_shadow",
+      "name": "Voice of the Faceless",
+      "spec": "Shadow",
+      "tuning": {
+        "cap": {
+          "note": "max stacks (Spell.dbc StackAmount is 20, the ceiling for this value)",
+          "value": 10
+        },
+        "dmg_sp_pct_per_stack": {
+          "note": "Shadow Word: Death bonus per stack, % of SP (was flat 250 at cap 20: ~144 DPS)",
+          "value": 150
+        },
+        "mb_pct": {
+          "note": "Mind Blast bonus with all three DoTs, %",
+          "value": 45
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Deathstalker's Mark",
+          "pieces": 2,
+          "spell_id": 900490,
+          "text": "Garrote applies 3 stacks of Deathstalker's Mark to your target for 30 sec. When you spend 4 or more combo points on Envenom against a marked target, you consume a stack, dealing 156% of your attack power as Poison damage."
+        },
+        {
+          "name": "Deathstalker's Mark",
+          "pieces": 4,
+          "spell_id": 900491,
+          "text": "Each time you consume a stack of Deathstalker's Mark, reduce the cooldown of Vanish by 30 sec."
+        }
+      ],
+      "cls": "Rogue",
+      "item_set_id": 9320,
+      "items": [
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901077,
+          "item_level": 271,
+          "name": "Choker of the Black Sap",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "agility": 96,
+            "armor_penetration_rating": 56,
+            "attack_power": 113,
+            "crit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901078,
+          "item_level": 271,
+          "name": "Band of the Venomous Root",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "agility": 96,
+            "armor_penetration_rating": 64,
+            "attack_power": 113,
+            "hit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901079,
+          "item_level": 271,
+          "name": "Drape of Silent Rot",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "agility": 96,
+            "armor": 184,
+            "attack_power": 113,
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901080,
+          "item_level": 271,
+          "name": "Sapfang",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "one-hand",
+          "stats": {
+            "agility": 74,
+            "armor_penetration_rating": 49,
+            "attack_power": 100,
+            "crit_rating": 49,
+            "stamina": 74
+          },
+          "weapon": {
+            "dps": 240.3,
+            "max_damage": 519.0,
+            "min_damage": 346.0,
+            "speed": 1.8,
+            "type": "dagger"
+          }
+        }
+      ],
+      "key": "rog_assa",
+      "name": "Blightsap Poisoner's Garb",
+      "spec": "Assassination",
+      "tuning": {
+        "mark_ap_pct": {
+          "note": "damage per mark consumed, % of AP",
+          "value": 156
+        },
+        "mark_dur": {
+          "note": "mark duration",
+          "value": 30
+        },
+        "min_cp": {
+          "note": "combo points an Envenom needs to consume a mark",
+          "value": 4
+        },
+        "stacks": {
+          "note": "marks per Garrote",
+          "value": 3
+        },
+        "vanish_cdr": {
+          "note": "Vanish reduction per mark consumed, sec",
+          "value": 30
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Flawless Form",
+          "pieces": 2,
+          "spell_id": 900500,
+          "text": "Rupture periodic damage increases the damage of your next Eviscerate by 4% for 12 sec, stacking up to 5 times."
+        },
+        {
+          "name": "Flawless Form",
+          "pieces": 4,
+          "spell_id": 900501,
+          "text": "Flawless Form makes your next Eviscerate swing a flurry of attacks, dealing 50% of your attack power as physical damage to the target and 30% to all other nearby enemies. While Blade Flurry is active, damage to non-primary targets is increased by 100%."
+        }
+      ],
+      "cls": "Rogue",
+      "item_set_id": 9321,
+      "items": [
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901081,
+          "item_level": 271,
+          "name": "Cutthroat's Bone Collar",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "agility": 96,
+            "armor_penetration_rating": 64,
+            "attack_power": 113,
+            "crit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901082,
+          "item_level": 271,
+          "name": "Ring of the Hollow Blade",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901083,
+          "item_level": 271,
+          "name": "Cape of the Furbolg Skinner",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "agility": 96,
+            "armor": 184,
+            "armor_penetration_rating": 56,
+            "attack_power": 113,
+            "hit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901084,
+          "item_level": 271,
+          "name": "Boughcleaver",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "one-hand",
+          "stats": {
+            "agility": 74,
+            "armor_penetration_rating": 49,
+            "attack_power": 100,
+            "crit_rating": 49,
+            "stamina": 74
+          },
+          "weapon": {
+            "dps": 240.2,
+            "max_damage": 812.0,
+            "min_damage": 437.0,
+            "speed": 2.6,
+            "type": "sword"
+          }
+        }
+      ],
+      "key": "rog_combat",
+      "name": "Burrow Cutthroat's Kit",
+      "spec": "Combat",
+      "tuning": {
+        "bf_bonus_pct": {
+          "note": "non-primary flurry bonus during Blade Flurry, %",
+          "value": 100
+        },
+        "cap": {
+          "note": "max stacks",
+          "value": 5
+        },
+        "dur": {
+          "note": "buff duration",
+          "value": 12
+        },
+        "evis_pct_per_stack": {
+          "note": "Eviscerate bonus per stack, %",
+          "value": 4
+        },
+        "flurry_primary_ap_pct": {
+          "note": "flurry primary, % of AP",
+          "value": 50
+        },
+        "flurry_secondary_ap_pct": {
+          "note": "flurry secondary per target, % of AP, 8 yd",
+          "value": 30
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Shadow Strikes",
+          "pieces": 2,
+          "spell_id": 900510,
+          "text": "Hemorrhage deals a secondary strike with both weapons, each dealing Shadow damage."
+        },
+        {
+          "name": "Shadow Strikes",
+          "pieces": 4,
+          "spell_id": 900511,
+          "text": "While in Shadow Dance, your abilities strike a second time, dealing Shadow damage. When Shadow Dance ends, all nearby enemies take increased Shadow damage from you for 12 sec."
+        }
+      ],
+      "cls": "Rogue",
+      "item_set_id": 9322,
+      "items": [
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901085,
+          "item_level": 271,
+          "name": "Pendant of the Unseen Bough",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901086,
+          "item_level": 271,
+          "name": "Loop of the Deep Shade",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901087,
+          "item_level": 271,
+          "name": "Cloak of Fallen Leaves",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "agility": 96,
+            "armor": 184,
+            "attack_power": 113,
+            "haste_rating": 56,
+            "hit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Rogue"
+          ],
+          "entry": 901088,
+          "item_level": 271,
+          "name": "Whisperfang",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "one-hand",
+          "stats": {
+            "agility": 74,
+            "attack_power": 100,
+            "crit_rating": 49,
+            "haste_rating": 49,
+            "stamina": 74
+          },
+          "weapon": {
+            "dps": 240.3,
+            "max_damage": 519.0,
+            "min_damage": 346.0,
+            "speed": 1.8,
+            "type": "dagger"
+          }
+        }
+      ],
+      "key": "rog_sub",
+      "name": "Shadow of the Canopy",
+      "spec": "Subtlety",
+      "tuning": {
+        "dance_ap_pct": {
+          "note": "Shadow Dance second strike, % of AP (200 gave ~6k DPS at 20 strikes; halved 2026-09-22)",
+          "value": 100
+        },
+        "debuff_dur": {
+          "note": "debuff duration, sec (18 -> 12 on 2026-09-22)",
+          "value": 12
+        },
+        "debuff_pct": {
+          "note": "shadow damage taken debuff, % (50 -> 15 test round 2026-09-22)",
+          "value": 15
+        },
+        "hemo_ap_pct": {
+          "note": "each Hemorrhage shadow strike, % of AP",
+          "value": 31.2
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Elemental Mastery",
+          "pieces": 2,
+          "spell_id": 900520,
+          "text": "Elemental Mastery makes your next 3 Lightning Bolts instant cast and deal 125% more damage."
+        },
+        {
+          "name": "Elemental Mastery",
+          "pieces": 4,
+          "spell_id": 900521,
+          "text": "Lightning Bolt reduces the cooldown of Elemental Mastery by 1 sec, and Chain Lightning by 2 sec."
+        }
+      ],
+      "cls": "Shaman",
+      "item_set_id": 9323,
+      "items": [
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901089,
+          "item_level": 271,
+          "name": "Torc of the Thunderstruck Tree",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901090,
+          "item_level": 271,
+          "name": "Ring of the Stormsplit Root",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901091,
+          "item_level": 271,
+          "name": "Cloak of the Rolling Storm",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "haste_rating": 56,
+            "hit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901092,
+          "item_level": 271,
+          "name": "Skyfire Bough",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "main-hand",
+          "stats": {
+            "crit_rating": 63,
+            "haste_rating": 63,
+            "intellect": 72,
+            "spell_power": 793,
+            "stamina": 72
+          },
+          "weapon": {
+            "dps": 139.2,
+            "max_damage": 381.0,
+            "min_damage": 120.0,
+            "speed": 1.8,
+            "type": "mace"
+          }
+        }
+      ],
+      "key": "sha_ele",
+      "name": "Stormcaller of Vordrassil",
+      "spec": "Elemental",
+      "tuning": {
+        "charge_dur": {
+          "note": "charge duration, sec",
+          "value": 15
+        },
+        "charges": {
+          "note": "instant Lightning Bolt charges",
+          "value": 3
+        },
+        "cl_cdr": {
+          "note": "per Chain Lightning, sec",
+          "value": 2
+        },
+        "dmg_pct": {
+          "note": "charged Lightning Bolt bonus, %",
+          "value": 125
+        },
+        "lb_cdr": {
+          "note": "Elemental Mastery reduction per Lightning Bolt, sec",
+          "value": 1
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Maelstrom Weapon",
+          "pieces": 2,
+          "spell_id": 900530,
+          "text": "Lightning Bolt and Chain Lightning deal 20% increased damage and have a 20% chance to refund the Maelstrom Weapon spent."
+        },
+        {
+          "name": "Maelstrom Weapon",
+          "pieces": 4,
+          "spell_id": 900531,
+          "text": "Maelstrom Weapon can stack 5 additional times. Each stack of Maelstrom Weapon increases the damage of Lightning Bolt or Chain Lightning by 10%. Stacks beyond 5 add damage only."
+        }
+      ],
+      "cls": "Shaman",
+      "item_set_id": 9324,
+      "items": [
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901093,
+          "item_level": 271,
+          "name": "Feral Spirit Bone Torc",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "crit_rating": 64,
+            "haste_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901094,
+          "item_level": 271,
+          "name": "Band of the Wolf Ancestor",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "agility": 96,
+            "attack_power": 113,
+            "haste_rating": 64,
+            "hit_rating": 56,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901095,
+          "item_level": 271,
+          "name": "Cape of Wind and Bark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "agility": 96,
+            "armor": 184,
+            "attack_power": 113,
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "stamina": 96
+          }
+        },
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901096,
+          "item_level": 271,
+          "name": "Rootbreaker",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "one-hand",
+          "stats": {
+            "agility": 74,
+            "attack_power": 100,
+            "crit_rating": 49,
+            "haste_rating": 49,
+            "stamina": 74
+          },
+          "weapon": {
+            "dps": 240.2,
+            "max_damage": 812.0,
+            "min_damage": 437.0,
+            "speed": 2.6,
+            "type": "axe"
+          }
+        }
+      ],
+      "key": "sha_enh",
+      "name": "Fury of the Grizzly Hills",
+      "spec": "Enhancement",
+      "tuning": {
+        "extra_stacks": {
+          "note": "extra Maelstrom Weapon stacks",
+          "value": 5
+        },
+        "flat_pct": {
+          "note": "Lightning Bolt / Chain Lightning flat bonus, %",
+          "value": 20
+        },
+        "per_stack_pct": {
+          "note": "damage per Maelstrom stack, %",
+          "value": 10
+        },
+        "refund_chance": {
+          "note": "Maelstrom refund chance, %",
+          "value": 20
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Stormstream Totem",
+          "pieces": 2,
+          "spell_id": 900540,
+          "text": "Casting Nature's Swiftness summons a Stormstream Totem at your feet, healing allies within 30 yards for 60% of your spell power every 2 sec for 10 sec."
+        },
+        {
+          "name": "Stormstream Totem",
+          "pieces": 4,
+          "spell_id": 900541,
+          "text": "While active, Stormstream Totem casts Riptide on the lowest health ally every 2 sec."
+        }
+      ],
+      "cls": "Shaman",
+      "item_set_id": 9325,
+      "items": [
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901097,
+          "item_level": 271,
+          "name": "Amulet of the Groundwater",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901098,
+          "item_level": 271,
+          "name": "Loop of the Underground Spring",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 64,
+            "intellect": 74,
+            "mp5": 32,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901099,
+          "item_level": 271,
+          "name": "Drape of the Mist Canopy",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "haste_rating": 56,
+            "intellect": 74,
+            "mp5": 32,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Shaman"
+          ],
+          "entry": 901100,
+          "item_level": 271,
+          "name": "Springwell, Hammer of the Deep Root",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "main-hand",
+          "stats": {
+            "crit_rating": 63,
+            "haste_rating": 63,
+            "intellect": 72,
+            "spell_power": 793,
+            "stamina": 72
+          },
+          "weapon": {
+            "dps": 139.2,
+            "max_damage": 381.0,
+            "min_damage": 120.0,
+            "speed": 1.8,
+            "type": "mace"
+          }
+        }
+      ],
+      "key": "sha_resto",
+      "name": "Tidewarden of the Deep Roots",
+      "spec": "Restoration",
+      "tuning": {
+        "dur": {
+          "note": "totem duration",
+          "value": 10
+        },
+        "radius": {
+          "note": "radius, yd",
+          "value": 30
+        },
+        "riptide_interval": {
+          "note": "totem Riptide interval, sec",
+          "value": 2
+        },
+        "tick_sp_pct": {
+          "note": "totem heal per tick, % of SP",
+          "value": 60
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Soul Anathema",
+          "pieces": 2,
+          "spell_id": 900550,
+          "text": "Haunt unleashes a demonic entity unto the soul of your target, dealing 680% of your spell power as Shadow damage over 10 sec. If reapplied, any remaining damage is added to the new Soul Anathema."
+        },
+        {
+          "name": "Soul Anathema",
+          "pieces": 4,
+          "spell_id": 900551,
+          "text": "Soul Anathema damage increased by 25%. Consuming Nightfall is guaranteed to apply Soul Anathema."
+        }
+      ],
+      "cls": "Warlock",
+      "item_set_id": 9326,
+      "items": [
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901101,
+          "item_level": 271,
+          "name": "Pendant of the Creeping Blight",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 56,
+            "haste_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901102,
+          "item_level": 271,
+          "name": "Ring of the Withering Root",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901103,
+          "item_level": 271,
+          "name": "Cloak of Lingering Rot",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "haste_rating": 56,
+            "hit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901104,
+          "item_level": 271,
+          "name": "Fevertongue",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "main-hand",
+          "stats": {
+            "crit_rating": 63,
+            "haste_rating": 63,
+            "intellect": 72,
+            "spell_power": 793,
+            "stamina": 72
+          },
+          "weapon": {
+            "dps": 139.2,
+            "max_damage": 381.0,
+            "min_damage": 120.0,
+            "speed": 1.8,
+            "type": "dagger"
+          }
+        }
+      ],
+      "key": "wl_affl",
+      "name": "Rot of the Fevered Dream",
+      "spec": "Affliction",
+      "tuning": {
+        "anathema_sp_pct": {
+          "note": "Anathema total over 10 sec, % of SP (114 gave ~500 DPS in testing; 680 targets ~3k)",
+          "value": 680
+        },
+        "bonus_pct": {
+          "note": "4pc Anathema damage bonus, %",
+          "value": 25
+        },
+        "proc_chance": {
+          "note": "Anathema chance per Haunt hit, %",
+          "value": 100
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Wild Imps",
+          "pieces": 2,
+          "spell_id": 900560,
+          "text": "Consuming a Molten Core charge summons 3 Wild Imps for 12 sec, each casting Fel Fireball at your primary target for 20% of your spell power as Fire damage."
+        },
+        {
+          "name": "Empowered Imp",
+          "pieces": 4,
+          "spell_id": 900561,
+          "text": "For each 3 Wild Imps summoned, 1 becomes Empowered and casts Empowered Fel Fireball instead, dealing 100% increased damage and also dealing 12.5% of your spell power as Fire damage to all enemies within 10 yards of the impact."
+        }
+      ],
+      "cls": "Warlock",
+      "item_set_id": 9327,
+      "items": [
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901105,
+          "item_level": 271,
+          "name": "Choker of the Bound Horror",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 64,
+            "haste_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901106,
+          "item_level": 271,
+          "name": "Signet of the Whispering Master",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "haste_rating": 64,
+            "hit_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901107,
+          "item_level": 271,
+          "name": "Cape of the Summoned Dark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901108,
+          "item_level": 271,
+          "name": "Leash of the Faceless",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "crit_rating": 129,
+            "haste_rating": 129,
+            "intellect": 167,
+            "spell_power": 793,
+            "stamina": 167
+          },
+          "weapon": {
+            "dps": 232.1,
+            "max_damage": 619.0,
+            "min_damage": 356.0,
+            "speed": 2.1,
+            "type": "staff"
+          }
+        }
+      ],
+      "key": "wl_demo",
+      "name": "Bindings of the Faceless Pact",
+      "spec": "Demonology",
+      "tuning": {
+        "cast_ms": {
+          "note": "Fel Fireball cast time, ms, fixed",
+          "value": 2000
+        },
+        "empowered_pct": {
+          "note": "Empowered imp bonus, %",
+          "value": 100
+        },
+        "fireball_sp_pct": {
+          "note": "Fel Fireball damage, % of SP (8 gave ~1.2k DPS over 60 s with 2 Molten Core procs; 20 targets ~3k)",
+          "value": 20
+        },
+        "imp_dur": {
+          "note": "imp duration",
+          "value": 12
+        },
+        "splash_sp_pct": {
+          "note": "Empowered splash, % of SP, 10 yd",
+          "value": 12.5
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Crashing Chaos",
+          "pieces": 2,
+          "spell_id": 900570,
+          "text": "Chaos Bolt deals an additional 40% of your spell power as damage, and makes your next Incinerate within 12 sec an instant cast."
+        },
+        {
+          "name": "Crashing Chaos",
+          "pieces": 4,
+          "spell_id": 900571,
+          "text": "Chaos Bolt has a 22% chance to summon an Infernal at your target for 8 sec, granting Crashing Chaos while it is active. Crashing Chaos increases Chaos Bolt and Incinerate damage by 35%."
+        }
+      ],
+      "cls": "Warlock",
+      "item_set_id": 9328,
+      "items": [
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901109,
+          "item_level": 271,
+          "name": "Collar of the Burning Canopy",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "crit_rating": 64,
+            "haste_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901110,
+          "item_level": 271,
+          "name": "Band of the Charred Root",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "haste_rating": 64,
+            "hit_rating": 56,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901111,
+          "item_level": 271,
+          "name": "Drape of Falling Embers",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "intellect": 74,
+            "spell_power": 104,
+            "stamina": 74
+          }
+        },
+        {
+          "classes": [
+            "Warlock"
+          ],
+          "entry": 901112,
+          "item_level": 271,
+          "name": "Vordrassil's Pyre",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "crit_rating": 129,
+            "haste_rating": 129,
+            "intellect": 167,
+            "spell_power": 793,
+            "stamina": 167
+          },
+          "weapon": {
+            "dps": 232.1,
+            "max_damage": 619.0,
+            "min_damage": 356.0,
+            "speed": 2.1,
+            "type": "staff"
+          }
+        }
+      ],
+      "key": "wl_destro",
+      "name": "Immolation of the World Tree",
+      "spec": "Destruction",
+      "tuning": {
+        "cb_sp_pct": {
+          "note": "Chaos Bolt bonus, % of SP",
+          "value": 40
+        },
+        "cc_pct": {
+          "note": "Crashing Chaos bonus, %",
+          "value": 35
+        },
+        "incin_window": {
+          "note": "instant Incinerate window, sec",
+          "value": 12
+        },
+        "infernal_chance": {
+          "note": "Infernal chance per Chaos Bolt, %",
+          "value": 22
+        },
+        "infernal_dur": {
+          "note": "Infernal duration",
+          "value": 8
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Fatal Mark",
+          "pieces": 2,
+          "spell_id": 900580,
+          "text": "Overpower has a 35% chance to reset the cooldown of Mortal Strike and reduce the cost of your next Mortal Strike by 33%."
+        },
+        {
+          "name": "Fatal Mark",
+          "pieces": 4,
+          "spell_id": 900581,
+          "text": "Mortal Strike applies a Fatal Mark for 30 sec, stacking up to 5. Execute against a marked target consumes all marks, dealing 276% of your attack power as physical damage per mark."
+        }
+      ],
+      "cls": "Warrior",
+      "item_set_id": 9329,
+      "items": [
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901113,
+          "item_level": 271,
+          "name": "Gorget of the Felled Giant",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "armor_penetration_rating": 64,
+            "crit_rating": 56,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901114,
+          "item_level": 271,
+          "name": "Ring of the Sundered Bough",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "crit_rating": 64,
+            "hit_rating": 56,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901115,
+          "item_level": 271,
+          "name": "Cape of the Woodcutter Champion",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "armor_penetration_rating": 56,
+            "hit_rating": 64,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901116,
+          "item_level": 271,
+          "name": "Vordrassil's Fall",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "armor_penetration_rating": 98,
+            "crit_rating": 98,
+            "stamina": 198,
+            "strength": 181
+          },
+          "weapon": {
+            "dps": 312.4,
+            "max_damage": 1275.0,
+            "min_damage": 849.0,
+            "speed": 3.4,
+            "type": "two-handed sword"
+          }
+        }
+      ],
+      "key": "war_arms",
+      "name": "Reaver of the Tainted Grove",
+      "spec": "Arms",
+      "tuning": {
+        "cap": {
+          "note": "max marks",
+          "value": 5
+        },
+        "mark_ap_pct": {
+          "note": "Fatal Mark detonation per mark consumed (all consumed), % of AP",
+          "value": 276
+        },
+        "mark_chance": {
+          "note": "Fatal Mark chance per Mortal Strike, %",
+          "value": 100
+        },
+        "mark_dur": {
+          "note": "mark duration",
+          "value": 30
+        },
+        "ms_cost_red_pct": {
+          "note": "next Mortal Strike cost reduction, %",
+          "value": 33
+        },
+        "reset_chance": {
+          "note": "Mortal Strike reset chance per Overpower, %",
+          "value": 35
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Bloodbath",
+          "pieces": 2,
+          "spell_id": 900590,
+          "text": "Bloodthirst critical strikes increase the damage of your next Bloodthirst by 20% for 9 sec."
+        },
+        {
+          "name": "Bloodbath",
+          "pieces": 4,
+          "spell_id": 900591,
+          "text": "Bloodthirst has a 28% chance to apply Bloodbath to your target, causing them to suffer 25% of your attack power as Bleed damage over 6 sec. Using Bloodthirst on a target affected by Bloodbath extends the bleed by 6 sec."
+        }
+      ],
+      "cls": "Warrior",
+      "item_set_id": 9330,
+      "items": [
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901117,
+          "item_level": 271,
+          "name": "Bloodied Bear-Tooth Collar",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "armor_penetration_rating": 56,
+            "crit_rating": 64,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901118,
+          "item_level": 271,
+          "name": "Band of the Frenzied Grizzly",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "armor_penetration_rating": 64,
+            "hit_rating": 56,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901119,
+          "item_level": 271,
+          "name": "Cloak of the Raging Furbolg",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "crit_rating": 56,
+            "hit_rating": 64,
+            "stamina": 110,
+            "strength": 102
+          }
+        },
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901120,
+          "item_level": 271,
+          "name": "Heartwood Hewer",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "two-hand",
+          "stats": {
+            "armor_penetration_rating": 98,
+            "crit_rating": 98,
+            "stamina": 198,
+            "strength": 181
+          },
+          "weapon": {
+            "dps": 312.4,
+            "max_damage": 1275.0,
+            "min_damage": 849.0,
+            "speed": 3.4,
+            "type": "two-handed axe"
+          }
+        }
+      ],
+      "key": "war_fury",
+      "name": "Berserker of Grizzlemaw",
+      "spec": "Fury",
+      "tuning": {
+        "bloodbath_ap_pct": {
+          "note": "Bloodbath total over 6 sec, % of AP",
+          "value": 25
+        },
+        "bloodbath_chance": {
+          "note": "Bloodbath chance per Bloodthirst, %",
+          "value": 28
+        },
+        "bt_crit_pct": {
+          "note": "next Bloodthirst bonus after a crit, %",
+          "value": 20
+        },
+        "crit_buff_dur": {
+          "note": "crit buff duration",
+          "value": 9
+        }
+      }
+    },
+    {
+      "bonuses": [
+        {
+          "name": "Violent Outburst",
+          "pieces": 2,
+          "spell_id": 900600,
+          "text": "Shield Slam deals 15% increased damage and reduces enemies' damage against you by 3% for 6 sec. Multiple stacks may overlap, up to 3."
+        },
+        {
+          "name": "Violent Outburst",
+          "pieces": 4,
+          "spell_id": 900601,
+          "text": "Every 250 rage you spend triggers a Violent Outburst, causing your next Shield Slam to deal 200% increased damage, generate 50% more rage and grant Shield Block for 8 sec."
+        }
+      ],
+      "cls": "Warrior",
+      "item_set_id": 9331,
+      "items": [
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901121,
+          "item_level": 271,
+          "name": "Gorget of the Standing Tree",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "neck",
+          "stats": {
+            "armor": 672,
+            "defense_rating": 51,
+            "dodge_rating": 43,
+            "stamina": 133,
+            "strength": 96
+          }
+        },
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901122,
+          "item_level": 271,
+          "name": "Seal of the Unyielding Bark",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "finger",
+          "stats": {
+            "armor": 672,
+            "defense_rating": 51,
+            "parry_rating": 43,
+            "stamina": 133,
+            "strength": 96
+          }
+        },
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901123,
+          "item_level": 271,
+          "name": "Greatcloak of the Buried Root",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "back",
+          "stats": {
+            "armor": 184,
+            "defense_rating": 51,
+            "expertise_rating": 43,
+            "stamina": 133,
+            "strength": 96
+          }
+        },
+        {
+          "classes": [
+            "Warrior"
+          ],
+          "entry": 901124,
+          "item_level": 271,
+          "name": "Rootward, Blade of the Burrow",
+          "quality": 4,
+          "required_level": 80,
+          "slot": "one-hand",
+          "stats": {
+            "defense_rating": 45,
+            "dodge_rating": 47,
+            "parry_rating": 44,
+            "stamina": 98,
+            "strength": 51
+          },
+          "weapon": {
+            "dps": 240.0,
+            "max_damage": 500.0,
+            "min_damage": 268.0,
+            "speed": 1.6,
+            "type": "sword"
+          }
+        }
+      ],
+      "key": "war_prot",
+      "name": "Warden of the Deep Root",
+      "spec": "Protection",
+      "tuning": {
+        "dr_dur": {
+          "note": "reduction duration",
+          "value": 6
+        },
+        "dr_pct": {
+          "note": "damage reduction per stack, %",
+          "value": 3
+        },
+        "dr_stacks": {
+          "note": "max reduction stacks",
+          "value": 3
+        },
+        "rage_gen_pct": {
+          "note": "Outburst rage generation bonus, %",
+          "value": 50
+        },
+        "rage_threshold": {
+          "note": "rage spent per Violent Outburst",
+          "value": 250
+        },
+        "sb_dur": {
+          "note": "granted Shield Block duration",
+          "value": 8
+        },
+        "ss_flat_pct": {
+          "note": "Shield Slam flat bonus, %",
+          "value": 15
+        },
+        "ss_pct": {
+          "note": "Outburst Shield Slam bonus, %",
+          "value": 200
+        }
+      }
+    }
+  ]
+}

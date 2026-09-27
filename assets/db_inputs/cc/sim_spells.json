@@ -1,0 +1,2355 @@
+[
+  {
+    "id": 200016,
+    "name": "Vaelith's Withering Grasp",
+    "spellFamilyName": 5,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200021,
+    "name": "Skareth's Falling Star",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200049,
+    "name": "Morgrath's Ravaging Claw",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200051,
+    "name": "Vorrax's Reckless Fury",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200052,
+    "name": "Undying Fury",
+    "spellFamilyName": 4,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200056,
+    "name": "Fury of the Goddess",
+    "spellFamilyName": 7,
+    "spellFamilyFlags": [
+      128,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 16870,
+        "name": "Clearcasting",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -101
+      },
+      {
+        "spellId": 16870,
+        "name": "Clearcasting",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc",
+        "basePoints": 0
+      },
+      {
+        "spellId": 17063,
+        "name": "Nature's Focus",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 9,
+        "basePoints": 22
+      },
+      {
+        "spellId": 17065,
+        "name": "Nature's Focus",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 9,
+        "basePoints": 45
+      },
+      {
+        "spellId": 17066,
+        "name": "Nature's Focus",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 9,
+        "basePoints": 69
+      },
+      {
+        "spellId": 17104,
+        "name": "Gift of Nature",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 1
+      },
+      {
+        "spellId": 17118,
+        "name": "Subtlety",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": -11
+      },
+      {
+        "spellId": 17119,
+        "name": "Subtlety",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": -21
+      },
+      {
+        "spellId": 17120,
+        "name": "Subtlety",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": -31
+      },
+      {
+        "spellId": 17123,
+        "name": "Improved Tranquility",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": -51
+      },
+      {
+        "spellId": 17123,
+        "name": "Improved Tranquility",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 11,
+        "basePoints": -31
+      },
+      {
+        "spellId": 17124,
+        "name": "Improved Tranquility",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": -101
+      },
+      {
+        "spellId": 17124,
+        "name": "Improved Tranquility",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 11,
+        "basePoints": -61
+      },
+      {
+        "spellId": 23556,
+        "name": "Decreased Tranquility and Hurricane Cooldown",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 11,
+        "basePoints": -51
+      },
+      {
+        "spellId": 24542,
+        "name": "Nimble Healing Touch",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -6
+      },
+      {
+        "spellId": 24943,
+        "name": "Gift of Nature",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 3
+      },
+      {
+        "spellId": 24944,
+        "name": "Gift of Nature",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 5
+      },
+      {
+        "spellId": 24945,
+        "name": "Gift of Nature",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 7
+      },
+      {
+        "spellId": 24946,
+        "name": "Gift of Nature",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 9
+      },
+      {
+        "spellId": 24968,
+        "name": "Tranquil Spirit",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -3
+      },
+      {
+        "spellId": 24969,
+        "name": "Tranquil Spirit",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -5
+      },
+      {
+        "spellId": 24970,
+        "name": "Tranquil Spirit",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -7
+      },
+      {
+        "spellId": 24971,
+        "name": "Tranquil Spirit",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -9
+      },
+      {
+        "spellId": 24972,
+        "name": "Tranquil Spirit",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -11
+      },
+      {
+        "spellId": 28743,
+        "name": "Dreamwalker",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -4
+      },
+      {
+        "spellId": 29195,
+        "name": "Corrupted Mind",
+        "kind": "class script",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 112,
+        "auraName": "OVERRIDE_CLASS_SCRIPTS",
+        "miscValue": 4327,
+        "basePoints": 0
+      },
+      {
+        "spellId": 33886,
+        "name": "Empowered Rejuvenation",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 24,
+        "basePoints": 3
+      },
+      {
+        "spellId": 33887,
+        "name": "Empowered Rejuvenation",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 24,
+        "basePoints": 7
+      },
+      {
+        "spellId": 33888,
+        "name": "Empowered Rejuvenation",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 24,
+        "basePoints": 11
+      },
+      {
+        "spellId": 33889,
+        "name": "Empowered Rejuvenation",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 24,
+        "basePoints": 15
+      },
+      {
+        "spellId": 33890,
+        "name": "Empowered Rejuvenation",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 24,
+        "basePoints": 19
+      },
+      {
+        "spellId": 37721,
+        "name": "Healing Trance",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -451
+      },
+      {
+        "spellId": 37878,
+        "name": "Blessing of Lower City",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -23
+      },
+      {
+        "spellId": 39926,
+        "name": "Improved Party Auras",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "basePoints": 43
+      },
+      {
+        "spellId": 40282,
+        "name": "Possess Spirit Immune",
+        "kind": "class script",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 112,
+        "auraName": "OVERRIDE_CLASS_SCRIPTS",
+        "miscValue": 3654,
+        "basePoints": 0
+      },
+      {
+        "spellId": 45838,
+        "name": "Possess Drake Immune",
+        "kind": "class script",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 112,
+        "auraName": "OVERRIDE_CLASS_SCRIPTS",
+        "miscValue": 3654,
+        "basePoints": 0
+      },
+      {
+        "spellId": 57810,
+        "name": "Genesis",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 0
+      },
+      {
+        "spellId": 57811,
+        "name": "Genesis",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 22,
+        "basePoints": 1
+      },
+      {
+        "spellId": 57811,
+        "name": "Genesis",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 1
+      },
+      {
+        "spellId": 57812,
+        "name": "Genesis",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 2
+      },
+      {
+        "spellId": 57813,
+        "name": "Genesis",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 3
+      },
+      {
+        "spellId": 57814,
+        "name": "Genesis",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 4
+      },
+      {
+        "spellId": 57849,
+        "name": "Improved Insect Swarm",
+        "kind": "class script",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "miscValue": 22,
+        "basePoints": 0
+      },
+      {
+        "spellId": 57850,
+        "name": "Improved Insect Swarm",
+        "kind": "class script",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "miscValue": 22,
+        "basePoints": 1
+      },
+      {
+        "spellId": 57851,
+        "name": "Improved Insect Swarm",
+        "kind": "class script",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "miscValue": 22,
+        "basePoints": 2
+      },
+      {
+        "spellId": 60512,
+        "name": "Healing Trance",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -801
+      }
+    ]
+  },
+  {
+    "id": 200057,
+    "name": "Vorrax's Fatebound Coin",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200058,
+    "name": "Coin Flip: Heads",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200059,
+    "name": "Coin Flip: Tails",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200060,
+    "name": "Coin Flip: Tails Streak",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 0,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200061,
+    "name": "Withering Grasp: Shadowed Mark",
+    "spellFamilyName": 5,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200076,
+    "name": "Vaelith's Reaped Soul",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200077,
+    "name": "Reaped Soul",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200078,
+    "name": "Reap Soul",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200082,
+    "name": "Rok'thul's Slayer's Edge",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200083,
+    "name": "Slayer's Strike",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200084,
+    "name": "Slayer",
+    "spellFamilyName": 4,
+    "spellFamilyFlags": [
+      0,
+      1024,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 1719,
+        "name": "Recklessness",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 7,
+        "basePoints": 99
+      },
+      {
+        "spellId": 1719,
+        "name": "Recklessness",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc",
+        "basePoints": 0
+      },
+      {
+        "spellId": 12295,
+        "name": "Tactical Mastery",
+        "kind": "spell modifier",
+        "effectIndex": 2,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": 20
+      },
+      {
+        "spellId": 12676,
+        "name": "Tactical Mastery",
+        "kind": "spell modifier",
+        "effectIndex": 2,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": 41
+      },
+      {
+        "spellId": 12677,
+        "name": "Tactical Mastery",
+        "kind": "spell modifier",
+        "effectIndex": 2,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": 62
+      },
+      {
+        "spellId": 16493,
+        "name": "Impale",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 15,
+        "basePoints": 9
+      },
+      {
+        "spellId": 16494,
+        "name": "Impale",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 15,
+        "basePoints": 19
+      },
+      {
+        "spellId": 21887,
+        "name": "Warrior's Wrath",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -51
+      },
+      {
+        "spellId": 29787,
+        "name": "Focused Rage",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -11
+      },
+      {
+        "spellId": 29790,
+        "name": "Focused Rage",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -21
+      },
+      {
+        "spellId": 29792,
+        "name": "Focused Rage",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -31
+      },
+      {
+        "spellId": 37517,
+        "name": "Revenge",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 9
+      },
+      {
+        "spellId": 37535,
+        "name": "Bloodthirst and Mortal Strike Discount",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -51
+      },
+      {
+        "spellId": 38399,
+        "name": "Improved Mortal Strike and Bloodthirst",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 4
+      },
+      {
+        "spellId": 40458,
+        "name": "Warrior Tier 6 Trinket",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc",
+        "basePoints": 0
+      },
+      {
+        "spellId": 46913,
+        "name": "Bloodsurge",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc",
+        "basePoints": 0
+      },
+      {
+        "spellId": 56927,
+        "name": "Unending Fury",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 1
+      },
+      {
+        "spellId": 56929,
+        "name": "Unending Fury",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 3
+      },
+      {
+        "spellId": 56930,
+        "name": "Unending Fury",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 5
+      },
+      {
+        "spellId": 56931,
+        "name": "Unending Fury",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 7
+      },
+      {
+        "spellId": 56932,
+        "name": "Unending Fury",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 9
+      },
+      {
+        "spellId": 58369,
+        "name": "Glyph of Bloodthirst",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 12,
+        "basePoints": 99
+      },
+      {
+        "spellId": 60176,
+        "name": "Bleed Cost Reduction",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "miscValue": 14,
+        "basePoints": -51
+      },
+      {
+        "spellId": 61571,
+        "name": "Spirits of the Lost",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -51
+      },
+      {
+        "spellId": 64939,
+        "name": "Item - Warrior T8 Melee 4P Bonus",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 7,
+        "basePoints": 9
+      },
+      {
+        "spellId": 900592,
+        "name": "Bloodbath",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 19
+      }
+    ]
+  },
+  {
+    "id": 200085,
+    "name": "Vaelith's Abyssal Calling",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200086,
+    "name": "Abyssal Strike - Pit Lord",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 4,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200087,
+    "name": "Empowered by the Abyss",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200088,
+    "name": "Morgrath's Malediction",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200089,
+    "name": "Malediction",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 4,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200091,
+    "name": "Malediction: Ignite",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200092,
+    "name": "Vorrax's Chaosflame",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200093,
+    "name": "Chaosflame",
+    "spellFamilyName": 5,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 4,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200165,
+    "name": "Roll the Bones",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200166,
+    "name": "Broadside",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200167,
+    "name": "Buried Treasure",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200168,
+    "name": "Grand Melee",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200169,
+    "name": "Ruthless Precision",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200170,
+    "name": "Skull and Crossbones",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200171,
+    "name": "Skull and Crossbones",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200172,
+    "name": "True Bearings",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200173,
+    "name": "Between the Eyes",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200174,
+    "name": "Between the Eyes",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      1
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 67209,
+        "name": "Item - Rogue T9 2P Bonus (Rupture)",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 42,
+        "auraName": "PROC_TRIGGER_SPELL",
+        "miscValue": 7,
+        "basePoints": 7
+      },
+      {
+        "spellId": 67210,
+        "name": "Clearcasting",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc_event",
+        "basePoints": 0
+      },
+      {
+        "spellId": 200173,
+        "name": "Between the Eyes",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 15,
+        "basePoints": 99
+      }
+    ]
+  },
+  {
+    "id": 200175,
+    "name": "Venomdrinker",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200176,
+    "name": "Venom Rush",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200177,
+    "name": "Sanguine Hunger",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200178,
+    "name": "Sanguine Hunger",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200179,
+    "name": "Endless Dance",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200180,
+    "name": "Endless Dance",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200181,
+    "name": "Shadow's Invitation",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 64,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200182,
+    "name": "Shadow's Invitation",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 200183,
+    "name": "Shadow's Invitation",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900330,
+    "name": "Dream Burst",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900332,
+    "name": "Dream Burst",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900334,
+    "name": "Power of Elune",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900340,
+    "name": "Bloodseeker Vines",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900342,
+    "name": "Bloodseeker Vines",
+    "spellFamilyName": 7,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": true,
+    "classModifiers": []
+  },
+  {
+    "id": 900343,
+    "name": "Bloodseeker Thorns",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900350,
+    "name": "Empowered Maul",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900352,
+    "name": "Empowered Maul",
+    "spellFamilyName": 7,
+    "spellFamilyFlags": [
+      0,
+      16777216,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 16819,
+        "name": "Nature's Reach",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 5,
+        "basePoints": 9
+      },
+      {
+        "spellId": 16819,
+        "name": "Nature's Reach",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": -16
+      },
+      {
+        "spellId": 16819,
+        "name": "Nature's Reach",
+        "kind": "spell modifier",
+        "effectIndex": 2,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 6,
+        "basePoints": 9
+      },
+      {
+        "spellId": 16820,
+        "name": "Nature's Reach",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 5,
+        "basePoints": 19
+      },
+      {
+        "spellId": 16820,
+        "name": "Nature's Reach",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 2,
+        "basePoints": -31
+      },
+      {
+        "spellId": 16820,
+        "name": "Nature's Reach",
+        "kind": "spell modifier",
+        "effectIndex": 2,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 6,
+        "basePoints": 19
+      },
+      {
+        "spellId": 16870,
+        "name": "Clearcasting",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -101
+      },
+      {
+        "spellId": 16870,
+        "name": "Clearcasting",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc",
+        "basePoints": 0
+      },
+      {
+        "spellId": 16880,
+        "name": "Nature's Grace",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc",
+        "basePoints": 0
+      },
+      {
+        "spellId": 40282,
+        "name": "Possess Spirit Immune",
+        "kind": "class script",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 112,
+        "auraName": "OVERRIDE_CLASS_SCRIPTS",
+        "miscValue": 3654,
+        "basePoints": 0
+      },
+      {
+        "spellId": 45838,
+        "name": "Possess Drake Immune",
+        "kind": "class script",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 112,
+        "auraName": "OVERRIDE_CLASS_SCRIPTS",
+        "miscValue": 3654,
+        "basePoints": 0
+      },
+      {
+        "spellId": 48391,
+        "name": "Owlkin Frenzy",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 9,
+        "basePoints": 99
+      },
+      {
+        "spellId": 48488,
+        "name": "Gale Winds",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 14
+      },
+      {
+        "spellId": 48514,
+        "name": "Gale Winds",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "basePoints": 29
+      },
+      {
+        "spellId": 62135,
+        "name": "Glyph of Typhoon",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 14,
+        "basePoints": -9
+      },
+      {
+        "spellId": 62135,
+        "name": "Glyph of Typhoon",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 6,
+        "basePoints": 9
+      },
+      {
+        "spellId": 63056,
+        "name": "Glyph of Monsoon",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 11,
+        "basePoints": -3001
+      }
+    ]
+  },
+  {
+    "id": 900353,
+    "name": "Empowered Maul",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900354,
+    "name": "Empowered Maul",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900355,
+    "name": "Ravage",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900490,
+    "name": "Deathstalker's Mark",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900492,
+    "name": "Deathstalker's Mark",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900493,
+    "name": "Deathstalker's Mark",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900500,
+    "name": "Flawless Form",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900502,
+    "name": "Flawless Form",
+    "spellFamilyName": 8,
+    "spellFamilyFlags": [
+      0,
+      16777216,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 52910,
+        "name": "Turn the Tables",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 7,
+        "basePoints": 5
+      },
+      {
+        "spellId": 52914,
+        "name": "Turn the Tables",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 7,
+        "basePoints": 1
+      },
+      {
+        "spellId": 52915,
+        "name": "Turn the Tables",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 7,
+        "basePoints": 3
+      },
+      {
+        "spellId": 52916,
+        "name": "Honor Among Thieves",
+        "kind": "class script",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "miscValue": 7,
+        "basePoints": 5
+      },
+      {
+        "spellId": 63249,
+        "name": "Glyph of Hunger For Blood",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 8,
+        "basePoints": 2
+      },
+      {
+        "spellId": 64199,
+        "name": "Glyph of Envenom",
+        "kind": "class script",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 4,
+        "auraName": "DUMMY",
+        "miscValue": 8,
+        "basePoints": 2
+      },
+      {
+        "spellId": 67210,
+        "name": "Clearcasting",
+        "kind": "class proc",
+        "effectIndex": 0,
+        "effect": "spell_proc_event",
+        "basePoints": 0
+      }
+    ]
+  },
+  {
+    "id": 900503,
+    "name": "Flawless Form",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900504,
+    "name": "Flawless Form",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900510,
+    "name": "Shadow Strikes",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900511,
+    "name": "Shadow Strikes",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900512,
+    "name": "Shadow Strike",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900514,
+    "name": "Shadow Strike",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900515,
+    "name": "Shadow of the Canopy",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900550,
+    "name": "Soul Anathema",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900552,
+    "name": "Soul Anathema",
+    "spellFamilyName": 5,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 32,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900560,
+    "name": "Wild Imps",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900562,
+    "name": "Fel Fireball",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 4,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900563,
+    "name": "Empowered Fel Fireball",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 4,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900564,
+    "name": "Empowered Fel Fireball",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 4,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900570,
+    "name": "Crashing Chaos",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900572,
+    "name": "Crashing Chaos",
+    "spellFamilyName": 5,
+    "spellFamilyFlags": [
+      0,
+      16777216,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 47220,
+        "name": "Empowered Imp",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 18,
+        "basePoints": 32
+      },
+      {
+        "spellId": 47221,
+        "name": "Empowered Imp",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 18,
+        "basePoints": 65
+      },
+      {
+        "spellId": 47223,
+        "name": "Empowered Imp",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 18,
+        "basePoints": 99
+      }
+    ]
+  },
+  {
+    "id": 900573,
+    "name": "Crashing Chaos",
+    "spellFamilyName": 5,
+    "spellFamilyFlags": [
+      0,
+      16777216,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 47220,
+        "name": "Empowered Imp",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 18,
+        "basePoints": 32
+      },
+      {
+        "spellId": 47221,
+        "name": "Empowered Imp",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 18,
+        "basePoints": 65
+      },
+      {
+        "spellId": 47223,
+        "name": "Empowered Imp",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 18,
+        "basePoints": 99
+      }
+    ]
+  },
+  {
+    "id": 900580,
+    "name": "Fatal Mark",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900581,
+    "name": "Fatal Mark",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900582,
+    "name": "Fatal Mark",
+    "spellFamilyName": 4,
+    "spellFamilyFlags": [
+      0,
+      16777216,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 70849,
+        "name": "Extra Charge!",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 4,
+        "basePoints": 0
+      },
+      {
+        "spellId": 70849,
+        "name": "Extra Charge!",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 1,
+        "basePoints": 99
+      }
+    ]
+  },
+  {
+    "id": 900583,
+    "name": "Fatal Mark",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900584,
+    "name": "Fatal Mark",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900590,
+    "name": "Bloodbath",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900591,
+    "name": "Bloodbath",
+    "spellFamilyName": 0,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 8,
+    "dmgClass": 1,
+    "bleed": false,
+    "classModifiers": []
+  },
+  {
+    "id": 900592,
+    "name": "Bloodbath",
+    "spellFamilyName": 4,
+    "spellFamilyFlags": [
+      0,
+      16777216,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 0,
+    "bleed": false,
+    "classModifiers": [
+      {
+        "spellId": 70849,
+        "name": "Extra Charge!",
+        "kind": "spell modifier",
+        "effectIndex": 0,
+        "effect": "APPLY_AURA",
+        "aura": 107,
+        "auraName": "ADD_FLAT_MODIFIER",
+        "miscValue": 4,
+        "basePoints": 0
+      },
+      {
+        "spellId": 70849,
+        "name": "Extra Charge!",
+        "kind": "spell modifier",
+        "effectIndex": 1,
+        "effect": "APPLY_AURA",
+        "aura": 108,
+        "auraName": "ADD_PCT_MODIFIER",
+        "miscValue": 1,
+        "basePoints": 99
+      }
+    ]
+  },
+  {
+    "id": 900593,
+    "name": "Bloodbath",
+    "spellFamilyName": 4,
+    "spellFamilyFlags": [
+      0,
+      0,
+      0
+    ],
+    "schoolMask": 1,
+    "dmgClass": 2,
+    "bleed": true,
+    "classModifiers": []
+  }
+]

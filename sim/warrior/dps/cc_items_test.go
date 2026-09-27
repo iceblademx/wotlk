@@ -3,11 +3,14 @@ package dps
 import (
 	"math"
 	"testing"
+	"time"
 
 	"github.com/wowsims/wotlk/sim/common/cc"
+	"github.com/wowsims/wotlk/sim/common/cc/ccfamily"
 	"github.com/wowsims/wotlk/sim/core"
 	"github.com/wowsims/wotlk/sim/core/proto"
 	"github.com/wowsims/wotlk/sim/warrior"
+	googleProto "google.golang.org/protobuf/proto"
 )
 
 // Tests for custom 3.3.5a server content in sim/warrior/cc_items.go.
@@ -30,31 +33,68 @@ func ring(id int32) map[proto.ItemSlot]int32 {
 	return map[proto.ItemSlot]int32{proto.ItemSlot_ItemSlotFinger1: id}
 }
 
+var reaverPieces = []struct {
+	slot proto.ItemSlot
+	id   int32
+}{{proto.ItemSlot_ItemSlotNeck, 901113}, {proto.ItemSlot_ItemSlotFinger2, 901114},
+	{proto.ItemSlot_ItemSlotBack, 901115}, {proto.ItemSlot_ItemSlotMainHand, 901116}}
+
+func reaverSet(n int) map[proto.ItemSlot]int32 {
+	m := map[proto.ItemSlot]int32{}
+	for _, p := range reaverPieces[:n] {
+		m[p.slot] = p.id
+	}
+	return m
+}
+
 func furyRequest(items map[proto.ItemSlot]int32, iterations int32) *proto.RaidSimRequest {
-	gear := core.GetGearSet("../../../ui/warrior/gear_sets", "p4_fury_horde").GearSet
+	return specRequest("p4_fury_horde", PlayerOptionsFury, FuryTalents, FuryGlyphs, "fury", items, iterations)
+}
+
+func armsRequest(items map[proto.ItemSlot]int32, iterations int32) *proto.RaidSimRequest {
+	return armsAplRequest("arms", items, iterations)
+}
+
+func armsAplRequest(apl string, items map[proto.ItemSlot]int32, iterations int32) *proto.RaidSimRequest {
+	return specRequest("p4_arms_horde", PlayerOptionsArms, ArmsTalents, ArmsGlyphs, apl, items, iterations)
+}
+
+func specRequest(gearSet string, spec *proto.Player_Warrior, talents string, glyphs *proto.Glyphs, apl string,
+	items map[proto.ItemSlot]int32, iterations int32) *proto.RaidSimRequest {
+	gear := core.GetGearSet("../../../ui/warrior/gear_sets", gearSet).GearSet
 	for slot, id := range items {
 		gear.Items[slot] = &proto.ItemSpec{Id: id}
 	}
-	return &proto.RaidSimRequest{
+	// A deep copy: sims write their class buffs into the raid buffs, which are shared globals.
+	return googleProto.Clone(&proto.RaidSimRequest{
 		Raid: core.SinglePlayerRaidProto(&proto.Player{
 			Race:          proto.Race_RaceOrc,
 			Class:         proto.Class_ClassWarrior,
 			Equipment:     gear,
 			Consumes:      FullConsumes,
-			Spec:          PlayerOptionsFury,
-			TalentsString: FuryTalents,
-			Glyphs:        FuryGlyphs,
+			Spec:          spec,
+			TalentsString: talents,
+			Glyphs:        glyphs,
 			Buffs:         core.FullIndividualBuffs,
-			Rotation:      core.GetAplRotation("../../../ui/warrior/apls", "fury").Rotation,
+			Rotation:      core.GetAplRotation("../../../ui/warrior/apls", apl).Rotation,
 		}, core.FullPartyBuffs, core.FullRaidBuffs, core.FullDebuffs),
 		Encounter:  core.MakeSingleTargetEncounter(0),
 		SimOptions: &proto.SimOptions{Iterations: iterations, RandomSeed: 3, IsTest: true},
-	}
+	}).(*proto.RaidSimRequest)
 }
 
 func newFury(t *testing.T, items map[proto.ItemSlot]int32) (*core.Simulation, *warrior.Warrior, *core.Unit) {
 	t.Helper()
-	req := furyRequest(items, 1)
+	return newSim(t, furyRequest(items, 1))
+}
+
+func newArms(t *testing.T, items map[proto.ItemSlot]int32) (*core.Simulation, *warrior.Warrior, *core.Unit) {
+	t.Helper()
+	return newSim(t, armsRequest(items, 1))
+}
+
+func newSim(t *testing.T, req *proto.RaidSimRequest) (*core.Simulation, *warrior.Warrior, *core.Unit) {
+	t.Helper()
 	req.Raid.Debuffs = &proto.Debuffs{}
 	sim := core.NewSim(req)
 	sim.Reset()
@@ -171,6 +211,123 @@ func TestSlayersEdge(t *testing.T) {
 
 const slayersEdgeChance = 0.15
 
+func TestRecklessFuryArms(t *testing.T) {
+	// With the Sudden Death talent (3/3, 9%) the ring tops the chance up to 20% combined per hit.
+	sim, war, target := newArms(t, ring(warrior.VorraxsRecklessFuryItemID))
+	if war.Talents.SuddenDeath != 3 {
+		t.Fatalf("arms preset has Sudden Death %d/3", war.Talents.SuddenDeath)
+	}
+	procs, hits := 0, 0
+	for i := 0; i < 6000; i++ {
+		// The preset wears Ymirjar 4pc (T10), which turns some talent procs into its own aura.
+		war.SuddenDeathAura.Deactivate(sim)
+		war.Ymirjar4pcProcAura.Deactivate(sim)
+		if landed := castMortalStrike(sim, war, target); landed {
+			hits++
+			if war.IsSuddenDeathActive() {
+				procs++
+			}
+		}
+	}
+	if rate := float64(procs) / float64(hits); math.Abs(rate-0.2) > 0.02 {
+		t.Errorf("Sudden Death on %.3f of landed hits, want 0.20 combined", rate)
+	}
+}
+
+// castMortalStrike casts Mortal Strike without cost or cooldown and reports whether it landed.
+func castMortalStrike(sim *core.Simulation, war *warrior.Warrior, target *core.Unit) bool {
+	m := &war.MortalStrike.SpellMetrics[target.UnitIndex]
+	landed := m.Hits + m.Crits
+	war.MortalStrike.SkipCastAndApplyEffects(sim, target)
+	return m.Hits+m.Crits > landed
+}
+
+func TestReaverOfTheTaintedGrove(t *testing.T) {
+	// 2pc: a landed Overpower resets Mortal Strike 35% of the time and makes the next one cost 33% less.
+	sim, war, target := newArms(t, reaverSet(2))
+	costBuff := war.GetAura("Fatal Mark (Mortal Strike cost)")
+	resets, landed := 0, 0
+	for i := 0; i < 4000; i++ {
+		war.MortalStrike.CD.Set(sim.CurrentTime + time.Second*5)
+		costBuff.Deactivate(sim)
+		m := &war.Overpower.SpellMetrics[target.UnitIndex]
+		before := m.Hits + m.Crits
+		war.Overpower.SkipCastAndApplyEffects(sim, target)
+		if m.Hits+m.Crits == before {
+			continue
+		}
+		landed++
+		if war.MortalStrike.IsReady(sim) != costBuff.IsActive() {
+			t.Fatal("Mortal Strike reset without the cost buff (or the reverse)")
+		}
+		if costBuff.IsActive() {
+			resets++
+		}
+	}
+	if rate := float64(resets) / float64(landed); math.Abs(rate-0.35) > 0.025 {
+		t.Errorf("Mortal Strike reset on %.3f of landed Overpowers, want 0.35", rate)
+	}
+	costBuff.Activate(sim)
+	if cost := war.MortalStrike.DefaultCast.Cost * war.MortalStrike.CostMultiplier; math.Abs(cost-20.1) > 1e-9 {
+		t.Errorf("Mortal Strike costs %.2f with the buff, want 20.1", cost)
+	}
+	war.OnCastComplete(sim, war.MortalStrike)
+	if costBuff.IsActive() || war.MortalStrike.CostMultiplier != 1 {
+		t.Error("the cost buff isn't used up by Mortal Strike")
+	}
+	if war.GetSpell(core.ActionID{SpellID: 900584}) != nil {
+		t.Error("Fatal Mark detonation registered with only 2 pieces")
+	}
+
+	// 4pc: each landed Mortal Strike adds a mark (up to 5); a landed Execute detonates them all for
+	// 276% of attack power each.
+	sim, war, target = newArms(t, reaverSet(4))
+	mark := target.GetAura("Fatal Mark-" + war.Label)
+	detonation := war.GetSpell(core.ActionID{SpellID: 900584})
+	for mark.GetStacks() < 5 {
+		castMortalStrike(sim, war, target)
+	}
+	castMortalStrike(sim, war, target)
+	if mark.GetStacks() != 5 {
+		t.Fatalf("%d marks, want the cap of 5", mark.GetStacks())
+	}
+	m := &detonation.SpellMetrics[target.UnitIndex]
+	for m.Casts == 0 {
+		war.Execute.SkipCastAndApplyEffects(sim, target)
+	}
+	if mark.IsActive() {
+		t.Error("marks remain after the detonation")
+	}
+	if m.Hits+m.Crits != 1 {
+		t.Error("the detonation didn't land: it can't miss")
+	}
+	// Remove crits, armor and multipliers to compare against the raw coefficient.
+	unmitigated := 5 * 2.76 * detonation.MeleeAttackPower()
+	if m.Crits == 0 && (m.TotalDamage < 0.5*unmitigated || m.TotalDamage > 1.2*unmitigated) {
+		t.Errorf("detonation dealt %.0f for 5 marks, want about %.0f before armor", m.TotalDamage, unmitigated)
+	}
+	war.Execute.SkipCastAndApplyEffects(sim, target)
+	if m.Casts != 1 {
+		t.Error("Execute on an unmarked target detonated")
+	}
+}
+
+func TestFatalMarkRotation(t *testing.T) {
+	// arms_fatal_mark holds Sudden Death Executes until the target has 5 marks, so each detonation
+	// consumes more marks than with the stock rotation.
+	detonation := core.ActionID{SpellID: 900584}
+	avg := func(apl string) float64 {
+		a := runCCSim(t, armsAplRequest(apl, reaverSet(4), 20)).actions[detonation]
+		if a == nil || a.Casts == 0 {
+			t.Fatalf("%s: no Fatal Mark detonations", apl)
+		}
+		return a.Damage / float64(a.Casts)
+	}
+	if held, stock := avg("arms_fatal_mark"), avg("arms"); held < 1.3*stock {
+		t.Errorf("average detonation %.0f with arms_fatal_mark vs %.0f with arms: marks aren't held", held, stock)
+	}
+}
+
 func TestBerserkerOfGrizzlemaw(t *testing.T) {
 	// 2pc: a Bloodthirst crit buffs the next Bloodthirst, which uses it up.
 	sim, war, target := newFury(t, berserkerSet(2))
@@ -250,4 +407,41 @@ func TestCCDpsImpactFury(t *testing.T) {
 		t.Logf("%-30s %6.0f DPS: effect %+5.1f%% (vs %.0f same stats), %+5.1f%% vs preset gear (%.0f)",
 			c.name, dps, 100*(dps/statsOnly-1), statsOnly, 100*(dps/base-1), base)
 	}
+}
+
+// Logs the DPS impact of each custom item on the arms preset (go test -run CCDps -v).
+func TestCCDpsImpactArms(t *testing.T) {
+	if !testing.Verbose() {
+		t.Skip("only logs numbers; run with -v")
+	}
+	const iterations = 500
+	base := runCCSim(t, armsRequest(nil, iterations)).dps
+	for _, c := range []struct {
+		name  string
+		apl   string
+		items map[proto.ItemSlot]int32
+	}{
+		{"Vorrax's Reckless Fury", "arms", ring(warrior.VorraxsRecklessFuryItemID)},
+		{"Reaver of the Tainted Grove 2pc", "arms", reaverSet(2)},
+		{"Reaver of the Tainted Grove 4pc", "arms", reaverSet(4)},
+		{"Reaver 4pc (arms_fatal_mark)", "arms_fatal_mark", reaverSet(4)},
+	} {
+		// The stat-only copy has no marks, so it always uses the stock rotation.
+		dps := runCCSim(t, armsAplRequest(c.apl, c.items, iterations)).dps
+		statsOnly := runCCSim(t, armsRequest(cc.StatOnlyCopies(c.items), iterations)).dps
+		t.Logf("%-32s %6.0f DPS: effect %+5.1f%% (vs %.0f same stats), %+5.1f%% vs preset gear (%.0f)",
+			c.name, dps, 100*(dps/statsOnly-1), statsOnly, 100*(dps/base-1), base)
+	}
+}
+
+// Every custom spell gets only the class modifiers its 3.3.5a family flags allow.
+func TestClassModifiers(t *testing.T) {
+	sim := func(items map[proto.ItemSlot]int32) *core.Simulation {
+		s, _, _ := newFury(t, items)
+		return s
+	}
+	withSet := berserkerSet(4)
+	withSet[proto.ItemSlot_ItemSlotFinger1] = warrior.VorraxsRecklessFuryItemID
+	arms, _, _ := newArms(t, reaverSet(4))
+	ccfamily.Check(t, nil, sim(withSet), sim(ring(warrior.RokthulsSlayersEdgeItemID)), arms)
 }

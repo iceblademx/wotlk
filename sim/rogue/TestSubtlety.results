@@ -102,6 +102,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSubtlety-AllItems-BetweentheEyes-900143"
+ value: {
+  dps: 6565.51512
+  tps: 4661.51574
+ }
+}
+dps_results: {
  key: "TestSubtlety-AllItems-BlackBruise-50035"
  value: {
   dps: 6280.65452
@@ -123,6 +130,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSubtlety-AllItems-BlightsapPoisoner'sGarb"
+ value: {
+  dps: 6572.86596
+  tps: 4666.73483
+ }
+}
+dps_results: {
  key: "TestSubtlety-AllItems-BonescytheBattlegear"
  value: {
   dps: 5462.53591
@@ -134,6 +148,13 @@ dps_results: {
  value: {
   dps: 6271.53392
   tps: 4363.7333
+ }
+}
+dps_results: {
+ key: "TestSubtlety-AllItems-BurrowCutthroat'sKit"
+ value: {
+  dps: 6601.74899
+  tps: 4687.24178
  }
 }
 dps_results: {
@@ -566,10 +587,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSubtlety-AllItems-RolltheBones-900142"
+ value: {
+  dps: 6638.30718
+  tps: 4713.1981
+ }
+}
+dps_results: {
  key: "TestSubtlety-AllItems-RuneofRepulsion-40372"
  value: {
   dps: 6162.30177
   tps: 4375.23425
+ }
+}
+dps_results: {
+ key: "TestSubtlety-AllItems-SanguineHunger-900145"
+ value: {
+  dps: 8569.1537
+  tps: 6084.09913
  }
 }
 dps_results: {
@@ -794,6 +829,20 @@ dps_results: {
  value: {
   dps: 5816.54823
   tps: 4129.74924
+ }
+}
+dps_results: {
+ key: "TestSubtlety-AllItems-Venomdrinker-900144"
+ value: {
+  dps: 6565.51512
+  tps: 4661.51574
+ }
+}
+dps_results: {
+ key: "TestSubtlety-AllItems-Vorrax'sFateboundCoin-900119"
+ value: {
+  dps: 7748.3638
+  tps: 5501.3383
  }
 }
 dps_results: {

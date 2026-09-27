@@ -123,6 +123,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeralApl-AllItems-CanopyDreamer'sRegalia"
+ value: {
+  dps: 10612.7111
+  tps: 7603.23032
+ }
+}
+dps_results: {
  key: "TestFeralApl-AllItems-ChaoticSkyflareDiamond"
  value: {
   dps: 11461.31545
@@ -680,8 +687,8 @@ dps_results: {
 dps_results: {
  key: "TestFeralApl-AllItems-ProwleroftheFeveredCanopy"
  value: {
-  dps: 13394.08205
-  tps: 9577.40541
+  dps: 13280.63985
+  tps: 9496.93623
  }
 }
 dps_results: {
@@ -759,6 +766,13 @@ dps_results: {
  value: {
   dps: 10899.20703
   tps: 7802.52917
+ }
+}
+dps_results: {
+ key: "TestFeralApl-AllItems-Skareth'sFallingStar-900108"
+ value: {
+  dps: 11277.15086
+  tps: 8071.39279
  }
 }
 dps_results: {
@@ -927,6 +941,13 @@ dps_results: {
  value: {
   dps: 8742.53938
   tps: 6269.20111
+ }
+}
+dps_results: {
+ key: "TestFeralApl-AllItems-Ursoc'sTaintedClaw"
+ value: {
+  dps: 11408.26075
+  tps: 8167.32271
  }
 }
 dps_results: {

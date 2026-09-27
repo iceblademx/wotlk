@@ -123,6 +123,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalancePhase3-AllItems-CanopyDreamer'sRegalia"
+ value: {
+  dps: 12279.79057
+  tps: 11994.12674
+ }
+}
+dps_results: {
  key: "TestBalancePhase3-AllItems-ChaoticSkyflareDiamond"
  value: {
   dps: 11438.04172
@@ -761,6 +768,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalancePhase3-AllItems-Skareth'sFallingStar-900108"
+ value: {
+  dps: 13878.68313
+  tps: 13591.69514
+ }
+}
+dps_results: {
  key: "TestBalancePhase3-AllItems-SliverofPureIce-50339"
  value: {
   dps: 11134.18972
@@ -926,6 +940,13 @@ dps_results: {
  value: {
   dps: 6729.13527
   tps: 6424.17323
+ }
+}
+dps_results: {
+ key: "TestBalancePhase3-AllItems-Ursoc'sTaintedClaw"
+ value: {
+  dps: 9984.27313
+  tps: 9698.14842
  }
 }
 dps_results: {

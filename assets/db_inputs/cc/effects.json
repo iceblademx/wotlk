@@ -172,6 +172,7 @@
     "spellId": 200021,
     "trigger": "equip",
     "detail": "Skareth's Falling Star: aura PROC_TRIGGER_SPELL (42)",
+    "handledByHandwrittenCode": true,
     "text": "Casting Starfall causes you to channel Fury of the Goddess for 3 sec, unleashing a rapid volley of spells at your current target."
   },
   {
@@ -272,6 +273,7 @@
     "spellId": 200057,
     "trigger": "equip",
     "detail": "Vorrax's Fatebound Coin: aura PROC_TRIGGER_SPELL (42)",
+    "handledByHandwrittenCode": true,
     "text": "Each finishing move that consumes 4 or more combo points flips a Fatebound Coin. Heads increases your Energy regeneration by 30% for 15 sec or until you flip Tails, gaining an additional 10% for each consecutive Heads flip. Tails deals Arcane damage to your target, dealing additional damage for each consecutive Tails flip."
   },
   {
@@ -346,6 +348,7 @@
     "spellId": 200085,
     "trigger": "equip",
     "detail": "Vaelith's Abyssal Calling: aura PROC_TRIGGER_SPELL (42)",
+    "handledByHandwrittenCode": true,
     "text": "Casting Demonic Empowerment calls forth a Pit Lord from the Twisting Nether that attacks your target with Fire damage, and increases the spell power of allies within 30 yards for 20 sec."
   },
   {
@@ -355,6 +358,7 @@
     "spellId": 200088,
     "trigger": "equip",
     "detail": "Morgrath's Malediction: aura PROC_TRIGGER_SPELL (42)",
+    "handledByHandwrittenCode": true,
     "text": "Casting Immolate also applies Malediction to your target, dealing Fire damage over 24 sec. If the target is afflicted by Malediction, casting Chaos Bolt and Shadowburn increases its stack count by 1. Each time Malediction gains a stack it has a chance to collapse, consuming a stack every 1 sec to deal Shadowflame damage until 1 stack remains."
   },
   {
@@ -364,6 +368,7 @@
     "spellId": 200092,
     "trigger": "equip",
     "detail": "Vorrax's Chaosflame: aura PROC_TRIGGER_SPELL (42)",
+    "handledByHandwrittenCode": true,
     "text": "Casting Incinerate grants a stack of Chaosflame, increasing the damage of your next Chaos Bolt by 50% and guaranteeing it will Critically Strike, stacking up to 5 times. Casting Chaos Bolt consumes all stacks of Chaosflame."
   },
   {
@@ -454,6 +459,7 @@
     "spellId": 200165,
     "trigger": "equip",
     "detail": "Roll the Bones: aura DUMMY (4)",
+    "handledByHandwrittenCode": true,
     "text": "Your Eviscerate has a 20% chance per combo point spent to grant you one of six combat enhancements for 15 sec. Different enhancements may overlap; receiving an enhancement you already have refreshes its duration."
   },
   {
@@ -463,6 +469,7 @@
     "spellId": 200173,
     "trigger": "equip",
     "detail": "Between the Eyes: aura ADD_PCT_MODIFIER (108)",
+    "handledByHandwrittenCode": true,
     "text": "Your Kidney Shot also deals Physical damage based on your attack power and the combo points spent, retaining its stun and cooldown. This damage strikes for three times normal damage on a critical strike."
   },
   {
@@ -472,6 +479,7 @@
     "spellId": 200175,
     "trigger": "equip",
     "detail": "Venomdrinker: proc",
+    "handledByHandwrittenCode": true,
     "text": "Your Shiv costs no Energy and grants Venom Rush for 8 sec, increasing your Energy regeneration by 50% and your poison damage by 20%. Shiv now has a 20-sec cooldown."
   },
   {
@@ -481,6 +489,7 @@
     "spellId": 200177,
     "trigger": "equip",
     "detail": "Sanguine Hunger: proc",
+    "handledByHandwrittenCode": true,
     "text": "Your Rupture and Garrote restore 8 Energy each time they deal periodic damage. Your Envenom extends your active bleeds on its target by 1 sec per combo point spent, up to their original maximum durations."
   },
   {

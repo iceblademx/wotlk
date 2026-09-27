@@ -601,6 +601,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFury-AllItems-ReaveroftheTaintedGrove"
+ value: {
+  dps: 7208.0528
+  tps: 5352.97604
+ }
+}
+dps_results: {
  key: "TestFury-AllItems-ReignoftheDead-47316"
  value: {
   dps: 6559.28013
@@ -631,8 +638,8 @@ dps_results: {
 dps_results: {
  key: "TestFury-AllItems-Rok'thul'sSlayer'sEdge-900126"
  value: {
-  dps: 9879.55311
-  tps: 7243.74241
+  dps: 9725.11474
+  tps: 7134.41006
  }
 }
 dps_results: {

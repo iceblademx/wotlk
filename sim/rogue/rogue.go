@@ -134,7 +134,7 @@ func (rogue *Rogue) ApplyFinisher(sim *core.Simulation, spell *core.Spell) {
 	numPoints := rogue.ComboPoints()
 	rogue.SpendComboPoints(sim, spell.ComboPointMetrics())
 	rogue.finishingMoveEffectApplier(sim, numPoints)
-	rogue.onFinisher(sim, numPoints)
+	rogue.onFinisher(sim, spell, numPoints)
 }
 
 func (rogue *Rogue) HasMajorGlyph(glyph proto.RogueMajorGlyph) bool {

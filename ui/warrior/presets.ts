@@ -62,6 +62,9 @@ import ArmsApl from './apls/arms.apl.json';
 export const ROTATION_ARMS = PresetUtils.makePresetAPLRotation('Arms', ArmsApl, { talentTree: 0 });
 import ArmsSunderApl from './apls/arms_sunder.apl.json';
 export const ROTATION_ARMS_SUNDER = PresetUtils.makePresetAPLRotation('Arms + Sunder', ArmsSunderApl, { talentTree: 0 });
+// Custom content: holds Sudden Death Executes until Reaver of the Tainted Grove 4pc has 5 Fatal Marks up.
+import ArmsFatalMarkApl from './apls/arms_fatal_mark.apl.json';
+export const ROTATION_ARMS_FATAL_MARK = PresetUtils.makePresetAPLRotation('Arms (Fatal Mark)', ArmsFatalMarkApl, { talentTree: 0 });
 
 // Default talents. Uses the wowhead calculator format, make the talents on
 // https://wowhead.com/wotlk/talent-calc and copy the numbers in the url.

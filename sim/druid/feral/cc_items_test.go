@@ -3,9 +3,11 @@ package feral
 import (
 	"testing"
 
+	"github.com/wowsims/wotlk/sim/common/cc/ccfamily"
 	"github.com/wowsims/wotlk/sim/core"
 	"github.com/wowsims/wotlk/sim/core/proto"
 	"github.com/wowsims/wotlk/sim/druid"
+	googleProto "google.golang.org/protobuf/proto"
 )
 
 // Tests for custom 3.3.5a server content in sim/druid/cc_items.go.
@@ -25,7 +27,8 @@ func catRequest(talents string, items map[proto.ItemSlot]int32) *proto.RaidSimRe
 	for slot, id := range items {
 		gear.Items[slot] = &proto.ItemSpec{Id: id}
 	}
-	return &proto.RaidSimRequest{
+	// A deep copy: sims write their class buffs into the raid buffs, which are shared globals.
+	return googleProto.Clone(&proto.RaidSimRequest{
 		Raid: core.SinglePlayerRaidProto(&proto.Player{
 			Race:          proto.Race_RaceTauren,
 			Class:         proto.Class_ClassDruid,
@@ -39,7 +42,7 @@ func catRequest(talents string, items map[proto.ItemSlot]int32) *proto.RaidSimRe
 		}, core.FullPartyBuffs, core.FullRaidBuffs, core.FullDebuffs),
 		Encounter:  core.MakeSingleTargetEncounter(0),
 		SimOptions: &proto.SimOptions{Iterations: 1, RandomSeed: 1, IsTest: true},
-	}
+	}).(*proto.RaidSimRequest)
 }
 
 // newCat builds a reset simulation whose spells can be driven by hand. Debuffs are disabled so no
@@ -181,10 +184,24 @@ func TestProwlerOfTheFeveredCanopy(t *testing.T) {
 	if two[900343] != nil {
 		t.Error("2pc: Bloodseeker Thorns must require the 4pc")
 	}
-	// Each Rake hit, Rake tick and Rip tick rolls 10%. Rake/Rip hit counts include their ticks.
+	// Rake and Rip ticks roll 10%, with a 6 sec cooldown per target after each vine: fewer than 10% of
+	// the damage events (whose counts also include Rake's initial hits), and never more than one vine
+	// per 6 sec.
 	triggers := float64(rake.Hits + rake.Crits + rip.Hits + rip.Crits)
-	if rate := float64(vines.Casts) / triggers; rate < 0.08 || rate > 0.12 {
-		t.Errorf("2pc: vines applied on %.3f of Rip/Rake damage events, want ~0.10", rate)
+	if rate := float64(vines.Casts) / triggers; rate < 0.04 || rate >= 0.10 {
+		t.Errorf("2pc: vines applied on %.3f of Rip/Rake damage events, want below 0.10", rate)
+	}
+	if perFight := float64(vines.Casts) / 200; perFight > 180/6+1 {
+		t.Errorf("2pc: %.1f vines per fight, more than one per 6 sec", perFight)
+	}
+
+	// Rake's initial hit never grows vines.
+	sim, cat, target := newCat(t, StandardTalents, set(2))
+	for i := 0; i < 200; i++ {
+		cat.Rake.SkipCastAndApplyEffects(sim, target)
+	}
+	if casts := cat.BloodseekerVines.SpellMetrics[target.UnitIndex].Casts; casts != 0 {
+		t.Errorf("2pc: %d vines from Rake's initial hit", casts)
 	}
 
 	four := metricsFor(4)
@@ -197,4 +214,14 @@ func TestProwlerOfTheFeveredCanopy(t *testing.T) {
 	if thorns.Casts > four[900342].Casts || thorns.Casts < four[900342].Casts/3 {
 		t.Errorf("4pc: %d explosions for %d vine applications", thorns.Casts, four[900342].Casts)
 	}
+}
+
+// Every custom spell gets only the class modifiers its 3.3.5a family flags allow.
+func TestClassModifiers(t *testing.T) {
+	sim, _, _ := newCat(t, StandardTalents, map[proto.ItemSlot]int32{
+		proto.ItemSlot_ItemSlotFinger1: druid.MorgrathsRavagingClawItemID,
+		proto.ItemSlot_ItemSlotNeck:    prowlerNeck, proto.ItemSlot_ItemSlotFinger2: prowlerRing,
+		proto.ItemSlot_ItemSlotBack: prowlerCloak, proto.ItemSlot_ItemSlotMainHand: prowlerWeapon,
+	})
+	ccfamily.Check(t, nil, sim)
 }

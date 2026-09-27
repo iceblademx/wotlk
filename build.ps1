@@ -6,25 +6,32 @@
 .EXAMPLE
   ./build.ps1 setup        # one-time: npm install + protoc-gen-go
   ./build.ps1              # full client build into dist/wotlk (same as `dist`)
-  ./build.ps1 host         # build + serve at http://localhost:8080/wotlk/
+  ./build.ps1 host         # build + serve at http://localhost:8080/wotlk/ (sims run in the browser)
   ./build.ps1 devserver    # build wowsimwotlk.exe (native sim server, UI embedded)
   ./build.ps1 rundevserver # build + run native server using dist/ at http://localhost:3333/wotlk/
+  ./build.ps1 serve        # build + run wowsimwotlk.exe at http://localhost:3333/wotlk/ (sims run on this machine)
+  ./build.ps1 serve -Remote -Port 8000   # host/rundevserver/serve: let other machines connect, on port 8000
   ./build.ps1 test         # go test --tags=with_db ./sim/...
   ./build.ps1 update-tests # accept *.results.tmp as new expected results
   ./build.ps1 items        # regenerate assets/database/db.{bin,json} (includes imported custom content)
   ./build.ps1 cc           # import cc_data/ (DBCs + server data), then regenerate the item DB
   ./build.ps1 inspect spell 12345   # decode a spell/item/set/enchant from cc_data/ (see tools/cc/inspect)
   ./build.ps1 dump         # export server tables (item_template, spell_proc, ...) via .env credentials (read-only)
+  ./build.ps1 tuning       # fetch the server's published tuning (sim/data.json), report changes, store it (-check: report only, exit 1 on changes)
   ./build.ps1 audit        # compare hardcoded item effect values with 3.3.5a spell data (add -Fix via: ./build.ps1 audit -fix)
   ./build.ps1 wasm | proto | ui | fmt | clean
 #>
 param(
 	[Parameter(Position = 0)]
-	[ValidateSet('dist', 'setup', 'proto', 'wasm', 'ui', 'host', 'devserver', 'rundevserver', 'release', 'test', 'update-tests', 'items', 'cc', 'inspect', 'dump', 'audit', 'fmt', 'clean')]
+	[ValidateSet('dist', 'setup', 'proto', 'wasm', 'ui', 'host', 'devserver', 'rundevserver', 'serve', 'release', 'test', 'update-tests', 'items', 'cc', 'inspect', 'dump', 'audit', 'tuning', 'fmt', 'clean')]
 	[string]$Target = 'dist',
 	[Parameter(Position = 1, ValueFromRemainingArguments = $true)]
 	[string[]]$Rest = @(),
-	[int]$Port = 8080
+	# Port for host (default 8080), rundevserver and serve (default 3333).
+	[ValidateRange(0, 65535)]
+	[int]$Port = 0,
+	# Listen on all network interfaces so other machines can connect (default: this machine only).
+	[switch]$Remote
 )
 
 $ErrorActionPreference = 'Stop'
@@ -193,6 +200,13 @@ function Invoke-DevServer([switch]$SkipClient) {
 	Write-Host 'Build Completed Successfully' -ForegroundColor Green
 }
 
+function Get-ServerArgs {
+	$p = if ($Port) { $Port } else { 3333 }
+	$serverArgs = @("--port=$p")
+	if ($Remote) { $serverArgs += '--remote' }
+	return $serverArgs
+}
+
 function Invoke-Release {
 	Invoke-BinaryDist
 	Copy-Item assets/favicon_io/icon-windows_amd64.syso sim/web/icon-windows_amd64.syso
@@ -262,15 +276,21 @@ switch ($Target) {
 	'dist' { Invoke-Dist }
 	'host' {
 		Invoke-Dist
-		Write-Host "Serving at http://localhost:$Port/wotlk/  (Ctrl+C to stop)" -ForegroundColor Green
+		$p = if ($Port) { $Port } else { 8080 }
+		$addr = if ($Remote) { '0.0.0.0' } else { '127.0.0.1' }
+		Write-Host "Serving at http://localhost:$p/wotlk/  (Ctrl+C to stop)" -ForegroundColor Green
 		# Serve one level up so the site lives under /wotlk/ exactly like the upstream GitHub pages.
-		Invoke-Native 'npx' @('http-server', 'dist', '-p', "$Port", '-c-1')
+		Invoke-Native 'npx' @('http-server', 'dist', '-a', $addr, '-p', "$p", '-c-1')
 	}
 	'devserver' { Invoke-DevServer }
 	'rundevserver' {
 		Invoke-Dist
 		Invoke-DevServer -SkipClient
-		& ./wowsimwotlk.exe --usefs=true --launch=false --host=":3333"
+		& ./wowsimwotlk.exe --usefs=true --launch=false @(Get-ServerArgs)
+	}
+	'serve' {
+		Invoke-DevServer
+		& ./wowsimwotlk.exe --launch=false @(Get-ServerArgs)
 	}
 	'release' { Invoke-Release }
 	'test' { Invoke-Test }
@@ -280,6 +300,8 @@ switch ($Target) {
 	'inspect' { Invoke-Proto; Invoke-Native 'go' (@('run', './tools/cc/inspect') + $Rest) }
 	'dump' { Invoke-Native 'go' (@('run', './tools/cc/dump') + $Rest) }
 	'audit' { Invoke-Proto; Invoke-Native 'go' (@('run', './tools/cc/audit') + $Rest) }
+	# Exit code passes through: with -check, 1 means changed (or failed; the report's Status line says which).
+	'tuning' { $ErrorActionPreference = 'Continue'; & go run ./tools/cc/tuning @Rest; exit $LASTEXITCODE }
 	'fmt' { Invoke-Fmt }
 	'clean' { Invoke-Clean }
 }

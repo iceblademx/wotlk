@@ -13,6 +13,8 @@
 //	assets/db_inputs/cc/effects.json            effects needing (or given) Go implementations
 //	assets/db_inputs/cc/custom_spells.json      index of every spell not present in stock data
 //	assets/db_inputs/cc/spell_changes.json      spells that differ from cc_data/dbc_baseline (if provided)
+//	assets/db_inputs/cc/sim_spells.json         family data of the custom spells hand-written sim code uses
+//	                                            (checked by sim/common/cc/ccfamily)
 //	assets/db_inputs/cc/REPORT.md               human-readable summary / TODO list
 //	sim/common/cc/zz_generated.go               effects expressible from data alone
 package main
@@ -838,6 +840,52 @@ func (ex *extraction) todoCount() int {
 // Output
 // ---------------------------------------------------------------------------
 
+// simSpell is the family data of a custom spell that hand-written sim code uses. Class talents,
+// glyphs, buffs, debuffs and procs reach a spell only through its family flags, so this is what the
+// sim may apply to it; sim/common/cc/ccfamily checks the registered spells against it.
+type simSpell struct {
+	ID               uint32              `json:"id"`
+	Name             string              `json:"name"`
+	SpellFamilyName  uint32              `json:"spellFamilyName"`
+	SpellFamilyFlags [3]uint32           `json:"spellFamilyFlags"`
+	SchoolMask       uint32              `json:"schoolMask"`
+	DmgClass         uint32              `json:"dmgClass"`
+	Bleed            bool                `json:"bleed"`
+	ClassModifiers   []dbc.ClassModifier `json:"classModifiers"`
+}
+
+// customSpellIDMin: stock 3.3.5a spell IDs stay below 100000; the server's custom spells use 200000+.
+const customSpellIDMin = 200000
+
+func (ex *extraction) simSpells() []simSpell {
+	out := []simSpell{}
+	for id := range ex.handwritten.itemIDs {
+		sp := ex.src.Spells.Spells[uint32(id)]
+		if id < customSpellIDMin || sp == nil {
+			continue
+		}
+		mods := dbc.ClassModifiers(ex.src.Spells.Spells, sp)
+		for procID, p := range ex.src.Server.SpellProcs {
+			if dbc.FamilyMaskMatches(p.SpellFamilyName, p.SpellFamilyMask, sp) {
+				name := ""
+				if other := ex.src.Spells.Spells[procID]; other != nil {
+					name = other.Name
+				}
+				mods = append(mods, dbc.ClassModifier{SpellID: procID, Name: name, Kind: "class proc", Effect: p.Source})
+			}
+		}
+		sort.SliceStable(mods, func(i, j int) bool { return mods[i].SpellID < mods[j].SpellID })
+		if mods == nil {
+			mods = []dbc.ClassModifier{}
+		}
+		out = append(out, simSpell{ID: sp.ID, Name: sp.Name, SpellFamilyName: sp.SpellFamilyName,
+			SpellFamilyFlags: sp.SpellFamilyFlags, SchoolMask: sp.SchoolMask, DmgClass: sp.DmgClass,
+			Bleed: sp.IsBleed(), ClassModifiers: mods})
+	}
+	sort.Slice(out, func(i, j int) bool { return out[i].ID < out[j].ID })
+	return out
+}
+
 func (ex *extraction) write(outDir, genFile string) (err error) {
 	must := func(e error) {
 		if e != nil && err == nil {
@@ -870,6 +918,7 @@ func (ex *extraction) write(outDir, genFile string) (err error) {
 		}
 	}
 	must(cc.WriteJSON(filepath.Join(outDir, "spells.json"), spells))
+	must(cc.WriteJSON(filepath.Join(outDir, "sim_spells.json"), ex.simSpells()))
 	must(cc.WriteJSON(filepath.Join(outDir, "item_sets.json"), ex.sets))
 	must(cc.WriteJSON(filepath.Join(outDir, "effects.json"), ex.effects))
 	must(cc.WriteJSON(filepath.Join(outDir, "custom_spells.json"), ex.customSpells))

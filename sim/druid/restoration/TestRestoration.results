@@ -92,6 +92,10 @@ dps_results: {
  value: {}
 }
 dps_results: {
+ key: "TestRestoration-AllItems-CanopyDreamer'sRegalia"
+ value: {}
+}
+dps_results: {
  key: "TestRestoration-AllItems-ChaoticSkyflareDiamond"
  value: {}
 }
@@ -461,6 +465,10 @@ dps_results: {
  value: {}
 }
 dps_results: {
+ key: "TestRestoration-AllItems-Skareth'sFallingStar-900108"
+ value: {}
+}
+dps_results: {
  key: "TestRestoration-AllItems-SliverofPureIce-50339"
  value: {}
 }
@@ -550,6 +558,10 @@ dps_results: {
 }
 dps_results: {
  key: "TestRestoration-AllItems-UndeadSlayer'sBlessedArmor"
+ value: {}
+}
+dps_results: {
+ key: "TestRestoration-AllItems-Ursoc'sTaintedClaw"
  value: {}
 }
 dps_results: {

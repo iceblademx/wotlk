@@ -176,6 +176,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarrior, {
 			Presets.ROTATION_FURY_SUNDER,
 			Presets.ROTATION_ARMS,
 			Presets.ROTATION_ARMS_SUNDER,
+			Presets.ROTATION_ARMS_FATAL_MARK,
 		],
 		// Preset gear configurations that the user can quickly select.
 		gear: [

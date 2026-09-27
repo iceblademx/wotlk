@@ -102,6 +102,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDestruction-AllItems-BindingsoftheFacelessPact"
+ value: {
+  dps: 13389.60543
+  tps: 11070.9881
+ }
+}
+dps_results: {
  key: "TestDestruction-AllItems-BlessedRegaliaofUndeadCleansing"
  value: {
   dps: 10049.22959
@@ -383,6 +390,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDestruction-AllItems-ImmolationoftheWorldTree"
+ value: {
+  dps: 13863.55801
+  tps: 11499.95668
+ }
+}
+dps_results: {
  key: "TestDestruction-AllItems-ImpassiveSkyflareDiamond"
  value: {
   dps: 13313.85188
@@ -443,6 +457,13 @@ dps_results: {
  value: {
   dps: 13123.39121
   tps: 10833.79052
+ }
+}
+dps_results: {
+ key: "TestDestruction-AllItems-Morgrath'sMalediction-900128"
+ value: {
+  dps: 14253.73734
+  tps: 11908.20367
  }
 }
 dps_results: {
@@ -726,6 +747,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDestruction-AllItems-Vaelith'sAbyssalCalling-900127"
+ value: {
+  dps: 13595.25587
+  tps: 11242.09995
+ }
+}
+dps_results: {
  key: "TestDestruction-AllItems-Vaelith'sReapedSoul-900125"
  value: {
   dps: 13680.12106
@@ -737,6 +765,13 @@ dps_results: {
  value: {
   dps: 13595.25587
   tps: 11242.09995
+ }
+}
+dps_results: {
+ key: "TestDestruction-AllItems-Vorrax'sChaosflame-900129"
+ value: {
+  dps: 16291.98129
+  tps: 13669.45593
  }
 }
 dps_results: {
