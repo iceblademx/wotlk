@@ -189,7 +189,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRogue, {
 
 	defaults: {
 		// Default equipped gear.
-		gear: Presets.PRERAID_PRESET_ASSASSINATION.gear,
+		gear: Presets.P3_PRESET_ASSASSINATION.gear,
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Stats.fromMap({
 			[Stat.StatAgility]: 1.86,

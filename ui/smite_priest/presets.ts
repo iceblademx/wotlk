@@ -28,6 +28,9 @@ import PreraidGear from './gear_sets/preraid.gear.json';
 export const PRERAID_PRESET = PresetUtils.makePresetGear('Preraid Preset', PreraidGear);
 import P1Gear from './gear_sets/p1.gear.json';
 export const P1_PRESET = PresetUtils.makePresetGear('P1 Preset', P1Gear);
+// Smite has no P3 list of its own; use Shadow's, as the raid sim does.
+import P3Gear from '../shadow_priest/gear_sets/p3.gear.json';
+export const P3_PRESET = PresetUtils.makePresetGear('P3 Preset', P3Gear);
 
 import DefaultApl from './apls/default.apl.json'
 export const ROTATION_PRESET_APL = PresetUtils.makePresetAPLRotation('Default', DefaultApl);

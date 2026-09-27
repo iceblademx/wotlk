@@ -52,7 +52,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecHealingPriest, {
 
 	defaults: {
 		// Default equipped gear.
-		gear: Presets.DISC_P1_PRESET.gear,
+		gear: Presets.DISC_P3_PRESET.gear,
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Stats.fromMap({
 			[Stat.StatIntellect]: 2.73,

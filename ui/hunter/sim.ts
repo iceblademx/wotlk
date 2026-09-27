@@ -156,7 +156,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecHunter, {
 
 	defaults: {
 		// Default equipped gear.
-		gear: Presets.SV_P1_PRESET.gear,
+		gear: Presets.SV_P3_PRESET.gear,
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Stats.fromMap({
 			[Stat.StatStamina]: 0.5,

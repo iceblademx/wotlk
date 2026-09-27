@@ -65,7 +65,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecShadowPriest, {
 
 	defaults: {
 		// Default equipped gear.
-		gear: Presets.P4_PRESET.gear,
+		gear: Presets.P3_PRESET.gear,
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Stats.fromMap({
 			[Stat.StatIntellect]: 0.11,

@@ -71,7 +71,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecDeathknight, {
 	],
 	defaults: {
 		// Default equipped gear.
-		gear: Presets.P2_UNHOLY_DW_PRESET.gear,
+		gear: Presets.P3_UNHOLY_DW_PRESET.gear,
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Stats.fromMap({
 			[Stat.StatStrength]: 3.22,
