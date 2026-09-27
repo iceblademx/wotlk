@@ -8,11 +8,13 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"net"
 	"net/http"
 	_ "net/http/pprof"
 	"os"
 	"os/signal"
 	"runtime/pprof"
+	"strconv"
 	"strings"
 	"sync"
 	"sync/atomic"
@@ -46,10 +48,17 @@ func main() {
 	var wasm = flag.Bool("wasm", false, "Use wasm for sim instead of web server apis. Can only be used with usefs=true")
 	var simName = flag.String("sim", "", "Name of simulator to launch (ex: balance_druid, elemental_shaman, etc)")
 	var host = flag.String("host", "localhost:3333", "URL to host the interface on.")
+	var port = flag.Int("port", 0, "Port to host the interface on, replacing the one in --host.")
+	var remote = flag.Bool("remote", false, "Accept connections from other machines (listen on all network interfaces).")
 	var launch = flag.Bool("launch", true, "auto launch browser")
 	var skipVersionCheck = flag.Bool("nvc", false, "set true to skip version check")
 
 	flag.Parse()
+
+	listenAddr, err := listenAddress(*host, *port, *remote)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	fmt.Printf("Version: %s\n", Version)
 	if !*skipVersionCheck && Version != "development" {
@@ -86,7 +95,70 @@ func main() {
 		progMut:         sync.RWMutex{},
 		asyncProgresses: map[string]*asyncProgress{},
 	}
-	s.runServer(*useFS, *host, *launch, *simName, *wasm, bufio.NewReader(os.Stdin))
+	s.runServer(*useFS, listenAddr, *launch, *simName, *wasm, bufio.NewReader(os.Stdin))
+}
+
+// listenAddress applies --port and --remote to the --host address.
+func listenAddress(host string, port int, remote bool) (string, error) {
+	h, p, err := net.SplitHostPort(host)
+	if err != nil {
+		return "", fmt.Errorf("--host %q: %w", host, err)
+	}
+	if port < 0 || port > 65535 {
+		return "", fmt.Errorf("--port %d: must be between 1 and 65535", port)
+	}
+	if port > 0 {
+		p = strconv.Itoa(port)
+	}
+	if remote {
+		h = ""
+	}
+	return net.JoinHostPort(h, p), nil
+}
+
+func isLoopback(addr string) bool {
+	h, _, err := net.SplitHostPort(addr)
+	if err != nil {
+		return false
+	}
+	if h == "localhost" {
+		return true
+	}
+	ip := net.ParseIP(h)
+	return ip != nil && ip.IsLoopback()
+}
+
+// hideDebugEndpoints keeps the pprof handlers (registered on the default mux by the net/http/pprof
+// import) away from other machines.
+func hideDebugEndpoints(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if strings.HasPrefix(r.URL.Path, "/debug/") {
+			http.NotFound(w, r)
+			return
+		}
+		next.ServeHTTP(w, r)
+	})
+}
+
+// logNetworkURLs prints the addresses other machines on the network can use to reach the sim.
+func logNetworkURLs(addr string) {
+	h, p, err := net.SplitHostPort(addr)
+	if err != nil {
+		return
+	}
+	if h != "" && h != "0.0.0.0" && h != "::" {
+		log.Printf("Accepting remote connections at http://%s/wotlk/", addr)
+		return
+	}
+	ifaceAddrs, err := net.InterfaceAddrs()
+	if err != nil {
+		return
+	}
+	for _, a := range ifaceAddrs {
+		if ipNet, ok := a.(*net.IPNet); ok && !ipNet.IP.IsLoopback() && ipNet.IP.To4() != nil {
+			log.Printf("Accepting remote connections at http://%s/wotlk/", net.JoinHostPort(ipNet.IP.String(), p))
+		}
+	}
 }
 
 // Handlers to decode and handle each proto function
@@ -304,11 +376,19 @@ func (s *server) runServer(useFS bool, host string, launchBrowser bool, simName 
 		fs.ServeHTTP(resp, req)
 	})
 
+	var handler http.Handler = http.DefaultServeMux
+	if !isLoopback(host) {
+		handler = hideDebugEndpoints(handler)
+		logNetworkURLs(host)
+	}
+
 	if launchBrowser {
-		if strings.HasPrefix(host, ":") {
-			host = "localhost" + host
+		// Open the local address without changing host: that would stop the server listening remotely.
+		browserHost := host
+		if h, p, err := net.SplitHostPort(host); err == nil && (h == "" || h == "0.0.0.0" || h == "::") {
+			browserHost = net.JoinHostPort("localhost", p)
 		}
-		url := fmt.Sprintf("http://%s/wotlk/%s", host, simName)
+		url := fmt.Sprintf("http://%s/wotlk/%s", browserHost, simName)
 		log.Printf("Launching interface on %s", url)
 		go func() {
 			err := browser.OpenURL(url)
@@ -321,7 +401,7 @@ func (s *server) runServer(useFS bool, host string, launchBrowser bool, simName 
 
 	go func() {
 		// Launch server!
-		if err := http.ListenAndServe(host, nil); err != nil {
+		if err := http.ListenAndServe(host, handler); err != nil {
 			log.Printf("Failed to shutdown server: %s", err)
 			os.Exit(1)
 		}

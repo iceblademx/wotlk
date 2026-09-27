@@ -58,7 +58,6 @@ export abstract class SimUI extends Component {
 		this.cssClass = config.cssClass;
 		this.cssScheme = config.cssScheme;
 		this.isWithinRaidSim = this.rootElem.closest('.within-raid-sim') != null;
-		config.noticeText = `Cataclysm sim development has begun! <a href="https://discord.gg/p3DgvmnDCS" target="_blank">Join our Discord</a> for more details or to contribute to the project.`;
 		this.rootElem.innerHTML = `
 			<div class="sim-root">
 				<div class="sim-bg"></div>

@@ -22,7 +22,24 @@ What's different from upstream:
 ./build.ps1 cc         # import custom content from cc_data/ (see cc_data/README.md)
 ```
 
-`./build.ps1 devserver` builds `wowsimwotlk.exe`, a single native binary with the UI embedded. The original upstream documentation follows.
+`./build.ps1 devserver` builds `wowsimwotlk.exe`, a single native binary with the UI embedded.
+
+## Hosting for other people
+
+By default everything listens on this machine only. Add `-Remote` to let other machines connect, and `-Port` to pick the port:
+
+```powershell
+./build.ps1 serve -Remote -Port 3333   # native server: sims run on this machine's CPU
+./build.ps1 host  -Remote -Port 8080   # static site: sims run in each visitor's browser (WebAssembly)
+```
+
+`wowsimwotlk.exe` takes the same options directly: `wowsimwotlk.exe --remote --port 3333 --launch=false`. On startup it prints the LAN addresses to share, e.g. `http://192.168.1.20:3333/wotlk/`.
+
+- Windows Firewall asks the first time; allow it on private networks.
+- Across the internet, forward the TCP port on your router or, more safely, use a VPN such as Tailscale and share that address.
+- There is no login: anyone who can reach the port can run sims. With `serve`, those sims use your CPU; `host` doesn't have that cost.
+
+The original upstream documentation follows.
 
 ---
 
