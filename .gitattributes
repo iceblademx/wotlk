@@ -1,0 +1,5 @@
+# Keep LF in the repo and working tree (matches upstream) even when edited on Windows.
+* text=auto eol=lf
+*.bin binary
+*.wasm binary
+*.syso binary

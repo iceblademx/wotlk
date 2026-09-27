@@ -4,6 +4,8 @@ import * as Popper from '@popperjs/core';
 import * as bootstrap from 'bootstrap';
 import { Chart, registerables } from 'chart.js';
 
+import { loadDatabaseSiteTooltips } from './core/constants/database_site';
+
 Chart.register(...registerables);
 Chart.defaults.color = 'white';
 
@@ -38,4 +40,5 @@ function docReady(fn: any) {
 
 docReady(function () {
 	document.body.classList.add('ready');
+	loadDatabaseSiteTooltips();
 });

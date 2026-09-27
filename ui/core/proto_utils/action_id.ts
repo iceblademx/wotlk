@@ -1,3 +1,4 @@
+import { databaseSiteIconUrl, databaseSiteUrl } from '../constants/database_site.js';
 import { getWowheadLanguagePrefix } from '../constants/lang.js';
 import { ActionID as ActionIdProto } from '../proto/common.js';
 import { ResourceType } from '../proto/api.js';
@@ -9,9 +10,6 @@ import {
 
 import { Database } from './database.js';
 import { CHARACTER_LEVEL } from '../constants/mechanics.js';
-
-// If true uses wotlkdb.com, else uses wowhead.com.
-export const USE_WOTLK_DB = false;
 
 // Uniquely identifies a specific item / spell / thing in WoW. This object is immutable.
 export class ActionId {
@@ -137,44 +135,19 @@ export class ActionId {
 	}
 
 	static makeItemUrl(id: number): string {
-		const langPrefix = getWowheadLanguagePrefix();
-		if (USE_WOTLK_DB) {
-			return 'https://wotlkdb.com/?item=' + id;
-		} else {
-			return `https://wowhead.com/wotlk/${langPrefix}item=${id}?lvl=${CHARACTER_LEVEL}`;
-		}
+		return databaseSiteUrl('item', id) ?? `https://wowhead.com/wotlk/${getWowheadLanguagePrefix()}item=${id}?lvl=${CHARACTER_LEVEL}`;
 	}
 	static makeSpellUrl(id: number): string {
-		const langPrefix = getWowheadLanguagePrefix();
-		if (USE_WOTLK_DB) {
-			return 'https://wotlkdb.com/?spell=' + id;
-		} else {
-			return `https://wowhead.com/wotlk/${langPrefix}spell=${id}`;
-		}
+		return databaseSiteUrl('spell', id) ?? `https://wowhead.com/wotlk/${getWowheadLanguagePrefix()}spell=${id}`;
 	}
 	static makeQuestUrl(id: number): string {
-		const langPrefix = getWowheadLanguagePrefix();
-		if (USE_WOTLK_DB) {
-			return 'https://wotlkdb.com/?quest=' + id;
-		} else {
-			return `https://wowhead.com/wotlk/${langPrefix}quest=${id}`;
-		}
+		return databaseSiteUrl('quest', id) ?? `https://wowhead.com/wotlk/${getWowheadLanguagePrefix()}quest=${id}`;
 	}
 	static makeNpcUrl(id: number): string {
-		const langPrefix = getWowheadLanguagePrefix();
-		if (USE_WOTLK_DB) {
-			return 'https://wotlkdb.com/?npc=' + id;
-		} else {
-			return `https://wowhead.com/wotlk/${langPrefix}npc=${id}`;
-		}
+		return databaseSiteUrl('npc', id) ?? `https://wowhead.com/wotlk/${getWowheadLanguagePrefix()}npc=${id}`;
 	}
 	static makeZoneUrl(id: number): string {
-		const langPrefix = getWowheadLanguagePrefix();
-		if (USE_WOTLK_DB) {
-			return 'https://wotlkdb.com/?zone=' + id;
-		} else {
-			return `https://wowhead.com/wotlk/${langPrefix}zone=${id}`;
-		}
+		return databaseSiteUrl('zone', id) ?? `https://wowhead.com/wotlk/${getWowheadLanguagePrefix()}zone=${id}`;
 	}
 
 	setWowheadHref(elem: HTMLAnchorElement) {
@@ -595,11 +568,7 @@ export class ActionId {
 	}
 
 	private static makeIconUrl(iconLabel: string): string {
-		if (USE_WOTLK_DB) {
-			return `https://wotlkdb.com/static/images/wow/icons/large/${iconLabel}.jpg`;
-		} else {
-			return `https://wow.zamimg.com/images/wow/icons/large/${iconLabel}.jpg`;
-		}
+		return databaseSiteIconUrl(iconLabel);
 	}
 
 	static async getTooltipData(actionId: ActionId): Promise<IconData> {
