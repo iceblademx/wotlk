@@ -31,7 +31,6 @@ import (
 
 	"github.com/wowsims/wotlk/sim/core/proto"
 	"github.com/wowsims/wotlk/sim/core/stats"
-	"github.com/wowsims/wotlk/tools"
 	"github.com/wowsims/wotlk/tools/cc"
 	"github.com/wowsims/wotlk/tools/cc/convert"
 	"github.com/wowsims/wotlk/tools/cc/dbc"
@@ -88,13 +87,12 @@ func runExtract(inDir, assetsDir, simDir, genFile string) (*extraction, string, 
 // Stock data (what upstream wowsims already knows about)
 // ---------------------------------------------------------------------------
 
+// Only stock *inputs* are used here, never the generated database: reading gen_db's output would
+// make each import depend on the previous one.
 type stockData struct {
 	itemIDs    map[int32]bool // wowhead item tooltip IDs: anything else is custom
 	spellIDs   map[int32]bool // wowhead spell tooltip IDs: anything else is custom
-	dbItemIDs  map[int32]bool // stock items that made it into the sim database
-	dbGemIDs   map[int32]bool
 	enchantIDs map[int32]bool // stock enchant effect IDs
-	setNames   map[string]bool
 }
 
 func csvIDs(path string) map[int32]bool {
@@ -122,31 +120,7 @@ func loadStock(assets string, cfg *cc.Config) *stockData {
 	s := &stockData{
 		itemIDs:    csvIDs(filepath.Join(assets, "db_inputs", "wowhead_item_tooltips.csv")),
 		spellIDs:   csvIDs(filepath.Join(assets, "db_inputs", "wowhead_spell_tooltips.csv")),
-		dbItemIDs:  map[int32]bool{},
-		dbGemIDs:   map[int32]bool{},
 		enchantIDs: map[int32]bool{},
-		setNames:   map[string]bool{},
-	}
-	for _, name := range []string{"db.json", "leftover_db.json"} {
-		path := filepath.Join(assets, "database", name)
-		if _, err := os.Stat(path); err != nil {
-			continue
-		}
-		db := database.ReadDatabaseFromJson(tools.ReadFile(path))
-		for id, item := range db.Items {
-			if isCustomID(cfg, s, uint32(id)) {
-				continue
-			}
-			s.dbItemIDs[id] = true
-			if item.SetName != "" {
-				s.setNames[item.SetName] = true
-			}
-		}
-		for id := range db.Gems {
-			if !isCustomID(cfg, s, uint32(id)) {
-				s.dbGemIDs[id] = true
-			}
-		}
 	}
 	for _, e := range database.EnchantOverrides {
 		s.enchantIDs[e.EffectId] = true
@@ -265,6 +239,7 @@ type extraction struct {
 	sets         []*setEntry
 	spellRefs    map[uint32]bool
 	gen          []string // generated Go statements
+	tooltips     Tooltips
 	customSpells []map[string]any
 	spellChanges []map[string]any
 }
@@ -324,8 +299,8 @@ func (ex *extraction) run() {
 				if it.ItemSet != 0 {
 					setIDs[it.ItemSet] = true
 				}
-			} else if ex.stock.dbItemIDs[int32(id)] {
-				ex.considerStock(item.Id, item.Name, issues, func() { ex.stockDB.MergeItem(item) })
+			} else if ex.stock.itemIDs[int32(id)] {
+				ex.considerStock(item.Id, item.Name, issues, func() { ex.stockDB.MergeItem(slimStockItem(item)) })
 			}
 		case convert.IsGem(it):
 			ex.serverIDs = append(ex.serverIDs, int32(id))
@@ -346,8 +321,8 @@ func (ex *extraction) run() {
 						}
 					}
 				}
-			} else if ex.stock.dbGemIDs[int32(id)] {
-				ex.considerStock(gem.Id, gem.Name, issues, func() { ex.stockDB.MergeGem(gem) })
+			} else if ex.stock.itemIDs[int32(id)] {
+				ex.considerStock(gem.Id, gem.Name, issues, func() { ex.stockDB.MergeGem(&proto.UIGem{Id: gem.Id, Name: gem.Name, Color: gem.Color, Stats: gem.Stats}) })
 			}
 		case it.Class == 0 && it.SubClass == 6: // item enhancements (scrolls, armor kits, spellthreads)
 			for _, sp := range it.Spells {
@@ -365,6 +340,50 @@ func (ex *extraction) run() {
 	}
 	ex.indexCustomSpells()
 	ex.diffBaseline()
+	ex.buildTooltips()
+}
+
+// Tooltips holds in-game style tooltip HTML for custom items and spells, keyed by ID.
+type Tooltips struct {
+	Items  map[int32]string `json:"items"`
+	Spells map[int32]string `json:"spells"`
+}
+
+// buildTooltips renders tooltips for custom items/gems and for custom spells the UI can show:
+// spells referenced by custom content, plus custom spell IDs used in hand-written sim code
+// (e.g. proc spells that appear in the results tables).
+func (ex *extraction) buildTooltips() {
+	ex.tooltips = Tooltips{Items: map[int32]string{}, Spells: map[int32]string{}}
+	for id := range ex.customDB.Items {
+		if it := ex.src.Server.Items[uint32(id)]; it != nil {
+			ex.tooltips.Items[id] = ex.src.ItemTooltipHTML(it)
+		}
+	}
+	for id := range ex.customDB.Gems {
+		if it := ex.src.Server.Items[uint32(id)]; it != nil {
+			ex.tooltips.Items[id] = ex.src.ItemTooltipHTML(it)
+		}
+	}
+
+	spellIDs := map[uint32]bool{}
+	for id := range ex.spellRefs {
+		spellIDs[id] = true
+	}
+	for id := range ex.handwritten.itemIDs {
+		spellIDs[uint32(id)] = true
+	}
+	for id := range spellIDs {
+		sp := ex.src.Spells.Spells[id]
+		if sp == nil || ex.stock.spellIDs[int32(id)] {
+			continue
+		}
+		ex.tooltips.Spells[int32(id)] = ex.src.SpellTooltipHTML(sp)
+		icon := sp.Icon
+		if icon == "" {
+			icon = "inv_misc_questionmark"
+		}
+		ex.customDB.SpellIcons[int32(id)] = &proto.IconData{Id: int32(id), Name: sp.Name, Icon: icon}
+	}
 }
 
 func (ex *extraction) addIssues(issues []convert.Issue) {
@@ -386,6 +405,25 @@ func (ex *extraction) considerStock(id int32, name string, issues []convert.Issu
 		}
 	}
 	accept()
+}
+
+// slimStockItem keeps only the fields gen_db applies to stock items (see CustomContent.Apply).
+func slimStockItem(item *proto.UIItem) *proto.UIItem {
+	return &proto.UIItem{
+		Id: item.Id, Name: item.Name, Stats: item.Stats, GemSockets: item.GemSockets, SocketBonus: item.SocketBonus,
+		WeaponDamageMin: item.WeaponDamageMin, WeaponDamageMax: item.WeaponDamageMax, WeaponSpeed: item.WeaponSpeed,
+		Ilvl: item.Ilvl, Quality: item.Quality,
+	}
+}
+
+// isStockSet reports whether an item set contains any stock item (its bonuses are upstream code).
+func (ex *extraction) isStockSet(set *dbc.ItemSet) bool {
+	for _, id := range set.ItemIDs {
+		if !isCustomID(ex.cfg, ex.stock, id) {
+			return true
+		}
+	}
+	return false
 }
 
 // addItemEffects records effects needing code and generates the ones expressible from data.
@@ -594,7 +632,7 @@ func (ex *extraction) extractSets(setIDs map[uint32]bool) {
 			ex.effects = append(ex.effects, effectEntry{Issue: convert.Issue{Kind: "warning", OwnerID: int32(id), Detail: fmt.Sprintf("item set %d not in ItemSet.dbc", id)}})
 			continue
 		}
-		entry := &setEntry{ID: id, Name: set.Name, ItemIDs: set.ItemIDs, Stock: ex.stock.setNames[set.Name],
+		entry := &setEntry{ID: id, Name: set.Name, ItemIDs: set.ItemIDs, Stock: ex.isStockSet(set),
 			Handwritten: ex.handwritten.literals[set.Name]}
 		allStats := true
 		statBonuses := map[uint32]stats.Stats{}
@@ -806,6 +844,7 @@ func (ex *extraction) write(outDir, genFile string) (err error) {
 	must(cc.WriteJSON(filepath.Join(outDir, "item_sets.json"), ex.sets))
 	must(cc.WriteJSON(filepath.Join(outDir, "effects.json"), ex.effects))
 	must(cc.WriteJSON(filepath.Join(outDir, "custom_spells.json"), ex.customSpells))
+	must(cc.WriteJSON(filepath.Join(outDir, "tooltips.json"), ex.tooltips))
 	if ex.in.Baseline != nil {
 		must(cc.WriteJSON(filepath.Join(outDir, "spell_changes.json"), ex.spellChanges))
 	}

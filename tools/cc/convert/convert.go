@@ -563,8 +563,12 @@ func (src *Source) SetName(setID uint32) string {
 	return ""
 }
 
+// Icon is the item's real icon (ItemDisplayInfo.dbc), or a generic placeholder for its slot.
 func (src *Source) Icon(it *server.ItemTemplate) string {
-	return src.Tables.DisplayIcons[it.DisplayID]
+	if icon := src.Tables.DisplayIcons[it.DisplayID]; icon != "" {
+		return icon
+	}
+	return PlaceholderIcon(it)
 }
 
 // ToUIItem converts an item_template entry, returning any effects that need custom code.

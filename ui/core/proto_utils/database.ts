@@ -23,6 +23,7 @@ import {
 	getEligibleEnchantSlots,
 	getEligibleItemSlots,
 } from './utils.js';
+import { loadCustomTooltips } from './cc_tooltips.js';
 import { gemEligibleForSocket, gemMatchesSocket } from './gems.js';
 import { EquippedItem } from './equipped_item.js';
 import { Gear, ItemSwapGear } from './gear.js';
@@ -40,15 +41,18 @@ export class Database {
 	private static loadPromise: Promise<Database> | null = null;
 	static get(): Promise<Database> {
 		if (Database.loadPromise == null) {
+			let dbPromise: Promise<Database>;
 			if (READ_JSON) {
-				Database.loadPromise = fetch(dbUrlJson)
+				dbPromise = fetch(dbUrlJson)
 					.then(response => response.json())
 					.then(json => new Database(UIDatabase.fromJson(json)));
 			} else {
-				Database.loadPromise = fetch(dbUrlBin)
+				dbPromise = fetch(dbUrlBin)
 					.then(response => response.arrayBuffer())
 					.then(buffer => new Database(UIDatabase.fromBinary(new Uint8Array(buffer))));
 			}
+			// Custom content tooltips must be ready whenever the database is.
+			Database.loadPromise = Promise.all([dbPromise, loadCustomTooltips()]).then(([db]) => db);
 		}
 		return Database.loadPromise;
 	}

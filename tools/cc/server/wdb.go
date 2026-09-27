@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math"
 	"os"
+	"strings"
 )
 
 // LoadItemCacheWDB reads the 3.3.5a client item cache (Cache/WDB/<locale>/itemcache.wdb).
@@ -114,7 +115,7 @@ func parseWDBItem(entry uint32, payload []byte) (*ItemTemplate, error) {
 	it.Class = w.u32()
 	it.SubClass = w.u32()
 	w.i32() // SoundOverrideSubclass
-	it.Name = w.cstr()
+	it.Name = strings.TrimSpace(w.cstr())
 	w.cstr()
 	w.cstr()
 	w.cstr()

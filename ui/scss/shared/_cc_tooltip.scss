@@ -1,0 +1,22 @@
+// In-game style tooltips for custom 3.3.5a content (ui/core/proto_utils/cc_tooltips.ts).
+.tippy-box[data-theme~='cc'] {
+	background: transparent;
+	padding: 0;
+
+	.tippy-content {
+		padding: 0;
+	}
+}
+
+.cc-tooltip {
+	background: rgba(7, 12, 33, 0.95);
+	border: 1px solid #5c5c5c;
+	border-radius: 4px;
+	padding: 6px 9px;
+	max-width: 330px;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.4;
+	color: #fff;
+	text-align: left;
+}

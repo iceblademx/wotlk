@@ -204,6 +204,26 @@ func TestExtractEndToEnd(t *testing.T) {
 	if _, err := os.Stat(filepath.Join(outDir, "server_item_ids.json")); err != nil {
 		t.Error("complete item_template should produce server_item_ids.json")
 	}
+
+	// In-game style tooltips and placeholder icons.
+	if ring.Icon != "inv_jewelry_ring_03" {
+		t.Errorf("ring without ItemDisplayInfo should get the ring placeholder icon, got %q", ring.Icon)
+	}
+	tips := ex.tooltips
+	for _, want := range []string{"Dagger of Testing", "One-Hand", "Dagger", "300 - 500 Damage", "Speed 1.80",
+		"(222.2 damage per second)", "+50 Agility", "Red Socket", "Yellow Socket", "Socket Bonus: +8 Critical Strike Rating",
+		"Classes: <span style=\"color:#fff569\">Rogue</span>", "Item Level 264", "Equip: Chance on melee hit to gain haste.",
+		"Regalia of Testing (0/2)", "(2) Set: Increases spell power by 50."} {
+		if !strings.Contains(tips.Items[900102], want) {
+			t.Errorf("dagger tooltip missing %q:\n%s", want, tips.Items[900102])
+		}
+	}
+	if !strings.Contains(tips.Items[900101], "Use: Increases critical strike rating by 300 for 20 sec. (2 Min Cooldown)") {
+		t.Errorf("trinket tooltip: %s", tips.Items[900101])
+	}
+	if !strings.Contains(tips.Spells[90003], "Haste rating increased by 200.") {
+		t.Errorf("proc buff spell tooltip: %s", tips.Spells[90003])
+	}
 }
 
 // Hand-written implementations must suppress generation.

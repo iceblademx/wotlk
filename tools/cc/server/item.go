@@ -159,10 +159,12 @@ func NewRow(columns []string, values []string) Row {
 
 func (r Row) ToItemTemplate() *ItemTemplate {
 	it := &ItemTemplate{
-		Entry:                   r.u32("entry"),
-		Class:                   r.u32("class"),
-		SubClass:                r.u32("subclass"),
-		Name:                    r.str("name"),
+		Entry:    r.u32("entry"),
+		Class:    r.u32("class"),
+		SubClass: r.u32("subclass"),
+		// Some rows carry trailing spaces ("Khadgar's Gauntlets "), which would defeat name-based
+		// matching such as upstream's unavailable-duplicate filters.
+		Name:                    strings.TrimSpace(r.str("name")),
 		DisplayID:               r.u32("displayid"),
 		Quality:                 r.u32("quality"),
 		Flags:                   r.u32("flags"),

@@ -1,4 +1,5 @@
 import { databaseSiteIconUrl, databaseSiteUrl } from '../constants/database_site.js';
+import { applyCustomTooltip } from './cc_tooltips.js';
 import { getWowheadLanguagePrefix } from '../constants/lang.js';
 import { ActionID as ActionIdProto } from '../proto/common.js';
 import { ResourceType } from '../proto/api.js';
@@ -151,6 +152,9 @@ export class ActionId {
 	}
 
 	setWowheadHref(elem: HTMLAnchorElement) {
+		if (applyCustomTooltip(elem, this.itemId, this.spellId)) {
+			return;
+		}
 		if (this.itemId) {
 			elem.href = ActionId.makeItemUrl(this.itemId);
 		} else if (this.spellId) {
