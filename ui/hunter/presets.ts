@@ -75,6 +75,15 @@ import SvAdvApl from './apls/sv_advanced.apl.json';
 export const ROTATION_PRESET_SV_ADVANCED = PresetUtils.makePresetAPLRotation('SV (Advanced)', SvAdvApl, { talentTree: 2 });
 import AoeApl from './apls/aoe.apl.json';
 export const ROTATION_PRESET_AOE = PresetUtils.makePresetAPLRotation('AOE', AoeApl);
+// Custom content: rotations for effects that change which abilities are worth casting.
+import BmPackLeaderApl from './apls/bm_pack_leader.apl.json';
+export const ROTATION_PRESET_BM_PACK_LEADER = PresetUtils.makePresetAPLRotation("BM (Pack Leader's Insignia)", BmPackLeaderApl, { talentTree: 0 });
+import MmDeadeyeApl from './apls/mm_deadeye.apl.json';
+export const ROTATION_PRESET_MM_DEADEYE = PresetUtils.makePresetAPLRotation("MM (Deadeye's Oath)", MmDeadeyeApl, { talentTree: 1 });
+import MmBansheeApl from './apls/mm_banshee.apl.json';
+export const ROTATION_PRESET_MM_BANSHEE = PresetUtils.makePresetAPLRotation('MM (Loop of the Banshee)', MmBansheeApl, { talentTree: 1 });
+import SvDarkDeedsApl from './apls/sv_dark_deeds.apl.json';
+export const ROTATION_PRESET_SV_DARK_DEEDS = PresetUtils.makePresetAPLRotation('SV (Signet of Dark Deeds)', SvDarkDeedsApl, { talentTree: 2 });
 
 // Default talents. Uses the wowhead calculator format, make the talents on
 // https://wowhead.com/wotlk/talent-calc and copy the numbers in the url.

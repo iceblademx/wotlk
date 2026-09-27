@@ -158,7 +158,7 @@ func (hunter *Hunter) makeStatInheritance() core.PetStatInheritance {
 		ownerHitChance := ownerStats[stats.MeleeHit] / core.MeleeHitRatingPerHitChance
 		hitRatingFromOwner := ownerHitChance * core.MeleeHitRatingPerHitChance
 
-		return stats.Stats{
+		return hunter.addCCPetStats(ownerStats, stats.Stats{
 			stats.Stamina:     ownerStats[stats.Stamina] * 0.3 * (1 + 0.2*float64(wildHunt)),
 			stats.Armor:       ownerStats[stats.Armor] * 0.35,
 			stats.AttackPower: ownerStats[stats.RangedAttackPower]*0.22*(1+0.15*float64(wildHunt)) + ownerStats[stats.Stamina]*0.1*float64(hvw),
@@ -166,7 +166,7 @@ func (hunter *Hunter) makeStatInheritance() core.PetStatInheritance {
 			stats.MeleeHit:  hitRatingFromOwner,
 			stats.SpellHit:  hitRatingFromOwner * 2,
 			stats.Expertise: ownerHitChance * PetExpertiseScale * core.ExpertisePerQuarterPercentReduction,
-		}
+		})
 	}
 }
 

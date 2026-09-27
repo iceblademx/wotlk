@@ -33,7 +33,7 @@ sim; the rest are only informational.
 ## 2. Baseline DPS (before changing code)
 
 For each class with a changed `[simulated]` entry, record the current impact so you can compare later:
-`go test --tags=with_db ./sim/<class>/... -run CCDps -v` (classes: `druid`, `rogue`, `warlock`,
+`go test --tags=with_db ./sim/<class>/... -run CCDps -v` (classes: `druid`, `hunter`, `rogue`, `warlock`,
 `warrior`). Keep the `DPS:` lines. This takes a minute or two per class.
 
 ## 3. Update changed values

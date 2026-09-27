@@ -257,6 +257,10 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecHunter, {
 			Presets.ROTATION_PRESET_SV,
 			Presets.ROTATION_PRESET_SV_ADVANCED,
 			Presets.ROTATION_PRESET_AOE,
+			Presets.ROTATION_PRESET_BM_PACK_LEADER,
+			Presets.ROTATION_PRESET_MM_DEADEYE,
+			Presets.ROTATION_PRESET_MM_BANSHEE,
+			Presets.ROTATION_PRESET_SV_DARK_DEEDS,
 		],
 		// Preset gear configurations that the user can quickly select.
 		gear: [

@@ -151,6 +151,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBM-AllItems-Bombardier'sPin-900137"
+ value: {
+  dps: 7200.92401
+  tps: 5110.18833
+ }
+}
+dps_results: {
  key: "TestBM-AllItems-BracingEarthsiegeDiamond"
  value: {
   dps: 6345.67184
@@ -226,6 +233,13 @@ dps_results: {
  value: {
   dps: 6423.41895
   tps: 4331.84582
+ }
+}
+dps_results: {
+ key: "TestBM-AllItems-Deadeye'sOath-900135"
+ value: {
+  dps: 6531.45802
+  tps: 4458.0608
  }
 }
 dps_results: {
@@ -425,6 +439,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBM-AllItems-GrizzlemawTracker'sGarb"
+ value: {
+  dps: 8860.37859
+  tps: 5418.32471
+ }
+}
+dps_results: {
  key: "TestBM-AllItems-Gronnstalker'sArmor"
  value: {
   dps: 4972.55047
@@ -510,6 +531,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBM-AllItems-LoopoftheBanshee-900136"
+ value: {
+  dps: 6531.45802
+  tps: 4458.0608
+ }
+}
+dps_results: {
  key: "TestBM-AllItems-MajesticDragonFigurine-40430"
  value: {
   dps: 6251.49513
@@ -545,10 +573,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBM-AllItems-NightmareStalker'sTrappings"
+ value: {
+  dps: 7107.72758
+  tps: 4959.21328
+ }
+}
+dps_results: {
  key: "TestBM-AllItems-OfferingofSacrifice-37638"
  value: {
   dps: 6251.49513
   tps: 4203.56528
+ }
+}
+dps_results: {
+ key: "TestBM-AllItems-PackLeader'sInsignia-900134"
+ value: {
+  dps: 7518.48838
+  tps: 4733.97886
  }
 }
 dps_results: {
@@ -671,10 +713,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBM-AllItems-SignetofDarkDeeds-900138"
+ value: {
+  dps: 6531.45802
+  tps: 4458.0608
+ }
+}
+dps_results: {
  key: "TestBM-AllItems-Sindragosa'sFlawlessFang-50361"
  value: {
   dps: 6251.49513
   tps: 4203.56528
+ }
+}
+dps_results: {
+ key: "TestBM-AllItems-Skareth'sKillingEye-900107"
+ value: {
+  dps: 7912.17677
+  tps: 5825.57818
  }
 }
 dps_results: {
@@ -850,6 +906,20 @@ dps_results: {
  value: {
   dps: 6183.67894
   tps: 4140.73256
+ }
+}
+dps_results: {
+ key: "TestBM-AllItems-Vorrax'sWildHunt-900133"
+ value: {
+  dps: 6910.4842
+  tps: 4622.15515
+ }
+}
+dps_results: {
+ key: "TestBM-AllItems-WardenoftheSilentCanopy"
+ value: {
+  dps: 7275.05441
+  tps: 5134.4577
  }
 }
 dps_results: {

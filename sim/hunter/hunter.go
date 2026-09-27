@@ -36,6 +36,7 @@ type Hunter struct {
 	Options *proto.Hunter_Options
 
 	pet *HunterPet
+	cc  ccItems
 
 	AmmoDPS                   float64
 	AmmoDamageBonus           float64
