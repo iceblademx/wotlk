@@ -147,6 +147,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-BerserkerofGrizzlemaw"
+ value: {
+  dps: 1588.41213
+  tps: 4092.49197
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-BlackBruise-50035"
  value: {
   dps: 1502.62813
@@ -660,6 +667,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-Rok'thul'sSlayer'sEdge-900126"
+ value: {
+  dps: 2141.54492
+  tps: 5218.01395
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-RuneofRepulsion-40372"
  value: {
   dps: 1443.50947
@@ -881,6 +895,13 @@ dps_results: {
  value: {
   dps: 1322.69643
   tps: 3474.57299
+ }
+}
+dps_results: {
+ key: "TestProtectionWarrior-AllItems-Vorrax'sRecklessFury-900116"
+ value: {
+  dps: 1513.19027
+  tps: 3906.04639
  }
 }
 dps_results: {

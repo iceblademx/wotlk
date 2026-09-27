@@ -102,6 +102,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArms-AllItems-BerserkerofGrizzlemaw"
+ value: {
+  dps: 9161.84388
+  tps: 7456.39716
+ }
+}
+dps_results: {
  key: "TestArms-AllItems-BlackBruise-50035"
  value: {
   dps: 4866.62556
@@ -622,6 +629,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArms-AllItems-Rok'thul'sSlayer'sEdge-900126"
+ value: {
+  dps: 8930.54727
+  tps: 7197.3156
+ }
+}
+dps_results: {
  key: "TestArms-AllItems-RuneofRepulsion-40372"
  value: {
   dps: 6396.79762
@@ -843,6 +857,13 @@ dps_results: {
  value: {
   dps: 3758.13369
   tps: 3115.8898
+ }
+}
+dps_results: {
+ key: "TestArms-AllItems-Vorrax'sRecklessFury-900116"
+ value: {
+  dps: 9839.02786
+  tps: 8493.11838
  }
 }
 dps_results: {

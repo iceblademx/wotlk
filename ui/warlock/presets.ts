@@ -62,6 +62,9 @@ export const P4_DESTRO_PRESET = PresetUtils.makePresetGear('P4 Destro', P4Destro
 
 import AfflictionApl from './apls/affliction.apl.json';
 export const APL_Affliction_Default = PresetUtils.makePresetAPLRotation('Affliction', AfflictionApl, { talentTree: 0 });
+// Custom ring Vaelith's Withering Grasp: Drain Soul only at 4 Shadowed Mark stacks.
+import AfflictionWitheringGraspApl from './apls/affliction_withering_grasp.apl.json';
+export const APL_Affliction_WitheringGrasp = PresetUtils.makePresetAPLRotation('Affliction (Withering Grasp)', AfflictionWitheringGraspApl, { talentTree: 0 });
 import DemoApl from './apls/demo.apl.json';
 export const APL_Demo_Default = PresetUtils.makePresetAPLRotation('Demo', DemoApl, { talentTree: 1 });
 import DestroApl from './apls/destro.apl.json';

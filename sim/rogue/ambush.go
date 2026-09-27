@@ -24,7 +24,7 @@ func (rogue *Rogue) registerAmbushSpell() {
 			IgnoreHaste: true,
 		},
 		ExtraCastCondition: func(sim *core.Simulation, target *core.Unit) bool {
-			return !rogue.PseudoStats.InFrontOfTarget && rogue.HasDagger(core.MainHand) && rogue.IsStealthed()
+			return !rogue.PseudoStats.InFrontOfTarget && rogue.HasDagger(core.MainHand) && (rogue.IsStealthed() || rogue.cc.shadowsInvitation.IsActive())
 		},
 
 		BonusCritRating: []float64{0, 2, 4, 6}[rogue.Talents.TurnTheTables]*core.CritRatingPerCritChance +

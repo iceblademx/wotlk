@@ -298,6 +298,8 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRogue, {
 			Presets.ROTATION_PRESET_COMBAT_CLEAVE_SND,
 			Presets.ROTATION_PRESET_COMBAT_CLEAVE_SND_EXPOSE,
 			Presets.ROTATION_PRESET_AOE,
+			Presets.ROTATION_PRESET_SUBTLETY,
+			Presets.ROTATION_PRESET_SUBTLETY_HEMO,
 		],
 		// Preset gear configurations that the user can quickly select.
 		gear: [
@@ -330,8 +332,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRogue, {
 		} else if (talentTree == 1) {
 			return Presets.ROTATION_PRESET_COMBAT_EXPOSE.rotation.rotation!;
 		} else {
-			// TODO: Need a sub rotation here
-			return Presets.ROTATION_PRESET_MUTILATE_EXPOSE.rotation.rotation!;
+			return Presets.ROTATION_PRESET_SUBTLETY.rotation.rotation!;
 		}
 	},
 

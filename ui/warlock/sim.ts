@@ -141,6 +141,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 		// Preset rotations that the user can quickly select.
 		rotations: [
 			Presets.APL_Affliction_Default,
+			Presets.APL_Affliction_WitheringGrasp,
 			Presets.APL_Demo_Default,
 			Presets.APL_Destro_Default,
 		],

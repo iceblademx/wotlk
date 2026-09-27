@@ -71,6 +71,10 @@ import CombatCleaveSndExposeApl from './apls/combat_cleave_snd_expose.apl.json'
 export const ROTATION_PRESET_COMBAT_CLEAVE_SND_EXPOSE = PresetUtils.makePresetAPLRotation('Combat Cleave SND w/ Expose', CombatCleaveSndExposeApl, { talentTree: 1 });
 import FanAoeApl from './apls/fan_aoe.apl.json'
 export const ROTATION_PRESET_AOE = PresetUtils.makePresetAPLRotation('Fan AOE', FanAoeApl);
+import SubtletyApl from './apls/subtlety.apl.json'
+export const ROTATION_PRESET_SUBTLETY = PresetUtils.makePresetAPLRotation('Subtlety', SubtletyApl, { talentTree: 2 });
+import SubtletyHemoApl from './apls/subtlety_hemo.apl.json'
+export const ROTATION_PRESET_SUBTLETY_HEMO = PresetUtils.makePresetAPLRotation('Subtlety Hemo', SubtletyHemoApl, { talentTree: 2 });
 
 // Default talents. Uses the wowhead calculator format, make the talents on
 // https://wowhead.com/wotlk/talent-calc and copy the numbers in the url.

@@ -257,6 +257,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSubtlety-AllItems-EndlessDance-900146"
+ value: {
+  dps: 6565.51512
+  tps: 4661.51574
+ }
+}
+dps_results: {
  key: "TestSubtlety-AllItems-EnigmaticSkyflareDiamond"
  value: {
   dps: 6286.57636
@@ -573,10 +580,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSubtlety-AllItems-Shadow'sInvitation-900147"
+ value: {
+  dps: 6565.51512
+  tps: 4661.51574
+ }
+}
+dps_results: {
  key: "TestSubtlety-AllItems-Shadowblade'sBattlegear"
  value: {
   dps: 6884.61297
   tps: 4888.07521
+ }
+}
+dps_results: {
+ key: "TestSubtlety-AllItems-ShadowoftheCanopy"
+ value: {
+  dps: 6625.50011
+  tps: 4704.10508
  }
 }
 dps_results: {

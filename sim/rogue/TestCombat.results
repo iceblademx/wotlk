@@ -271,6 +271,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestCombat-AllItems-EndlessDance-900146"
+ value: {
+  dps: 6782.25089
+  tps: 4815.39813
+ }
+}
+dps_results: {
  key: "TestCombat-AllItems-EnigmaticSkyflareDiamond"
  value: {
   dps: 6392.18235
@@ -615,6 +622,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestCombat-AllItems-Shadow'sInvitation-900147"
+ value: {
+  dps: 6782.25089
+  tps: 4815.39813
+ }
+}
+dps_results: {
  key: "TestCombat-AllItems-Shadowblade'sBattlegear"
  value: {
   dps: 7239.99449
@@ -626,6 +640,13 @@ dps_results: {
  value: {
   dps: 6518.25861
   tps: 4627.96361
+ }
+}
+dps_results: {
+ key: "TestCombat-AllItems-ShadowoftheCanopy"
+ value: {
+  dps: 6849.96658
+  tps: 4863.47627
  }
 }
 dps_results: {

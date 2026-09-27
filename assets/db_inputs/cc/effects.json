@@ -153,6 +153,7 @@
     "spellId": 200016,
     "trigger": "equip",
     "detail": "Vaelith's Withering Grasp: aura ADD_FLAT_MODIFIER (107)",
+    "handledByHandwrittenCode": true,
     "text": "Shadow Bolt increases the damage of your Drain Soul by 50%, stacking up to 4 times, consumed by your next Drain Soul cast. Drain Soul channels twice as fast: half the duration, same number of ticks."
   },
   {
@@ -252,6 +253,7 @@
     "spellId": 200051,
     "trigger": "equip",
     "detail": "Vorrax's Reckless Fury: aura DUMMY (4)",
+    "handledByHandwrittenCode": true,
     "text": "Execute grants a stack of Undying Fury, increasing the damage of Execute by 5% and its critical strike chance by 5%. Stacks up to 99 times, lasting 60 sec. Sudden Death has a 20% chance to activate."
   },
   {
@@ -324,6 +326,7 @@
     "spellId": 200076,
     "trigger": "equip",
     "detail": "Vaelith's Reaped Soul: aura PROC_TRIGGER_SPELL (42)",
+    "handledByHandwrittenCode": true,
     "text": "Corruption, Curse of Agony, and Unstable Affliction grant a stack of Reaped Soul each time they deal damage. At 25 stacks, consume all stacks to Reap your primary target's soul, dealing Shadow damage every 1 sec for 4 sec."
   },
   {
@@ -333,6 +336,7 @@
     "spellId": 200082,
     "trigger": "equip",
     "detail": "Rok'thul's Slayer's Edge: proc",
+    "handledByHandwrittenCode": true,
     "text": "Your attacks against your primary target have a chance to overwhelm their defenses and trigger a Slayer's Strike, dealing Physical damage and granting you a stack of Slayer, increasing your Bloodthirst damage for a short time. Multiple stacks of Slayer may overlap."
   },
   {
@@ -486,6 +490,7 @@
     "spellId": 200179,
     "trigger": "equip",
     "detail": "Endless Dance: aura DUMMY (4)",
+    "handledByHandwrittenCode": true,
     "text": "Your finishing moves reduce the remaining cooldown of Shadow Dance by 1 sec per combo point spent. Activating Shadow Dance restores 40 Energy."
   },
   {
@@ -495,6 +500,7 @@
     "spellId": 200181,
     "trigger": "equip",
     "detail": "Shadow's Invitation: proc",
+    "handledByHandwrittenCode": true,
     "text": "Your Eviscerate allows your next Ambush to be used without being in Stealth and reduces its Energy cost by 20. Your Ambush deals additional Shadow damage equal to 30% of its damage dealt."
   },
   {

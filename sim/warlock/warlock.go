@@ -72,6 +72,8 @@ type Warlock struct {
 	PreviousTime  time.Duration
 
 	petStmBonusSP float64
+
+	cc ccItems // custom 3.3.5a content, see cc_items.go
 }
 
 func (warlock *Warlock) GetCharacter() *core.Character {

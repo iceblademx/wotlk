@@ -106,6 +106,8 @@ type Rogue struct {
 
 	costModifier               func(float64) float64
 	finishingMoveEffectApplier func(sim *core.Simulation, numPoints int32)
+
+	cc ccItems // custom 3.3.5a content, see cc_items.go
 }
 
 func (rogue *Rogue) GetCharacter() *core.Character {
@@ -132,6 +134,7 @@ func (rogue *Rogue) ApplyFinisher(sim *core.Simulation, spell *core.Spell) {
 	numPoints := rogue.ComboPoints()
 	rogue.SpendComboPoints(sim, spell.ComboPointMetrics())
 	rogue.finishingMoveEffectApplier(sim, numPoints)
+	rogue.onFinisher(sim, numPoints)
 }
 
 func (rogue *Rogue) HasMajorGlyph(glyph proto.RogueMajorGlyph) bool {

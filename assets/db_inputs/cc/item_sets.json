@@ -570,7 +570,8 @@
         "text": "While in Shadow Dance, your abilities strike a second time, dealing Shadow damage. When Shadow Dance ends, all nearby enemies take increased Shadow damage from you for 12 sec.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9323,
@@ -674,7 +675,8 @@
         "text": "Soul Anathema damage increased by 25%. Consuming Nightfall is guaranteed to apply Soul Anathema.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9327,
@@ -778,7 +780,8 @@
         "text": "Bloodthirst has a 28% chance to apply Bloodbath to your target, causing them to suffer 25% of your attack power as Bleed damage over 6 sec. Using Bloodthirst on a target affected by Bloodbath extends the bleed by 6 sec.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9331,

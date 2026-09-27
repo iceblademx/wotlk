@@ -548,6 +548,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAffliction-AllItems-RotoftheFeveredDream"
+ value: {
+  dps: 21409.6919
+  tps: 20235.86805
+ }
+}
+dps_results: {
  key: "TestAffliction-AllItems-RuneofRepulsion-40372"
  value: {
   dps: 14034.25543
@@ -713,6 +720,20 @@ dps_results: {
  value: {
   dps: 14710.20324
   tps: 13501.98816
+ }
+}
+dps_results: {
+ key: "TestAffliction-AllItems-Vaelith'sReapedSoul-900125"
+ value: {
+  dps: 25486.18549
+  tps: 24279.65331
+ }
+}
+dps_results: {
+ key: "TestAffliction-AllItems-Vaelith'sWitheringGrasp-900106"
+ value: {
+  dps: 17418.53007
+  tps: 16217.8981
  }
 }
 dps_results: {
