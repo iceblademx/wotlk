@@ -285,14 +285,18 @@ func (src *Source) ItemTooltipHTML(it *server.ItemTemplate) string {
 		}
 	}
 
+	// Dynamic parts are marked with data-cc-* attributes and filled in by the UI at hover time from
+	// the equipped gear (ui/core/proto_utils/cc_tooltips.ts): enchant, socketed gems, socket bonus,
+	// equipped set pieces and active set bonuses.
+	w.b.WriteString(`<div data-cc-enchant style="color:` + colorGreen + `"></div>`)
 	for _, c := range it.SocketColors {
 		if name, ok := socketNames[c]; ok {
-			w.line(colorGray, name)
+			fmt.Fprintf(&w.b, `<div data-cc-socket="%d" style="color:%s">%s</div>`, int32(socketColor(c)), colorGray, name)
 		}
 	}
 	if it.SocketBonus != 0 {
 		if e := src.Tables.Enchants[it.SocketBonus]; e != nil {
-			w.line(colorGray, "Socket Bonus: "+esc(e.Name))
+			fmt.Fprintf(&w.b, `<div data-cc-socket-bonus style="color:%s">Socket Bonus: %s</div>`, colorGray, esc(e.Name))
 		}
 	}
 
@@ -344,18 +348,20 @@ func (src *Source) ItemTooltipHTML(it *server.ItemTemplate) string {
 
 	if set := src.Tables.ItemSets[it.ItemSet]; set != nil && it.ItemSet != 0 {
 		w.b.WriteString(`<div style="margin-top:0.5em"></div>`)
-		w.line(colorYellow, fmt.Sprintf("%s (0/%d)", esc(set.Name), len(set.ItemIDs)))
+		fmt.Fprintf(&w.b, `<div data-cc-set-header data-name="%s" data-total="%d" style="color:%s">%s (0/%d)</div>`,
+			esc(set.Name), len(set.ItemIDs), colorYellow, esc(set.Name), len(set.ItemIDs))
 		for _, id := range set.ItemIDs {
 			name := fmt.Sprintf("item %d", id)
 			if piece := src.Server.Items[id]; piece != nil {
 				name = piece.Name
 			}
-			w.line(colorGray, "&nbsp;&nbsp;"+esc(name))
+			fmt.Fprintf(&w.b, `<div data-cc-set-piece="%d" style="color:%s;padding-left:0.8em">%s</div>`, id, colorGray, esc(name))
 		}
 		bonuses := append([]dbc.ItemSetBonus(nil), set.Bonuses...)
 		sort.Slice(bonuses, func(i, j int) bool { return bonuses[i].Pieces < bonuses[j].Pieces })
 		for _, b := range bonuses {
-			w.line(colorGray, esc(fmt.Sprintf("(%d) Set: %s", b.Pieces, src.spellText(b.SpellID))))
+			fmt.Fprintf(&w.b, `<div data-cc-set-bonus="%d" style="color:%s">%s</div>`, b.Pieces, colorGray,
+				esc(fmt.Sprintf("(%d) Set: %s", b.Pieces, src.spellText(b.SpellID))))
 		}
 	}
 	return w.html()

@@ -221,6 +221,16 @@ func TestExtractEndToEnd(t *testing.T) {
 	if !strings.Contains(tips.Items[900101], "Use: Increases critical strike rating by 300 for 20 sec. (2 Min Cooldown)") {
 		t.Errorf("trinket tooltip: %s", tips.Items[900101])
 	}
+	// Dynamic parts are marked for the UI (sockets carry UI GemColor values: red=2, yellow=4).
+	for _, want := range []string{`data-cc-enchant`, `data-cc-socket="2"`, `data-cc-socket="4"`, `data-cc-socket-bonus`,
+		`data-cc-set-header data-name="Regalia of Testing" data-total="2"`, `data-cc-set-piece="900102"`, `data-cc-set-bonus="2"`} {
+		if !strings.Contains(tips.Items[900102], want) {
+			t.Errorf("dagger tooltip missing marker %s", want)
+		}
+	}
+	if tips.Gems[900103] != "+23 Spell Power" {
+		t.Errorf("gem text = %q", tips.Gems[900103])
+	}
 	if !strings.Contains(tips.Spells[90003], "Haste rating increased by 200.") {
 		t.Errorf("proc buff spell tooltip: %s", tips.Spells[90003])
 	}

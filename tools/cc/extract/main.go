@@ -322,7 +322,9 @@ func (ex *extraction) run() {
 					}
 				}
 			} else if ex.stock.itemIDs[int32(id)] {
-				ex.considerStock(gem.Id, gem.Name, issues, func() { ex.stockDB.MergeGem(&proto.UIGem{Id: gem.Id, Name: gem.Name, Color: gem.Color, Stats: gem.Stats}) })
+				ex.considerStock(gem.Id, gem.Name, issues, func() {
+					ex.stockDB.MergeGem(&proto.UIGem{Id: gem.Id, Name: gem.Name, Color: gem.Color, Stats: gem.Stats})
+				})
 			}
 		case it.Class == 0 && it.SubClass == 6: // item enhancements (scrolls, armor kits, spellthreads)
 			for _, sp := range it.Spells {
@@ -347,13 +349,40 @@ func (ex *extraction) run() {
 type Tooltips struct {
 	Items  map[int32]string `json:"items"`
 	Spells map[int32]string `json:"spells"`
+	// In-game texts (SpellItemEnchantment names) for socketed gems (by gem item ID) and enchants (by
+	// effect ID), shown inside custom item tooltips.
+	Gems     map[int32]string `json:"gems"`
+	Enchants map[int32]string `json:"enchants"`
 }
 
 // buildTooltips renders tooltips for custom items/gems and for custom spells the UI can show:
 // spells referenced by custom content, plus custom spell IDs used in hand-written sim code
 // (e.g. proc spells that appear in the results tables).
 func (ex *extraction) buildTooltips() {
-	ex.tooltips = Tooltips{Items: map[int32]string{}, Spells: map[int32]string{}}
+	ex.tooltips = Tooltips{Items: map[int32]string{}, Spells: map[int32]string{}, Gems: map[int32]string{}, Enchants: map[int32]string{}}
+	for id, it := range ex.src.Server.Items {
+		if !convert.IsGem(it) {
+			continue
+		}
+		if gp := ex.src.Tables.GemProperties[it.GemProperties]; gp != nil {
+			if e := ex.src.Tables.Enchants[gp.EnchantID]; e != nil && e.Name != "" {
+				ex.tooltips.Gems[int32(id)] = e.Name
+			}
+		}
+	}
+	enchantIDs := map[int32]bool{}
+	for id := range ex.stock.enchantIDs {
+		enchantIDs[id] = true
+	}
+	for key := range ex.customDB.Enchants {
+		enchantIDs[key.EffectID] = true
+	}
+	for id := range enchantIDs {
+		if e := ex.src.Tables.Enchants[uint32(id)]; e != nil && e.Name != "" {
+			ex.tooltips.Enchants[id] = e.Name
+		}
+	}
+
 	for id := range ex.customDB.Items {
 		if it := ex.src.Server.Items[uint32(id)]; it != nil {
 			ex.tooltips.Items[id] = ex.src.ItemTooltipHTML(it)
