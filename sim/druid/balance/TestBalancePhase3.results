@@ -579,6 +579,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalancePhase3-AllItems-Morgrath'sRavagingClaw-900115"
+ value: {
+  dps: 11314.41403
+  tps: 11030.43304
+ }
+}
+dps_results: {
  key: "TestBalancePhase3-AllItems-NevermeltingIceCrystal-50259"
  value: {
   dps: 11077.74893
@@ -667,6 +674,13 @@ dps_results: {
  value: {
   dps: 11002.20302
   tps: 10718.16665
+ }
+}
+dps_results: {
+ key: "TestBalancePhase3-AllItems-ProwleroftheFeveredCanopy"
+ value: {
+  dps: 10225.7936
+  tps: 9942.47431
  }
 }
 dps_results: {

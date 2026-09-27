@@ -294,8 +294,8 @@ func (druid *Druid) applyRendAndTear(aura core.Aura) core.Aura {
 }
 
 func (druid *Druid) applyOmenOfClarity() {
-	// Feral 2p needs clearcasting aura
-	if !druid.Talents.OmenOfClarity && !druid.HasSetBonus(ItemSetNightsongBattlegear, 2) {
+	// Feral 2p and Morgrath's Ravaging Claw need clearcasting aura
+	if !druid.Talents.OmenOfClarity && !druid.HasSetBonus(ItemSetNightsongBattlegear, 2) && !druid.hasRavagingClaw {
 		return
 	}
 

@@ -94,6 +94,11 @@ type Druid struct {
 
 	ProcOoc func(sim *core.Simulation)
 
+	// Custom 3.3.5a server content (cc_items.go).
+	hasRavagingClaw   bool
+	BloodseekerVines  *DruidSpell
+	BloodseekerThorns *DruidSpell
+
 	ExtendingMoonfireStacks int
 	LunarICD                core.Cooldown
 	SolarICD                core.Cooldown

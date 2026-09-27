@@ -580,6 +580,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeralApl-AllItems-Morgrath'sRavagingClaw-900115"
+ value: {
+  dps: 14925.12667
+  tps: 10660.33382
+ }
+}
+dps_results: {
  key: "TestFeralApl-AllItems-NevermeltingIceCrystal-50259"
  value: {
   dps: 11025.17669
@@ -668,6 +675,13 @@ dps_results: {
  value: {
   dps: 11150.66001
   tps: 7981.43471
+ }
+}
+dps_results: {
+ key: "TestFeralApl-AllItems-ProwleroftheFeveredCanopy"
+ value: {
+  dps: 13394.08205
+  tps: 9577.40541
  }
 }
 dps_results: {

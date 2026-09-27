@@ -53,7 +53,7 @@ func (druid *Druid) registerShredSpell() {
 			if druid.AssumeBleedActive || ripDot.IsActive() || druid.Rake.Dot(target).IsActive() || druid.Lacerate.Dot(target).IsActive() {
 				modifier *= 1.0 + (0.04 * float64(druid.Talents.RendAndTear))
 			}
-			baseDamage *= modifier
+			baseDamage *= modifier * druid.clearcastBuilderMultiplier()
 
 			result := spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialHitAndCrit)
 

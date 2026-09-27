@@ -52,6 +52,7 @@ func (druid *Druid) registerFerociousBiteSpell() {
 			result := spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialHitAndCrit)
 
 			if result.Landed() {
+				druid.onFerociousBiteLanded(sim, target, int32(comboPoints))
 				druid.SpendEnergy(sim, excessEnergy, spell.Cost.(*core.EnergyCost).ResourceMetrics)
 				druid.SpendComboPoints(sim, spell.ComboPointMetrics())
 			} else {

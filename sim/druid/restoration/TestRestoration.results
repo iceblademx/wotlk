@@ -357,6 +357,10 @@ dps_results: {
  value: {}
 }
 dps_results: {
+ key: "TestRestoration-AllItems-Morgrath'sRavagingClaw-900115"
+ value: {}
+}
+dps_results: {
  key: "TestRestoration-AllItems-NevermeltingIceCrystal-50259"
  value: {}
 }
@@ -406,6 +410,10 @@ dps_results: {
 }
 dps_results: {
  key: "TestRestoration-AllItems-PowerfulEarthsiegeDiamond"
+ value: {}
+}
+dps_results: {
+ key: "TestRestoration-AllItems-ProwleroftheFeveredCanopy"
  value: {}
 }
 dps_results: {

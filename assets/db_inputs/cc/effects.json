@@ -242,6 +242,7 @@
     "spellId": 200049,
     "trigger": "equip",
     "detail": "Morgrath's Ravaging Claw: aura PROC_TRIGGER_SPELL (42)",
+    "handledByHandwrittenCode": true,
     "text": "Ferocious Bite has a 20% chance per combo point spent to trigger Omen of Clarity. Shred or Mangle casts that consume Omen of Clarity deal 100% additional damage."
   },
   {

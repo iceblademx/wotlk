@@ -13,7 +13,9 @@ Fork of wowsims/wotlk (Wrath Classic sim) targeting the 3.3.5a (12340) client pl
 - `tools/cc/dbc`: WDBC reader and 3.3.5a layouts (Spell.dbc = 234 fields). `tools/cc/server`: item_template SQL/CSV, itemcache.wdb, spell_proc(_event), spell_bonus_data.
 - `tools/cc/convert`: maps them to UIItem/UIGem/UIEnchant. Passive equip auras become plain stats.
 - `tools/cc/extract` (`./build.ps1 cc`) writes `assets/db_inputs/cc/*` (committed) and `sim/common/cc/zz_generated.go`, then gen_db merges them in via `tools/database/custom_content.go`.
-- Custom effects: hand-write them in `sim/common/cc/*.go` (not `zz_generated.go`). Hand-written code wins: the generator skips any item ID or set name that appears in sim code, and runtime helpers check `core.HasItemEffect` / `core.HasItemSet`.
+- Custom effects: hand-write generic ones in `sim/common/cc/*.go` (not `zz_generated.go`). Class-specific ones go in the class package as `cc_items.go` (e.g. `sim/druid/cc_items.go`), with tests in `<spec>/cc_items_test.go`. Keep hooks into upstream spell files to one line each (e.g. `druid.onFerociousBiteLanded(...)`).
+- Server scripts are unavailable, so implement from tooltip text plus helper-spell data, and write the assumptions in comments.
+- Done: Feral Cat (Morgrath's Ravaging Claw 900115, Prowler of the Fevered Canopy set 9305). Hand-written code wins: the generator skips any item ID or set name that appears in sim code, and runtime helpers check `core.HasItemEffect` / `core.HasItemSet`.
 - To decode data while implementing, run `./build.ps1 inspect spell|item|set|enchant <id>` or `inspect search <text>`.
 - Server: AzerothCore world DB. `./build.ps1 dump` exports tables using `.env` (read-only session; never commit `.env`). Custom items are IDs >= 900000 (`cc_data/cc.json`).
 - `./build.ps1 audit [-fix]` checks the item effect values hardcoded in the sim against 3.3.5a Spell.dbc. Wrath Classic buffed Ulduar trinket procs, and the 3.3.5a values are restored. Re-run it after merging upstream.

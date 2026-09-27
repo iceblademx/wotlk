@@ -127,7 +127,8 @@
         "text": "When Bloodseeker Vines expire, or you use Ferocious Bite on their target, they explode in thorns, dealing 30% of your attack power as physical damage to the victim and nearby enemies.",
         "needsCode": "aura DUMMY (4)"
       }
-    ]
+    ],
+    "handwritten": true
   },
   {
     "id": 9306,
