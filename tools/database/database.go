@@ -154,6 +154,9 @@ func (db *WowDatabase) MergeNpc(src *proto.UINPC) {
 }
 
 func (db *WowDatabase) AddItemIcon(id int32, tooltips map[int32]WowheadItemResponse) {
+	if _, ok := db.ItemIcons[id]; ok {
+		return // e.g. provided by custom content
+	}
 	if tooltip, ok := tooltips[id]; ok {
 		if tooltip.GetName() == "" || tooltip.GetIcon() == "" {
 			return
@@ -165,6 +168,9 @@ func (db *WowDatabase) AddItemIcon(id int32, tooltips map[int32]WowheadItemRespo
 }
 
 func (db *WowDatabase) AddSpellIcon(id int32, tooltips map[int32]WowheadItemResponse) {
+	if _, ok := db.SpellIcons[id]; ok {
+		return // e.g. provided by custom content
+	}
 	if tooltip, ok := tooltips[id]; ok {
 		if tooltip.GetName() == "" || tooltip.GetIcon() == "" {
 			return

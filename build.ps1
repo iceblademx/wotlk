@@ -11,13 +11,17 @@
   ./build.ps1 rundevserver # build + run native server using dist/ at http://localhost:3333/wotlk/
   ./build.ps1 test         # go test --tags=with_db ./sim/...
   ./build.ps1 update-tests # accept *.results.tmp as new expected results
-  ./build.ps1 items        # regenerate assets/database/db.{bin,json} (includes custom 3.3.5a data)
+  ./build.ps1 items        # regenerate assets/database/db.{bin,json} (includes imported custom content)
+  ./build.ps1 cc           # import cc_data/ (DBCs + server data), then regenerate the item DB
+  ./build.ps1 inspect spell 12345   # decode a spell/item/set/enchant from cc_data/ (see tools/cc/inspect)
   ./build.ps1 wasm | proto | ui | fmt | clean
 #>
 param(
 	[Parameter(Position = 0)]
-	[ValidateSet('dist', 'setup', 'proto', 'wasm', 'ui', 'host', 'devserver', 'rundevserver', 'release', 'test', 'update-tests', 'items', 'fmt', 'clean')]
+	[ValidateSet('dist', 'setup', 'proto', 'wasm', 'ui', 'host', 'devserver', 'rundevserver', 'release', 'test', 'update-tests', 'items', 'cc', 'inspect', 'fmt', 'clean')]
 	[string]$Target = 'dist',
+	[Parameter(Position = 1, ValueFromRemainingArguments = $true)]
+	[string[]]$Rest = @(),
 	[int]$Port = 8080
 )
 
@@ -225,6 +229,15 @@ function Invoke-Items {
 	Invoke-Native 'go' @('run', './tools/database/gen_db', '-outDir=./assets', '-gen=db')
 }
 
+function Invoke-CustomContent {
+	Invoke-Proto
+	if (-not (Test-Path 'cc_data')) { throw 'cc_data/ not found. See cc_data/README.md for the expected layout.' }
+	Write-Step 'Importing custom content from cc_data/'
+	Invoke-Native 'go' @('run', './tools/cc/extract')
+	Invoke-Items
+	Write-Host 'Review assets/db_inputs/cc/REPORT.md and STOCK_CHANGES.md, then run ./build.ps1 test.' -ForegroundColor Green
+}
+
 function Invoke-Fmt {
 	Invoke-Native 'gofmt' @('-w', './sim', './tools')
 }
@@ -260,6 +273,8 @@ switch ($Target) {
 	'test' { Invoke-Test }
 	'update-tests' { Invoke-UpdateTests }
 	'items' { Invoke-Items }
+	'cc' { Invoke-CustomContent }
+	'inspect' { Invoke-Proto; Invoke-Native 'go' (@('run', './tools/cc/inspect') + $Rest) }
 	'fmt' { Invoke-Fmt }
 	'clean' { Invoke-Clean }
 }

@@ -101,6 +101,10 @@ func main() {
 	db.MergeItems(database.ItemOverrides)
 	db.MergeGems(database.GemOverrides)
 	db.MergeEnchants(database.EnchantOverrides)
+	// Custom 3.3.5a content imported by tools/cc/extract (no-op when none has been imported).
+	if cc := database.LoadCustomContent(inputsDir); cc != nil {
+		cc.Apply(db)
+	}
 	ApplyGlobalFilters(db)
 	AttachFactionInformation(db, factionRestrictions)
 

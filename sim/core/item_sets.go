@@ -35,6 +35,17 @@ func (set ItemSet) Items() []Item {
 
 var sets []*ItemSet
 
+// HasItemSet reports whether a set with this name (or alternative name) is already registered.
+// Used by generated custom-content code to defer to hand-written implementations.
+func HasItemSet(name string) bool {
+	for _, set := range sets {
+		if set.Name == name || set.AlternativeName == name {
+			return true
+		}
+	}
+	return false
+}
+
 // Registers a new ItemSet with item IDs populated.
 func NewItemSet(set ItemSet) *ItemSet {
 	foundName := false

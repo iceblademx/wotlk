@@ -1,3 +1,31 @@
+# wowsims-cc: WotLK 3.3.5a fork
+
+This is a fork of [wowsims/wotlk](https://github.com/wowsims/wotlk) (the Wrath Classic simulator), retargeted at the **3.3.5a (build 12340)** client and at private-server custom content: custom items, gems, enchants, set bonuses and modified spells.
+
+What's different from upstream:
+
+- **Windows-native build**: `build.ps1` replaces the bash makefile. `.tools/` holds a portable Go, protoc and Git, so no admin rights or WSL are needed.
+- **3.3.5a data import** (`tools/cc/`): reads client DBCs (Spell, ItemSet, SpellItemEnchantment, GemProperties, ItemDisplayInfo, ...) and server item data (`item_template` SQL/CSV or `itemcache.wdb`). It then:
+  - adds custom items, gems and enchants to the item database
+  - replaces Classic stats with the server's 3.3.5a values for stock items
+  - hides Classic-only items that the server doesn't have
+- **Generated effects** (`sim/common/cc/zz_generated.go`): stat-only set bonuses, on-use stat items and stat procs are generated from the spell data. Anything more complex is listed in `assets/db_inputs/cc/REPORT.md`, with decoded spell data, to implement by hand in `sim/common/cc/`.
+- **Configurable tooltip site** (`ui/core/constants/database_site.ts`): wowhead, or your server's AoWoW, so custom items get correct tooltips and icons.
+- No Google Analytics.
+
+## Quick start (Windows)
+
+```powershell
+./build.ps1 setup      # once: npm install + protoc-gen-go
+./build.ps1 host       # build and serve at http://localhost:8080/wotlk/
+./build.ps1 test       # Go test suite
+./build.ps1 cc         # import custom content from cc_data/ (see cc_data/README.md)
+```
+
+`./build.ps1 devserver` builds `wowsimwotlk.exe`, a single native binary with the UI embedded. The original upstream documentation follows.
+
+---
+
 Welcome to the WoW WOTLK Classic simulator! If you have questions or are thinking about contributing, [join our discord](https://discord.gg/jJMPr9JWwx "https://discord.gg/jJMPr9JWwx") to chat!
 
 The primary goal of this project is to provide a framework that makes it easy to build a DPS sim for any class/spec, with a polished UI and accurate results. Each community will have ownership / responsibility over their portion of the sim, to ensure accuracy and that their community is represented. By having all the individual sims on the same engine, we can also have a combined 'raid sim' for testing raid compositions.
