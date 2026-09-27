@@ -1,3 +1,11 @@
+# portable toolchain (go/protoc/git) used by build.ps1
+/.tools/
+
+# raw 3.3.5a client/server files (DBC, WDB, SQL). Only the extracted JSON under
+# assets/db_inputs/cc/ is committed.
+/cc_data/*
+!/cc_data/README.md
+
 # nodejs modules
 node_modules
 ui/core/index.ts
