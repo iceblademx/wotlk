@@ -151,9 +151,8 @@ func SpellStats(sp *dbc.Spell) (s stats.Stats, ok bool, reason string) {
 			if !hasSpellDamage {
 				return s, false, "healing-only spell power"
 			}
-		case dbc.AuraModAttackPower:
+		case dbc.AuraModAttackPower: // melee only; "attack power" item spells carry a separate ranged aura
 			s[stats.AttackPower] += v
-			s[stats.RangedAttackPower] += v
 		case dbc.AuraModRangedAttackPower:
 			s[stats.RangedAttackPower] += v
 		case dbc.AuraModPowerRegen:
@@ -544,9 +543,10 @@ func isUnique(it *server.ItemTemplate) bool {
 	return it.MaxCount == 1 || it.Flags&itemFlagUniqueEquippable != 0 || it.ItemLimitCategory != 0
 }
 
-// IsEquippable reports whether the item can go in a sim gear slot.
+// IsEquippable reports whether the item can go in a sim gear slot. This is decided by the slot,
+// not the class: e.g. the alchemist stones are class 7 (Trade Goods) trinkets.
 func IsEquippable(it *server.ItemTemplate) bool {
-	return itemType(it) != proto.ItemType_ItemTypeUnknown && (it.Class == 2 || it.Class == 4)
+	return itemType(it) != proto.ItemType_ItemTypeUnknown
 }
 
 func IsGem(it *server.ItemTemplate) bool {
@@ -592,11 +592,13 @@ func (src *Source) ToUIItem(it *server.ItemTemplate, phase int32) (*proto.UIItem
 	wType := weaponType(it)
 	scalableArmor := wType == proto.WeaponType_WeaponTypeShield || !(iType == proto.ItemType_ItemTypeNeck ||
 		iType == proto.ItemType_ItemTypeFinger || iType == proto.ItemType_ItemTypeTrinket || iType == proto.ItemType_ItemTypeWeapon)
+	// item_template.armor is the total; ArmorDamageModifier is the green "bonus armor" part of it.
 	if scalableArmor {
-		s[stats.Armor] += float64(it.Armor)
-		s[stats.BonusArmor] += it.ArmorDamageModifier
+		bonus := max(0, min(it.ArmorDamageModifier, float64(it.Armor)))
+		s[stats.Armor] += float64(it.Armor) - bonus
+		s[stats.BonusArmor] += bonus
 	} else {
-		s[stats.BonusArmor] += float64(it.Armor) + it.ArmorDamageModifier
+		s[stats.BonusArmor] += float64(it.Armor)
 	}
 
 	for _, spell := range it.Spells {

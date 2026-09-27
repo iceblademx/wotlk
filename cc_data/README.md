@@ -31,6 +31,20 @@ cc_data/
 - `itemcache.wdb`: the client cache, `Cache\WDB\enUS\itemcache.wdb`. It only contains items your client has seen and has no proc PPM, so use it only when you can't get server data.
 - Optional, but improves generated procs: `spell_proc` (TrinityCore) or `spell_proc_event` (AzerothCore), for internal cooldowns and hit masks, plus `spell_bonus_data` for spell coefficients.
 
+### Exporting from the server database
+
+With read access to the world database, put the credentials in `.env` at the repo root (git-ignored):
+
+```
+SQL_HOSTNAME=...
+SQL_PORT=3306
+SQL_USERNAME=...
+SQL_PASSWORD=...
+# SQL_DATABASE=world   (optional; auto-detected as the database containing item_template)
+```
+
+`./build.ps1 dump` opens a read-only session and exports `item_template`, `spell_proc`, `spell_proc_event`, `spell_bonus_data`, `spell_dbc`, `spell_enchant_proc_data`, `spell_cooldown_overrides` and `item_set_names` to `server/*.csv`. `spell_dbc` (server-side spells) is merged over `Spell.dbc`, and `spell_cooldown_overrides` is applied on top.
+
 ## cc.json
 
 ```jsonc

@@ -294,6 +294,82 @@ func LoadSpells(d *Dir) (*SpellStore, error) {
 	return store, nil
 }
 
+// Spell.dbc fields holding floats; everything else is an integer except the localized strings.
+var spellFloatFields = map[int]bool{spSpeed: true}
+
+func init() {
+	for i := 0; i < 3; i++ {
+		for _, f := range []int{spEffectRealPointsPerLevel, spEffectValueMultiplier, spEffectPointsPerComboPoint, spEffectDamageMultiplier, spEffectBonusMultiplier} {
+			spellFloatFields[f+i] = true
+		}
+	}
+}
+
+func isSpellStringField(field int) bool {
+	for _, start := range []int{spName, spRank, spDescription, spToolTip} {
+		if field >= start && field < start+16 {
+			return true
+		}
+	}
+	return false
+}
+
+// MergeTable merges server-side spells (AzerothCore/TrinityCore `spell_dbc`, whose columns follow
+// the Spell.dbc field order) into the store. Server rows replace client rows with the same ID.
+func (store *SpellStore) MergeTable(header []string, rows [][]string) (added, replaced int, err error) {
+	if len(header) != spellFieldCount {
+		return 0, 0, fmt.Errorf("expected %d columns in Spell.dbc order, got %d", spellFieldCount, len(header))
+	}
+	b := NewBuilder(spellFieldCount)
+	for n, row := range rows {
+		if len(row) != spellFieldCount {
+			return 0, 0, fmt.Errorf("row %d has %d columns", n+1, len(row))
+		}
+		values := make(map[int]any, spellFieldCount)
+		for i, v := range row {
+			switch {
+			case isSpellStringField(i):
+				values[i] = v
+			case spellFloatFields[i]:
+				f, _ := strconv.ParseFloat(v, 32)
+				values[i] = float32(f)
+			default:
+				num, err := strconv.ParseInt(strings.TrimSpace(v), 10, 64)
+				if err != nil && v != "" {
+					f, ferr := strconv.ParseFloat(v, 64)
+					if ferr != nil {
+						return 0, 0, fmt.Errorf("row %d column %s: %q is not a number", n+1, header[i], v)
+					}
+					num = int64(f)
+				}
+				values[i] = uint32(num)
+			}
+		}
+		b.Add(values)
+	}
+	f, err := Parse("spell_dbc", b.Bytes())
+	if err != nil {
+		return 0, 0, err
+	}
+	var merged []*Spell
+	for i := 0; i < f.RecordCount; i++ {
+		s := decodeSpell(f.Record(i))
+		s.DurationMs = store.Durations[s.DurationIndex]
+		s.Icon = store.Icons[s.SpellIconID]
+		if _, ok := store.Spells[s.ID]; ok {
+			replaced++
+		} else {
+			added++
+		}
+		store.Spells[s.ID] = s
+		merged = append(merged, s)
+	}
+	for _, s := range merged {
+		s.Text = store.FormatText(s, s.Description)
+	}
+	return added, replaced, nil
+}
+
 // IconName turns "Interface\Icons\INV_Sword_39" into "inv_sword_39", the form wowhead/zamimg use.
 func IconName(path string) string {
 	path = strings.ReplaceAll(path, "/", "\\")

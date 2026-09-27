@@ -57,8 +57,9 @@ func writeFixture(t *testing.T, root string) {
 	}
 
 	spells := dbc.NewBuilder(dbc.SpellFieldCount)
-	// Equip: +100 attack power (folds into item stats).
-	spells.Add(spell(90001, "Attack Power 100", "Increases attack power by $s1.", aura(0, dbc.AuraModAttackPower, 100, 0)))
+	// Equip: +100 attack power (folds into item stats). Like real 3.3.5a data, melee and ranged AP are separate auras.
+	spells.Add(spell(90001, "Attack Power 100", "Increases attack power by $s1.",
+		merge(aura(0, dbc.AuraModAttackPower, 100, 0), aura(1, dbc.AuraModRangedAttackPower, 100, 0))))
 	// Equip: proc -> 90003, 10% chance on melee.
 	spells.Add(spell(90002, "Test Proc", "Chance on melee hit to gain haste.", merge(map[int]any{
 		dbc.SpellFieldEffect: uint32(dbc.EffectApplyAura), dbc.SpellFieldAura: uint32(dbc.AuraProcTriggerSpell),

@@ -15,6 +15,8 @@ Fork of wowsims/wotlk (Wrath Classic sim) targeting the 3.3.5a (12340) client pl
 - `tools/cc/extract` (`./build.ps1 cc`) writes `assets/db_inputs/cc/*` (committed) and `sim/common/cc/zz_generated.go`, then gen_db merges them in via `tools/database/custom_content.go`.
 - Custom effects: hand-write them in `sim/common/cc/*.go` (not `zz_generated.go`). Hand-written code wins: the generator skips any item ID or set name that appears in sim code, and runtime helpers check `core.HasItemEffect` / `core.HasItemSet`.
 - To decode data while implementing, run `./build.ps1 inspect spell|item|set|enchant <id>` or `inspect search <text>`.
+- Server: AzerothCore world DB. `./build.ps1 dump` exports tables using `.env` (read-only session; never commit `.env`). Custom items are IDs >= 900000 (`cc_data/cc.json`).
+- `./build.ps1 audit [-fix]` checks the item effect values hardcoded in the sim against 3.3.5a Spell.dbc. Wrath Classic buffed Ulduar trinket procs, and the 3.3.5a values are restored. Re-run it after merging upstream.
 - Stat mapping: hit, crit and haste ratings go to both melee and spell stats. AP goes to both AP and RAP. Expertise and defense aura points are converted to rating.
 
 ## Conventions

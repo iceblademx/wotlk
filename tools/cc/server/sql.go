@@ -9,10 +9,12 @@ import (
 
 // Tables the SQL reader keeps, with their primary key column (normalized).
 var sqlTables = map[string]string{
-	"item_template":    "entry",
-	"spell_proc":       "spellid",
-	"spell_proc_event": "entry",
-	"spell_bonus_data": "entry",
+	"item_template":            "entry",
+	"spell_proc":               "spellid",
+	"spell_proc_event":         "entry",
+	"spell_bonus_data":         "entry",
+	"spell_cooldown_overrides": "id",    // AzerothCore module table
+	"spell_enchant_proc_data":  "entry", // keyed by SpellItemEnchantment id
 }
 
 // Default TrinityCore/AzerothCore 3.3.5 item_template column order, used for
@@ -42,9 +44,13 @@ var defaultItemTemplateColumns = func() []string {
 
 // Data accumulates rows from any number of SQL/CSV/WDB sources; later sources override earlier ones.
 type Data struct {
-	Items      map[uint32]*ItemTemplate
-	SpellProcs map[uint32]*SpellProc
-	SpellBonus map[uint32]*SpellBonus
+	Items             map[uint32]*ItemTemplate
+	SpellProcs        map[uint32]*SpellProc
+	SpellBonus        map[uint32]*SpellBonus
+	CooldownOverrides map[uint32]*CooldownOverride
+	EnchantProcs      map[uint32]*EnchantProc
+	// Server-side spells (AzerothCore/TrinityCore spell_dbc), in Spell.dbc column order.
+	SpellDBC *RawTable
 	// True when item data came from a complete item_template (SQL/CSV) rather than a partial client cache.
 	CompleteItemList bool
 	Warnings         []string
@@ -55,11 +61,13 @@ type Data struct {
 
 func NewData() *Data {
 	return &Data{
-		Items:      map[uint32]*ItemTemplate{},
-		SpellProcs: map[uint32]*SpellProc{},
-		SpellBonus: map[uint32]*SpellBonus{},
-		rows:       map[string]map[uint32]Row{},
-		columns:    map[string][]string{"item_template": defaultItemTemplateColumns},
+		Items:             map[uint32]*ItemTemplate{},
+		SpellProcs:        map[uint32]*SpellProc{},
+		SpellBonus:        map[uint32]*SpellBonus{},
+		CooldownOverrides: map[uint32]*CooldownOverride{},
+		EnchantProcs:      map[uint32]*EnchantProc{},
+		rows:              map[string]map[uint32]Row{},
+		columns:           map[string][]string{"item_template": defaultItemTemplateColumns},
 	}
 }
 
@@ -68,10 +76,12 @@ func (d *Data) warn(format string, args ...any) {
 }
 
 func (d *Data) putRow(table string, row Row) {
-	key := row.u32(sqlTables[table])
-	if key == 0 && table == "spell_proc" {
-		key = row.u32("entry")
+	keyCol := sqlTables[table]
+	if table == "spell_proc" && !row.has(keyCol) {
+		keyCol = "entry"
 	}
+	// Negative spell IDs in proc tables mean "every rank of this spell"; key them by the first rank.
+	key := uint32(abs64(row.i64(keyCol)))
 	if key == 0 {
 		return
 	}
@@ -97,6 +107,38 @@ func (d *Data) Finalize() {
 	for id, row := range d.rows["spell_bonus_data"] {
 		d.SpellBonus[id] = rowToSpellBonus(row)
 	}
+	for id, row := range d.rows["spell_cooldown_overrides"] {
+		d.CooldownOverrides[id] = &CooldownOverride{SpellID: id, RecoveryTime: row.u32("recoverytime"),
+			CategoryRecoveryTime: row.u32("categoryrecoverytime"), StartRecoveryTime: row.u32("startrecoverytime"),
+			StartRecoveryCategory: row.u32("startrecoverycategory")}
+	}
+	for id, row := range d.rows["spell_enchant_proc_data"] {
+		d.EnchantProcs[id] = &EnchantProc{EnchantID: id, Chance: row.f64("customchance"), PPM: row.f64("ppmchance"), HitMask: row.u32("procex")}
+	}
+}
+
+// CooldownOverride is an AzerothCore spell_cooldown_overrides row (replaces Spell.dbc cooldown fields).
+type CooldownOverride struct {
+	SpellID               uint32 `json:"spellId"`
+	RecoveryTime          uint32 `json:"recoveryTimeMs"`
+	CategoryRecoveryTime  uint32 `json:"categoryRecoveryTimeMs"`
+	StartRecoveryTime     uint32 `json:"gcdMs"`
+	StartRecoveryCategory uint32 `json:"startRecoveryCategory"`
+}
+
+// EnchantProc is a spell_enchant_proc_data row: proc chance / PPM for an enchantment's proc spell.
+type EnchantProc struct {
+	EnchantID uint32  `json:"enchantId"`
+	Chance    float64 `json:"chance,omitempty"`
+	PPM       float64 `json:"ppm,omitempty"`
+	HitMask   uint32  `json:"hitMask,omitempty"`
+}
+
+func abs64(v int64) int64 {
+	if v < 0 {
+		return -v
+	}
+	return v
 }
 
 func (d *Data) LoadSQLFile(path string) error {

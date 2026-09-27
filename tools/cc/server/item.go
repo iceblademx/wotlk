@@ -123,6 +123,15 @@ func (r Row) u32(col string) uint32 {
 
 func (r Row) i32(col string) int32 { return int32(r.u32(col)) }
 
+func (r Row) i64(col string) int64 {
+	v := strings.TrimSpace(r[col])
+	if n, err := strconv.ParseInt(v, 10, 64); err == nil {
+		return n
+	}
+	f, _ := strconv.ParseFloat(v, 64)
+	return int64(f)
+}
+
 func (r Row) f64(col string) float64 {
 	f, _ := strconv.ParseFloat(strings.TrimSpace(r[col]), 64)
 	return f
@@ -229,14 +238,16 @@ func (r Row) ToItemTemplate() *ItemTemplate {
 
 // SpellProc is a server-side proc definition (spell_proc / spell_proc_event).
 type SpellProc struct {
-	SpellID    uint32  `json:"spellId"`
-	ProcFlags  uint32  `json:"procFlags,omitempty"`
-	HitMask    uint32  `json:"hitMask,omitempty"` // TC HitMask / AC procEx: 0x1 normal hit, 0x2 crit, ...
-	PPM        float64 `json:"ppm,omitempty"`
-	Chance     float64 `json:"chance,omitempty"`
-	CooldownMs int32   `json:"cooldownMs,omitempty"`
-	Charges    uint32  `json:"charges,omitempty"`
-	Source     string  `json:"source"`
+	SpellID         uint32    `json:"spellId"`
+	SpellFamilyName uint32    `json:"spellFamilyName,omitempty"`
+	SpellFamilyMask [3]uint32 `json:"spellFamilyMask"` // non-zero: only procs from specific class spells
+	ProcFlags       uint32    `json:"procFlags,omitempty"`
+	HitMask         uint32    `json:"hitMask,omitempty"` // TC HitMask / AC procEx: 0x1 normal hit, 0x2 crit, ...
+	PPM             float64   `json:"ppm,omitempty"`
+	Chance          float64   `json:"chance,omitempty"`
+	CooldownMs      int32     `json:"cooldownMs,omitempty"`
+	Charges         uint32    `json:"charges,omitempty"`
+	Source          string    `json:"source"`
 }
 
 // SpellBonus is a spell_bonus_data row: spell power / attack power coefficients.
@@ -273,6 +284,11 @@ func rowToSpellProc(table string, r Row) *SpellProc {
 	}
 	if sp.SpellID == 0 {
 		sp.SpellID = r.u32("entry")
+	}
+	sp.SpellID = uint32(abs64(int64(int32(sp.SpellID))))
+	sp.SpellFamilyName = r.u32("spellfamilyname")
+	for i := 0; i < 3; i++ {
+		sp.SpellFamilyMask[i] = r.u32("spellfamilymask" + strconv.Itoa(i))
 	}
 	return sp
 }

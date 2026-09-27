@@ -1,3 +1,6 @@
+# local secrets (SQL credentials for tools/cc/dump)
+.env
+
 # portable toolchain (go/protoc/git) used by build.ps1
 /.tools/
 
@@ -5,6 +8,7 @@
 # assets/db_inputs/cc/ is committed.
 /cc_data/*
 !/cc_data/README.md
+!/cc_data/cc.json
 
 # nodejs modules
 node_modules

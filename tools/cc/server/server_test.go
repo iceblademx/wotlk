@@ -147,8 +147,11 @@ func TestCSV(t *testing.T) {
 		t.Fatal(err)
 	}
 	d := NewData()
-	if err := d.LoadCSVFile(path); err != nil {
-		t.Fatal(err)
+	if used, err := d.LoadCSVFile(path); err != nil || !used {
+		t.Fatal(used, err)
+	}
+	if used, err := d.LoadCSVFile(filepath.Join(dir, "item_set_names.csv")); used || err != nil {
+		t.Errorf("unrelated tables should be skipped without reading: used=%v err=%v", used, err)
 	}
 	d.Finalize()
 	it := d.Items[900300]

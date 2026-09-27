@@ -30,7 +30,8 @@ import (
 type Config struct {
 	// Phase assigned to imported custom items/gems/enchants (UI phase filter). Default 1.
 	Phase int32 `json:"phase"`
-	// Items with ID >= this are always treated as custom, even if wowhead knows the ID. 0 = off.
+	// When set, exactly the items with ID >= this are custom (plus IncludeItems). When 0, anything
+	// wowhead doesn't know is treated as custom.
 	CustomItemIDMin uint32 `json:"customItemIdMin"`
 	// Extra item IDs to import as custom / to never import.
 	IncludeItems []uint32 `json:"includeItems"`
@@ -139,18 +140,41 @@ func Load(inputDir string) (*Inputs, error) {
 	})
 	sort.Strings(files)
 	for _, f := range files {
+		used := true
 		var err error
 		if strings.EqualFold(filepath.Ext(f), ".sql") {
 			err = src.Server.LoadSQLFile(f)
 		} else {
-			err = src.Server.LoadCSVFile(f)
+			used, err = src.Server.LoadCSVFile(f)
 		}
 		if err != nil {
 			return nil, err
 		}
-		in.Loaded = append(in.Loaded, rel(inputDir, f))
+		if used {
+			in.Loaded = append(in.Loaded, rel(inputDir, f))
+		}
 	}
 	src.Server.Finalize()
+
+	// Server-side spells and cooldown overrides take precedence over the client's Spell.dbc.
+	if t := src.Server.SpellDBC; t != nil {
+		added, replaced, err := src.Spells.MergeTable(t.Header, t.Rows)
+		if err != nil {
+			return nil, fmt.Errorf("spell_dbc: %w", err)
+		}
+		in.Loaded = append(in.Loaded, fmt.Sprintf("spell_dbc merged into Spell.dbc: %d added, %d replaced", added, replaced))
+	}
+	if n := len(src.Server.CooldownOverrides); n > 0 {
+		applied := 0
+		for id, o := range src.Server.CooldownOverrides {
+			if sp := src.Spells.Spells[id]; sp != nil {
+				sp.RecoveryTime, sp.CategoryRecoveryTime = o.RecoveryTime, o.CategoryRecoveryTime
+				sp.StartRecoveryTime, sp.StartRecoveryCategory = o.StartRecoveryTime, o.StartRecoveryCategory
+				applied++
+			}
+		}
+		in.Loaded = append(in.Loaded, fmt.Sprintf("spell_cooldown_overrides applied to %d of %d spells", applied, n))
+	}
 	for _, f := range wdbFiles {
 		if err := src.Server.LoadItemCacheWDB(f); err != nil {
 			return nil, err

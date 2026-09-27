@@ -14,11 +14,13 @@
   ./build.ps1 items        # regenerate assets/database/db.{bin,json} (includes imported custom content)
   ./build.ps1 cc           # import cc_data/ (DBCs + server data), then regenerate the item DB
   ./build.ps1 inspect spell 12345   # decode a spell/item/set/enchant from cc_data/ (see tools/cc/inspect)
+  ./build.ps1 dump         # export server tables (item_template, spell_proc, ...) via .env credentials (read-only)
+  ./build.ps1 audit        # compare hardcoded item effect values with 3.3.5a spell data (add -Fix via: ./build.ps1 audit -fix)
   ./build.ps1 wasm | proto | ui | fmt | clean
 #>
 param(
 	[Parameter(Position = 0)]
-	[ValidateSet('dist', 'setup', 'proto', 'wasm', 'ui', 'host', 'devserver', 'rundevserver', 'release', 'test', 'update-tests', 'items', 'cc', 'inspect', 'fmt', 'clean')]
+	[ValidateSet('dist', 'setup', 'proto', 'wasm', 'ui', 'host', 'devserver', 'rundevserver', 'release', 'test', 'update-tests', 'items', 'cc', 'inspect', 'dump', 'audit', 'fmt', 'clean')]
 	[string]$Target = 'dist',
 	[Parameter(Position = 1, ValueFromRemainingArguments = $true)]
 	[string[]]$Rest = @(),
@@ -275,6 +277,8 @@ switch ($Target) {
 	'items' { Invoke-Items }
 	'cc' { Invoke-CustomContent }
 	'inspect' { Invoke-Proto; Invoke-Native 'go' (@('run', './tools/cc/inspect') + $Rest) }
+	'dump' { Invoke-Native 'go' (@('run', './tools/cc/dump') + $Rest) }
+	'audit' { Invoke-Proto; Invoke-Native 'go' (@('run', './tools/cc/audit') + $Rest) }
 	'fmt' { Invoke-Fmt }
 	'clean' { Invoke-Clean }
 }

@@ -9,25 +9,35 @@ import (
 	"strings"
 )
 
-// LoadCSVFile loads an export of item_template / spell_proc / spell_proc_event / spell_bonus_data
-// with a header row. The table is chosen from the file name (e.g. "item_template.csv",
-// "custom_item_template.tsv"); the delimiter (comma, tab or semicolon) is auto-detected.
-func (d *Data) LoadCSVFile(path string) error {
-	base := strings.ToLower(filepath.Base(path))
+// Tables recognized by CSV file name, longest names first so "spell_proc_event" isn't read as "spell_proc".
+var csvTables = []string{"spell_enchant_proc_data", "spell_cooldown_overrides", "spell_proc_event", "spell_bonus_data",
+	"item_template", "spell_proc", "spell_dbc"}
+
+// RawTable keeps a table's rows in column order (used for spell_dbc, whose columns follow the Spell.dbc layout).
+type RawTable struct {
+	Header []string
+	Rows   [][]string
+}
+
+// LoadCSVFile loads an export with a header row. The table is chosen from the file name
+// (e.g. "item_template.csv", "custom_item_template.tsv"); the delimiter (comma, tab or semicolon)
+// is auto-detected. Returns false for files that aren't a table the importer uses.
+func (d *Data) LoadCSVFile(path string) (bool, error) {
+	base := strings.ToLower(strings.TrimSuffix(filepath.Base(path), filepath.Ext(path)))
 	table := ""
-	for _, t := range []string{"item_template", "spell_proc_event", "spell_proc", "spell_bonus_data"} {
+	for _, t := range csvTables {
 		if strings.Contains(base, t) {
 			table = t
 			break
 		}
 	}
-	if table == "" {
-		return fmt.Errorf("%s: can't tell which table this is; include item_template, spell_proc, spell_proc_event or spell_bonus_data in the file name", path)
+	if table == "" || strings.Contains(base, "locale") {
+		return false, nil
 	}
 
 	data, err := os.ReadFile(path)
 	if err != nil {
-		return err
+		return false, err
 	}
 	data = bytes.TrimPrefix(data, []byte("\xef\xbb\xbf"))
 	firstLine := string(data)
@@ -48,10 +58,10 @@ func (d *Data) LoadCSVFile(path string) error {
 	r.FieldsPerRecord = -1
 	records, err := r.ReadAll()
 	if err != nil {
-		return fmt.Errorf("%s: %w", path, err)
+		return false, fmt.Errorf("%s: %w", path, err)
 	}
 	if len(records) < 2 {
-		return nil
+		return true, nil
 	}
 	header := records[0]
 	for _, rec := range records[1:] {
@@ -60,7 +70,16 @@ func (d *Data) LoadCSVFile(path string) error {
 				rec[i] = ""
 			}
 		}
+	}
+	if table == "spell_dbc" {
+		if d.SpellDBC == nil {
+			d.SpellDBC = &RawTable{Header: header}
+		}
+		d.SpellDBC.Rows = append(d.SpellDBC.Rows, records[1:]...)
+		return true, nil
+	}
+	for _, rec := range records[1:] {
 		d.putRow(table, NewRow(header, rec))
 	}
-	return nil
+	return true, nil
 }

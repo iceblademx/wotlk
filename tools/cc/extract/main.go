@@ -160,8 +160,10 @@ func isCustomID(cfg *cc.Config, s *stockData, id uint32) bool {
 			return true
 		}
 	}
-	if cfg.CustomItemIDMin > 0 && id >= cfg.CustomItemIDMin {
-		return true
+	// With an explicit custom ID range, only that range is custom: stock 3.3.5a items that wowhead's
+	// Classic data lacks (test/unused items) must not be mistaken for custom content.
+	if cfg.CustomItemIDMin > 0 {
+		return id >= cfg.CustomItemIDMin
 	}
 	return !s.itemIDs[int32(id)]
 }
@@ -372,8 +374,10 @@ func (ex *extraction) addIssues(issues []convert.Issue) {
 // considerStock queues server values for a stock item unless some effect wasn't understood,
 // in which case the stats would be incomplete and the item is listed for review instead.
 func (ex *extraction) considerStock(id int32, name string, issues []convert.Issue, accept func()) {
+	// Procs, dummies and spell modifiers never count as item stats (not in wowhead's values either),
+	// so only unresolvable data makes the server values untrustworthy.
 	for _, is := range issues {
-		if (is.Kind == "item-spell" && is.Trigger == "equip") || strings.Contains(is.Detail, "unknown ITEM_MOD") ||
+		if strings.Contains(is.Detail, "spell not found") || strings.Contains(is.Detail, "unknown ITEM_MOD") ||
 			strings.Contains(is.Detail, "not in SpellItemEnchantment.dbc") || strings.Contains(is.Detail, "socket bonus:") {
 			ex.stockReview = append(ex.stockReview, stockReview{ID: id, Name: name, Reason: is.Detail})
 			return
@@ -476,6 +480,10 @@ func (ex *extraction) generateItemEffect(it *server.ItemTemplate, is convert.Iss
 				if e.Effect != dbc.EffectApplyAura || e.Aura != dbc.AuraProcTriggerSpell || trig != 0 {
 					return false
 				}
+				// Procs limited to specific class spells ("each time you cast Holy Shield") need code.
+				if e.SpellClassMask != [3]uint32{} {
+					return false
+				}
 				trig = e.TriggerSpell
 			}
 			buff = ex.src.Spells.Spells[trig]
@@ -496,6 +504,9 @@ func (ex *extraction) generateItemEffect(it *server.ItemTemplate, is convert.Iss
 		var icd int32
 		var hitMask uint32
 		if proc := ex.src.Server.SpellProcs[sp.ID]; proc != nil {
+			if proc.SpellFamilyMask != [3]uint32{} {
+				return false
+			}
 			if proc.ProcFlags != 0 {
 				procFlags = proc.ProcFlags
 			}

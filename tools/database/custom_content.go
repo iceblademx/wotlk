@@ -6,6 +6,7 @@ import (
 	"math"
 	"os"
 	"path/filepath"
+	"regexp"
 	"slices"
 	"sort"
 	"strings"
@@ -60,6 +61,10 @@ func LoadCustomContent(inputsDir string) *CustomContent {
 		}
 	}
 
+	// Server naming conventions for unobtainable items (renamed stubs); stock items take server names.
+	DenyListNameRegexes = append(DenyListNameRegexes,
+		regexp.MustCompile(`^Obsolete`), regexp.MustCompile(`^NPC Equip `), regexp.MustCompile(`^QR \d`))
+
 	// Custom content is always simmable and never deny-listed (servers often reuse unused item IDs).
 	for id := range cc.Custom.Items {
 		ItemAllowList[id] = struct{}{}
@@ -91,6 +96,7 @@ func (cc *CustomContent) Apply(db *WowDatabase) {
 				dst.WeaponDamageMin, dst.WeaponDamageMax, dst.WeaponSpeed = src.WeaponDamageMin, src.WeaponDamageMax, src.WeaponSpeed
 				dst.Ilvl = src.Ilvl
 				dst.Quality = src.Quality
+				dst.Name = src.Name
 			}
 		}
 		for id, src := range cc.StockOverrides.Gems {
@@ -165,6 +171,9 @@ func (cc *CustomContent) Apply(db *WowDatabase) {
 
 func diffItem(a, b *proto.UIItem) []string {
 	var out []string
+	if a.Name != b.Name {
+		out = append(out, fmt.Sprintf("name %q -> %q", a.Name, b.Name))
+	}
 	if d := diffStats(a.Stats, b.Stats); d != "" {
 		out = append(out, d)
 	}
