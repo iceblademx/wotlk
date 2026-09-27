@@ -211,6 +211,8 @@ function Get-ServerArgs {
 function Invoke-Release {
 	# Builds the platforms upstream ships into release/, one zip each. The version is the current git
 	# tag (tag the commit first); the sim checks this fork's latest GitHub release against it.
+	# vite never empties dist/, so start clean to keep old bundle chunks out of the binaries.
+	Remove-Item dist -Recurse -Force -ErrorAction SilentlyContinue
 	Invoke-BinaryDist
 	$version = (& git describe --tags --always).Trim()
 	$ldflags = "-X 'main.Version=$version' -s -w"

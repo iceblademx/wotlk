@@ -67,6 +67,11 @@ func main() {
 			if err != nil {
 				return
 			}
+			defer resp.Body.Close()
+			// A private repo or rate limit answers 404/403 with no tag, which isn't a newer version.
+			if resp.StatusCode != http.StatusOK {
+				return
+			}
 
 			body, err := io.ReadAll(resp.Body)
 			if err != nil {
@@ -82,6 +87,9 @@ func main() {
 				return
 			}
 
+			if result.Tag == "" {
+				return
+			}
 			if result.Tag != Version {
 				outdated = 2
 				fmt.Printf("New version of simulator available: %s\n\tDownload at: %s\n", result.Name, result.URL)
